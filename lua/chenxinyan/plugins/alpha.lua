@@ -17,6 +17,7 @@ return {
       dashboard.button('e', '  > New file', ':ene <BAR> startinsert <CR>'),
       dashboard.button('f', '󰈞  > Find file', ':Telescope find_files<CR>'),
       dashboard.button('r', '  > Recent', ':Telescope oldfiles<CR>'),
+      dashboard.button('p', '  > Projects', ':Telescope session-lens'),
       dashboard.button('u', '󰚰  > Update Plugins', ':Lazy update<CR>'),
       dashboard.button('q', '󰈆  > Quit NVIM', ':qa<CR>'),
     }
@@ -27,6 +28,6 @@ return {
     vim.cmd [[ autocmd FileType alpha setlocal nofoldenable]]
 
     -- Toggle dashboard
-    vim.keymap.set('n', '<leader>ta', ':Alpha<CR>', { desc = '[T]oggle [A]lpha' })
+    vim.keymap.set('n', '<leader>td', ':Alpha<CR>', { desc = '[T]oggle [D]ashboard' })
   end,
 }

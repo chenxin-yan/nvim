@@ -59,7 +59,8 @@ require('lazy').setup({
   require 'chenxinyan.plugins.gitsigns', -- git support
   require 'chenxinyan.plugins.lint', -- linter
   require 'chenxinyan.plugins.glow', -- markdown preview
-  require 'chenxinyan.plugins.rainbow-delimiters',
+  require 'chenxinyan.plugins.rainbow-delimiters', -- rainbow brackets
+  require 'chenxinyan.plugins.auto-session', -- session manager
 }, {
   ui = {
     -- If you are using a Nerd Font: set icons to an empty table which will use the

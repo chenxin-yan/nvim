@@ -3,10 +3,6 @@
 vim.g.mapleader = ' '
 vim.g.maplocalleader = ' '
 
--- change current directory to workspace directory specified
-local workspacePath = '~/dev'
-vim.keymap.set('n', '<leader>wD', ':cd ' .. workspacePath .. '<CR>', { desc = 'Go to [W]orkspace [D]irectory' })
-
 -- [[ Basic Keymaps ]]
 --  See `:help vim.keymap.set()`
 
@@ -23,17 +19,8 @@ vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist, { desc = 'Open diagn
 -- delete and paste without yanking the deleted text into the register
 vim.keymap.set('x', '<leader>p', '"-dP')
 
--- Exit terminal mode in the builtin terminal with a shortcut that is a bit easier
--- for people to discover. Otherwise, you normally need to press <C-\><C-n>, which
--- is not what someone will guess without a bit more experience.
---
+-- Close buildin terminal
 vim.keymap.set('t', '<C-c>', '<C-\\><C-n>:q<CR>', { desc = '[C]lose terminal' })
-
--- TIP: Disable arrow keys in normal mode
-vim.keymap.set('n', '<left>', '<cmd>echo "Use h to move!!"<CR>')
-vim.keymap.set('n', '<right>', '<cmd>echo "Use l to move!!"<CR>')
-vim.keymap.set('n', '<up>', '<cmd>echo "Use k to move!!"<CR>')
-vim.keymap.set('n', '<down>', '<cmd>echo "Use j to move!!"<CR>')
 
 -- Keybinds to make split navigation easier.
 --  Use CTRL+<hjkl> to switch between windows
@@ -59,3 +46,6 @@ vim.keymap.set('x', 'K', ":m '<-2<CR>gv=gv")
 vim.keymap.set('n', '<leader>y', '"+y')
 vim.keymap.set('x', '<leader>y', '"+y')
 vim.keymap.set('n', '<leader>Y', '"+Y')
+
+-- Clear buffer
+vim.keymap.set('n', '<leader>cB', ':wa<CR>:%bd<CR>', { desc = '[C]lear [B]uffers' })
