@@ -20,7 +20,6 @@ return {
         javascript = { 'eslint_d' },
         typescript = { 'eslint_d' },
         python = { 'pylint' },
-        css = { 'stylelint' },
       }
 
       -- To allow other plugins to add linters to require('lint').linters_by_ft,

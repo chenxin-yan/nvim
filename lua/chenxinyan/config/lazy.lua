@@ -57,6 +57,7 @@ require('lazy').setup({
   require 'chenxinyan.plugins.neo-tree', -- nvim file explorer
   require 'chenxinyan.plugins.gitsigns', -- git support
   require 'chenxinyan.plugins.lint', -- linter
+  require 'chenxinyan.plugins.glow', -- markdown preview
 }, {
   ui = {
     -- If you are using a Nerd Font: set icons to an empty table which will use the

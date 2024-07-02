@@ -41,11 +41,11 @@ vim.keymap.set('n', '<C-j>', '<C-w><C-j>', { desc = 'Move focus to the lower win
 vim.keymap.set('n', '<C-k>', '<C-w><C-k>', { desc = 'Move focus to the upper window' })
 
 -- open neovim builtin terminal
-vim.keymap.set('n', '<C-t>', ':terminal<Enter>', { desc = 'Open [T]erminal' })
+vim.keymap.set('n', '<C-t>', ':split<CR>:terminal<CR>', { desc = 'Open [T]erminal' })
 
 -- Move selection up and down
-vim.keymap.set('v', 'J', ":m '>+1<CR>gv=gv")
-vim.keymap.set('v', 'K', ":m '<-2<CR>gv=gv")
+vim.keymap.set('x', 'J', ":m '>+1<CR>gv=gv")
+vim.keymap.set('x', 'K', ":m '<-2<CR>gv=gv")
 
 -- Keep cursor always in the middle when scrolling
 -- vim.keymap.set('n', '<C-d>', '<C-d>zz')
@@ -53,9 +53,7 @@ vim.keymap.set('v', 'K', ":m '<-2<CR>gv=gv")
 
 -- Yanking/deleting/pasting selection into system clipboard
 vim.keymap.set('n', '<leader>y', '"+y')
-vim.keymap.set('v', '<leader>y', '"+y')
+vim.keymap.set('x', '<leader>y', '"+y')
 vim.keymap.set('n', '<leader>Y', '"+Y')
-vim.keymap.set('n', '<leader>d', '"+d')
-vim.keymap.set('v', '<leader>d', '"+d')
 vim.keymap.set('n', '<leader>p', '"+p')
-vim.keymap.set('v', '<leader>p', '"+p')
+vim.keymap.set('x', '<leader>p', '"+p')
