@@ -44,6 +44,7 @@ require('lazy').setup({
   -- Highlight todo, notes, etc in comments
   { 'folke/todo-comments.nvim', event = 'VimEnter', dependencies = { 'nvim-lua/plenary.nvim' }, opts = { signs = false } },
 
+  require 'chenxinyan.plugins.alpha', -- neovim dashboard
   require 'chenxinyan.plugins.undotree', -- undo history management
   require 'chenxinyan.plugins.which-key', -- kinbinding hint
   require 'chenxinyan.plugins.telescope', -- fuzzy search
@@ -58,6 +59,7 @@ require('lazy').setup({
   require 'chenxinyan.plugins.gitsigns', -- git support
   require 'chenxinyan.plugins.lint', -- linter
   require 'chenxinyan.plugins.glow', -- markdown preview
+  require 'chenxinyan.plugins.rainbow-delimiters',
 }, {
   ui = {
     -- If you are using a Nerd Font: set icons to an empty table which will use the

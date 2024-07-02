@@ -51,9 +51,7 @@ vim.keymap.set('x', 'K', ":m '<-2<CR>gv=gv")
 -- vim.keymap.set('n', '<C-d>', '<C-d>zz')
 -- vim.keymap.set('n', '<C-u>', '<C-u>zz')
 
--- Yanking/deleting/pasting selection into system clipboard
+-- Yanking selection into system clipboard
 vim.keymap.set('n', '<leader>y', '"+y')
 vim.keymap.set('x', '<leader>y', '"+y')
 vim.keymap.set('n', '<leader>Y', '"+Y')
-vim.keymap.set('n', '<leader>p', '"+p')
-vim.keymap.set('x', '<leader>p', '"+p')
