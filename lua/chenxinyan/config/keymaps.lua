@@ -3,6 +3,10 @@
 vim.g.mapleader = ' '
 vim.g.maplocalleader = ' '
 
+-- change current directory to workspace directory specified
+local workspacePath = '~/dev'
+vim.keymap.set('n', '<leader>wD', ':cd ' .. workspacePath .. '<CR>', { desc = 'Go to [W]orkspace [D]irectory' })
+
 -- [[ Basic Keymaps ]]
 --  See `:help vim.keymap.set()`
 
@@ -23,7 +27,7 @@ vim.keymap.set('x', '<leader>p', '"-dP')
 -- for people to discover. Otherwise, you normally need to press <C-\><C-n>, which
 -- is not what someone will guess without a bit more experience.
 --
-vim.keymap.set('t', '<leader><Esc>', '<C-\\><C-n>', { desc = 'Exit terminal mode' })
+vim.keymap.set('t', '<C-c>', '<C-\\><C-n>:q<CR>', { desc = '[C]lose terminal' })
 
 -- TIP: Disable arrow keys in normal mode
 vim.keymap.set('n', '<left>', '<cmd>echo "Use h to move!!"<CR>')
@@ -41,14 +45,7 @@ vim.keymap.set('n', '<C-j>', '<C-w><C-j>', { desc = 'Move focus to the lower win
 vim.keymap.set('n', '<C-k>', '<C-w><C-k>', { desc = 'Move focus to the upper window' })
 
 -- open neovim builtin terminal
-vim.keymap.set('n', '<leader>tt', function()
-  if vim.bo.buftype == 'terminal' then
-    vim.cmd 'q'
-  else
-    vim.cmd 'split'
-    vim.cmd 'terminal'
-  end
-end, { desc = '[T]oggle [T]erminal' })
+vim.keymap.set('n', '<C-t>', ':split<CR>:terminal<CR>', { desc = '[T]oggle [T]erminal' })
 
 -- Move selection up and down
 vim.keymap.set('x', 'J', ":m '>+1<CR>gv=gv")

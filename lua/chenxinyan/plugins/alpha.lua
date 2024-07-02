@@ -27,6 +27,6 @@ return {
     vim.cmd [[ autocmd FileType alpha setlocal nofoldenable]]
 
     -- Toggle dashboard
-    vim.keymap.set('n', '<leader>ta', ':Alpha<CR>', { desc = '[T]oggle [A]ashboard' })
+    vim.keymap.set('n', '<leader>ta', ':Alpha<CR>', { desc = '[T]oggle [A]lpha' })
   end,
 }
