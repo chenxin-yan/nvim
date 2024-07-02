@@ -44,20 +44,19 @@ require('lazy').setup({
   -- Highlight todo, notes, etc in comments
   { 'folke/todo-comments.nvim', event = 'VimEnter', dependencies = { 'nvim-lua/plenary.nvim' }, opts = { signs = false } },
 
-  require 'chenxinyan.plugins.undotree',
-  require 'chenxinyan.plugins.which-key',
-  require 'chenxinyan.plugins.telescope',
-  require 'chenxinyan.plugins.lspconfig',
-  require 'chenxinyan.plugins.conform',
-  require 'chenxinyan.plugins.cmp',
-  require 'chenxinyan.plugins.mini',
-  require 'chenxinyan.plugins.treesitter',
+  require 'chenxinyan.plugins.undotree', -- undo history management
+  require 'chenxinyan.plugins.which-key', -- kinbinding hint
+  require 'chenxinyan.plugins.telescope', -- fuzzy search
+  require 'chenxinyan.plugins.lspconfig', -- LSP support
+  require 'chenxinyan.plugins.conform', -- formatter support
+  require 'chenxinyan.plugins.cmp', -- autocompletion
+  require 'chenxinyan.plugins.mini', -- misc tools
+  require 'chenxinyan.plugins.treesitter', -- syntax highlighting
   -- require 'chenxinyan.plugins.debug',
-  require 'chenxinyan.plugins.autopairs',
-  require 'chenxinyan.plugins.neo-tree',
-  require 'chenxinyan.plugins.gitsigns',
-  require 'chenxinyan.plugins.indent-blankline',
-  require 'chenxinyan.plugins.lint',
+  require 'chenxinyan.plugins.autopairs', -- autopair brackets
+  require 'chenxinyan.plugins.neo-tree', -- nvim file explorer
+  require 'chenxinyan.plugins.gitsigns', -- git support
+  require 'chenxinyan.plugins.lint', -- linter
 }, {
   ui = {
     -- If you are using a Nerd Font: set icons to an empty table which will use the
