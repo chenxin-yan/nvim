@@ -41,7 +41,14 @@ vim.keymap.set('n', '<C-j>', '<C-w><C-j>', { desc = 'Move focus to the lower win
 vim.keymap.set('n', '<C-k>', '<C-w><C-k>', { desc = 'Move focus to the upper window' })
 
 -- open neovim builtin terminal
-vim.keymap.set('n', '<C-t>', ':split<CR>:terminal<CR>', { desc = 'Open [T]erminal' })
+vim.keymap.set('n', '<leader>tt', function()
+  if vim.bo.buftype == 'terminal' then
+    vim.cmd 'q'
+  else
+    vim.cmd 'split'
+    vim.cmd 'terminal'
+  end
+end, { desc = '[T]oggle [T]erminal' })
 
 -- Move selection up and down
 vim.keymap.set('x', 'J', ":m '>+1<CR>gv=gv")
