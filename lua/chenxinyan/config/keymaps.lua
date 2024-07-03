@@ -42,10 +42,11 @@ vim.keymap.set('x', 'K', ":m '<-2<CR>gv=gv")
 -- vim.keymap.set('n', '<C-d>', '<C-d>zz')
 -- vim.keymap.set('n', '<C-u>', '<C-u>zz')
 
--- Yanking selection into system clipboard
+-- Yanking/deleting selection into system clipboard
 vim.keymap.set('n', '<leader>y', '"+y')
 vim.keymap.set('x', '<leader>y', '"+y')
 vim.keymap.set('n', '<leader>Y', '"+Y')
+vim.keymap.set('x', '<leader>d', '"+d')
 
 -- Clear buffer
 vim.keymap.set('n', '<leader>cB', ':wa<CR>:%bd<CR>', { desc = '[C]lear [B]uffers' })

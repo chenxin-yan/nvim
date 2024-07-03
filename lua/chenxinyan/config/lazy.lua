@@ -58,9 +58,10 @@ require('lazy').setup({
   require 'chenxinyan.plugins.neo-tree', -- nvim file explorer
   require 'chenxinyan.plugins.gitsigns', -- git support
   require 'chenxinyan.plugins.lint', -- linter
-  require 'chenxinyan.plugins.glow', -- markdown preview
   require 'chenxinyan.plugins.rainbow-delimiters', -- rainbow brackets
   require 'chenxinyan.plugins.auto-session', -- session manager
+  require 'chenxinyan.plugins.markdown-preview', -- markdown preview in browser
+  require 'chenxinyan.plugins.markdown', -- markdown editing toolkits
 }, {
   ui = {
     -- If you are using a Nerd Font: set icons to an empty table which will use the

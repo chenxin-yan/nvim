@@ -122,6 +122,7 @@ return { -- LSP Configuration & Plugins
       -- clangd = {},
       -- gopls = {},
       pyright = {},
+      marksman = {},
       -- rust_analyzer = {},
       -- ... etc. See `:help lspconfig-all` for a list of all the pre-configured LSPs
       tsserver = {},
@@ -131,15 +132,15 @@ return { -- LSP Configuration & Plugins
         -- cmd = {...},
         -- filetypes = { ...},
         -- capabilities = {},
-        settings = {
-          Lua = {
-            completion = {
-              callSnippet = 'Replace',
-            },
-            -- You can toggle below to ignore Lua_LS's noisy `missing-fields` warnings
-            -- diagnostics = { disable = { 'missing-fields' } },
-          },
-        },
+        -- settings = {
+        --   Lua = {
+        --     completion = {
+        --       callSnippet = 'Replace',
+        -- },
+        -- You can toggle below to ignore Lua_LS's noisy `missing-fields` warnings
+        -- diagnostics = { disable = { 'missing-fields' } },
+        -- },
+        -- },
       },
     }
 
