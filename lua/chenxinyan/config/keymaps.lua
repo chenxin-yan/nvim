@@ -1,4 +1,4 @@
--- Set <space> as the leader key
+-- Set <space> as the leader keykeymap
 -- See `:help mapleader`
 vim.g.mapleader = ' '
 vim.g.maplocalleader = ' '
@@ -10,7 +10,7 @@ vim.g.maplocalleader = ' '
 vim.opt.hlsearch = true
 vim.keymap.set('n', '<Esc>', '<cmd>nohlsearch<CR>')
 
--- Diagnostic keymaps
+-- Diagnostic/todo keymaps
 vim.keymap.set('n', '[d', vim.diagnostic.goto_prev, { desc = 'Go to previous [D]iagnostic message' })
 vim.keymap.set('n', ']d', vim.diagnostic.goto_next, { desc = 'Go to next [D]iagnostic message' })
 vim.keymap.set('n', '<leader>e', vim.diagnostic.open_float, { desc = 'Show diagnostic [E]rror messages' })
@@ -49,4 +49,4 @@ vim.keymap.set('n', '<leader>Y', '"+Y')
 vim.keymap.set('x', '<leader>d', '"+d')
 
 -- Clear buffer
-vim.keymap.set('n', '<leader>cB', ':wa<CR>:%bd<CR>', { desc = '[C]lear [B]uffers' })
+vim.keymap.set('n', '<C-c><C-b>', ':wa<CR>:%bd<CR>', { desc = '[C]lear [B]uffers' })

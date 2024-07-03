@@ -41,9 +41,7 @@ require('lazy').setup({
   -- "gc" to comment visual regions/lines
   { 'numToStr/Comment.nvim', opts = {} },
 
-  -- Highlight todo, notes, etc in comments
-  { 'folke/todo-comments.nvim', event = 'VimEnter', dependencies = { 'nvim-lua/plenary.nvim' }, opts = { signs = false } },
-
+  require 'chenxinyan.plugins.todo-comments', -- Highlight todo, notes, etc in comment; todo tree
   require 'chenxinyan.plugins.alpha', -- neovim dashboard
   require 'chenxinyan.plugins.undotree', -- undo history management
   require 'chenxinyan.plugins.which-key', -- kinbinding hint
