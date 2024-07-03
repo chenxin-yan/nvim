@@ -1,4 +1,4 @@
--- Set <space> as the leader keykeymap
+-- Set <space> as the leader key
 -- See `:help mapleader`
 vim.g.mapleader = ' '
 vim.g.maplocalleader = ' '
@@ -48,5 +48,14 @@ vim.keymap.set('x', '<leader>y', '"+y')
 vim.keymap.set('n', '<leader>Y', '"+Y')
 vim.keymap.set('x', '<leader>d', '"+d')
 
+-- 'x' not yanking to buffer
+vim.keymap.set('n', 'x', '"_x')
+
 -- Clear buffer
 vim.keymap.set('n', '<C-c><C-b>', ':wa<CR>:%bd<CR>', { desc = '[C]lear [B]uffers' })
+
+-- Tabs
+vim.keymap.set('n', 'te', ':tabedit<CR>', { desc = '[T]able [E]dit' })
+vim.keymap.set('n', '<Tab>', ':tabnext<CR>', { desc = '[T]able Next' })
+vim.keymap.set('n', '<S-Tab>', ':tabpre<CR>', { desc = '[T]able Previous' })
+vim.keymap.set('n', 'tw', ':tabclose<CR>', { desc = '[T]able [C]lose' })

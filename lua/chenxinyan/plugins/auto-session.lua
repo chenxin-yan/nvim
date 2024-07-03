@@ -6,6 +6,7 @@ return {
   config = function()
     require('auto-session').setup {
       auto_session_suppress_dirs = { '~/', '~/Downloads', '/' },
+      auto_session_create_enabled = false,
 
       -- auto session telescope integration settings
       session_lens = {
