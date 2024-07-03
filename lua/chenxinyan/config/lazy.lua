@@ -41,6 +41,9 @@ require('lazy').setup({
   -- "gc" to comment visual regions/lines
   { 'numToStr/Comment.nvim', opts = {} },
 
+  -- neovim git wrapper
+  { 'tpope/vim-fugitive', event = 'VimEnter' },
+
   require 'chenxinyan.plugins.todo-comments', -- Highlight todo, notes, etc in comment; todo tree
   require 'chenxinyan.plugins.alpha', -- neovim dashboard
   require 'chenxinyan.plugins.undotree', -- undo history management

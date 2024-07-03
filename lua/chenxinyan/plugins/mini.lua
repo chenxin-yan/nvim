@@ -24,6 +24,10 @@ return { -- Collection of various small independent plugins/modules
         hex_color = hipatterns.gen_highlighter.hex_color(),
       },
     }
+
+    -- split and joint parameters within brackets
+    require('mini.splitjoin').setup()
+
     -- Simple and easy statusline.
     --  You could remove this setup call if you don't like it,
     --  and try some other statusline plugin

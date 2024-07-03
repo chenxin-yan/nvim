@@ -19,7 +19,8 @@ vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist, { desc = 'Open diagn
 -- delete and paste without yanking the deleted text into the register
 vim.keymap.set('x', '<leader>p', '"-dP')
 
--- Close buildin terminal
+-- Open/Close buildin terminal
+vim.keymap.set('n', '<C-t>', ':split<CR>:terminal<CR>', { desc = 'Open [T]erminal' })
 vim.keymap.set('t', '<C-c>', '<C-\\><C-n>:q<CR>', { desc = '[C]lose terminal' })
 
 -- Keybinds to make split navigation easier.
@@ -30,9 +31,6 @@ vim.keymap.set('n', '<C-h>', '<C-w><C-h>', { desc = 'Move focus to the left wind
 vim.keymap.set('n', '<C-l>', '<C-w><C-l>', { desc = 'Move focus to the right window' })
 vim.keymap.set('n', '<C-j>', '<C-w><C-j>', { desc = 'Move focus to the lower window' })
 vim.keymap.set('n', '<C-k>', '<C-w><C-k>', { desc = 'Move focus to the upper window' })
-
--- open neovim builtin terminal
-vim.keymap.set('n', '<C-t>', ':split<CR>:terminal<CR>', { desc = '[T]oggle [T]erminal' })
 
 -- Move selection up and down
 vim.keymap.set('x', 'J', ":m '>+1<CR>gv=gv")
@@ -45,17 +43,11 @@ vim.keymap.set('x', 'K', ":m '<-2<CR>gv=gv")
 -- Yanking/deleting selection into system clipboard
 vim.keymap.set('n', '<leader>y', '"+y')
 vim.keymap.set('x', '<leader>y', '"+y')
-vim.keymap.set('n', '<leader>Y', '"+Y')
 vim.keymap.set('x', '<leader>d', '"+d')
 
 -- 'x' not yanking to buffer
 vim.keymap.set('n', 'x', '"_x')
+vim.keymap.set('x', 'x', '"_x')
 
--- Clear buffer
-vim.keymap.set('n', '<C-c><C-b>', ':wa<CR>:%bd<CR>', { desc = '[C]lear [B]uffers' })
-
--- Tabs
-vim.keymap.set('n', 'te', ':tabedit<CR>', { desc = '[T]able [E]dit' })
-vim.keymap.set('n', '<Tab>', ':tabnext<CR>', { desc = '[T]able Next' })
-vim.keymap.set('n', '<S-Tab>', ':tabpre<CR>', { desc = '[T]able Previous' })
-vim.keymap.set('n', 'tw', ':tabclose<CR>', { desc = '[T]able [C]lose' })
+-- Save and clear all buffers
+vim.keymap.set('n', '<leader>wc', ':wa<CR>:%bd<CR>', { desc = '[C]lear buffers' })

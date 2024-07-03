@@ -19,9 +19,6 @@ vim.opt.showmode = false
 -- Enable break indent
 vim.opt.breakindent = true
 
--- disable wrap
-vim.opt.wrap = false
-
 -- show current buffer name in the title
 vim.opt.title = true
 
