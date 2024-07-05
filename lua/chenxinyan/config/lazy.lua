@@ -48,14 +48,14 @@ require('lazy').setup({
   require 'chenxinyan.plugins.todo-comments', -- Highlight todo, notes, etc in comment; todo tree
   require 'chenxinyan.plugins.alpha', -- neovim dashboard
   require 'chenxinyan.plugins.undotree', -- undo history management
-  require 'chenxinyan.plugins.which-key', -- kinbinding hint
+  require 'chenxinyan.plugins.which-key', -- keybinding hint
   require 'chenxinyan.plugins.telescope', -- fuzzy search
   require 'chenxinyan.plugins.lspconfig', -- LSP support
   require 'chenxinyan.plugins.conform', -- formatter support
   require 'chenxinyan.plugins.cmp', -- autocompletion
   require 'chenxinyan.plugins.mini', -- misc tools
   require 'chenxinyan.plugins.treesitter', -- syntax highlighting
-  -- require 'chenxinyan.plugins.debug',
+  require 'chenxinyan.plugins.debug', -- language debugger
   require 'chenxinyan.plugins.autopairs', -- autopair brackets
   require 'chenxinyan.plugins.neo-tree', -- nvim file explorer
   require 'chenxinyan.plugins.gitsigns', -- git support
@@ -65,7 +65,7 @@ require('lazy').setup({
   require 'chenxinyan.plugins.markdown-preview', -- markdown preview in browser
   require 'chenxinyan.plugins.markdown', -- markdown editing toolkits
   require 'chenxinyan.plugins.vim-flog', -- vim graph
-  require 'chenxinyan.plugins.harpoon', -- buffer bookmakrs
+  require 'chenxinyan.plugins.harpoon', -- buffer bookmarks
 }, {
   ui = {
     -- If you are using a Nerd Font: set icons to an empty table which will use the
