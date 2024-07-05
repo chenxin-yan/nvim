@@ -16,12 +16,14 @@ vim.keymap.set('n', ']d', vim.diagnostic.goto_next, { desc = 'Go to next [D]iagn
 vim.keymap.set('n', '<leader>e', vim.diagnostic.open_float, { desc = 'Show diagnostic [E]rror messages' })
 vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist, { desc = 'Open diagnostic [Q]uickfix list' })
 
--- delete and paste without yanking the deleted text into the register
+--  deleting/paste without yanking the deleted text into the register
 vim.keymap.set('x', '<leader>p', '"-dP')
+vim.keymap.set('n', 'x', '"_x')
+vim.keymap.set('x', 'x', '"_x')
 
 -- Open/Close buildin terminal
 vim.keymap.set('n', '<C-t>', ':split<CR>:terminal<CR>', { desc = 'Open [T]erminal' })
-vim.keymap.set('t', '<C-c>', '<C-\\><C-n>:q<CR>', { desc = '[C]lose terminal' })
+vim.keymap.set('t', '<Esc><Esc>', '<C-\\><C-n>:q<CR>', { desc = 'Close terminal' })
 
 -- Keybinds to make split navigation easier.
 --  Use CTRL+<hjkl> to switch between windows
@@ -37,17 +39,16 @@ vim.keymap.set('x', 'J', ":m '>+1<CR>gv=gv")
 vim.keymap.set('x', 'K', ":m '<-2<CR>gv=gv")
 
 -- Keep cursor always in the middle when scrolling
--- vim.keymap.set('n', '<C-d>', '<C-d>zz')
--- vim.keymap.set('n', '<C-u>', '<C-u>zz')
+vim.keymap.set('n', '<C-d>', '<C-d>zz')
+vim.keymap.set('n', '<C-u>', '<C-u>zz')
 
 -- Yanking/deleting selection into system clipboard
 vim.keymap.set('n', '<leader>y', '"+y')
 vim.keymap.set('x', '<leader>y', '"+y')
 vim.keymap.set('x', '<leader>d', '"+d')
 
--- 'x' not yanking to buffer
-vim.keymap.set('n', 'x', '"_x')
-vim.keymap.set('x', 'x', '"_x')
-
 -- Save and clear all buffers
 vim.keymap.set('n', '<leader>wc', ':wa<CR>:%bd<CR>', { desc = '[C]lear buffers' })
+
+-- toggle spellcheck
+vim.keymap.set('n', '<leader>ts', ':set invspell<CR>', { desc = '[T]oggle [S]pell check' })

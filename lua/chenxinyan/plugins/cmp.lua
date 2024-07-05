@@ -43,7 +43,7 @@ return { -- Autocompletion
       enable_autosnippets = true,
     }
 
-    -- NOTE: Load custom lua snippets
+    --Load custom lua snippets
     require('luasnip.loaders.from_lua').load { paths = { '~/.config/nvim/lua/chenxinyan/snippets/' } }
     vim.keymap.set('n', '<leader>sp', '<cmd>source ~/.config/nvim/lua/chenxinyan/plugins/cmp.lua')
 
@@ -80,7 +80,7 @@ return { -- Autocompletion
         -- Manually trigger a completion from nvim-cmp.
         --  Generally you don't need this, because nvim-cmp will display
         --  completions whenever it has completion options available.
-        ['<C-Space>'] = cmp.mapping.complete {},
+        -- ['<C-Space>'] = cmp.mapping.complete {},
 
         -- Think of <c-l> as moving to the right of your snippet expansion.
         --  So if you have a snippet that's like:

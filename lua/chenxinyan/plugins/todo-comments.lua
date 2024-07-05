@@ -14,9 +14,9 @@ return {
     end, { desc = 'Previous todo comment' })
 
     -- Open todo comment tree in builtin quckfix window
-    vim.keymap.set('n', '<leader>T', ':exe ":TodoQuickFix keywords=TODO,FIXME cwd=" .. fnameescape(expand("%:p"))<CR>', { desc = 'Open [T]odo [T]ree' })
+    vim.keymap.set('n', '<leader>T', ':exe ":TodoQuickFix keywords=TODO,FIXME,FIX cwd=" .. fnameescape(expand("%:p"))<CR>', { desc = 'Open [T]odo [T]ree' })
 
     -- search todo comments via telescope
-    vim.keymap.set('n', '<leader>st', ':TodoTelescope keywords=TODO,FIXME<CR>', { desc = '[S]earch [T]odos' })
+    vim.keymap.set('n', '<leader>st', ':TodoTelescope keywords=TODO,FIXME,FIX<CR>', { desc = '[S]earch [T]odos' })
   end,
 }

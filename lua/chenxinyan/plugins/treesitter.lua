@@ -120,7 +120,7 @@ return { -- Highlight, edit, and navigate code
       tsc.toggle()
     end, { desc = '[t]oggle tressiter [c]ontext' })
 
-    -- treesitter textobjects command repeat
+    -- treesitter textobjects command repeat with ; and ,
     local ts_repeat_move = require 'nvim-treesitter.textobjects.repeatable_move'
 
     -- Repeat movement with ; and ,
