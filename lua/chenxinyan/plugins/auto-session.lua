@@ -16,7 +16,7 @@ return {
       },
 
       -- auto session keybindings
-      vim.keymap.set('n', '<leader>ss', require('auto-session.session-lens').search_session, { desc = '[S]earch [S]ession' }),
+      vim.keymap.set('n', '<leader>sw', require('auto-session.session-lens').search_session, { desc = '[S]earch [W]orkspace' }),
       vim.keymap.set('n', '<leader>wS', ':SessionSave<CR>', { desc = '[W]orkspace [S]ave' }),
     }
   end,
