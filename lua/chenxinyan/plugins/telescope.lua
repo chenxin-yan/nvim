@@ -110,6 +110,6 @@ return { -- Fuzzy Finder (files, lsp, etc)
     -- Shortcut for searching spelling suggestions
     vim.keymap.set('n', '<leader>ss', function()
       require('telescope.builtin').spell_suggest(require('telescope.themes').get_cursor {})
-    end, { desc = '[S]pelling [S]uggestions' })
+    end, { desc = '[S]earch spelling [S]uggestions' })
   end,
 }

@@ -2,16 +2,6 @@ return {
   { -- Linting
     'mfussenegger/nvim-lint',
     event = { 'BufReadPre', 'BufNewFile' },
-    key = {
-      {
-        '<leader>l',
-        function()
-          require('lint').try_lint()
-        end,
-        mode = '',
-        desc = '[F]ormat buffer',
-      },
-    },
     config = function()
       local lint = require 'lint'
       lint.linters_by_ft = {

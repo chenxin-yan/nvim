@@ -18,7 +18,7 @@ return { -- Highlight, edit, and navigate code
     incremental_selection = {
       enable = true,
       keymaps = {
-        init_selection = '<leader>cs',
+        init_selection = '<leader>i',
         node_incremental = '<C-i>',
         scope_incremental = '<C-o>',
         node_decremental = '<C-d>',
@@ -71,12 +71,12 @@ return { -- Highlight, edit, and navigate code
       swap = {
         enable = true,
         swap_next = {
-          ['<leader>na'] = { query = '@parameter.inner', desc = 'Swap [N]ext argument' },
-          ['<leader>nm'] = { query = '@function.outer', desc = 'Swap [N]ext function' },
+          ['<leader>cn'] = { query = '@parameter.inner', desc = 'Swap [N]ext argument' },
+          ['<leader>cp'] = { query = '@function.outer', desc = 'Swap [N]ext function' },
         },
         swap_previous = {
-          ['<leader>pa'] = { query = '@parameter.inner', desc = 'Swap [P]revious argument' },
-          ['<leader>pm'] = { query = '@function.outer', desc = 'Swap [P]revious function' },
+          ['<leader>cN'] = { query = '@parameter.inner', desc = 'Swap [P]revious argument' },
+          ['<leader>cP'] = { query = '@function.outer', desc = 'Swap [P]revious function' },
         },
       },
       move = {
@@ -85,6 +85,7 @@ return { -- Highlight, edit, and navigate code
         goto_next_start = {
           [']m'] = { query = '@function.outer', desc = 'Next function/method start' },
           [']c'] = { query = '@class.outer', desc = 'Next class start' },
+          [']a'] = { query = '@parameter.outer', desc = 'Next argument' },
         },
         goto_next_end = {
           [']M'] = { query = '@function.outer', desc = 'Next function/method end' },
@@ -93,11 +94,14 @@ return { -- Highlight, edit, and navigate code
         goto_previous_start = {
           ['[m'] = { query = '@function.outer', desc = 'Previous function/method start' },
           ['[c'] = { query = '@class.outer', desc = 'Previous class start' },
+          ['[a'] = { query = '@parameter.outer', desc = 'Previous argument' },
         },
         goto_previous_end = {
           ['[M'] = { query = '@function.outer', desc = 'Previous function/method end' },
           ['[C'] = { query = '@class.outer', desc = 'Previous class end' },
         },
+        -- goto_next = {},
+        -- goto_previous = {},
       },
     },
   },
@@ -118,7 +122,7 @@ return { -- Highlight, edit, and navigate code
     }
     vim.keymap.set('n', '<leader>tc', function()
       tsc.toggle()
-    end, { desc = '[t]oggle tressiter [c]ontext' })
+    end, { desc = '[T]oggle tressiter [C]ontext' })
 
     -- treesitter textobjects command repeat with ; and ,
     local ts_repeat_move = require 'nvim-treesitter.textobjects.repeatable_move'

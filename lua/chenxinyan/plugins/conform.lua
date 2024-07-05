@@ -3,12 +3,12 @@ return { -- Autoformat
   lazy = false,
   keys = {
     {
-      '<leader>f',
+      '<leader>cf',
       function()
         require('conform').format { async = true, lsp_fallback = true }
       end,
       mode = '',
-      desc = '[F]ormat buffer',
+      desc = '[C]ode [F]ormatting buffer',
     },
   },
   opts = {
@@ -27,6 +27,8 @@ return { -- Autoformat
       lua = { 'stylua' },
       javascript = { 'prettier' },
       typescript = { 'prettier' },
+      javascriptreact = { 'prettier' },
+      typescriptreact = { 'prettier' },
       css = { 'prettier' },
       html = { 'prettier' },
       json = { 'prettier' },

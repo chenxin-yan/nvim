@@ -23,7 +23,8 @@ vim.keymap.set('x', 'x', '"_x')
 
 -- Open/Close buildin terminal
 vim.keymap.set('n', '<C-t>', ':split<CR>:terminal<CR>', { desc = 'Open [T]erminal' })
-vim.keymap.set('t', '<Esc><Esc>', '<C-\\><C-n>:q<CR>', { desc = 'Close terminal' })
+vim.keymap.set('t', '<Esc><Esc>', '<C-\\><C-n>', { desc = 'Exit terminal' })
+vim.keymap.set('t', '<C-c>', '<C-\\><C-n>:q<CR>', { desc = '[C]lose terminal' })
 
 -- Keybinds to make split navigation easier.
 --  Use CTRL+<hjkl> to switch between windows
@@ -41,6 +42,8 @@ vim.keymap.set('x', 'K', ":m '<-2<CR>gv=gv")
 -- Keep cursor always in the middle when scrolling
 vim.keymap.set('n', '<C-d>', '<C-d>zz')
 vim.keymap.set('n', '<C-u>', '<C-u>zz')
+vim.keymap.set('n', 'n', 'nzzzv')
+vim.keymap.set('n', 'N', 'Nzzzv')
 
 -- Yanking/deleting selection into system clipboard
 vim.keymap.set('n', '<leader>y', '"+y')
