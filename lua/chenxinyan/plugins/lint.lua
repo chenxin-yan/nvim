@@ -52,6 +52,11 @@ return {
           require('lint').try_lint()
         end,
       })
+
+      -- keymap for manual linting
+      vim.keymap.set('n', '<leader>dl', function()
+        lint.try_lint()
+      end, { desc = '[D]ocument [L]intting' })
     end,
   },
 }

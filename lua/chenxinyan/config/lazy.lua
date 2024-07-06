@@ -18,12 +18,8 @@ vim.opt.rtp:prepend(lazypath)
 --    :Lazy update
 --
 require('lazy').setup({
-
-  { -- You can easily change to a different colorscheme.
-    -- Change the name of the colorscheme plugin below, and then
-    -- change the command in the config to whatever the name of that colorscheme is.
-    --
-    -- If you want to see what colorschemes are already installed, you can use `:Telescope colorscheme`.
+  -- == themes ==
+  {
     'catppuccin/nvim',
     name = 'catppuccin',
     priority = 1000, -- Make sure to load this before all the other start plugins.
@@ -37,6 +33,7 @@ require('lazy').setup({
     end,
   },
 
+  -- == plugin ==
   'tpope/vim-sleuth', -- Detect tabstop and shiftwidth automatically
 
   -- "gc" to comment visual regions/lines
@@ -65,6 +62,7 @@ require('lazy').setup({
   require 'chenxinyan.plugins.harpoon', -- buffer bookmarks
   require 'chenxinyan.plugins.inc-rename', -- incremental renaming
   require 'chenxinyan.plugins.ts-autotag', -- auto close/rename tags
+  -- require 'chenxinyan.plugins.bufferline', -- buffer tabs
 }, {
   ui = {
     -- If you are using a Nerd Font: set icons to an empty table which will use the
