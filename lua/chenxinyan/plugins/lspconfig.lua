@@ -165,6 +165,8 @@ return { -- LSP Configuration & Plugins
       'markdownlint', --linter for markdown
       'eslint_d', --linter for javascript
       'pylint', -- linter for python
+      -- debugger
+      'js-debug-adapter',
     })
     require('mason-tool-installer').setup { ensure_installed = ensure_installed }
 
