@@ -5,6 +5,6 @@ return {
   },
   cmd = { 'Flog', 'Flogsplit', 'Floggit' },
   keys = {
-    { '<leader>wg', ':Flog<CR>', desc = 'Show workspace [G]it graph' },
+    { '<leader>gg', ':Flog<CR>', desc = '[G]it [G]raph' },
   },
 }

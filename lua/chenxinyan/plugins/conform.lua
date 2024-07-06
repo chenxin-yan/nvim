@@ -1,6 +1,6 @@
 return { -- Autoformat
   'stevearc/conform.nvim',
-  lazy = false,
+  event = { 'BufReadPre', 'BufNewFile' },
   keys = {
     {
       '<leader>cf',
@@ -8,7 +8,7 @@ return { -- Autoformat
         require('conform').format { async = true, lsp_fallback = true }
       end,
       mode = '',
-      desc = '[C]ode [F]ormatting buffer',
+      desc = '[D]ocument [F]ormatting',
     },
   },
   opts = {

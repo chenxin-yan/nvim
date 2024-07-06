@@ -18,7 +18,6 @@ return {
       dashboard.button('f', '󰈞  > Find file', ':Telescope find_files<CR>'),
       dashboard.button('r', '󱋡  > Recent file', ':Telescope oldfiles<CR>'),
       dashboard.button('p', '  > My projects', ':Telescope session-lens<CR>'),
-      dashboard.button('v', '  > My vault', ':cd ~/Documents/Ideaverse<CR>:ene<CR>'),
       dashboard.button('c', '  > My configs', ':cd ~/.config/nvim<CR>:Telescope find_files<CR>'),
       dashboard.button('u', '󰚰  > Update plugins', ':Lazy update<CR>'),
       dashboard.button('q', '󰈆  > Quit NVIM', ':qa<CR>'),

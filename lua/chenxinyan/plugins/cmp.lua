@@ -33,6 +33,7 @@ return { -- Autocompletion
     --  into multiple repos for maintenance purposes.
     'hrsh7th/cmp-nvim-lsp',
     'hrsh7th/cmp-path',
+    'hrsh7th/cmp-buffer',
   },
   config = function()
     -- See `:help cmp`
@@ -45,7 +46,7 @@ return { -- Autocompletion
 
     --Load custom lua snippets
     require('luasnip.loaders.from_lua').load { paths = { '~/.config/nvim/lua/chenxinyan/snippets/' } }
-    vim.keymap.set('n', '<leader>us', '<cmd>source ~/.config/nvim/lua/chenxinyan/plugins/cmp.lua<CR>', { desc = '[U]pdate [S]ippets' })
+    vim.keymap.set('n', '<leader>U', '<cmd>source ~/.config/nvim/lua/chenxinyan/plugins/cmp.lua<CR>', { desc = '[U]pdate snippets' })
 
     cmp.setup {
       snippet = {

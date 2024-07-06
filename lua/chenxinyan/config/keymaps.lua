@@ -13,22 +13,21 @@ vim.keymap.set('n', '<Esc>', '<cmd>nohlsearch<CR>')
 -- Diagnostic/todo keymaps
 vim.keymap.set('n', '[d', vim.diagnostic.goto_prev, { desc = 'Go to previous [D]iagnostic message' })
 vim.keymap.set('n', ']d', vim.diagnostic.goto_next, { desc = 'Go to next [D]iagnostic message' })
-vim.keymap.set('n', '<leader>e', vim.diagnostic.open_float, { desc = 'Show diagnostic [E]rror messages' })
-vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist, { desc = 'Open diagnostic [Q]uickfix list' })
+vim.keymap.set('n', '<leader>xx', vim.diagnostic.open_float, { desc = 'Show diagnostic Error messages' })
+vim.keymap.set('n', '<leader>xq', vim.diagnostic.setloclist, { desc = 'Open diagnostic [Q]uickfix list' })
 
 --  deleting/paste without yanking the deleted text into the register
-vim.keymap.set('x', '<leader>p', '"-dP')
+vim.keymap.set('x', '<leader>p', '"_dP')
 vim.keymap.set('n', 'x', '"_x')
 vim.keymap.set('x', 'x', '"_x')
 
 -- Open/Close buildin terminal
 vim.keymap.set('n', '<C-t>', ':split<CR>:terminal<CR>', { desc = 'Open [T]erminal' })
 vim.keymap.set('t', '<Esc><Esc>', '<C-\\><C-n>', { desc = 'Exit terminal' })
-vim.keymap.set('t', '<C-c>', '<C-\\><C-n>:q<CR>', { desc = '[C]lose terminal' })
+vim.keymap.set('t', '<C-c>', '<C-c><C-d>', { desc = 'Kill terminal' })
 
 -- Keybinds to make split navigation easier.
 --  Use CTRL+<hjkl> to switch between windows
---
 --  See `:help wincmd` for a list of all window commands
 vim.keymap.set('n', '<C-h>', '<C-w><C-h>', { desc = 'Move focus to the left window' })
 vim.keymap.set('n', '<C-l>', '<C-w><C-l>', { desc = 'Move focus to the right window' })
@@ -51,7 +50,7 @@ vim.keymap.set('x', '<leader>y', '"+y')
 vim.keymap.set('x', '<leader>d', '"+d')
 
 -- Save and clear all buffers
-vim.keymap.set('n', '<leader>wc', ':wa<CR>:%bd<CR>', { desc = '[C]lear buffers' })
+vim.keymap.set('n', '<leader>bc', ':wa<CR>:%bd<CR>', { desc = '[C]lear buffers' })
 
 -- toggle spellcheck
 vim.keymap.set('n', '<leader>ts', ':set invspell<CR>', { desc = '[T]oggle [S]pell check' })

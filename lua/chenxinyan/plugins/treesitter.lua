@@ -18,7 +18,7 @@ return { -- Highlight, edit, and navigate code
     incremental_selection = {
       enable = true,
       keymaps = {
-        init_selection = '<leader>i',
+        init_selection = '<leader>I',
         node_incremental = '<C-i>',
         scope_incremental = '<C-o>',
         node_decremental = '<C-d>',
