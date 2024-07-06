@@ -1,3 +1,7 @@
+if vim.g.neovide then
+  require 'chenxinyan.config.neovide'
+end
+
 require 'chenxinyan.config.keymaps'
 
 require 'chenxinyan.config.options'
