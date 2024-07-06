@@ -37,7 +37,7 @@ require('lazy').setup({
     end,
   },
 
-  'tpope/vim-sleuth', -- Detect tabstop and shiftwidth automatically
+  -- 'tpope/vim-sleuth', -- Detect tabstop and shiftwidth automatically
 
   -- "gc" to comment visual regions/lines
   { 'numToStr/Comment.nvim', opts = {} },
@@ -63,7 +63,6 @@ require('lazy').setup({
   require 'chenxinyan.plugins.rainbow-delimiters', -- rainbow brackets
   require 'chenxinyan.plugins.auto-session', -- session manager
   require 'chenxinyan.plugins.markdown-preview', -- markdown preview in browser
-  require 'chenxinyan.plugins.markdown', -- markdown editing toolkits
   require 'chenxinyan.plugins.vim-flog', -- vim graph
   require 'chenxinyan.plugins.harpoon', -- buffer bookmarks
   require 'chenxinyan.plugins.obsidian', -- obsidian integration
