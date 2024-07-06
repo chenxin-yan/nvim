@@ -61,3 +61,6 @@ vim.opt.scrolloff = 10
 -- Spell checker setting
 vim.opt.spelllang = 'en_us'
 vim.opt.spell = false
+
+-- set conceallevel
+vim.opt.conceallevel = 2

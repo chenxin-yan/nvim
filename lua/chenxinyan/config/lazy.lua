@@ -66,6 +66,7 @@ require('lazy').setup({
   require 'chenxinyan.plugins.markdown', -- markdown editing toolkits
   require 'chenxinyan.plugins.vim-flog', -- vim graph
   require 'chenxinyan.plugins.harpoon', -- buffer bookmarks
+  require 'chenxinyan.plugins.obsidian', -- obsidian integration
 }, {
   ui = {
     -- If you are using a Nerd Font: set icons to an empty table which will use the
