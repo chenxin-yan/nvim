@@ -63,6 +63,7 @@ require('lazy').setup({
   require 'chenxinyan.plugins.inc-rename', -- incremental renaming
   require 'chenxinyan.plugins.ts-autotag', -- auto close/rename tags
   -- require 'chenxinyan.plugins.bufferline', -- buffer tabs
+  require 'chenxinyan.plugins.refactoring', -- code refactoring
 }, {
   ui = {
     -- If you are using a Nerd Font: set icons to an empty table which will use the

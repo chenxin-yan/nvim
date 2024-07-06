@@ -48,9 +48,10 @@ vim.keymap.set('n', 'N', 'Nzzzv')
 vim.keymap.set('n', '<leader>y', '"+y')
 vim.keymap.set('x', '<leader>y', '"+y')
 vim.keymap.set('x', '<leader>d', '"+d')
+vim.keymap.set('n', '<leader>p', '"+p')
 
 -- toggle spellcheck
 vim.keymap.set('n', '<leader>ts', ':set invspell<CR>', { desc = '[T]oggle [S]pell check' })
 
 -- Save and clear all buffers
-vim.keymap.set('n', '<leader>bC', ':wa<CR>:%bd<CR>', { desc = '[C]lear all buffers and save' })
+vim.keymap.set('n', '<leader>bC', ':wa<CR>:%bd<CR>', { desc = '[C]lear buffers and save' })
