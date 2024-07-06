@@ -63,6 +63,8 @@ require('lazy').setup({
   require 'chenxinyan.plugins.markdown-preview', -- markdown preview in browser
   require 'chenxinyan.plugins.vim-flog', -- vim graph
   require 'chenxinyan.plugins.harpoon', -- buffer bookmarks
+  require 'chenxinyan.plugins.inc-rename', -- incremental renaming
+  require 'chenxinyan.plugins.ts-autotag', -- auto close/rename tags
 }, {
   ui = {
     -- If you are using a Nerd Font: set icons to an empty table which will use the

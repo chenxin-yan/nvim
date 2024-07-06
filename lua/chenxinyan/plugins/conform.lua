@@ -3,7 +3,7 @@ return { -- Autoformat
   event = { 'BufReadPre', 'BufNewFile' },
   keys = {
     {
-      '<leader>cf',
+      '<leader>df',
       function()
         require('conform').format { async = true, lsp_fallback = true }
       end,
