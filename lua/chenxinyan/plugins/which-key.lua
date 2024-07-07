@@ -20,8 +20,8 @@ return { -- Useful plugin to show you pending keybinds.
       ['<leader>t'] = { name = '[T]oggle', _ = 'which_key_ignore' },
       ['<leader>g'] = { name = '[G]it', _ = 'which_key_ignore' },
       ['<leader>h'] = { name = 'Git [H]unk', _ = 'which_key_ignore' },
-      ['<leader>b'] = { name = '[B]uffer' },
-      ['<leader>x'] = { name = '[X]Diagnostics/Quickfix' },
+      ['<leader>b'] = { name = '[B]uffer', _ = 'which_key_ignore' },
+      ['<leader>x'] = { name = '[X]Diagnostics/Quickfix', _ = 'which_key_ignore' },
     },
   },
   config = function(_, opts)

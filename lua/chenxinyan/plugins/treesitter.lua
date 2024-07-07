@@ -84,21 +84,17 @@ return { -- Highlight, edit, and navigate code
         set_jumps = true, -- whether to set jumps in the jumplist
         goto_next_start = {
           [']m'] = { query = '@function.outer', desc = 'Next function/method start' },
-          [']c'] = { query = '@class.outer', desc = 'Next class start' },
           [']a'] = { query = '@parameter.outer', desc = 'Next argument' },
         },
         goto_next_end = {
           [']M'] = { query = '@function.outer', desc = 'Next function/method end' },
-          [']C'] = { query = '@class.outer', desc = 'Next class start' },
         },
         goto_previous_start = {
           ['[m'] = { query = '@function.outer', desc = 'Previous function/method start' },
-          ['[c'] = { query = '@class.outer', desc = 'Previous class start' },
           ['[a'] = { query = '@parameter.outer', desc = 'Previous argument' },
         },
         goto_previous_end = {
           ['[M'] = { query = '@function.outer', desc = 'Previous function/method end' },
-          ['[C'] = { query = '@class.outer', desc = 'Previous class end' },
         },
         -- goto_next = {},
         -- goto_previous = {},

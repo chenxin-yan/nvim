@@ -26,7 +26,38 @@ return { -- Collection of various small independent plugins/modules
     }
 
     -- split and joint parameters within brackets
-    require('mini.splitjoin').setup()
+    require('mini.splitjoin').setup {
+      mapping = {
+        toggle = '<leader>cs',
+      },
+    }
+
+    -- mini buffer tabs
+    local tbl = require 'mini.tabline'
+    tbl.setup {
+      use_icons = vim.g.have_nerd_font,
+    }
+
+    -- smart buffer deletion
+    local bufr = require 'mini.bufremove'
+    bufr.setup()
+    vim.keymap.set('n', '<leader>bc', function()
+      bufr.delete(0, false)
+    end, { desc = '[B]uffer [R]emove' })
+
+    -- Mini bracketed for easy navigation
+    local bracketed = require 'mini.bracketed'
+    bracketed.setup {
+      comment = { suffix = '', options = {} },
+      conflict = { suffix = '', options = {} },
+      diagnostic = { suffix = '', options = {} },
+      file = { suffix = '', options = {} },
+      jump = { suffix = '', options = {} },
+      location = { suffix = '', options = {} },
+      treesitter = { suffix = '', options = {} },
+      undo = { suffix = '', options = {} },
+      window = { suffix = '', options = {} },
+    }
 
     -- Simple and easy statusline.
     --  You could remove this setup call if you don't like it,
