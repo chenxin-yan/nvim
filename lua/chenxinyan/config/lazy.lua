@@ -57,6 +57,7 @@ require('lazy').setup({
   require 'chenxinyan.plugins.gitsigns', -- git support
   require 'chenxinyan.plugins.lint', -- linter
   require 'chenxinyan.plugins.rainbow-delimiters', -- rainbow brackets
+  require 'chenxinyan.plugins.indent-line', -- indentation guide
   require 'chenxinyan.plugins.auto-session', -- session manager
   require 'chenxinyan.plugins.markdown-preview', -- markdown preview in browser
   require 'chenxinyan.plugins.vim-flog', -- vim graph
