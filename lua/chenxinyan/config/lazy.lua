@@ -39,12 +39,14 @@ require('lazy').setup({
   -- "gc" to comment visual regions/lines
   { 'numToStr/Comment.nvim', event = { 'BufReadPre', 'BufNewFile' }, opts = {} },
 
+  -- More plugins
   require 'chenxinyan.plugins.fugitive', -- nvim git wraper
   require 'chenxinyan.plugins.todo-comments', -- Highlight todo, notes, etc in comment; todo tree
   require 'chenxinyan.plugins.alpha', -- neovim dashboard
   require 'chenxinyan.plugins.undotree', -- undo history management
   require 'chenxinyan.plugins.which-key', -- keybinding hint
   require 'chenxinyan.plugins.telescope', -- fuzzy search
+  require 'chenxinyan.plugins.neo-tree', -- nvim file explorer
   require 'chenxinyan.plugins.lspconfig', -- LSP support
   require 'chenxinyan.plugins.conform', -- formatter support
   require 'chenxinyan.plugins.cmp', -- autocompletion
@@ -52,7 +54,6 @@ require('lazy').setup({
   require 'chenxinyan.plugins.treesitter', -- syntax highlighting
   require 'chenxinyan.plugins.debug', -- language debugger
   require 'chenxinyan.plugins.autopairs', -- autopair brackets
-  require 'chenxinyan.plugins.neo-tree', -- nvim file explorer
   require 'chenxinyan.plugins.gitsigns', -- git support
   require 'chenxinyan.plugins.lint', -- linter
   require 'chenxinyan.plugins.rainbow-delimiters', -- rainbow brackets

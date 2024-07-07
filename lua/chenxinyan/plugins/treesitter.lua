@@ -4,7 +4,20 @@ return { -- Highlight, edit, and navigate code
   event = { 'BufReadPre', 'BufNewFile' },
   dependencies = { 'nvim-treesitter/nvim-treesitter-context', 'nvim-treesitter/nvim-treesitter-textobjects' },
   opts = {
-    ensure_installed = { 'bash', 'c', 'diff', 'html', 'css', 'lua', 'luadoc', 'markdown', 'vim', 'vimdoc', 'javascript', 'typescript' },
+    ensure_installed = {
+      'bash',
+      'c',
+      'diff',
+      'lua',
+      'luadoc',
+      'markdown',
+      'vim',
+      'vimdoc',
+      'javascript',
+      'typescript',
+      'html',
+      'css',
+    },
     -- Autoinstall languages that are not installed
     auto_install = true,
     highlight = {
@@ -18,7 +31,7 @@ return { -- Highlight, edit, and navigate code
     incremental_selection = {
       enable = true,
       keymaps = {
-        init_selection = '<leader>I',
+        init_selection = '<leader>i',
         node_incremental = '<C-i>',
         scope_incremental = '<C-o>',
         node_decremental = '<C-d>',

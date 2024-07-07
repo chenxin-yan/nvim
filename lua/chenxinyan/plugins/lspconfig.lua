@@ -1,6 +1,5 @@
 return { -- LSP Configuration & Plugins
   'neovim/nvim-lspconfig',
-  event = { 'BufReadPre', 'BufNewFile' },
   dependencies = {
     -- Automatically install LSPs and related tools to stdpath for Neovim
     { 'williamboman/mason.nvim', config = true },
@@ -13,6 +12,16 @@ return { -- LSP Configuration & Plugins
     -- `neodev` configures Lua LSP for your Neovim config, runtime and plugins
     -- used for completion, annotations and signatures of Neovim apis
     { 'folke/neodev.nvim', opts = {} },
+    {
+      'antosha417/nvim-lsp-file-operations',
+      dependencies = {
+        'nvim-lua/plenary.nvim',
+        'nvim-neo-tree/neo-tree.nvim',
+        config = function()
+          require('lsp-file-operations').setup()
+        end,
+      },
+    },
   },
   config = function()
     -- If you're wondering about lsp vs treesitter, you can check out the wonderfully
@@ -122,14 +131,14 @@ return { -- LSP Configuration & Plugins
     local servers = {
       -- clangd = {},
       -- gopls = {},
-      pyright = {},
-      marksman = {},
+      pyright = {}, -- python lsp
+      marksman = {}, -- markdown lsp
       -- rust_analyzer = {},
       -- ... etc. See `:help lspconfig-all` for a list of all the pre-configured LSPs
-      tsserver = {},
-      html = {},
-      cssls = {},
-      lua_ls = {
+      tsserver = {}, -- javascript/typescript lsp
+      html = {}, -- HTML lsp
+      cssls = {}, -- CSS lsp
+      lua_ls = { -- Lua lsp
         -- cmd = {...},
         -- filetypes = { ...},
         -- capabilities = {},
