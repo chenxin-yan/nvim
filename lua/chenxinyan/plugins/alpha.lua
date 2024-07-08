@@ -17,8 +17,8 @@ return {
       dashboard.button('e', '  > New file', ':ene <BAR> startinsert <CR>'),
       dashboard.button('f', '󰈞  > Find file', ':Telescope find_files<CR>'),
       dashboard.button('r', '󱋡  > Recent file', ':Telescope oldfiles<CR>'),
-      dashboard.button('p', '  > My projects', ':Telescope session-lens<CR>'),
-      dashboard.button('c', '  > My configs', ':cd ~/.config/nvim<CR>:Telescope find_files<CR>'),
+      dashboard.button('p', '  > My sessions', ':Telescope session-lens<CR>'),
+      dashboard.button('c', '  > My configs', ':cd ~/.config/nvim<CR>:Telescope find_files<CR>'),
       dashboard.button('u', '󰚰  > Update plugins', ':Lazy update<CR>'),
       dashboard.button('q', '󰈆  > Quit NVIM', ':qa<CR>'),
     }

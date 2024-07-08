@@ -18,32 +18,42 @@ vim.opt.rtp:prepend(lazypath)
 --    :Lazy update
 --
 require('lazy').setup({
-  -- == themes ==
+  -- == theme ==
   {
     'catppuccin/nvim',
     name = 'catppuccin',
     priority = 1000, -- Make sure to load this before all the other start plugins.
     init = function()
-      -- Like many other themes, this one has different styles, and you could load
-      -- any other, such as 'tokyonight-storm', 'tokyonight-moon', or 'tokyonight-day'.
       vim.cmd.colorscheme 'catppuccin-mocha'
-
-      -- You can configure highlights by doing something like:
-      vim.cmd.hi 'Comment gui=none'
     end,
 
     config = function()
       if not vim.g.neovide then
-        require('catppuccin').setup {
-          transparent_background = true,
-        }
-        vim.print 'hello'
+        require('catppuccin').setup { transparent_background = true }
       end
     end,
   },
 
-  -- == plugin ==
-  'tpope/vim-sleuth', -- Detect tabstop and shiftwidth automatically
+  -- == plugins ==
+  {
+    'freddiehaddad/feline.nvim',
+    config = function()
+      local ctp_feline = require 'catppuccin.groups.integrations.feline'
+
+      ctp_feline.setup {}
+
+      require('feline').setup {
+        components = ctp_feline.get(),
+      }
+    end,
+  },
+
+  {
+    'tpope/vim-sleuth',
+    config = function()
+      vim.keymap.set('n', '<leader>di', ':Sleuth<CR>', { desc = 'Detect [D]ocument [I]ndent' })
+    end,
+  }, -- Detect tabstop and shiftwidth automatically
 
   -- "gc" to comment visual regions/lines
   { 'numToStr/Comment.nvim', event = { 'BufReadPre', 'BufNewFile' }, opts = {} },

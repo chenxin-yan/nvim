@@ -12,6 +12,8 @@ return { -- LSP Configuration & Plugins
     -- `neodev` configures Lua LSP for your Neovim config, runtime and plugins
     -- used for completion, annotations and signatures of Neovim apis
     { 'folke/neodev.nvim', opts = {} },
+
+    -- code refactoring when rename using neotree
     {
       'antosha417/nvim-lsp-file-operations',
       dependencies = {
@@ -55,7 +57,7 @@ return { -- LSP Configuration & Plugins
         -- Jump to the type of the word under your cursor.
         --  Useful when you're not sure what type a variable is and you want to see
         --  the definition of its *type*, not where it was *defined*.
-        map('<leader>D', require('telescope.builtin').lsp_type_definitions, 'Type [D]efinition')
+        map('gt', require('telescope.builtin').lsp_type_definitions, '[G]oto [T]ype definition')
 
         -- Fuzzy find all the symbols in your current document.
         --  Symbols are things like variables, functions, types, etc.
@@ -118,6 +120,7 @@ return { -- LSP Configuration & Plugins
     --  So, we create new capabilities with nvim cmp, and then broadcast that to the servers.
     local capabilities = vim.lsp.protocol.make_client_capabilities()
     capabilities = vim.tbl_deep_extend('force', capabilities, require('cmp_nvim_lsp').default_capabilities())
+    capabilities = vim.tbl_deep_extend('force', capabilities, require('lsp-file-operations').default_capabilities())
 
     -- Enable the following language servers
     --  Feel free to add/remove any LSPs that you want here. They will automatically be installed.
