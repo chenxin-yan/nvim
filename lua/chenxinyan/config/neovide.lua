@@ -9,3 +9,5 @@ vim.g.neovide_transparency = 0.90
 vim.g.neovide_cursor_animation_length = 0.05
 vim.g.neovide_cursor_trail_size = 0.3
 vim.g.neovide_cursor_smooth_blink = true
+
+vim.g.neovide_input_macos_option_key_is_meta = 'only_left'

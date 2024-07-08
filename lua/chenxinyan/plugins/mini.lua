@@ -33,6 +33,9 @@ return { -- Collection of various small independent plugins/modules
       },
     }
 
+    -- move code line/block horizontally or vertically
+    require('mini.move').setup()
+
     -- mini buffer tabs
     local tbl = require 'mini.tabline'
     tbl.setup {
