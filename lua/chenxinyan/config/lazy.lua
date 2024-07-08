@@ -35,19 +35,6 @@ require('lazy').setup({
   },
 
   -- == plugins ==
-  {
-    'freddiehaddad/feline.nvim',
-    event = { 'BufReadPre', 'BufNewFile' },
-    config = function()
-      local ctp_feline = require 'catppuccin.groups.integrations.feline'
-
-      ctp_feline.setup {}
-
-      require('feline').setup {
-        components = ctp_feline.get(),
-      }
-    end,
-  },
 
   {
     'tpope/vim-sleuth',
@@ -61,6 +48,7 @@ require('lazy').setup({
   { 'numToStr/Comment.nvim', event = { 'BufReadPre', 'BufNewFile' }, opts = {} },
 
   -- More plugins
+  require 'chenxinyan.plugins.feline', -- status line
   require 'chenxinyan.plugins.fugitive', -- nvim git wraper
   require 'chenxinyan.plugins.todo-comments', -- Highlight todo, notes, etc in comment; todo tree
   require 'chenxinyan.plugins.alpha', -- neovim dashboard

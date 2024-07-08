@@ -1,6 +1,5 @@
 return {
   'rmagatti/auto-session',
-  event = 'VimEnter',
   dependencies = {
     'nvim-telescope/telescope.nvim',
   },
@@ -15,10 +14,9 @@ return {
         previewer = false,
         buftypes_to_ignore = {},
       },
-
-      -- auto session keybindings
-      vim.keymap.set('n', '<leader>ss', require('auto-session.session-lens').search_session, { desc = '[S]earch [S]ession' }),
-      vim.keymap.set('n', '<leader>wS', ':SessionSave<CR>', { desc = '[W]orkspace session [S]ave' }),
     }
+    -- auto session keybindings
+    vim.keymap.set('n', '<leader>ss', require('auto-session.session-lens').search_session, { desc = '[S]earch [S]ession' })
+    vim.keymap.set('n', '<leader>wS', ':SessionSave<CR>', { desc = '[W]orkspace session [S]ave' })
   end,
 }
