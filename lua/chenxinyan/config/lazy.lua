@@ -31,6 +31,15 @@ require('lazy').setup({
       -- You can configure highlights by doing something like:
       vim.cmd.hi 'Comment gui=none'
     end,
+
+    config = function()
+      if not vim.g.neovide then
+        require('catppuccin').setup {
+          transparent_background = true,
+        }
+        vim.print 'hello'
+      end
+    end,
   },
 
   -- == plugin ==
@@ -65,6 +74,7 @@ require('lazy').setup({
   require 'chenxinyan.plugins.inc-rename', -- incremental renaming
   require 'chenxinyan.plugins.ts-autotag', -- auto close/rename tags
   require 'chenxinyan.plugins.refactoring', -- code refactoring
+  require 'chenxinyan.plugins.dash', -- dash integration for doc lookup
 }, {
   ui = {
     -- If you are using a Nerd Font: set icons to an empty table which will use the
