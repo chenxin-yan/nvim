@@ -1,5 +1,6 @@
 return {
   'rmagatti/auto-session',
+  event = 'VimEnter',
   dependencies = {
     'nvim-telescope/telescope.nvim',
   },

@@ -37,6 +37,7 @@ require('lazy').setup({
   -- == plugins ==
   {
     'freddiehaddad/feline.nvim',
+    event = { 'BufReadPre', 'BufNewFile' },
     config = function()
       local ctp_feline = require 'catppuccin.groups.integrations.feline'
 
@@ -50,8 +51,9 @@ require('lazy').setup({
 
   {
     'tpope/vim-sleuth',
+    event = { 'BufReadPre', 'BufNewFile' },
     config = function()
-      vim.keymap.set('n', '<leader>di', ':Sleuth<CR>', { desc = 'Detect [D]ocument [I]ndent' })
+      vim.keymap.set('n', '<leader>bi', ':Sleuth<CR>', { desc = 'Detect [B]uffer [I]ndent' })
     end,
   }, -- Detect tabstop and shiftwidth automatically
 
