@@ -103,6 +103,14 @@ return {
           require('lsp-file-operations').setup()
         end,
       },
+
+      -- make typescript error messages more readable
+      {
+        'dmmulroy/ts-error-translator.nvim',
+        config = function()
+          require('ts-error-translator').setup()
+        end,
+      },
     },
     config = function()
       -- If you're wondering about lsp vs treesitter, you can check out the wonderfully
