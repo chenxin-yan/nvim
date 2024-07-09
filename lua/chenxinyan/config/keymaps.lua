@@ -53,5 +53,5 @@ vim.keymap.set('n', '<leader>ts', ':set invspell<CR>', { desc = '[T]oggle [S]pel
 vim.keymap.set('n', '<leader>bC', ':%bd<CR>', { desc = '[B]uffer [C]lear all' })
 
 -- Split windows
-vim.keymap.set('n', '<leader>dh', '<C-w><C-s>', { desc = 'Split [D]ocument [H]orizontally' })
-vim.keymap.set('n', '<leader>dv', '<C-w><C-v>', { desc = 'Split [D]ocument [V]ertically' })
+vim.keymap.set('n', '<leader>d_', '<C-w><C-s>', { desc = 'Split [D]ocument Horizontally' })
+vim.keymap.set('n', '<leader>d|', '<C-w><C-v>', { desc = 'Split [D]ocument Vertically' })

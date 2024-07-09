@@ -48,6 +48,7 @@ require('lazy').setup({
   { 'numToStr/Comment.nvim', event = { 'BufReadPre', 'BufNewFile' }, opts = {} },
 
   -- More plugins
+  require 'chenxinyan.plugins.vim-tmux-navigator', -- tmux window navigation integration
   require 'chenxinyan.plugins.feline', -- status line
   require 'chenxinyan.plugins.fugitive', -- nvim git wraper
   require 'chenxinyan.plugins.todo-comments', -- Highlight todo, notes, etc in comment; todo tree
