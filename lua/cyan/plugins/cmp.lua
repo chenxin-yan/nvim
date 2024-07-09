@@ -45,8 +45,8 @@ return { -- Autocompletion
     }
 
     --Load custom lua snippets
-    require('luasnip.loaders.from_lua').load { paths = { '~/.config/nvim/lua/chenxinyan/snippets/' } }
-    vim.keymap.set('n', '<leader>U', '<cmd>source ~/.config/nvim/lua/chenxinyan/plugins/cmp.lua<CR>', { desc = '[U]pdate snippets' })
+    require('luasnip.loaders.from_lua').load { paths = { '~/.config/nvim/lua/cyan/snippets/' } }
+    vim.keymap.set('n', '<leader>U', '<cmd>source ~/.config/nvim/lua/cyan/plugins/cmp.lua<CR>', { desc = '[U]pdate snippets' })
 
     cmp.setup {
       snippet = {

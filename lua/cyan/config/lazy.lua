@@ -34,7 +34,7 @@ require('lazy').setup({
         },
       }
       if not vim.g.neovide then
-        require('catppuccin').setup { vim.list_extend(opts, { transparent_background = true }) }
+        require('catppuccin').setup { opts, transparent_background = true }
       else
         require('catppuccin').setup { opts }
       end
@@ -63,33 +63,33 @@ require('lazy').setup({
   { 'numToStr/Comment.nvim', event = { 'BufReadPre', 'BufNewFile' }, opts = {} },
 
   -- More plugins
-  require 'chenxinyan.plugins.vim-tmux-navigator', -- tmux window navigation integration
-  require 'chenxinyan.plugins.feline', -- status line
-  require 'chenxinyan.plugins.fugitive', -- nvim git wraper
-  require 'chenxinyan.plugins.todo-comments', -- Highlight todo, notes, etc in comment; todo tree
-  require 'chenxinyan.plugins.alpha', -- neovim dashboard
-  require 'chenxinyan.plugins.undotree', -- undo history management
-  require 'chenxinyan.plugins.which-key', -- keybinding hint
-  require 'chenxinyan.plugins.telescope', -- fuzzy search
-  require 'chenxinyan.plugins.neo-tree', -- nvim file explorer
-  require 'chenxinyan.plugins.lspconfig', -- LSP support
-  require 'chenxinyan.plugins.conform', -- formatter support
-  require 'chenxinyan.plugins.cmp', -- autocompletion
-  require 'chenxinyan.plugins.mini', -- misc tools
-  require 'chenxinyan.plugins.treesitter', -- syntax highlighting
-  require 'chenxinyan.plugins.debug', -- language debugger
-  require 'chenxinyan.plugins.autopairs', -- autopair brackets
-  require 'chenxinyan.plugins.gitsigns', -- git support
-  require 'chenxinyan.plugins.lint', -- linter
-  require 'chenxinyan.plugins.indent-line', -- indentation guide
-  require 'chenxinyan.plugins.auto-session', -- session manager
-  require 'chenxinyan.plugins.markdown-preview', -- markdown preview in browser
-  require 'chenxinyan.plugins.vim-flog', -- vim graph
-  require 'chenxinyan.plugins.harpoon', -- buffer bookmarks
-  require 'chenxinyan.plugins.inc-rename', -- incremental renaming
-  require 'chenxinyan.plugins.ts-autotag', -- auto close/rename tags
-  require 'chenxinyan.plugins.refactoring', -- code refactoring
-  require 'chenxinyan.plugins.dash', -- dash integration for doc lookup
+  require 'cyan.plugins.vim-tmux-navigator', -- tmux window navigation integration
+  require 'cyan.plugins.feline', -- status line
+  require 'cyan.plugins.fugitive', -- nvim git wraper
+  require 'cyan.plugins.todo-comments', -- Highlight todo, notes, etc in comment; todo tree
+  require 'cyan.plugins.alpha', -- neovim dashboard
+  require 'cyan.plugins.undotree', -- undo history management
+  require 'cyan.plugins.which-key', -- keybinding hint
+  require 'cyan.plugins.telescope', -- fuzzy search
+  require 'cyan.plugins.neo-tree', -- nvim file explorer
+  require 'cyan.plugins.lspconfig', -- LSP support
+  require 'cyan.plugins.conform', -- formatter support
+  require 'cyan.plugins.cmp', -- autocompletion
+  require 'cyan.plugins.mini', -- misc tools
+  require 'cyan.plugins.treesitter', -- syntax highlighting
+  require 'cyan.plugins.debug', -- language debugger
+  require 'cyan.plugins.autopairs', -- autopair brackets
+  require 'cyan.plugins.gitsigns', -- git support
+  require 'cyan.plugins.lint', -- linter
+  require 'cyan.plugins.indent-line', -- indentation guide
+  require 'cyan.plugins.auto-session', -- session manager
+  require 'cyan.plugins.markdown-preview', -- markdown preview in browser
+  require 'cyan.plugins.vim-flog', -- vim graph
+  require 'cyan.plugins.harpoon', -- buffer bookmarks
+  require 'cyan.plugins.inc-rename', -- incremental renaming
+  require 'cyan.plugins.ts-autotag', -- auto close/rename tags
+  require 'cyan.plugins.refactoring', -- code refactoring
+  require 'cyan.plugins.dash', -- dash integration for doc lookup
 }, {
   ui = {
     -- If you are using a Nerd Font: set icons to an empty table which will use the
