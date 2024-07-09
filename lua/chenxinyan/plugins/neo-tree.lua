@@ -10,14 +10,35 @@ return {
   },
   cmd = 'Neotree',
   keys = {
-    { '\\', ':Neotree reveal<CR>', desc = 'NeoTree reveal' },
+    { '\\', '<cmd>Neotree reveal<CR>', desc = 'NeoTree reveal' },
   },
   opts = {
+    close_if_last_window = true,
     filesystem = {
       window = {
         mappings = {
           ['\\'] = 'close_window',
         },
+      },
+    },
+    event_handlers = {
+      {
+        event = 'neo_tree_buffer_enter',
+        handler = function()
+          vim.o.showmode = false
+          vim.o.ruler = false
+          vim.o.laststatus = 0
+          vim.o.showcmd = false
+        end,
+      },
+      {
+        event = 'neo_tree_buffer_leave',
+        handler = function()
+          vim.o.showmode = true
+          vim.o.ruler = true
+          vim.o.laststatus = 2
+          vim.o.showcmd = true
+        end,
       },
     },
   },

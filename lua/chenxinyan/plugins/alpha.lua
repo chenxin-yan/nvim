@@ -14,13 +14,13 @@ return {
       '                                                     ',
     }
     dashboard.section.buttons.val = {
-      dashboard.button('e', '  > New file', ':ene <BAR> startinsert <CR>'),
-      dashboard.button('f', '󰈞  > Find file', ':Telescope find_files<CR>'),
-      dashboard.button('r', '󱋡  > Recent file', ':Telescope oldfiles<CR>'),
-      dashboard.button('w', '  > My workspaces', ':Telescope session-lens<CR>'),
-      dashboard.button('c', '  > My configs', ':cd ~/.config/nvim<CR>:Telescope find_files<CR>'),
-      dashboard.button('u', '󰚰  > Update plugins', ':Lazy update<CR>'),
-      dashboard.button('q', '󰈆  > Quit NVIM', ':qa<CR>'),
+      dashboard.button('e', '  > New file', '<cmd>ene <BAR> startinsert <CR>'),
+      dashboard.button('f', '󰈞  > Find file', '<cmd>Telescope find_files<CR>'),
+      dashboard.button('r', '󱋡  > Recent file', '<cmd>Telescope oldfiles<CR>'),
+      dashboard.button('w', '  > My workspaces', '<cmd>Telescope session-lens<CR>'),
+      dashboard.button('c', '  > My configs', '<cmd>cd ~/.config/nvim<CR>:Telescope find_files<CR>'),
+      dashboard.button('u', '󰚰  > Update plugins', '<cmd>Lazy update<CR>'),
+      dashboard.button('q', '󰈆  > Quit NVIM', '<cmd>qa<CR>'),
     }
     -- Send config to alpha
     alpha.setup(dashboard.opts)
@@ -29,6 +29,6 @@ return {
     vim.cmd [[ autocmd FileType alpha setlocal nofoldenable]]
 
     -- Toggle dashboard
-    vim.keymap.set('n', '<leader>td', ':Alpha<CR>', { desc = '[T]oggle [D]ashboard' })
+    vim.keymap.set('n', '<leader>td', '<cmd>Alpha<CR>', { desc = '[T]oggle [D]ashboard' })
   end,
 }

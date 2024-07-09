@@ -22,7 +22,7 @@ vim.keymap.set('n', 'x', '"_x')
 vim.keymap.set('x', 'x', '"_x')
 
 -- Open/Close buildin terminal
-vim.keymap.set('n', '<C-t>', ':split<CR>:terminal<CR>', { desc = 'Open [T]erminal' })
+vim.keymap.set('n', '<C-t>', '<cmd>split<CR><cmd>terminal<CR>', { desc = 'Open [T]erminal' })
 vim.keymap.set('t', '<Esc><Esc>', '<C-\\><C-n>', { desc = 'Exit terminal' })
 vim.keymap.set('t', '<C-c>', '<C-c><C-d>', { desc = 'Kill terminal' })
 
@@ -47,10 +47,10 @@ vim.keymap.set('x', '<leader>d', '"+d')
 vim.keymap.set('n', '<leader>p', '"+p')
 
 -- toggle spellcheck
-vim.keymap.set('n', '<leader>ts', ':set invspell<CR>', { desc = '[T]oggle [S]pell check' })
+vim.keymap.set('n', '<leader>ts', '<cmd>set invspell<CR>', { desc = '[T]oggle [S]pell check' })
 
 -- Save and clear all buffers
-vim.keymap.set('n', '<leader>bC', ':%bd<CR>', { desc = '[B]uffer [C]lear all' })
+vim.keymap.set('n', '<leader>dC', '<cmd>%bd<CR>', { desc = '[D]ocument [C]lear all' })
 
 -- Split windows
 vim.keymap.set('n', '<leader>d_', '<C-w><C-s>', { desc = 'Split [D]ocument Horizontally' })

@@ -28,8 +28,15 @@ require('lazy').setup({
     end,
 
     config = function()
+      local opts = {
+        integrations = {
+          neotree = true,
+        },
+      }
       if not vim.g.neovide then
-        require('catppuccin').setup { transparent_background = true }
+        require('catppuccin').setup { vim.list_extend(opts, { transparent_background = true }) }
+      else
+        require('catppuccin').setup { opts }
       end
     end,
   },
@@ -44,6 +51,14 @@ require('lazy').setup({
     end,
   }, -- Detect tabstop and shiftwidth automatically
 
+  {
+    -- bracket colorizer
+    'HiPhish/rainbow-delimiters.nvim',
+    event = { 'BufReadPre', 'BufNewFile' },
+    config = function()
+      require('rainbow-delimiters.setup').setup {}
+    end,
+  },
   -- "gc" to comment visual regions/lines
   { 'numToStr/Comment.nvim', event = { 'BufReadPre', 'BufNewFile' }, opts = {} },
 
@@ -66,7 +81,6 @@ require('lazy').setup({
   require 'chenxinyan.plugins.autopairs', -- autopair brackets
   require 'chenxinyan.plugins.gitsigns', -- git support
   require 'chenxinyan.plugins.lint', -- linter
-  require 'chenxinyan.plugins.rainbow-delimiters', -- rainbow brackets
   require 'chenxinyan.plugins.indent-line', -- indentation guide
   require 'chenxinyan.plugins.auto-session', -- session manager
   require 'chenxinyan.plugins.markdown-preview', -- markdown preview in browser

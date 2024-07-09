@@ -52,11 +52,11 @@ return {
         { desc = '[T]oggle [H]arpoon Menu' },
       },
       {
-        '<leader>ba',
+        '<leader>da',
         function()
           require('harpoon'):list():add()
         end,
-        desc = '[B]uffer [A]dd to harpoon',
+        desc = '[D]ocument [A]dd to harpoon',
       },
     },
     config = function()

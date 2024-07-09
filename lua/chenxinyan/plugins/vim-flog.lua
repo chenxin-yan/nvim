@@ -5,6 +5,6 @@ return {
   },
   cmd = { 'Flog', 'Flogsplit', 'Floggit' },
   keys = {
-    { '<leader>gg', ':Flog<CR>', desc = '[G]it [G]raph' },
+    { '<leader>gg', '<cmd>Flog<CR>', desc = '[G]it [G]raph' },
   },
 }
