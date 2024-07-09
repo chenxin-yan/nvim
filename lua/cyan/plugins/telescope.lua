@@ -116,6 +116,6 @@ return { -- Fuzzy Finder (files, lsp, etc)
     end, { desc = '[S]earch spelling [S]uggestions' })
 
     -- Searching projects
-    vim.keymap.set('n', '<leader>sp', '<cmd>Telescope project<CR>', { desc = '[S]earch [P]roject' })
+    vim.keymap.set('n', '<leader>wp', '<cmd>Telescope project<CR>', { desc = '[W]orkspace [P]rojects' })
   end,
 }

@@ -42,12 +42,12 @@ return { -- Collection of various small independent plugins/modules
     --   use_icons = vim.g.have_nerd_font,
     -- }
     --
-    -- -- smart buffer deletion
-    -- local bufr = require 'mini.bufremove'
-    -- bufr.setup()
-    -- vim.keymap.set('n', '<leader>bc', function()
-    --   bufr.delete(0, false)
-    -- end, { desc = '[B]uffer [R]emove' })
+    -- smart buffer deletion
+    local bufr = require 'mini.bufremove'
+    bufr.setup()
+    vim.keymap.set('n', '<leader>bd', function()
+      bufr.delete(0, false)
+    end, { desc = '[B]uffer delete' })
 
     -- Mini bracketed for easy navigation
     local bracketed = require 'mini.bracketed'

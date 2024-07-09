@@ -89,6 +89,7 @@ require('lazy').setup({
   require 'cyan.plugins.ts-autotag', -- auto close/rename tags
   require 'cyan.plugins.refactoring', -- code refactoring
   require 'cyan.plugins.dash', -- dash integration for doc lookup
+  require 'cyan.plugins.bufferline', -- buffer & tab lines
 }, {
   ui = {
     -- If you are using a Nerd Font: set icons to an empty table which will use the
