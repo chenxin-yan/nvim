@@ -36,12 +36,6 @@ return { -- Collection of various small independent plugins/modules
     -- move code line/block horizontally or vertically
     require('mini.move').setup()
 
-    -- -- mini buffer tabs
-    -- local tbl = require 'mini.tabline'
-    -- tbl.setup {
-    --   use_icons = vim.g.have_nerd_font,
-    -- }
-    --
     -- smart buffer deletion
     local bufr = require 'mini.bufremove'
     bufr.setup()
