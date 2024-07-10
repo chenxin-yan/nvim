@@ -34,7 +34,7 @@ require('lazy').setup({
         },
       }
       if not vim.g.neovide then
-        require('catppuccin').setup { opts, transparent_background = true }
+        require('catppuccin').setup { opts, transparent_background = vim.g.is_transparent }
       else
         require('catppuccin').setup { opts }
       end

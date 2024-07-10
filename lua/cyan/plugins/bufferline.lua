@@ -29,11 +29,11 @@ return {
 
     -- buffer commands & keymaps
     local function buffer_map(key, cmd, desc)
-      vim.keymap.set('n', key, cmd, { desc = '[B]uffer: ' .. desc })
+      vim.keymap.set('n', key, cmd, { desc = 'BufLine: ' .. desc })
     end
     buffer_map(']b', '<cmd>BufferLineCycleNext<CR>', 'Goto next buffer')
     buffer_map('[b', '<cmd>BufferLineCyclePrev<CR>', 'Goto previous buffer')
 
-    buffer_map('<leader>bc', '<cmd>BufferLineCloseOthers<CR>', 'Close other buffers')
+    buffer_map('<leader>bc', '<cmd>BufferLineCloseOthers<CR>', '[R]emove other buffers')
   end,
 }

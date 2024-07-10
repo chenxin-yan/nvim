@@ -45,9 +45,9 @@ return { -- Collection of various small independent plugins/modules
     -- smart buffer deletion
     local bufr = require 'mini.bufremove'
     bufr.setup()
-    vim.keymap.set('n', '<leader>bd', function()
+    vim.keymap.set('n', '<leader>bc', function()
       bufr.delete(0, false)
-    end, { desc = '[B]uffer delete' })
+    end, { desc = '[B]uffer [C]lear current' })
 
     -- Mini bracketed for easy navigation
     local bracketed = require 'mini.bracketed'
