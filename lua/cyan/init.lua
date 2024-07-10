@@ -1,6 +1,7 @@
 -- == Global variablesa ==
 vim.g.is_transparent = true
-vim.g.has_bufferline = false
+vim.g.has_bufferline = true
+vim.g.has_obsidian = true
 
 -- == configs ==
 if vim.g.neovide then

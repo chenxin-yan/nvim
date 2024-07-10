@@ -90,6 +90,7 @@ require('lazy').setup({
   require 'cyan.plugins.refactoring', -- code refactoring
   require 'cyan.plugins.dash', -- dash integration for doc lookup
   require 'cyan.plugins.bufferline', -- bufferline
+  require 'cyan.plugins.obsidian', -- obsidian integration
 }, {
   ui = {
     -- If you are using a Nerd Font: set icons to an empty table which will use the

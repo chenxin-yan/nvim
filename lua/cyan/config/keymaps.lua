@@ -50,7 +50,7 @@ vim.keymap.set('n', '<leader>p', '"+p')
 vim.keymap.set('n', '<leader>ts', '<cmd>set invspell<CR>', { desc = '[T]oggle [S]pell check' })
 
 -- Save and clear all buffers
-vim.keymap.set('n', '<leader>bC', '<cmd>%bd<CR>', { desc = '[B]uffer [C]lear all' })
+vim.keymap.set('n', '<leader>bD', '<cmd>%bd<CR>', { desc = '[B]uffer [D]elete all' })
 
 -- Split windows
 vim.keymap.set('n', '<leader>d_', '<C-w><C-s>', { desc = 'Split [D]ocument Horizontally' })
