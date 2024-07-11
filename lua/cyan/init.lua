@@ -1,5 +1,5 @@
 -- == Global variablesa ==
-vim.g.is_transparent = true
+vim.g.is_transparent = false
 vim.g.has_bufferline = true
 vim.g.has_obsidian = true
 
