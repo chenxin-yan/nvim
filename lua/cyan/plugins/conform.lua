@@ -33,7 +33,7 @@ return { -- Autoformat
       html = { 'prettier' },
       json = { 'prettier' },
       python = { 'isort', 'black' },
-      markdown = { 'prettier' },
+      markdown = { 'prettier', 'markdownlint-cli2' },
     },
   },
 }

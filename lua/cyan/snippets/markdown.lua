@@ -5,16 +5,27 @@ local i = ls.insert_node
 local f = ls.function_node
 local c = ls.choice_node
 return {
-  s('>', {
-    t '> [!',
-    c(1, {
-      t 'Info',
-      t 'Example',
-      t 'Tip',
-      t 'Warning',
-    }),
-    t '] ',
-    i(2),
+  s('info', {
+    t '> [!Info] ',
+    i(1),
+    t { '', '> ' },
+    i(0),
+  }),
+  s('ex', {
+    t '> [!Example] ',
+    i(1),
+    t { '', '> ' },
+    i(0),
+  }),
+  s('tip', {
+    t '> [!Tip] ',
+    i(1),
+    t { '', '> ' },
+    i(0),
+  }),
+  s('warn', {
+    t '> [!Warning] ',
+    i(1),
     t { '', '> ' },
     i(0),
   }),

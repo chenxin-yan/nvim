@@ -42,7 +42,7 @@ vim.list_extend(ensure_installed, {
   'isort', -- formatter for python
   'black', -- formatter for python
   -- Linters
-  'markdownlint', --linter for markdown
+  'markdownlint-cli2', --linter for markdown
   'eslint_d', --linter for javascript
   'pylint', -- linter for python
   -- debugger
