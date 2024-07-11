@@ -27,11 +27,11 @@ return { -- Collection of various small independent plugins/modules
     }
 
     -- split and joint parameters within brackets
-    require('mini.splitjoin').setup {
-      mapping = {
-        toggle = '<leader>cs',
-      },
-    }
+    local sj = require 'mini.splitjoin'
+    sj.setup()
+    vim.keymap.set({ 'n', 'x' }, '<leader>cs', function()
+      sj.toggle()
+    end, { desc = 'Toggle [C]ode [S]plitjoin' })
 
     -- move code line/block horizontally or vertically
     require('mini.move').setup()

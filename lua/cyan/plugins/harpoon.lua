@@ -21,35 +21,35 @@ return {
         function()
           require('harpoon'):list():select(4)
         end,
-        { desc = 'Goto Harpoon 4' },
+        desc = 'Goto Harpoon 4',
       },
       {
         '<leader>3',
         function()
           require('harpoon'):list():select(3)
         end,
-        { desc = 'Goto Harpoon 3' },
+        desc = 'Goto Harpoon 3',
       },
       {
         '<leader>2',
         function()
           require('harpoon'):list():select(2)
         end,
-        { desc = 'Goto Harpoon 2' },
+        desc = 'Goto Harpoon 2',
       },
       {
         '<leader>1',
         function()
           require('harpoon'):list():select(1)
         end,
-        { desc = 'Goto Harpoon 1' },
+        desc = 'Goto Harpoon 1',
       },
       {
         '<leader>th',
         function()
           require('harpoon').ui:toggle_quick_menu(require('harpoon'):list())
         end,
-        { desc = '[T]oggle [H]arpoon Menu' },
+        desc = '[T]oggle [H]arpoon Menu',
       },
       {
         '<leader>da',

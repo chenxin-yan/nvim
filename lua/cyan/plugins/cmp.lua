@@ -48,6 +48,9 @@ return { -- Autocompletion
     require('luasnip.loaders.from_lua').load { paths = { '~/.config/nvim/lua/cyan/snippets/' } }
     vim.keymap.set('n', '<leader>S', '<cmd>source ~/.config/nvim/lua/cyan/plugins/cmp.lua<CR>', { desc = '[S]ource snippets' })
 
+    -- set keybinds for select choice node in luasnip
+    vim.keymap.set('i', '<C-s>', '<cmd>lua require("luasnip.extras.select_choice")()<cr>')
+
     cmp.setup {
       snippet = {
         expand = function(args)
