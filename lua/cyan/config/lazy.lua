@@ -83,6 +83,7 @@ require('lazy').setup({
   require 'cyan.plugins.lint', -- linter
   require 'cyan.plugins.indent-line', -- indentation guide
   require 'cyan.plugins.bullet', -- markdown list support
+  require 'cyan.plugins.markdowny', -- markdown shortcut support
   require 'cyan.plugins.markdown-preview', -- markdown preview in browser
   require 'cyan.plugins.vim-flog', -- vim graph
   require 'cyan.plugins.harpoon', -- buffer bookmarks

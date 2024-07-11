@@ -34,7 +34,21 @@ return { -- Collection of various small independent plugins/modules
     end, { desc = 'Toggle [C]ode [S]plitjoin' })
 
     -- move code line/block horizontally or vertically
-    require('mini.move').setup()
+    require('mini.move').setup {
+      mappings = {
+        -- Move visual selection in Visual mode. Defaults are Alt (Meta) + hjkl.
+        left = '<M-S-h>',
+        right = '<M-S-l>',
+        down = '<M-S-j>',
+        up = '<M-S-k>',
+
+        -- Move current line in Normal mode
+        line_left = '<M-S-h>',
+        line_right = '<M-S-l>',
+        line_down = '<M-S-j>',
+        line_up = '<M-S-k>',
+      },
+    }
 
     -- smart buffer deletion
     local bufr = require 'mini.bufremove'

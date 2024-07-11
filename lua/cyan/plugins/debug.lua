@@ -42,7 +42,7 @@ return {
       },
     }
 
-    -- add adapters to dap
+    -- Javascript: add adapters to dap
     dap.adapters['pwa-node'] = {
       type = 'server',
       host = '127.0.0.1',
