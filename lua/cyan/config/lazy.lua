@@ -85,7 +85,7 @@ require('lazy').setup({
   require 'cyan.plugins.bullet', -- markdown list support
   require 'cyan.plugins.markdowny', -- markdown shortcut support
   require 'cyan.plugins.markdown-preview', -- markdown preview in browser
-  require 'cyan.plugins.vim-flog', -- vim graph
+  require 'cyan.plugins.lazygit', -- git CLI
   require 'cyan.plugins.harpoon', -- buffer bookmarks
   require 'cyan.plugins.inc-rename', -- incremental renaming
   require 'cyan.plugins.ts-autotag', -- auto close/rename tags
