@@ -23,7 +23,6 @@ vim.keymap.set('x', 'x', '"_x')
 
 -- Open/Close buildin terminal
 vim.keymap.set('n', '<C-t>', '<cmd>split<CR><cmd>terminal<CR>', { desc = 'Open [T]erminal' })
-vim.keymap.set('t', '<Esc><Esc>', '<C-\\><C-n>', { desc = 'Exit terminal' })
 vim.keymap.set('t', '<C-c>', '<C-c><C-d>', { desc = 'Kill terminal' })
 
 -- Keybinds to make split navigation easier.

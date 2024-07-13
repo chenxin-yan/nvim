@@ -19,7 +19,6 @@ return { -- Fuzzy Finder (files, lsp, etc)
     },
 
     'nvim-telescope/telescope-ui-select.nvim',
-    'nvim-telescope/telescope-project.nvim',
 
     -- Useful for getting pretty icons, but requires a Nerd Font.
     { 'nvim-tree/nvim-web-devicons', enabled = vim.g.have_nerd_font },
@@ -72,7 +71,6 @@ return { -- Fuzzy Finder (files, lsp, etc)
     -- Enable Telescope extensions if they are installed
     pcall(require('telescope').load_extension, 'fzf')
     pcall(require('telescope').load_extension, 'ui-select')
-    pcall(require('telescope').load_extension, 'project')
 
     -- See `:help telescope.builtin`
     local builtin = require 'telescope.builtin'
@@ -113,8 +111,5 @@ return { -- Fuzzy Finder (files, lsp, etc)
     vim.keymap.set('n', '<leader>ss', function()
       require('telescope.builtin').spell_suggest(require('telescope.themes').get_cursor {})
     end, { desc = '[S]earch spelling [S]uggestions' })
-
-    -- Searching projects
-    vim.keymap.set('n', '<leader>wp', '<cmd>Telescope project<CR>', { desc = '[W]orkspace [P]rojects' })
   end,
 }

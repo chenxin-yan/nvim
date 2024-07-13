@@ -94,6 +94,7 @@ require('lazy').setup({
   require 'cyan.plugins.markdowny', -- markdown shortcut support
   require 'cyan.plugins.markdown-preview', -- markdown preview in browser
   require 'cyan.plugins.obsidian', -- obsidian integration
+  require 'cyan.plugins.auto-session', -- nvim session manager
 }, {
   ui = {
     -- If you are using a Nerd Font: set icons to an empty table which will use the
