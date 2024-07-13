@@ -4,6 +4,13 @@ return {
     dependencies = {
       'nvim-telescope/telescope.nvim',
     },
+    event = { 'BufReadPre', 'BufNewFile' },
+    cmd = { 'SessionSave', 'SessionRestore', 'Telescope session_lens' },
+    keys = {
+      { '<leader>wr', '<cmd>SessionRestore<CR>', desc = '[W]orkspace [R]estore for current directory' },
+      { '<leader>wS', '<cmd>SessionSave<CR>', desc = '[W]orkspace [S]ave' },
+      { '<leader>sW', '<cmd>Telescope session-lens<CR>', desc = '[S]earch [W]orkspace' },
+    },
     config = function()
       require('auto-session').setup {
         log_level = 'error',
@@ -17,9 +24,5 @@ return {
         },
       }
     end,
-
-    vim.keymap.set('n', '<leader>wr', '<cmd>SessionRestore<CR>', { desc = '[W]orkspace [R]estore for current directory' }),
-    vim.keymap.set('n', '<leader>wS', '<cmd>SessionSave<CR>', { desc = '[W]orkspace [S]ave' }),
-    vim.keymap.set('n', '<leader>sW', '<cmd>Telescope session-lens<CR>', { desc = '[S]earch [W]orkspace', noremap = true }),
   },
 }
