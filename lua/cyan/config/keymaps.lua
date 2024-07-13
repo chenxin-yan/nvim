@@ -61,3 +61,7 @@ vim.keymap.set('n', '<leader>wc', '<cmd>tabnew<CR>', { desc = '[W]orkspace tab [
 vim.keymap.set('n', ']w', '<cmd>tabn<CR>', { desc = '[W]orkspace tab [N]ext' })
 vim.keymap.set('n', '[w', '<cmd>tabp<CR>', { desc = '[W]orkspace tab [P]revious' })
 vim.keymap.set('n', '<leader>wC', '<cmd>tabc<CR>', { desc = '[W]orkspace tab [C]lose' })
+
+-- replace $ and ^ with H and L
+vim.keymap.set({ 'n', 'x' }, 'H', '^')
+vim.keymap.set({ 'n', 'x' }, 'L', '$')

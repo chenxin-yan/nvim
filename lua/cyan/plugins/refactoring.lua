@@ -13,6 +13,6 @@ return {
 
     vim.keymap.set({ 'n', 'x' }, '<leader>cf', function()
       require('telescope').extensions.refactoring.refactors()
-    end, { desc = '[C]ode [R]efactoring' })
+    end, { desc = '[C]ode [F]actoring' })
   end,
 }
