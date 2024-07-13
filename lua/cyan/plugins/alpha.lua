@@ -15,9 +15,8 @@ return {
     dashboard.section.buttons.val = {
       dashboard.button('e', '  > New file', ':e '),
       dashboard.button('f', '󰈞  > Find file', '<cmd>Telescope find_files<CR>'),
-      dashboard.button('r', '󱋡  > Recent file', '<cmd>Telescope oldfiles<CR>'),
-      dashboard.button('w', '  > Workspaces', '<cmd>Telescope project<CR>'),
       dashboard.button('v', '  > Vault', '<cmd>cd ~/Documents/Ideaverse<CR><cmd>Telescope find_files<CR>'),
+      dashboard.button('r', '󰚰  > Restore Workspace', '<cmd>SessionRestore<CR>'),
       dashboard.button('c', '  > Configration', '<cmd>cd ~/.config/nvim<CR><cmd>Telescope find_files<CR>'),
       dashboard.button('u', '  > Update plugins', '<cmd>Lazy update<CR>'),
       dashboard.button('q', '󰈆  > Quit NVIM', '<cmd>qa<CR>'),
