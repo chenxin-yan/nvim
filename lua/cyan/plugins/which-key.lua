@@ -8,29 +8,31 @@ return { -- Useful plugin to show you pending keybinds.
       },
     },
     icons = {
-      group = '+ ',
+      rules = false,
     },
     ignore_missing = true,
-    defaults = {
-      ['g'] = { name = '[G]oto' },
-      ['z'] = { name = 'Fold' },
-      [']'] = { name = 'Next' },
-      ['['] = { name = 'Previous' },
-      ['s'] = { name = '[S]urround' },
-
-      ['<leader>c'] = { name = '󰘦 [C]ode', _ = 'which_key_ignore' },
-      ['<leader>d'] = { name = '󰈙 [D]ocument', _ = 'which_key_ignore' },
-      ['<leader>s'] = { name = ' [S]earch', _ = 'which_key_ignore' },
-      ['<leader>w'] = { name = ' [W]orkspace', _ = 'which_key_ignore' },
-      ['<leader>t'] = { name = '󰔡 [T]oggle', _ = 'which_key_ignore' },
-      ['<leader>g'] = { name = ' [G]it', _ = 'which_key_ignore' },
-      ['<leader>h'] = { name = ' [H]unk', _ = 'which_key_ignore' },
-      ['<leader>b'] = { name = ' [B]uffer', _ = 'which_key_ignore' },
-      ['<leader>x'] = { name = ' [X]Diagnostics/Quickfix', _ = 'which_key_ignore' },
-    },
   },
   config = function(_, opts)
     local wk = require 'which-key'
-    wk.register(opts.defaults)
+    wk.setup(opts)
+    wk.add {
+      {
+        { 'g', group = '[G]oto' },
+        { 'z', group = 'Fold' },
+        { ']', group = 'Next' },
+        { '[', group = 'Previous' },
+        { 's', group = '[S]urround' },
+
+        { '<leader>c', group = '󰘦 [C]ode' },
+        { '<leader>d', group = '󰈙 [D]ocument' },
+        { '<leader>s', group = ' [S]earch' },
+        { '<leader>w', group = ' [W]orkspace' },
+        { '<leader>t', group = '󰔡 [T]oggle' },
+        { '<leader>g', group = ' [G]it' },
+        { '<leader>h', group = ' [H]unk' },
+        { '<leader>b', group = ' [B]uffer' },
+        { '<leader>x', group = ' [X]Diagnostics/Quickfix' },
+      },
+    }
   end,
 }

@@ -59,7 +59,7 @@ if vim.g.has_obsidian then
       obMap('o', '<cmd>ObsidianOpen<CR>', '[O]pen in [O]bsidian')
       obMap('N', ':ObsidianExtractNote ', '[N]ew note with a link')
       obMap('n', ':ObsidianNew ', '[N]ew Note')
-      require('which-key').register { ['<leader>o'] = { name = ' [O]bsidian', _ = 'which_key_ignore' } }
+      require('which-key').add { '<leader>o', group = ' [O]bsidian' }
     end,
   }
 end
