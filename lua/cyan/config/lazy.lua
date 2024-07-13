@@ -82,16 +82,17 @@ require('lazy').setup({
   require 'cyan.plugins.gitsigns', -- git support
   require 'cyan.plugins.lint', -- linter
   require 'cyan.plugins.indent-line', -- indentation guide
-  require 'cyan.plugins.bullet', -- markdown list support
-  require 'cyan.plugins.markdowny', -- markdown shortcut support
-  require 'cyan.plugins.markdown-preview', -- markdown preview in browser
   require 'cyan.plugins.lazygit', -- git CLI
   require 'cyan.plugins.harpoon', -- buffer bookmarks
   require 'cyan.plugins.inc-rename', -- incremental renaming
   require 'cyan.plugins.ts-autotag', -- auto close/rename tags
   require 'cyan.plugins.refactoring', -- code refactoring
-  require 'cyan.plugins.dash', -- dash integration for doc lookup
   require 'cyan.plugins.bufferline', -- bufferline
+
+  -- markdown plugins
+  require 'cyan.plugins.bullet', -- markdown list support
+  require 'cyan.plugins.markdowny', -- markdown shortcut support
+  require 'cyan.plugins.markdown-preview', -- markdown preview in browser
   require 'cyan.plugins.obsidian', -- obsidian integration
 }, {
   ui = {
