@@ -83,7 +83,6 @@ require('lazy').setup({
   require 'cyan.plugins.lint', -- linter
   require 'cyan.plugins.indent-line', -- indentation guide
   require 'cyan.plugins.lazygit', -- git CLI
-  require 'cyan.plugins.harpoon', -- buffer bookmarks
   require 'cyan.plugins.inc-rename', -- incremental renaming
   require 'cyan.plugins.ts-autotag', -- auto close/rename tags
   require 'cyan.plugins.refactoring', -- code refactoring

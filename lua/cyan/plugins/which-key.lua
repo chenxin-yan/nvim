@@ -7,7 +7,6 @@ return {
       { 'z', group = 'Fold' },
       { ']', group = 'Next' },
       { '[', group = 'Previous' },
-      { 's', group = '[S]urround' },
       { '<leader>c', group = '󰘦 [C]ode' },
       { '<leader>d', group = '󰈙 [D]ocument' },
       { '<leader>s', group = ' [S]earch' },

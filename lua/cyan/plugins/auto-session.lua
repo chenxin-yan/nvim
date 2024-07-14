@@ -5,7 +5,7 @@ return {
       'nvim-telescope/telescope.nvim',
     },
     event = { 'BufReadPre', 'BufNewFile' },
-    cmd = { 'SessionSave', 'SessionRestore', 'Telescope session_lens' },
+    cmd = { 'SessionSave', 'SessionRestore' },
     keys = {
       { '<leader>wr', '<cmd>SessionRestore<CR>', desc = '[W]orkspace [R]estore for current directory' },
       { '<leader>wS', '<cmd>SessionSave<CR>', desc = '[W]orkspace [S]ave' },
