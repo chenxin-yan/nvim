@@ -56,10 +56,10 @@ vim.keymap.set('n', '<leader>d_', '<C-w><C-s>', { desc = 'Split [D]ocument Horiz
 vim.keymap.set('n', '<leader>d|', '<C-w><C-v>', { desc = 'Split [D]ocument Vertically' })
 
 -- workspace tab operations
-vim.keymap.set('n', '<leader>wc', '<cmd>tabnew<CR>', { desc = '[W]orkspace tab [C]reate' })
+vim.keymap.set('n', '<leader>wt', '<cmd>tabnew<CR>', { desc = '[W]orkspace [T]ab new' })
 vim.keymap.set('n', ']w', '<cmd>tabn<CR>', { desc = '[W]orkspace tab [N]ext' })
 vim.keymap.set('n', '[w', '<cmd>tabp<CR>', { desc = '[W]orkspace tab [P]revious' })
-vim.keymap.set('n', '<leader>wC', '<cmd>tabc<CR>', { desc = '[W]orkspace tab [C]lose' })
+vim.keymap.set('n', '<leader>wd', '<cmd>tabc<CR>', { desc = '[W]orkspace tab [D]elete' })
 
 -- replace $ and ^ with H and L
 vim.keymap.set({ 'n', 'x' }, 'H', '^')

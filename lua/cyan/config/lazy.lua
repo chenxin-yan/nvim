@@ -87,13 +87,13 @@ require('lazy').setup({
   require 'cyan.plugins.ts-autotag', -- auto close/rename tags
   require 'cyan.plugins.refactoring', -- code refactoring
   require 'cyan.plugins.bufferline', -- bufferline
+  require 'cyan.plugins.auto-session', -- nvim session manager
 
   -- markdown plugins
   require 'cyan.plugins.bullet', -- markdown list support
   require 'cyan.plugins.markdowny', -- markdown shortcut support
   require 'cyan.plugins.markdown-preview', -- markdown preview in browser
   require 'cyan.plugins.obsidian', -- obsidian integration
-  require 'cyan.plugins.auto-session', -- nvim session manager
 }, {
   ui = {
     -- If you are using a Nerd Font: set icons to an empty table which will use the

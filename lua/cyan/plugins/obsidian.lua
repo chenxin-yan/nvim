@@ -2,13 +2,16 @@ if vim.g.has_obsidian then
   return {
     'epwalsh/obsidian.nvim',
     version = '*',
+    dependencies = {
+      'nvim-lua/plenary.nvim',
+    },
     ft = 'markdown',
     event = {
       'BufReadPre ' .. vim.fn.expand '~' .. '/Documents/Ideaverse/**.md',
       'BufNewFile ' .. vim.fn.expand '~' .. '/Documents/Ideaverse/**.md',
     },
-    dependencies = {
-      'nvim-lua/plenary.nvim',
+    keys = {
+      { '<M-d>', '<cmd>ObsidianToday<CR>', desc = 'Open [D]aily note' },
     },
     config = function()
       -- set conceallevel
@@ -24,7 +27,7 @@ if vim.g.has_obsidian then
         },
 
         daily_notes = {
-          folder = '05 Dailies',
+          folder = 'Dailies',
           alias_format = '%Y-%m-%d',
           template = 'Miscs/Templates/Daily Note Template',
         },
@@ -55,7 +58,6 @@ if vim.g.has_obsidian then
       obMap('b', '<cmd>ObsidianBacklinks<CR>', 'Search [B]acklinks')
       obMap('l', '<cmd>Obsidianlinks<CR>', 'Search [L]inks in current note')
       obMap('f', '<cmd>ObsidianFollowLink vsplit<CR>', '[F]ollow note to a new window')
-      obMap('d', '<cmd>ObsidianToday<CR>', 'Open [D]aily note')
       obMap('o', '<cmd>ObsidianOpen<CR>', '[O]pen in [O]bsidian')
       obMap('N', ':ObsidianExtractNote ', '[N]ew note with a link')
       obMap('n', ':ObsidianNew ', '[N]ew Note')

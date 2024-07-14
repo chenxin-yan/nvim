@@ -9,6 +9,7 @@ return {
     keys = {
       { '<leader>wr', '<cmd>SessionRestore<CR>', desc = '[W]orkspace [R]estore for current directory' },
       { '<leader>wS', '<cmd>SessionSave<CR>', desc = '[W]orkspace [S]ave' },
+      { '<leader>wc', '<cmd>SessionPurgeOrphaned<CR>', desc = '[W]orkspace [C]lear' },
       { '<leader>sW', '<cmd>Telescope session-lens<CR>', desc = '[S]earch [W]orkspace' },
     },
     config = function()
