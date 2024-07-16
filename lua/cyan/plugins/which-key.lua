@@ -28,7 +28,6 @@ return {
     icons = {
       rules = false,
     },
-    ignore_missing = true,
   },
   config = function(_, opts)
     local wk = require 'which-key'

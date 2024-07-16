@@ -11,7 +11,7 @@ if vim.g.has_obsidian then
       'BufNewFile ' .. vim.fn.expand '~' .. '/Documents/Ideaverse/**.md',
     },
     keys = {
-      { '<M-d>', '<cmd>ObsidianToday<CR>', desc = 'Open [D]aily note' },
+      { '<M-n>', ':ObsidianNew ', desc = 'Obsidian: [N]ew Note' },
     },
     config = function()
       -- set conceallevel
@@ -47,6 +47,7 @@ if vim.g.has_obsidian then
         end,
         disable_frontmatter = true,
         wiki_link_func = 'use_alias_only',
+        open_app_foreground = true,
       }
 
       -- nvim keymaps
@@ -59,8 +60,7 @@ if vim.g.has_obsidian then
       obMap('l', '<cmd>Obsidianlinks<CR>', 'Search [L]inks in current note')
       obMap('f', '<cmd>ObsidianFollowLink vsplit<CR>', '[F]ollow note to a new window')
       obMap('o', '<cmd>ObsidianOpen<CR>', '[O]pen in [O]bsidian')
-      obMap('N', ':ObsidianExtractNote ', '[N]ew note with a link')
-      obMap('n', ':ObsidianNew ', '[N]ew Note')
+      obMap('e', ':ObsidianExtractNote ', '[E]xtract to a new note')
       require('which-key').add { '<leader>o', group = ' [O]bsidian' }
     end,
   }

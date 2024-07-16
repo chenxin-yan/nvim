@@ -40,8 +40,7 @@ vim.keymap.set('n', 'n', 'nzzzv')
 vim.keymap.set('n', 'N', 'Nzzzv')
 
 -- Yanking/deleting selection into system clipboard
-vim.keymap.set('n', '<leader>y', '"+y')
-vim.keymap.set('x', '<leader>y', '"+y')
+vim.keymap.set({ 'n', 'x' }, '<leader>y', '"+y')
 vim.keymap.set('x', '<leader>d', '"+d')
 vim.keymap.set('n', '<leader>p', '"+p')
 
