@@ -5,6 +5,7 @@
 
 return {
   'mfussenegger/nvim-dap',
+  event = { 'BufReadPre', 'BufNewFile' },
   dependencies = {
     -- Creates a beautiful debugger UI
     'rcarriga/nvim-dap-ui',
@@ -18,8 +19,29 @@ return {
 
     -- Add your own debuggers here
     -- 'leoluz/nvim-dap-go',
+
+    -- JS/TS debugger
+    -- uncomment this once to install the vscode-js-debug
+    -- {
+    --   'microsoft/vscode-js-debug',
+    --   build = 'npm install --legacy-peer-deps && npx gulp vsDebugServerBundle && mv dist out',
+    -- },
+    {
+      'mxsdev/nvim-dap-vscode-js',
+      config = function()
+        require('dap-vscode-js').setup {
+          debugger_path = vim.fn.resolve(vim.fn.expand '~' .. '/.local/share/nvim/lazy/vscode-js-debug'),
+          adapters = {
+            'chrome',
+            'pwa-node',
+            'pwa-chrome',
+            'pwa-extensionHost',
+            'node-terminal',
+          },
+        }
+      end,
+    },
   },
-  event = { 'BufReadPre', 'BufNewFile' },
   config = function()
     local dap = require 'dap'
     local dapui = require 'dapui'
@@ -42,18 +64,8 @@ return {
       },
     }
 
-    -- Javascript: add adapters to dap
-    dap.adapters['pwa-node'] = {
-      type = 'server',
-      host = '127.0.0.1',
-      port = 8123,
-      executable = {
-        command = 'js-debug-adapter',
-      },
-    }
-
-    -- setup adapter for javascript/typescript
-    for _, language in ipairs { 'typescript', 'javascript', 'typescriptreact', 'javascriptreact' } do
+    -- Javascript: setup adapter for javascript/typescript
+    for _, language in ipairs { 'typescript', 'javascript', 'typescriptreact', 'javascriptreact', 'vue' } do
       dap.configurations[language] = {
         {
           {
@@ -61,21 +73,32 @@ return {
             request = 'launch',
             name = 'Launch file',
             program = '${file}',
-            cwd = '${workspaceFolder}',
+            cwd = vim.fn.getcwd(),
           },
           {
             type = 'pwa-node',
             request = 'attach',
             name = 'Attach',
             processId = require('dap.utils').pick_process,
-            cwd = '${workspaceFolder}',
+            cwd = vim.fn.getcwd(),
           },
           {
             type = 'pwa-chrome',
             request = 'launch',
             name = 'Start Chrome with "localhost"',
-            url = 'http://localhost:3000',
-            webRoot = '${workspaceFolder}',
+            url = function()
+              local co = coroutine.running()
+              return coroutine.create(function()
+                vim.ui.input({ prompt = 'Enter URL: ', default = 'Http://localhost:3000' }, function(url)
+                  if url == nil or url == '' then
+                    return
+                  else
+                    coroutine.resume(co, url)
+                  end
+                end)
+              end)
+            end,
+            webRoot = vim.fn.getcwd(),
             userDataDir = false,
           },
         },
