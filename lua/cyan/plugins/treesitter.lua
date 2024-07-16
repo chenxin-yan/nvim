@@ -13,10 +13,12 @@ return { -- Highlight, edit, and navigate code
       'markdown',
       'vim',
       'vimdoc',
+      'python',
       'javascript',
       'typescript',
       'html',
       'css',
+      'toml',
     },
     -- Autoinstall languages that are not installed
     auto_install = true,
@@ -47,8 +49,8 @@ return { -- Highlight, edit, and navigate code
           -- Assignments
           ['a='] = { query = '@assignment.outer', desc = 'Around assignment' },
           ['i='] = { query = '@assignment.inner', desc = 'Inside assignment' },
-          -- ['l='] = { query = '@assignment.lhs', desc = 'LHS of assignment' },
-          -- ['r='] = { query = '@assignment.rhs', desc = 'RHS of assignment' },
+          ['l='] = { query = '@assignment.lhs', desc = 'LHS of assignment' },
+          ['r='] = { query = '@assignment.rhs', desc = 'RHS of assignment' },
 
           -- Function
           ['am'] = { query = '@function.outer', desc = 'Around function/method' },

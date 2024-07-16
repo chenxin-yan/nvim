@@ -3,12 +3,12 @@ return { -- Autoformat
   event = { 'BufReadPre', 'BufNewFile' },
   keys = {
     {
-      '<leader>bf',
+      '<leader>df',
       function()
         require('conform').format { async = true, lsp_fallback = true }
       end,
       mode = '',
-      desc = '[B]uffer [F]ormatting',
+      desc = '[D]ocument [F]ormatting',
     },
   },
   opts = {

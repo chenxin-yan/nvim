@@ -11,8 +11,8 @@ return {
     -- load refactoring Telescope extension
     require('telescope').load_extension 'refactoring'
 
-    vim.keymap.set({ 'n', 'x' }, '<leader>cf', function()
+    vim.keymap.set({ 'n', 'x' }, '<leader>cR', function()
       require('telescope').extensions.refactoring.refactors()
-    end, { desc = '[C]ode [F]actoring' })
+    end, { desc = '[C]ode [R]efactoring' })
   end,
 }

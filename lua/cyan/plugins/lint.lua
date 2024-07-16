@@ -54,9 +54,9 @@ return {
       })
 
       -- keymap for manual linting
-      vim.keymap.set('n', '<leader>bl', function()
+      vim.keymap.set('n', '<leader>dl', function()
         lint.try_lint()
-      end, { desc = '[B]uffer [L]int' })
+      end, { desc = '[D]ocument [L]int' })
     end,
   },
 }

@@ -35,7 +35,9 @@ if vim.g.has_bufferline then
       buffer_map(']b', '<cmd>BufferLineCycleNext<CR>', 'Goto next buffer')
       buffer_map('[b', '<cmd>BufferLineCyclePrev<CR>', 'Goto previous buffer')
 
-      buffer_map('<leader>bc', '<cmd>BufferLineCloseOthers<CR>', '[R]emove other buffers')
+      buffer_map('<leader>bc', '<cmd>BufferLineGroupClose ungrouped<CR>', '[C]lose unpined buffers ')
+      buffer_map('<leader>bC', '<cmd>BufferLineCloseOthers<CR>', '[C]lose other buffers')
+      buffer_map('<leader>bp', '<cmd>BufferLineTogglePin<CR>', '[P]in buffer')
 
       buffer_map('<leader>1', '<cmd>BufferLineGoToBuffer 1<CR>', 'Goto Buffer 1')
       buffer_map('<leader>2', '<cmd>BufferLineGoToBuffer 2<CR>', 'Goto Buffer 2')
