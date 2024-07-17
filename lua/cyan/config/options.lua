@@ -64,3 +64,8 @@ vim.opt.spell = false
 
 -- turn off line wrap
 vim.o.wrap = false
+
+-- indent config
+vim.o.expandtab = true
+vim.o.softtabstop = 2
+vim.o.shiftwidth = 2
