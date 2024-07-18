@@ -32,7 +32,6 @@ return { -- Autoformat
       css = { 'prettier' },
       html = { 'prettier' },
       json = { 'prettier' },
-      python = { 'isort', 'black' },
       markdown = { 'prettier', 'markdownlint-cli2' },
     },
   },

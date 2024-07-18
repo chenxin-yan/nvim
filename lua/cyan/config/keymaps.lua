@@ -51,8 +51,8 @@ vim.keymap.set('n', '<leader>ts', '<cmd>set invspell<CR>', { desc = '[T]oggle [S
 vim.keymap.set('n', '<leader>bD', '<cmd>%bd<CR>', { desc = '[B]uffer [D]elete all' })
 
 -- Split windows
-vim.keymap.set('n', '<leader>d_', '<C-w><C-s>', { desc = 'Split [D]ocument Horizontally' })
-vim.keymap.set('n', '<leader>d|', '<C-w><C-v>', { desc = 'Split [D]ocument Vertically' })
+vim.keymap.set('n', '<leader>d_', '<C-w><C-s>', { desc = 'Open new [D]ocument Horizontally' })
+vim.keymap.set('n', '<leader>d|', '<C-w><C-v>', { desc = 'Open new [D]ocument Vertically' })
 
 -- workspace tab operations
 vim.keymap.set('n', '<leader>wt', '<cmd>tabnew<CR>', { desc = '[W]orkspace [T]ab new' })

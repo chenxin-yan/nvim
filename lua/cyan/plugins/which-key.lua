@@ -22,9 +22,6 @@ return {
         enabled = false,
       },
     },
-    modes = {
-      t = false,
-    },
     icons = {
       rules = false,
     },

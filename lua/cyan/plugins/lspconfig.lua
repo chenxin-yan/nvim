@@ -10,7 +10,6 @@
 local servers = {
   -- clangd = {},
   -- gopls = {},
-  pyright = {}, -- python lsp
   marksman = {}, -- markdown lsp
   -- rust_analyzer = {},
   -- ... etc. See `:help lspconfig-all` for a list of all the pre-configured LSPs
@@ -39,12 +38,9 @@ vim.list_extend(ensure_installed, {
   -- Formatters
   'stylua', -- formatter for lua
   'prettier', -- formatter for javascript
-  'isort', -- formatter for python
-  'black', -- formatter for python
   -- Linters
   'markdownlint-cli2', --linter for markdown
   'eslint_d', --linter for javascript
-  'pylint', -- linter for python
   -- debugger
   'js-debug-adapter',
 })
