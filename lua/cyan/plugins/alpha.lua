@@ -17,7 +17,6 @@ return {
       dashboard.button('f', '󰈞  > Find file', '<cmd>Telescope find_files<CR>'),
       dashboard.button('t', '󰺮  > Find text', '<cmd>Telescope live_grep<CR>'),
       dashboard.button('r', '󰚰  > Restore Workspace', '<cmd>SessionRestore<CR>'),
-      dashboard.button('v', '  > Vault', '<cmd>cd ~/Documents/Ideaverse<CR><cmd>Telescope find_files<CR>'),
       dashboard.button('c', '  > Configration', '<cmd>cd ~/.config/nvim<CR><cmd>Telescope find_files<CR>'),
       dashboard.button('u', '  > Update plugins', '<cmd>Lazy update<CR>'),
       dashboard.button('q', '󰈆  > Quit NVIM', '<cmd>qa<CR>'),

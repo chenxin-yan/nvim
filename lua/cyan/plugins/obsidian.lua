@@ -1,4 +1,5 @@
 if vim.g.has_obsidian then
+  local vault_path = vim.fn.expand '~' .. '/Documents/Ideaverse'
   return {
     'epwalsh/obsidian.nvim',
     version = '*',
@@ -7,11 +8,17 @@ if vim.g.has_obsidian then
     },
     ft = 'markdown',
     event = {
-      'BufReadPre ' .. vim.fn.expand '~' .. '/Documents/Ideaverse/**.md',
-      'BufNewFile ' .. vim.fn.expand '~' .. '/Documents/Ideaverse/**.md',
+      'BufReadPre ' .. vault_path .. '/**.md',
+      'BufNewFile ' .. vault_path .. '/**.md',
     },
     keys = {
-      { '<M-n>', ':ObsidianNew ', desc = 'Obsidian: [N]ew Note' },
+      {
+        '<leader>so',
+        function()
+          require('telescope.builtin').find_files { cwd = vault_path }
+        end,
+        desc = '[S]earch [O]bsidian Vault',
+      },
     },
     config = function()
       -- set conceallevel
@@ -61,6 +68,8 @@ if vim.g.has_obsidian then
       obMap('f', '<cmd>ObsidianFollowLink vsplit<CR>', '[F]ollow note to a new window')
       obMap('o', '<cmd>ObsidianOpen<CR>', '[O]pen in [O]bsidian')
       obMap('e', ':ObsidianExtractNote ', '[E]xtract to a new note')
+      obMap('g', '<cmd>ObsidianSearch<CR>', '[G]rep [O]bsidian Vault')
+
       require('which-key').add { '<leader>o', group = ' [O]bsidian' }
     end,
   }

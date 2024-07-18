@@ -63,3 +63,6 @@ vim.keymap.set('n', '<leader>wd', '<cmd>tabc<CR>', { desc = '[W]orkspace tab [D]
 -- replace $ and ^ with H and L
 vim.keymap.set({ 'n', 'x' }, 'H', '^')
 vim.keymap.set({ 'n', 'x' }, 'L', '$')
+
+-- select all
+vim.keymap.set('n', '<C-a>', 'gg<S-v>G')
