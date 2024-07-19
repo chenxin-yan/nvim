@@ -69,3 +69,6 @@ vim.o.wrap = false
 vim.o.expandtab = true
 vim.o.softtabstop = 2
 vim.o.shiftwidth = 2
+
+-- Session config
+vim.o.sessionoptions = 'blank,buffers,curdir,folds,help,tabpages,winsize,winpos,terminal,localoptions'

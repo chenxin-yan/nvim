@@ -19,6 +19,10 @@ if vim.g.has_obsidian then
         end,
         desc = '[S]earch [O]bsidian Vault',
       },
+      {
+        '<M-n>',
+        ':ObsidianNew ',
+      },
     },
     config = function()
       -- set conceallevel

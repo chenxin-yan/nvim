@@ -21,11 +21,12 @@ return {
     -- 'leoluz/nvim-dap-go',
 
     -- JS/TS debugger
-    -- uncomment this once to install the vscode-js-debug
-    -- {
-    --   'microsoft/vscode-js-debug',
-    --   build = 'npm install --legacy-peer-deps && npx gulp vsDebugServerBundle && mv dist out',
-    -- },
+    {
+      'microsoft/vscode-js-debug',
+      opt = true,
+      -- WARN: uncomment this once to install the vscode-js-debug
+      -- build = 'npm install --legacy-peer-deps && npx gulp vsDebugServerBundle && mv dist out',
+    },
     {
       'mxsdev/nvim-dap-vscode-js',
       config = function()

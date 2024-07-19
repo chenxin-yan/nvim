@@ -5,7 +5,7 @@ return {
       'nvim-telescope/telescope.nvim',
     },
     event = { 'BufReadPre', 'BufNewFile' },
-    cmd = { 'SessionSave', 'SessionRestore' },
+    cmd = { 'SessionSave', 'SessionRestore', 'Telescope session_lens' },
     keys = {
       { '<leader>wr', '<cmd>SessionRestore<CR>', desc = '[W]orkspace [R]estore for current directory' },
       { '<leader>wS', '<cmd>SessionSave<CR>', desc = '[W]orkspace [S]ave' },
@@ -16,12 +16,11 @@ return {
       require('auto-session').setup {
         log_level = 'error',
         auto_restore_enabled = false,
-        auto_session_suppress_dirs = { '~/', '~/Downloads', '/' },
+        auto_session_allowed_dirs = { '~/dev/*' },
         session_lens = {
           load_on_setup = true,
           theme_conf = { border = true },
           previewer = false,
-          buftypes_to_ignore = {}, -- list of buffer types that should not be deleted from current session when a new one is loaded
         },
       }
     end,

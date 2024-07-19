@@ -15,8 +15,9 @@ return {
     dashboard.section.buttons.val = {
       dashboard.button('e', '  > New file', ':e '),
       dashboard.button('f', '󰈞  > Find file', '<cmd>Telescope find_files<CR>'),
-      dashboard.button('t', '󰺮  > Find text', '<cmd>Telescope live_grep<CR>'),
-      dashboard.button('r', '󰚰  > Restore Workspace', '<cmd>SessionRestore<CR>'),
+      dashboard.button('g', '󰺮  > Grep text', '<cmd>Telescope live_grep<CR>'),
+      dashboard.button('w', '  > Search workspace', '<cmd>Telescope session-lens<CR>'),
+      dashboard.button('r', '󰚰  > Restore workspace', '<cmd>SessionRestore<CR>'),
       dashboard.button('c', '  > Configration', '<cmd>cd ~/.config/nvim<CR><cmd>Telescope find_files<CR>'),
       dashboard.button('u', '  > Update plugins', '<cmd>Lazy update<CR>'),
       dashboard.button('q', '󰈆  > Quit NVIM', '<cmd>qa<CR>'),
