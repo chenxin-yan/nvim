@@ -89,6 +89,7 @@ require('lazy').setup({
   require 'cyan.plugins.bufferline', -- bufferline
   require 'cyan.plugins.auto-session', -- nvim session manager
   require 'cyan.plugins.oil', -- file explorer & editor
+  require 'cyan.plugins.gx', -- use gx without netrw
   require 'cyan.plugins.noice', -- UI improvement
 
   -- markdown plugins
