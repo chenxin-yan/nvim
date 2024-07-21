@@ -35,6 +35,7 @@ return { -- Autocompletion
     'hrsh7th/cmp-nvim-lsp',
     'hrsh7th/cmp-path',
     'hrsh7th/cmp-buffer',
+    'hrsh7th/cmp-cmdline',
   },
   config = function()
     -- See `:help cmp`
@@ -137,5 +138,39 @@ return { -- Autocompletion
         { name = 'buffer' },
       },
     }
+
+    -- setup cmp-cmdline
+    local cmd_mapping = {
+      ['<C-j>'] = { c = cmp.mapping.select_next_item() },
+      ['<C-k>'] = { c = cmp.mapping.select_prev_item() },
+      ['<C-y>'] = {
+        c = cmp.mapping.confirm {
+          behavior = cmp.ConfirmBehavior.Insert,
+          select = true,
+        },
+      },
+    }
+
+    -- `/` cmdline setup.
+    cmp.setup.cmdline('/', {
+      mapping = cmd_mapping,
+      sources = {
+        { name = 'buffer' },
+      },
+    })
+    -- `:` cmdline setup.
+    cmp.setup.cmdline(':', {
+      mapping = cmd_mapping,
+      sources = cmp.config.sources({
+        { name = 'path' },
+      }, {
+        {
+          name = 'cmdline',
+          option = {
+            ignore_cmds = { 'Man', '!' },
+          },
+        },
+      }),
+    })
   end,
 }
