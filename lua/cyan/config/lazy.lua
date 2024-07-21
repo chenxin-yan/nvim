@@ -88,6 +88,7 @@ require('lazy').setup({
   require 'cyan.plugins.refactoring', -- code refactoring
   require 'cyan.plugins.bufferline', -- bufferline
   require 'cyan.plugins.auto-session', -- nvim session manager
+  require 'cyan.plugins.oil', -- file explorer & editor
 
   -- markdown plugins
   require 'cyan.plugins.bullet', -- markdown list support
