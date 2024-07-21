@@ -31,6 +31,7 @@ return { -- Autocompletion
     -- Adds other completion capabilities.
     --  nvim-cmp does not ship with all sources by default. They are split
     --  into multiple repos for maintenance purposes.
+    'onsails/lspkind.nvim',
     'hrsh7th/cmp-nvim-lsp',
     'hrsh7th/cmp-path',
     'hrsh7th/cmp-buffer',
@@ -39,6 +40,7 @@ return { -- Autocompletion
     -- See `:help cmp`
     local cmp = require 'cmp'
     local luasnip = require 'luasnip'
+    local lspkind = require 'lspkind'
     luasnip.config.setup {
       update_events = { 'TextChanged', 'TextChangedI' },
       enable_autosnippets = true,
@@ -52,6 +54,14 @@ return { -- Autocompletion
     vim.keymap.set('i', '<C-s>', '<cmd>lua require("luasnip.extras.select_choice")()<cr>')
 
     cmp.setup {
+      formatting = {
+        format = lspkind.cmp_format {
+          -- mode = 'symbol', -- show only symbol annotations
+          maxwidth = 50, -- prevent the popup from showing more than provided characters (e.g 50 will not show more than 50 characters)
+          ellipsis_char = '...', -- when popup menu exceed maxwidth, the truncated part would show ellipsis_char instead (must define maxwidth first)
+          show_labelDetails = true, -- show labelDetails in menu. Disabled by default
+        },
+      },
       snippet = {
         expand = function(args)
           luasnip.lsp_expand(args.body)
@@ -124,6 +134,7 @@ return { -- Autocompletion
         { name = 'nvim_lsp' },
         { name = 'luasnip' },
         { name = 'path' },
+        { name = 'buffer' },
       },
     }
   end,

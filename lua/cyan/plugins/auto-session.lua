@@ -16,7 +16,7 @@ return {
       require('auto-session').setup {
         log_level = 'error',
         auto_restore_enabled = false,
-        auto_session_allowed_dirs = { '~/dev/*' },
+        auto_session_allowed_dirs = { '~/Dev/*' },
         session_lens = {
           load_on_setup = true,
           theme_conf = { border = true },

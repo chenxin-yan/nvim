@@ -35,7 +35,7 @@ return { -- Highlight, edit, and navigate code
         init_selection = '<leader>i',
         node_incremental = '<C-i>',
         scope_incremental = '<C-o>',
-        node_decremental = '<C-d>',
+        node_decremental = '<C-n>',
       },
     },
     textobjects = {
@@ -48,8 +48,8 @@ return { -- Highlight, edit, and navigate code
           -- Assignments
           ['a='] = { query = '@assignment.outer', desc = 'Around assignment' },
           ['i='] = { query = '@assignment.inner', desc = 'Inside assignment' },
-          ['l='] = { query = '@assignment.lhs', desc = 'LHS of assignment' },
-          ['r='] = { query = '@assignment.rhs', desc = 'RHS of assignment' },
+          -- ['l='] = { query = '@assignment.lhs', desc = 'LHS of assignment' },
+          -- ['r='] = { query = '@assignment.rhs', desc = 'RHS of assignment' },
 
           -- Function
           ['am'] = { query = '@function.outer', desc = 'Around function/method' },

@@ -17,6 +17,9 @@ return {
     'williamboman/mason.nvim',
     'jay-babu/mason-nvim-dap.nvim',
 
+    -- display text next to variable when debugging
+    'theHamsta/nvim-dap-virtual-text',
+
     -- Add your own debuggers here
     -- 'leoluz/nvim-dap-go',
 
@@ -25,7 +28,7 @@ return {
       'microsoft/vscode-js-debug',
       opt = true,
       -- WARN: uncomment this once to install the vscode-js-debug
-      -- build = 'npm install --legacy-peer-deps && npx gulp vsDebugServerBundle && mv dist out',
+      build = 'npm install --legacy-peer-deps && npx gulp vsDebugServerBundle && mv dist out',
     },
     {
       'mxsdev/nvim-dap-vscode-js',
