@@ -13,7 +13,11 @@ local servers = {
   marksman = {}, -- markdown lsp
   -- rust_analyzer = {},
   -- ... etc. See `:help lspconfig-all` for a list of all the pre-configured LSPs
-  tsserver = {}, -- javascript/typescript lsp
+  tsserver = {
+    keys = {
+      { '<leader>co', '<cmd>TypescriptOrganizeImports<CR>', desc = '[O]rganize Imports' },
+    },
+  }, -- javascript/typescript lsp
   html = {}, -- HTML lsp
   cssls = {}, -- CSS lsp
   lua_ls = { -- Lua lsp

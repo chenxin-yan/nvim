@@ -40,9 +40,9 @@ vim.keymap.set('n', 'n', 'nzzzv')
 vim.keymap.set('n', 'N', 'Nzzzv')
 
 -- Yanking/deleting selection into system clipboard
-vim.keymap.set({ 'n', 'x' }, '<leader>y', '"+y')
-vim.keymap.set('x', '<leader>d', '"+d')
-vim.keymap.set('n', '<leader>p', '"+p')
+vim.keymap.set({ 'n', 'x' }, '<leader>y', '"+y', { desc = 'Yank into system clipboard' })
+vim.keymap.set('x', '<leader>d', '"+d', { desc = 'Delete into system clipboard' })
+vim.keymap.set('n', '<leader>p', '"+p', { desc = 'Paste from system clipboard' })
 
 -- toggle spellcheck
 vim.keymap.set('n', '<leader>ts', '<cmd>set invspell<CR>', { desc = '[T]oggle [S]pell check' })
@@ -63,6 +63,3 @@ vim.keymap.set('n', '<leader>wd', '<cmd>tabc<CR>', { desc = '[W]orkspace tab [D]
 -- replace $ and ^ with H and L
 vim.keymap.set({ 'n', 'x' }, 'H', '^')
 vim.keymap.set({ 'n', 'x' }, 'L', '$')
-
--- select all
-vim.keymap.set('n', '<C-a>', 'gg<S-v>G')
