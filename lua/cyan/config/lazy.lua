@@ -91,6 +91,7 @@ require('lazy').setup({
   require 'cyan.plugins.oil', -- file explorer & editor
   require 'cyan.plugins.gx', -- use gx without netrw
   require 'cyan.plugins.noice', -- UI improvement
+  require 'cyan.plugins.live-server', -- node live server
 
   -- markdown plugins
   require 'cyan.plugins.bullet', -- markdown list support
