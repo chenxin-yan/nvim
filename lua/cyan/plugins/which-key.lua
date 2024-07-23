@@ -3,8 +3,6 @@ return {
   event = { 'BufReadPre', 'BufNewFile' },
   opts = {
     spec = {
-      { 'g', group = '[G]oto' },
-      { 'z', group = 'Fold' },
       { ']', group = 'Next' },
       { '[', group = 'Previous' },
       { '<leader>c', group = '󰘦 [C]ode' },
@@ -21,9 +19,16 @@ return {
       spelling = {
         enabled = false,
       },
+      presets = {
+        windows = false,
+        nav = false,
+        z = false,
+        g = false,
+      },
     },
     icons = {
       rules = false,
+      mappings = false,
     },
   },
   config = function(_, opts)

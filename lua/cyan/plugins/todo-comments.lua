@@ -18,6 +18,6 @@ return {
 
     -- search todo comments via telescope
     vim.keymap.set('n', '<leader>st', '<cmd>TodoTelescope keywords=TODO,FIXME,FIX<CR>', { desc = '[S]earch [T]odos' })
-    vim.keymap.set('n', '<leader>sc', '<cmd>TodoTelescope<CR>', { desc = '[S]earch all highlighted [C]omments' })
+    vim.keymap.set('n', '<leader>sT', '<cmd>TodoTelescope<CR>', { desc = '[S]earch all highlighted [C]omments' })
   end,
 }

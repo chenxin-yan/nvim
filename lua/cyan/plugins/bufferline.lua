@@ -10,6 +10,7 @@ if vim.g.has_bufferline then
         options = {
           diagnostics = 'nvim_lsp',
           show_buffer_close_icons = false,
+          always_show_bufferline = false,
           offsets = {
             {
               filetype = 'neo-tree',
@@ -43,6 +44,7 @@ if vim.g.has_bufferline then
       buffer_map('<leader>2', '<cmd>BufferLineGoToBuffer 2<CR>', 'Goto Buffer 2')
       buffer_map('<leader>3', '<cmd>BufferLineGoToBuffer 3<CR>', 'Goto Buffer 3')
       buffer_map('<leader>4', '<cmd>BufferLineGoToBuffer 4<CR>', 'Goto Buffer 4')
+      buffer_map('<leader>5', '<cmd>BufferLineGoToBuffer 5<CR>', 'Goto Buffer 5')
     end,
   }
 end

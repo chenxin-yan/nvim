@@ -18,7 +18,7 @@ return { -- Highlight, edit, and navigate code
       'typescript',
       'html',
       'css',
-      'toml',
+      'json5',
     },
     -- Autoinstall languages that are not installed
     auto_install = true,

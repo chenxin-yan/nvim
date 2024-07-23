@@ -34,6 +34,7 @@ local servers = {
       },
     },
   },
+  jsonls = {}, -- JSON lsp
 }
 -- You can add other tools here that you want Mason to install
 -- for you, so that they are available from within Neovim.
@@ -42,8 +43,8 @@ vim.list_extend(ensure_installed, {
   -- Formatters
   'stylua', -- formatter for lua
   'prettier', -- formatter for javascript
+  'markdownlint-cli2', --linter & formatter for markdown
   -- Linters
-  'markdownlint-cli2', --linter for markdown
   'eslint_d', --linter for javascript
   -- debugger
   'js-debug-adapter',
