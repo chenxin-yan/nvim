@@ -87,10 +87,10 @@ return { -- Highlight, edit, and navigate code
         enable = true,
         swap_next = {
           ['<leader>cn'] = { query = '@parameter.inner', desc = 'Swap [N]ext argument' },
-          ['<leader>cp'] = { query = '@function.outer', desc = 'Swap [N]ext function' },
+          ['<leader>cN'] = { query = '@function.outer', desc = 'Swap [N]ext function' },
         },
         swap_previous = {
-          ['<leader>cN'] = { query = '@parameter.inner', desc = 'Swap [P]revious argument' },
+          ['<leader>cp'] = { query = '@parameter.inner', desc = 'Swap [P]revious argument' },
           ['<leader>cP'] = { query = '@function.outer', desc = 'Swap [P]revious function' },
         },
       },

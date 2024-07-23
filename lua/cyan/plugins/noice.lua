@@ -36,4 +36,9 @@ return {
     -- if you lazy-load any plugin below, make sure to add proper `module="..."` entries
     'MunifTanjim/nui.nvim',
   },
+  config = function(_, opts)
+    require('noice').setup(opts)
+    require('telescope').load_extension 'noice'
+    vim.keymap.set('n', '<leader>sm', '<cmd>Telescope noice<CR>', { desc = '[S]earch [M]essages' })
+  end,
 }
