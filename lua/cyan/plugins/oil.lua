@@ -1,6 +1,15 @@
 return {
   'stevearc/oil.nvim',
+  cmd = 'Oil',
+  event = { 'VimEnter */*,.*', 'BufNew */*,.*' },
   dependencies = { 'nvim-tree/nvim-web-devicons' },
+  keys = {
+    {
+      '-',
+      '<CMD>Oil<CR>',
+      desc = 'Open parent directory',
+    },
+  },
   config = function()
     require('oil').setup {
       default_file_explorer = true,
@@ -11,7 +20,5 @@ return {
         ['<C-t>'] = false,
       },
     }
-
-    vim.keymap.set('n', '-', '<CMD>Oil<CR>', { desc = 'Open parent directory' })
   end,
 }

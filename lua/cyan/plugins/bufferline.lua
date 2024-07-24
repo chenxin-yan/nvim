@@ -4,6 +4,7 @@ if vim.g.has_bufferline then
     version = '*',
     event = { 'BufReadPre', 'BufNewFile' },
     dependencies = 'nvim-tree/nvim-web-devicons',
+    after = 'catppuccin',
     config = function()
       local bufferline = require 'bufferline'
       bufferline.setup {

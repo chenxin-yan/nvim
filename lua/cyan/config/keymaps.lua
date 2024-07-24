@@ -54,8 +54,8 @@ vim.keymap.set('n', '<leader>d|', '<C-w><C-v>', { desc = 'Open new [D]ocument Ve
 
 -- workspace tab operations
 vim.keymap.set('n', '<leader>wt', '<cmd>tabnew<CR>', { desc = '[W]orkspace [T]ab new' })
-vim.keymap.set('n', ']w', '<cmd>tabn<CR>', { desc = '[W]orkspace tab [N]ext' })
-vim.keymap.set('n', '[w', '<cmd>tabp<CR>', { desc = '[W]orkspace tab [P]revious' })
+vim.keymap.set('n', ']T', '<cmd>tabn<CR>', { desc = '[N]ext tab' })
+vim.keymap.set('n', '[T', '<cmd>tabp<CR>', { desc = '[P]revious tab' })
 vim.keymap.set('n', '<leader>wd', '<cmd>tabc<CR>', { desc = '[W]orkspace tab [D]elete' })
 
 -- replace $ and ^ with H and L
