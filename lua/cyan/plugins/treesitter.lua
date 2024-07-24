@@ -21,6 +21,7 @@ return { -- Highlight, edit, and navigate code
       'html',
       'css',
       'json5',
+      'java',
     },
     -- Autoinstall languages that are not installed
     auto_install = true,

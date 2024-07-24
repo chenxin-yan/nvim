@@ -7,3 +7,5 @@ A personal neovim config built from [kickstart.nvim](https://github.com/nvim-lua
 ## Plugins
 
 ## Keymaps
+
+## Language support
