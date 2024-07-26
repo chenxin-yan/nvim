@@ -7,10 +7,10 @@ return {
     event = { 'BufReadPre', 'BufNewFile' },
     cmd = { 'SessionSave', 'SessionRestore', 'Telescope session_lens' },
     keys = {
-      { '<leader>wr', '<cmd>SessionRestore<CR>', desc = '[W]orkspace [R]estore for current directory' },
-      { '<leader>wS', '<cmd>SessionSave<CR>', desc = '[W]orkspace [S]ave' },
-      { '<leader>wc', '<cmd>SessionPurgeOrphaned<CR>', desc = '[W]orkspace [C]lear' },
-      { '<leader>sW', '<cmd>Telescope session-lens<CR>', desc = '[S]earch [W]orkspace' },
+      { '<leader>wr', '<cmd>SessionRestore<CR>', desc = 'Session: [W]orkspace [R]estore for current directory' },
+      { '<leader>wS', '<cmd>SessionSave<CR>', desc = 'Session: [W]orkspace [S]ave' },
+      { '<leader>wc', '<cmd>SessionPurgeOrphaned<CR>', desc = 'Session: [W]orkspace [C]lear' },
+      { '<leader>sW', '<cmd>Telescope session-lens<CR>', desc = 'Session: [S]earch [W]orkspace' },
     },
     config = function()
       require('auto-session').setup {

@@ -11,8 +11,8 @@ vim.opt.hlsearch = true
 vim.keymap.set('n', '<Esc>', '<cmd>nohlsearch<CR>')
 
 -- Diagnostic/todo keymaps
-vim.keymap.set('n', '<leader>xx', vim.diagnostic.open_float, { desc = 'Show diagnostic Error messages' })
-vim.keymap.set('n', '<leader>xq', vim.diagnostic.setloclist, { desc = 'Open diagnostic [Q]uickfix list' })
+vim.keymap.set('n', 'X', vim.diagnostic.open_float, { desc = 'Show diagnostic Error messages' })
+vim.keymap.set('n', '<leader>dq', vim.diagnostic.setloclist, { desc = 'Open [D]iagnostic [Q]uickfix list' })
 
 --  deleting/paste without yanking the deleted text into the register
 vim.keymap.set('x', '<leader>p', '"_dP')
@@ -45,12 +45,9 @@ vim.keymap.set('n', '<leader>p', '"+p', { desc = 'Paste from system clipboard' }
 -- toggle spellcheck
 vim.keymap.set('n', '<leader>ts', '<cmd>set invspell<CR>', { desc = '[T]oggle [S]pell check' })
 
--- Save and clear all buffers
-vim.keymap.set('n', '<leader>bD', '<cmd>%bd<CR>', { desc = '[B]uffer [D]elete all' })
-
 -- Split windows
-vim.keymap.set('n', '<leader>d_', '<C-w><C-s>', { desc = 'Open new [D]ocument Horizontally' })
-vim.keymap.set('n', '<leader>d|', '<C-w><C-v>', { desc = 'Open new [D]ocument Vertically' })
+vim.keymap.set('n', '<leader>_', '<C-w><C-s>', { desc = 'Horizontal Split' })
+vim.keymap.set('n', '<leader>|', '<C-w><C-v>', { desc = 'Vertical Split' })
 
 -- workspace tab operations
 vim.keymap.set('n', '<leader>wt', '<cmd>tabnew<CR>', { desc = '[W]orkspace [T]ab new' })
@@ -61,3 +58,6 @@ vim.keymap.set('n', '<leader>wd', '<cmd>tabc<CR>', { desc = '[W]orkspace tab [D]
 -- replace $ and ^ with H and L
 vim.keymap.set({ 'n', 'x' }, 'H', '^')
 vim.keymap.set({ 'n', 'x' }, 'L', '$')
+
+-- select all keymap
+vim.keymap.set({ 'n', 'x' }, '<leader>A', 'gg<s-v>G', { desc = 'Select all' })

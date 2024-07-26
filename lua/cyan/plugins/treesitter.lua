@@ -33,15 +33,15 @@ return { -- Highlight, edit, and navigate code
       additional_vim_regex_highlighting = { 'ruby' },
     },
     indent = { enable = true, disable = { 'ruby' } },
-    incremental_selection = {
-      enable = true,
-      keymaps = {
-        init_selection = '<leader>i',
-        node_incremental = '<C-i>',
-        scope_incremental = '<C-o>',
-        node_decremental = '<C-n>',
-      },
-    },
+    -- incremental_selection = {
+    --   enable = true,
+    --   keymaps = {
+    --     init_selection = '<leader>i',
+    --     node_incremental = '<C-i>',
+    --     scope_incremental = '<C-o>',
+    --     node_decremental = '<C-n>',
+    --   },
+    -- },
     textobjects = {
       select = {
         enable = true,
