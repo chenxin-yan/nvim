@@ -46,6 +46,7 @@ require('lazy').setup({
 
   -- == plugins ==
 
+  -- ---- Core plugins ----
   {
     'tpope/vim-sleuth',
     event = { 'BufReadPre', 'BufNewFile' },
@@ -63,28 +64,6 @@ require('lazy').setup({
     end,
   },
 
-  -- java lsp support
-  { 'mfussenegger/nvim-jdtls', ft = 'java' },
-
-  -- leetcode integration
-  {
-    'kawre/leetcode.nvim',
-    build = ':TSUpdate html',
-    dependencies = {
-      'nvim-telescope/telescope.nvim',
-      'nvim-lua/plenary.nvim', -- required by telescope
-      'MunifTanjim/nui.nvim',
-
-      -- optional
-      'nvim-treesitter/nvim-treesitter',
-      'nvim-tree/nvim-web-devicons',
-    },
-    lazy = 'leetcode' ~= vim.fn.argv()[1],
-    opts = { arg = 'leetcode', lang = 'java' },
-  },
-
-  -- More plugins
-  require 'cyan.plugins.vim-tmux-navigator', -- tmux window navigation integration
   require 'cyan.plugins.feline', -- status line
   require 'cyan.plugins.fugitive', -- nvim git wraper
   require 'cyan.plugins.todo-comments', -- Highlight todo, notes, etc in comment; todo tree
@@ -103,23 +82,50 @@ require('lazy').setup({
   require 'cyan.plugins.gitsigns', -- git support
   require 'cyan.plugins.lint', -- linter
   require 'cyan.plugins.indent-line', -- indentation guide
-  require 'cyan.plugins.lazygit', -- git CLI
   require 'cyan.plugins.inc-rename', -- incremental renaming
-  require 'cyan.plugins.ts-autotag', -- auto close/rename tags
-  require 'cyan.plugins.refactoring', -- code refactoring
   require 'cyan.plugins.bufferline', -- bufferline
   require 'cyan.plugins.auto-session', -- nvim session manager
   require 'cyan.plugins.oil', -- file explorer & editor
   require 'cyan.plugins.gx', -- use gx without netrw
   require 'cyan.plugins.noice', -- UI improvement
+  require 'cyan.plugins.flash', -- eazy motion alternative
+
+  -- ---- language specific ----
+
+  -- java lsp support
+  { 'mfussenegger/nvim-jdtls', ft = 'java' },
+
+  -- JS/TS
+  require 'cyan.plugins.ts-autotag', -- auto close/rename tags
+  require 'cyan.plugins.refactoring', -- code refactoring
   require 'cyan.plugins.live-server', -- node live server
 
-  -- markdown plugins
+  -- markdown
   require 'cyan.plugins.bullet', -- markdown list support
   require 'cyan.plugins.markdowny', -- markdown shortcut support
   require 'cyan.plugins.markdown-preview', -- markdown preview in browser
   require 'cyan.plugins.obsidian', -- obsidian integration
-  require 'cyan.plugins.flash', -- eazy motion alternative
+
+  -- ---- extras ----
+  -- leetcode integration
+  {
+    'kawre/leetcode.nvim',
+    build = ':TSUpdate html',
+    dependencies = {
+      'nvim-telescope/telescope.nvim',
+      'nvim-lua/plenary.nvim', -- required by telescope
+      'MunifTanjim/nui.nvim',
+
+      -- optional
+      'nvim-treesitter/nvim-treesitter',
+      'nvim-tree/nvim-web-devicons',
+    },
+    lazy = 'leetcode' ~= vim.fn.argv()[1],
+    opts = { arg = 'leetcode', lang = 'java' },
+  },
+
+  require 'cyan.plugins.vim-tmux-navigator', -- tmux window navigation integration
+  require 'cyan.plugins.lazygit', -- git CLI
 }, {
   ui = {
     -- If you are using a Nerd Font: set icons to an empty table which will use the
