@@ -43,49 +43,6 @@ return { -- Highlight, edit, and navigate code
     --   },
     -- },
     textobjects = {
-      select = {
-        enable = true,
-
-        -- Automatically jump forward to textobj, similar to targets.vim
-        lookahead = true,
-        keymaps = {
-          -- Assignments
-          ['a='] = { query = '@assignment.outer', desc = 'Around assignment' },
-          ['i='] = { query = '@assignment.inner', desc = 'Inside assignment' },
-          -- ['l='] = { query = '@assignment.lhs', desc = 'LHS of assignment' },
-          -- ['r='] = { query = '@assignment.rhs', desc = 'RHS of assignment' },
-
-          -- Function
-          ['am'] = { query = '@function.outer', desc = 'Around function/method' },
-          ['im'] = { query = '@function.inner', desc = 'Inside function/method' },
-
-          -- Function call
-          ['af'] = { query = '@call.outer', desc = 'Around function call' },
-          ['if'] = { query = '@call.inner', desc = 'Inside function call' },
-
-          -- Class
-          ['ac'] = { query = '@class.outer', desc = 'Around class' },
-          ['ic'] = { query = '@class.inner', desc = 'Inside class' },
-
-          -- Conditional
-          ['ai'] = { query = '@conditional.outer', desc = 'Around conditional' },
-          ['ii'] = { query = '@conditional.inner', desc = 'Inside conditional' },
-
-          -- Loop
-          ['al'] = { query = '@loop.outer', desc = 'Around loop' },
-          ['il'] = { query = '@loop.inner', desc = 'Inside loop' },
-
-          -- Parameter/argument
-          ['aa'] = { query = '@parameter.outer', desc = 'Around parameter/argument' },
-          ['ia'] = { query = '@parameter.inner', desc = 'Inside parameter/argument' },
-        },
-
-        selection_modes = {
-          ['@parameter.outer'] = 'v', -- charwise
-          ['@function.outer'] = 'V', -- linewise
-          ['@class.outer'] = '<c-v>', -- blockwise
-        },
-      },
       swap = {
         enable = true,
         swap_next = {
@@ -99,20 +56,19 @@ return { -- Highlight, edit, and navigate code
       },
       move = {
         enable = true,
-        set_jumps = true, -- whether to set jumps in the jumplist
         goto_next_start = {
-          [']m'] = { query = '@function.outer', desc = 'Next function/method start' },
+          [']f'] = { query = '@function.outer', desc = 'Next function/method start' },
           [']a'] = { query = '@parameter.outer', desc = 'Next argument' },
         },
         goto_next_end = {
-          [']M'] = { query = '@function.outer', desc = 'Next function/method end' },
+          [']F'] = { query = '@function.outer', desc = 'Next function/method end' },
         },
         goto_previous_start = {
-          ['[m'] = { query = '@function.outer', desc = 'Previous function/method start' },
+          ['[f'] = { query = '@function.outer', desc = 'Previous function/method start' },
           ['[a'] = { query = '@parameter.outer', desc = 'Previous argument' },
         },
         goto_previous_end = {
-          ['[M'] = { query = '@function.outer', desc = 'Previous function/method end' },
+          ['[F'] = { query = '@function.outer', desc = 'Previous function/method end' },
         },
         -- goto_next = {},
         -- goto_previous = {},

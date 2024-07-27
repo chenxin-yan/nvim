@@ -13,9 +13,9 @@ local servers = {
   marksman = {}, -- markdown lsp
   -- rust_analyzer = {},
   -- ... etc. See `:help lspconfig-all` for a list of all the pre-configured LSPs
-  tsserver = {
+  tsserver = { -- javascript/typescript lsp
     keys = {
-      { '<leader>co', '<cmd>TypescriptOrganizeImports<CR>', desc = '[O]rganize Imports' },
+      { '<leader>co', '<cmd>OrganizeImports<CR>', desc = '[O]rganize Imports' },
     },
     javascript = {
       inlay_hint = {
@@ -39,7 +39,19 @@ local servers = {
         includeInlayVariableTypeHints = true,
       },
     },
-  }, -- javascript/typescript lsp
+    command = {
+      OrganizeImports = {
+        function()
+          local params = {
+            command = '_typescript.organizeImports',
+            arguments = { vim.api.nvim_buf_get_name(0) },
+          }
+          vim.lsp.buf.execute_command(params)
+        end,
+        description = 'Organize Imports',
+      },
+    },
+  },
   html = {}, -- HTML lsp
   cssls = {}, -- CSS lsp
   lua_ls = { -- Lua lsp
@@ -57,8 +69,22 @@ local servers = {
       },
     },
   },
-  jsonls = {}, -- JSON lsp
+  jsonls = { -- JSON lsp
+    on_new_config = function(new_config)
+      new_config.settings.json.schemas = new_config.settings.json.schemas or {}
+      vim.list_extend(new_config.settings.json.schemas, require('schemastore').json.schemas())
+    end,
+    settings = {
+      json = {
+        format = {
+          enable = true,
+        },
+        validate = { enable = true },
+      },
+    },
+  },
   jdtls = {}, -- java lsp
+  eslint = {}, --linter for javascript
 }
 -- You can add other tools here that you want Mason to install
 -- for you, so that they are available from within Neovim.
@@ -67,9 +93,8 @@ vim.list_extend(ensure_installed, {
   -- Formatters
   'stylua', -- formatter for lua
   'prettier', -- formatter for javascript
-  'markdownlint-cli2', --linter & formatter for markdown
   -- Linters
-  'eslint_d', --linter for javascript
+  'markdownlint-cli2', --linter & formatter for markdown
   -- debugger
   'js-debug-adapter',
 })

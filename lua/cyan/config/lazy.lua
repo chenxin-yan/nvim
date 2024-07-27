@@ -55,19 +55,8 @@ require('lazy').setup({
     end,
   }, -- Detect tabstop and shiftwidth automatically
 
-  {
-    -- bracket colorizer
-    'HiPhish/rainbow-delimiters.nvim',
-    event = { 'BufReadPre', 'BufNewFile' },
-    config = function()
-      require('rainbow-delimiters.setup').setup {}
-    end,
-  },
-
-  require 'cyan.plugins.feline', -- status line
   require 'cyan.plugins.fugitive', -- nvim git wraper
   require 'cyan.plugins.todo-comments', -- Highlight todo, notes, etc in comment; todo tree
-  require 'cyan.plugins.alpha', -- neovim dashboard
   require 'cyan.plugins.undotree', -- undo history management
   require 'cyan.plugins.which-key', -- keybinding hint
   require 'cyan.plugins.telescope', -- fuzzy search
@@ -81,19 +70,35 @@ require('lazy').setup({
   require 'cyan.plugins.autopairs', -- autopair brackets
   require 'cyan.plugins.gitsigns', -- git support
   require 'cyan.plugins.lint', -- linter
-  require 'cyan.plugins.indent-line', -- indentation guide
   require 'cyan.plugins.inc-rename', -- incremental renaming
-  require 'cyan.plugins.bufferline', -- bufferline
   require 'cyan.plugins.auto-session', -- nvim session manager
   require 'cyan.plugins.oil', -- file explorer & editor
   require 'cyan.plugins.gx', -- use gx without netrw
-  require 'cyan.plugins.noice', -- UI improvement
   require 'cyan.plugins.flash', -- eazy motion alternative
+
+  -- ---- UI ----
+  {
+    -- bracket colorizer
+    'HiPhish/rainbow-delimiters.nvim',
+    event = { 'BufReadPre', 'BufNewFile' },
+    config = function()
+      require('rainbow-delimiters.setup').setup {}
+    end,
+  },
+
+  require 'cyan.plugins.alpha', -- neovim dashboard
+  require 'cyan.plugins.feline', -- status line
+  require 'cyan.plugins.indent-line', -- indentation guide
+  require 'cyan.plugins.bufferline', -- bufferline
+  require 'cyan.plugins.noice', -- UI improvement
 
   -- ---- language specific ----
 
   -- java lsp support
   { 'mfussenegger/nvim-jdtls', ft = 'java' },
+
+  -- json schema support
+  { 'b0o/schemastore.nvim', lazy = true },
 
   -- JS/TS
   require 'cyan.plugins.ts-autotag', -- auto close/rename tags
