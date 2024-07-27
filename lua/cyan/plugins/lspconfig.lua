@@ -13,42 +13,45 @@ local servers = {
   marksman = {}, -- markdown lsp
   -- rust_analyzer = {},
   -- ... etc. See `:help lspconfig-all` for a list of all the pre-configured LSPs
-  tsserver = { -- javascript/typescript lsp
-    keys = {
-      { '<leader>co', '<cmd>OrganizeImports<CR>', desc = '[O]rganize Imports' },
-    },
-    javascript = {
-      inlay_hint = {
-        includeInlayEnumMemberValueHints = true,
-        includeInlayFunctionLikeReturnTypeHints = true,
-        includeInlayFunctionParameterTypeHints = true,
-        includeInlayParameterNameHints = 'all',
-        includeInlayParameterNameHintsWhenArgumentMatchesName = true,
-        includeInlayPropertyDeclarationTypeHints = true,
-        includeInlayVariableTypeHints = true,
+  vtsls = {
+    settings = {
+      complete_function_calls = true,
+      vtsls = {
+        enableMoveToFileCodeAction = true,
+        autoUseWorkspaceTsdk = true,
+        experimental = {
+          completion = {
+            enableServerSideFuzzyMatch = true,
+          },
+        },
       },
-    },
-    typescript = {
-      inlay_hint = {
-        includeInlayEnumMemberValueHints = true,
-        includeInlayFunctionLikeReturnTypeHints = true,
-        includeInlayFunctionParameterTypeHints = true,
-        includeInlayParameterNameHints = 'all',
-        includeInlayParameterNameHintsWhenArgumentMatchesName = true,
-        includeInlayPropertyDeclarationTypeHints = true,
-        includeInlayVariableTypeHints = true,
+      typescript = {
+        updateImportsOnFileMove = { enabled = 'always' },
+        suggest = {
+          completeFunctionCalls = true,
+        },
+        inlayHints = {
+          enumMemberValues = { enabled = true },
+          functionLikeReturnTypes = { enabled = true },
+          parameterNames = { enabled = 'literals' },
+          parameterTypes = { enabled = true },
+          propertyDeclarationTypes = { enabled = true },
+          variableTypes = { enabled = false },
+        },
       },
-    },
-    command = {
-      OrganizeImports = {
-        function()
-          local params = {
-            command = '_typescript.organizeImports',
-            arguments = { vim.api.nvim_buf_get_name(0) },
-          }
-          vim.lsp.buf.execute_command(params)
-        end,
-        description = 'Organize Imports',
+      javascript = {
+        updateImportsOnFileMove = { enabled = 'always' },
+        suggest = {
+          completeFunctionCalls = true,
+        },
+        inlayHints = {
+          enumMemberValues = { enabled = true },
+          functionLikeReturnTypes = { enabled = true },
+          parameterNames = { enabled = 'literals' },
+          parameterTypes = { enabled = true },
+          propertyDeclarationTypes = { enabled = true },
+          variableTypes = { enabled = false },
+        },
       },
     },
   },
@@ -84,7 +87,12 @@ local servers = {
     },
   },
   jdtls = {}, -- java lsp
-  eslint = {}, --linter for javascript
+  eslint = {
+    settings = {
+      -- helps eslint find the eslintrc when it's placed in a subfolder instead of the cwd root
+      workingDirectories = { mode = 'auto' },
+    },
+  }, --linter for javascript
 }
 -- You can add other tools here that you want Mason to install
 -- for you, so that they are available from within Neovim.
@@ -95,6 +103,7 @@ vim.list_extend(ensure_installed, {
   'prettier', -- formatter for javascript
   -- Linters
   'markdownlint-cli2', --linter & formatter for markdown
+  'markdown-toc', -- formmater for markdown toc
   -- debugger
   'js-debug-adapter',
 })
@@ -124,7 +133,7 @@ return {
       -- Automatically install LSPs and related tools to stdpath for Neovim
       { 'williamboman/mason.nvim', config = true },
       'williamboman/mason-lspconfig.nvim',
-      'WhoIsSethDaniel/mason-tool-installer.nvim',
+      -- 'WhoIsSethDaniel/mason-tool-installer.nvim',
 
       -- Useful status updates for LSP.
       {

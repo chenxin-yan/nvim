@@ -14,6 +14,15 @@ return { -- Autoformat
   },
   opts = {
     formatters = {
+      ['markdown-toc'] = {
+        condition = function(_, ctx)
+          for _, line in ipairs(vim.api.nvim_buf_get_lines(ctx.buf, 0, -1, false)) do
+            if line:find '<!%-%- toc %-%->' then
+              return true
+            end
+          end
+        end,
+      },
       ['markdownlint-cli2'] = {
         condition = function(_, ctx)
           local diag = vim.tbl_filter(function(d)
@@ -43,7 +52,7 @@ return { -- Autoformat
       css = { 'prettier' },
       html = { 'prettier' },
       json = { 'prettier' },
-      markdown = { 'prettier', 'markdownlint-cli2' },
+      markdown = { 'prettier', 'markdown-toc', 'markdownlint-cli2' },
     },
   },
 }

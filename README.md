@@ -1,5 +1,18 @@
 # Neovim Config
 
+<!-- toc -->
+
+- [Dependencies](#dependencies)
+- [Installation](#installation)
+- [Feature](#feature)
+- [Language Support](#language-support)
+  - [Lua](#lua)
+  - [Java](#java)
+  - [JavaScript/TypeScript](#javascripttypescript)
+- [Keymaps](#keymaps)
+
+<!-- tocstop -->
+
 A minimal Catppuccin neovim config built from [kickstart.nvim](https://github.com/nvim-lua/kickstart.nvim)
 
 ![Preview 1](./Preview_1.jpg)
@@ -19,7 +32,7 @@ A minimal Catppuccin neovim config built from [kickstart.nvim](https://github.co
 
 ## Installation
 
-_Backup your current config before installation_
+make sure to **backup your current config** before installation
 
 ```bash
 git clone https://github.com/chenxin-yan/nvim.git "${XDG_CONFIG_HOME:-$HOME/.config}"/nvim
@@ -33,15 +46,15 @@ nvim
 
 ## Language Support
 
-| Language              | Lsp         | Formatter                 | Linter          | Debugger           |
-| --------------------- | ----------- | ------------------------- | --------------- | ------------------ |
-| lua                   | ✅ luals    | ✅ stylua                 | ❌              | ❌                 |
-| Java                  | ✅ jdtls    | ✅ jdtls                  | ❌              | ❌                 |
-| JavaScript/TypeScript | ✅ tsserver | ✅ Prettier               | ✅ Eslint (WIP) | ✅ vscode-js-debug |
-| Markdown              | ✅ marksman | ✅ Prettier, markdownlint | ❌              | ❌                 |
-| html                  | ✅ html     | ✅ Prettier               | ❌              | ❌                 |
-| css                   | ✅ cssls    | ✅ Prettier               | ❌              | ❌                 |
-| json                  | ✅ jsonls   | ✅ Prettier               | ❌              | ❌                 |
+| Language              | Lsp         | Formatter                 | Linter    | Debugger           |
+| --------------------- | ----------- | ------------------------- | --------- | ------------------ |
+| lua                   | ✅ luals    | ✅ stylua                 | ❌        | ❌                 |
+| Java                  | ✅ jdtls    | ✅ jdtls                  | ❌        | ❌                 |
+| JavaScript/TypeScript | ✅ vtsls    | ✅ Prettier               | ✅ Eslint | ✅ vscode-js-debug |
+| Markdown              | ✅ marksman | ✅ Prettier, markdownlint | ❌        | ❌                 |
+| html                  | ✅ html     | ✅ Prettier               | ❌        | ❌                 |
+| css                   | ✅ cssls    | ✅ Prettier               | ❌        | ❌                 |
+| json                  | ✅ jsonls   | ✅ Prettier               | ❌        | ❌                 |
 
 ### Lua
 

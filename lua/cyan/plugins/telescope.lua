@@ -2,6 +2,7 @@ return { -- Fuzzy Finder (files, lsp, etc)
   'nvim-telescope/telescope.nvim',
   branch = '0.1.x',
   cmd = 'Telescope',
+  lazy = true,
   keys = {
     -- See `:help telescope.builtin`
     { '<leader>sh', '<cmd>Telescope help_tags<CR>', desc = '[S]earch [H]elp' },
