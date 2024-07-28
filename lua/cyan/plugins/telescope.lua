@@ -13,14 +13,18 @@ return { -- Fuzzy Finder (files, lsp, etc)
     { '<leader>sd', '<cmd>Telescope diagnostics<CR>', desc = '[S]earch [D]iagnostics' },
     { '<leader>sr', '<cmd>Telescope resume<CR>', desc = '[S]earch [R]esume' },
     { '<leader>s.', '<cmd>Telescope oldfiles<CR>', desc = '[S]earch Recent Files ("." for repeat)' },
-    { '<leader><leader>', '<cmd>Telescope buffers<CR>', desc = '[ ] Find existing buffers' },
+    { '<leader>sb', '<cmd>Telescope buffers<CR>', desc = '[S]earch existing buffers' },
 
     -- Slightly advanced example of overriding default behavior and theme
     { '<leader>/', '<cmd>Telescope current_buffer_fuzzy_find theme=dropdown previewer=false<CR>', desc = '[/] Fuzzily search in current buffer' },
 
     -- It's also possible to pass additional configuration options.
     --  See `:help telescope.builtin.live_grep()` for information about particular keys
-    { '<leader>s/', '<cmd>Telescope live_grep grep_open_files=true prompt_title="Live Grep in Open File"<CR>', desc = '[S]earch [/] in Open Files' },
+    {
+      '<leader>s/',
+      '<cmd>lua require("telescope.builtin").live_grep({grep_open_files=true, prompt_title="Live Grep in Open File"})<CR>',
+      desc = '[S]earch [/] in Open Files',
+    },
 
     -- Shortcut for searching your Neovim configuration files
     { '<leader>sn', '<cmd>Telescope find_files cwd=' .. vim.fn.stdpath 'config' .. '<CR>', desc = '[S]earch [N]eovim files' },
@@ -73,6 +77,25 @@ return { -- Fuzzy Finder (files, lsp, etc)
     -- [[ Configure Telescope ]]
     -- See `:help telescope` and `:help telescope.setup()`
     local actions = require 'telescope.actions'
+    -- flash.nvim integration
+    local function flash(prompt_bufnr)
+      require('flash').jump {
+        pattern = '^',
+        label = { after = { 0, 0 } },
+        search = {
+          mode = 'search',
+          exclude = {
+            function(win)
+              return vim.bo[vim.api.nvim_win_get_buf(win)].filetype ~= 'TelescopeResults'
+            end,
+          },
+        },
+        action = function(match)
+          local picker = require('telescope.actions.state').get_current_picker(prompt_bufnr)
+          picker:set_selection(match.pos[1] - 1)
+        end,
+      }
+    end
     require('telescope').setup {
       -- You can put your default mappings / updates / etc. in here
       --  All the info you're looking for is in `:help telescope.setup()`
@@ -83,6 +106,8 @@ return { -- Fuzzy Finder (files, lsp, etc)
             ['<C-k>'] = actions.move_selection_previous,
             ['<C-n>'] = actions.cycle_history_next,
             ['<C-p>'] = actions.cycle_history_prev,
+            -- flash.nvim integration
+            ['<c-f>'] = flash,
           },
         },
       },
