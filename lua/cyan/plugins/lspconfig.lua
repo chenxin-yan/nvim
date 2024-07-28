@@ -87,6 +87,7 @@ local servers = {
     },
   },
   jdtls = {}, -- java lsp
+  taplo = {}, -- toml lsp
   eslint = {
     settings = {
       -- helps eslint find the eslintrc when it's placed in a subfolder instead of the cwd root

@@ -38,7 +38,7 @@ return {
     local wk = require 'which-key'
     wk.setup(opts)
 
-    vim.keymap.set('n', '<leader>?', function()
+    vim.keymap.set({ 'n', 'x' }, '<leader>?', function()
       require('which-key').show { global = false }
     end, { desc = 'Buffer Local Keymaps (which-key)' })
   end,

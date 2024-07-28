@@ -63,6 +63,9 @@ vim.keymap.set({ 'n', 'x' }, 'L', '$')
 vim.keymap.set({ 'n', 'x' }, '<leader>A', 'gg<s-v>G', { desc = 'Select all' })
 
 -- coment above & below
-
 vim.keymap.set('n', 'gco', 'o<esc>Vcx<esc><cmd>normal gcc<cr>fxa<bs>', { desc = 'Add Comment Below' })
 vim.keymap.set('n', 'gcO', 'O<esc>Vcx<esc><cmd>normal gcc<cr>fxa<bs>', { desc = 'Add Comment Above' })
+
+-- add endline caracter
+vim.keymap.set('n', ',,', 'm`A,<Esc>``', { desc = 'Add "," at the end of the line ' })
+vim.keymap.set('n', ';;', 'm`A;<Esc>``', { desc = 'Add ";" at the end of the line' })

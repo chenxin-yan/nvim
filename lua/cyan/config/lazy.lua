@@ -114,25 +114,10 @@ require('lazy').setup({
   require 'cyan.plugins.obsidian', -- obsidian integration
 
   -- ---- extras ----
-  -- leetcode integration
-  {
-    'kawre/leetcode.nvim',
-    build = ':TSUpdate html',
-    dependencies = {
-      'nvim-telescope/telescope.nvim',
-      'nvim-lua/plenary.nvim', -- required by telescope
-      'MunifTanjim/nui.nvim',
-
-      -- optional
-      'nvim-treesitter/nvim-treesitter',
-      'nvim-tree/nvim-web-devicons',
-    },
-    lazy = 'leetcode' ~= vim.fn.argv()[1],
-    opts = { arg = 'leetcode', lang = 'java' },
-  },
-
+  require 'cyan.plugins.leetcode', -- Leetcode integration
   require 'cyan.plugins.vim-tmux-navigator', -- tmux window navigation integration
   require 'cyan.plugins.lazygit', -- git CLI
+  require 'cyan.plugins.gitignore', -- generate gitignore files
 }, {
   ui = {
     -- If you are using a Nerd Font: set icons to an empty table which will use the
