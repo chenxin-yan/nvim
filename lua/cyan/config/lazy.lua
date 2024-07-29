@@ -33,7 +33,10 @@ require('lazy').setup({
     config = function()
       local opts = {
         integrations = {
+          fidget = true,
           neotree = true,
+          noice = true,
+          which_key = true,
           grug_far = true,
         },
       }
@@ -112,7 +115,7 @@ require('lazy').setup({
   require 'cyan.plugins.bullet', -- markdown list support
   require 'cyan.plugins.markdowny', -- markdown shortcut support
   require 'cyan.plugins.markdown-preview', -- markdown preview in browser
-  require 'cyan.plugins.markdown', -- obsidian integration
+  require 'cyan.plugins.markdown', -- better markdown render
   require 'cyan.plugins.obsidian', -- obsidian integration
 
   -- ---- extras ----

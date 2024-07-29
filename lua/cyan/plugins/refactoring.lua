@@ -1,6 +1,5 @@
 return {
   'ThePrimeagen/refactoring.nvim',
-  event = { 'BufReadPre', 'BufNewFile' },
   keys = {
     {
       '<leader>rf',

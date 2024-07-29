@@ -6,7 +6,7 @@ return {
   opts = {
     modes = {
       search = {
-        enabled = false,
+        enabled = true,
       },
     },
   },

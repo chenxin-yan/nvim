@@ -25,6 +25,19 @@ return { -- Autocompletion
           end,
         },
       },
+      config = function()
+        --Load custom lua snippets
+        require('luasnip.loaders.from_lua').lazy_load { paths = { '~/.config/nvim/lua/cyan/snippets/' } }
+        vim.keymap.set('n', '<leader>S', '<cmd>source ~/.config/nvim/lua/cyan/plugins/cmp.lua<CR>', { desc = '[S]ource snippets' })
+
+        -- set keybinds for select choice node in luasnip
+        vim.keymap.set('i', '<C-n>', function()
+          require('luasnip').change_choice(1)
+        end, { desc = '[N]ext choice' })
+        vim.keymap.set('i', '<C-p>', function()
+          require('luasnip').change_choice(-1)
+        end, { desc = '[P]revious choice' })
+      end,
     },
     'saadparwaiz1/cmp_luasnip',
 
@@ -46,13 +59,6 @@ return { -- Autocompletion
       update_events = { 'TextChanged', 'TextChangedI' },
       enable_autosnippets = true,
     }
-
-    --Load custom lua snippets
-    require('luasnip.loaders.from_lua').load { paths = { '~/.config/nvim/lua/cyan/snippets/' } }
-    vim.keymap.set('n', '<leader>S', '<cmd>source ~/.config/nvim/lua/cyan/plugins/cmp.lua<CR>', { desc = '[S]ource snippets' })
-
-    -- set keybinds for select choice node in luasnip
-    vim.keymap.set('i', '<C-s>', '<cmd>lua require("luasnip.extras.select_choice")()<cr>')
 
     cmp.setup {
       formatting = {

@@ -14,11 +14,4 @@ return {
     },
   },
   ft = { 'markdown' },
-  keys = {
-    {
-      '<leader>tr',
-      '<cmd>RenderMarkdown toggle<CR>',
-      desc = '[T]oggle [R]ender Markdown',
-    },
-  },
 }

@@ -55,6 +55,7 @@ nvim
 | html                  | ✅ html     | ✅ Prettier               | ❌        | ❌                 |
 | css                   | ✅ cssls    | ✅ Prettier               | ❌        | ❌                 |
 | json                  | ✅ jsonls   | ✅ Prettier               | ❌        | ❌                 |
+| toml                  | ✅ taplo    | ✅ taplo                  | ❌        | ❌                 |
 
 ### Lua
 

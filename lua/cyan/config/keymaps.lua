@@ -67,5 +67,5 @@ vim.keymap.set('n', 'gco', 'o<esc>Vcx<esc><cmd>normal gcc<cr>fxa<bs>', { desc = 
 vim.keymap.set('n', 'gcO', 'O<esc>Vcx<esc><cmd>normal gcc<cr>fxa<bs>', { desc = 'Add Comment Above' })
 
 -- add endline caracter
-vim.keymap.set('n', ',,', 'm`A,<Esc>``', { desc = 'Add "," at the end of the line ' })
-vim.keymap.set('n', ';;', 'm`A;<Esc>``', { desc = 'Add ";" at the end of the line' })
+vim.keymap.set('n', 'g,', 'm`A,<Esc>``', { desc = 'Add "," at the end of the line ' })
+vim.keymap.set('n', 'g;', 'm`A;<Esc>``', { desc = 'Add ";" at the end of the line' })

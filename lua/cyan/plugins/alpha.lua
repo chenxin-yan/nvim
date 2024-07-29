@@ -51,7 +51,7 @@ return {
       },
       {
         type = 'text',
-        val = '˖  ࣪⊹ You just face your fears and you become your heroes ⊹ ࣪ ˖',
+        val = ' ࣪⊹ You just face your fears and you become your heroes ⊹ ࣪',
         opts = { hl = 'NeovimDashboardUsername', shrink_margin = false, position = 'center' },
       },
     }
