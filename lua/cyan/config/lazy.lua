@@ -124,6 +124,7 @@ require('lazy').setup({
   require 'cyan.plugins.lazygit', -- git CLI
   require 'cyan.plugins.gitignore', -- generate gitignore files
   require 'cyan.plugins.ufo', -- better folds
+  require 'cyan.plugins.neogen', -- generate annotations/documentations
 }, {
   ui = {
     -- If you are using a Nerd Font: set icons to an empty table which will use the
