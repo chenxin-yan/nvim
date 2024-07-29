@@ -38,6 +38,7 @@ require('lazy').setup({
           noice = true,
           which_key = true,
           ufo = true,
+          grug_far = true,
         },
       }
       if not vim.g.neovide then
@@ -79,6 +80,7 @@ require('lazy').setup({
   require 'cyan.plugins.oil', -- file explorer & editor
   require 'cyan.plugins.gx', -- use gx without netrw
   require 'cyan.plugins.flash', -- eazy motion alternative
+  require 'cyan.plugins.grug-far', -- grep and replace
 
   -- ---- UI ----
   {

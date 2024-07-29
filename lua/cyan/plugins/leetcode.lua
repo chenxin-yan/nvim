@@ -10,6 +10,6 @@ return {
     'nvim-treesitter/nvim-treesitter',
     'nvim-tree/nvim-web-devicons',
   },
-  lazy = 'leetcode' ~= vim.fn.argv()[1],
-  opts = { arg = 'leetcode', lang = 'java' },
+  lazy = 'Leet' ~= vim.fn.argv()[1],
+  opts = { arg = 'Leet', lang = 'java' },
 }

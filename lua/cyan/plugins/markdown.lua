@@ -4,10 +4,13 @@ return {
   opts = {
     file_types = { 'markdown' },
     code = {
-      enabled = false,
+      sign = false,
+      width = 'block',
+      right_pad = 1,
     },
     heading = {
-      enabled = false,
+      sign = false,
+      icons = {},
     },
     bullet = {
       enabled = false,
