@@ -22,7 +22,6 @@ return {
       presets = {
         windows = false,
         nav = false,
-        z = false,
         g = false,
       },
     },
