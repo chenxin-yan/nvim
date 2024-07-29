@@ -13,6 +13,7 @@ return {
       { '<leader>g', group = ' [G]it' },
       { '<leader>h', group = ' [H]unk' },
       { '<leader>b', group = ' [B]uffer' },
+      { '<leader>r', group = ' [R]efactor' },
     },
     plugins = {
       spelling = {

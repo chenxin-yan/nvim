@@ -34,6 +34,7 @@ require('lazy').setup({
       local opts = {
         integrations = {
           neotree = true,
+          grug_far = true,
         },
       }
       if not vim.g.neovide then
@@ -119,6 +120,7 @@ require('lazy').setup({
   require 'cyan.plugins.vim-tmux-navigator', -- tmux window navigation integration
   require 'cyan.plugins.lazygit', -- git CLI
   require 'cyan.plugins.gitignore', -- generate gitignore files
+  require 'cyan.plugins.grug-far', -- find & replace
 }, {
   ui = {
     -- If you are using a Nerd Font: set icons to an empty table which will use the

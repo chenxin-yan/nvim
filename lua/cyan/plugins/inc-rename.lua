@@ -2,9 +2,9 @@ return { -- incremental renaming
   'smjonas/inc-rename.nvim',
   keys = {
     {
-      '<leader>cr',
+      '<leader>rn',
       ':IncRename ',
-      desc = '[R]ename',
+      desc = 'Rename',
     },
   },
   config = function()
