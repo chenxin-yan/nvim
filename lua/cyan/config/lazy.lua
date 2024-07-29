@@ -111,6 +111,7 @@ require('lazy').setup({
   require 'cyan.plugins.bullet', -- markdown list support
   require 'cyan.plugins.markdowny', -- markdown shortcut support
   require 'cyan.plugins.markdown-preview', -- markdown preview in browser
+  require 'cyan.plugins.markdown', -- obsidian integration
   require 'cyan.plugins.obsidian', -- obsidian integration
 
   -- ---- extras ----
