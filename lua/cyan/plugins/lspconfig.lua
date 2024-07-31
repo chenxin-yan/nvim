@@ -127,6 +127,32 @@ return {
       require('mason-tool-installer').setup { ensure_installed = ensure_installed }
     end,
   },
+
+  -- == LSP Plugins==
+  -- `lazydev` configures Lua LSP for your Neovim config, runtime and plugins
+  -- used for completion, annotations and signatures of Neovim apis
+  {
+    'folke/lazydev.nvim',
+    ft = 'lua',
+    opts = {
+      library = {
+        -- Load luvit types when the `vim.uv` word is found
+        { path = 'luvit-meta/library', words = { 'vim%.uv' } },
+      },
+    },
+  },
+  { 'Bilal2453/luvit-meta', lazy = true },
+
+  -- java lsp config
+  { 'mfussenegger/nvim-jdtls', ft = 'java' },
+
+  -- json schema support
+  { 'b0o/schemastore.nvim', lazy = true },
+
+  -- JS/TS
+  { 'yioneko/nvim-vtsls', lazy = true },
+
+  -- == Main LSP configs ==
   { -- LSP Configuration & Plugins
     'neovim/nvim-lspconfig',
     event = { 'BufReadPre', 'BufNewFile' },
@@ -148,19 +174,8 @@ return {
         },
       },
 
-      -- `lazydev` configures Lua LSP for your Neovim config, runtime and plugins
-      -- used for completion, annotations and signatures of Neovim apis
-      {
-        'folke/lazydev.nvim',
-        ft = 'lua',
-        opts = {
-          library = {
-            -- Load luvit types when the `vim.uv` word is found
-            { path = 'luvit-meta/library', words = { 'vim%.uv' } },
-          },
-        },
-      },
-      { 'Bilal2453/luvit-meta', lazy = true },
+      -- Allows extra capabilities provided by nvim-cmp
+      'hrsh7th/cmp-nvim-lsp',
 
       -- code refactoring when rename using neotree
       {
@@ -175,12 +190,7 @@ return {
       },
 
       -- make typescript error messages more readable
-      {
-        'dmmulroy/ts-error-translator.nvim',
-        config = function()
-          require('ts-error-translator').setup()
-        end,
-      },
+      'dmmulroy/ts-error-translator.nvim',
     },
     config = function()
       -- If you're wondering about lsp vs treesitter, you can check out the wonderfully

@@ -100,15 +100,6 @@ require('lazy').setup({
 
   -- ---- language specific ----
 
-  -- java lsp support
-  { 'mfussenegger/nvim-jdtls', ft = 'java' },
-
-  -- json schema support
-  { 'b0o/schemastore.nvim', lazy = true },
-
-  -- JS/TS
-  { 'yioneko/nvim-vtsls', lazy = true },
-
   require 'cyan.plugins.ts-autotag', -- auto close/rename tags
   require 'cyan.plugins.refactoring', -- code refactoring
   require 'cyan.plugins.live-server', -- node live server
