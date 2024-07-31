@@ -12,7 +12,7 @@ vim.keymap.set('n', '<Esc>', '<cmd>nohlsearch<CR>')
 
 -- Diagnostic/todo keymaps
 vim.keymap.set('n', 'X', vim.diagnostic.open_float, { desc = 'Show diagnostic Error messages' })
-vim.keymap.set('n', '<leader>dq', vim.diagnostic.setloclist, { desc = 'Open [D]iagnostic [Q]uickfix list' })
+vim.keymap.set('n', '<leader>Q', vim.diagnostic.setloclist, { desc = 'Open [Q]uickfix list' })
 
 --  deleting/paste without yanking the deleted text into the register
 vim.keymap.set('x', '<leader>p', '"_dP', { desc = 'Paste in without yanking selected text' })
@@ -39,7 +39,6 @@ vim.keymap.set('n', 'N', 'Nzzzv')
 
 -- Yanking/deleting selection into system clipboard
 vim.keymap.set({ 'n', 'x' }, '<leader>y', '"+y', { desc = 'Yank into system clipboard' })
-vim.keymap.set('x', '<leader>d', '"+d', { desc = 'Delete into system clipboard' })
 vim.keymap.set('n', '<leader>p', '"+p', { desc = 'Paste from system clipboard' })
 
 -- toggle spellcheck

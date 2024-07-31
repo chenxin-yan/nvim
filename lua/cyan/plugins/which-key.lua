@@ -5,15 +5,16 @@ return {
     spec = {
       { ']', group = 'Next' },
       { '[', group = 'Previous' },
-      { '<leader>c', group = '󰘦 [C]ode' },
-      { '<leader>d', group = ' [D]iagnostics' },
+      { '<leader>c', group = '󰘦 [C]ode', mode = { 'n', 'x' } },
+      { '<leader>d', group = ' [D]ebug', mode = { 'n', 'x' } },
+      -- { '<leader>x', group = ' [X]Diagnostics' },
       { '<leader>s', group = ' [S]earch' },
       { '<leader>w', group = ' [W]orkspace' },
       { '<leader>t', group = '󰔡 [T]oggle' },
       { '<leader>g', group = ' [G]it' },
-      { '<leader>h', group = ' [H]unk' },
+      { '<leader>h', group = ' [H]unk', mode = { 'n', 'x' } },
       { '<leader>b', group = ' [B]uffer' },
-      { '<leader>r', group = ' [R]efactor' },
+      { '<leader>r', group = ' [R]efactor', mode = { 'n', 'x' } },
     },
     plugins = {
       spelling = {

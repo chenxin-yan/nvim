@@ -3,12 +3,12 @@ return {
   cmd = 'Neogen',
   keys = {
     {
-      '<leader>cd',
+      '<leader>cA',
       function()
         ---@diagnostic disable-next-line: missing-parameter
         require('neogen').generate()
       end,
-      desc = 'Generate [D]ocumentation',
+      desc = 'Generate [A]nnotation',
     },
   },
   opts = {

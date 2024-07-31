@@ -43,9 +43,43 @@ return {
       mode = 'n',
       desc = 'Extract [B]lock to file',
     },
+    {
+      '<leader>dp',
+      '<cmd>lua require("refactoring").debug.printf({below = false})<CR>',
+      mode = 'n',
+      desc = 'Debug [P]rint',
+    },
+    {
+      '<leader>dv',
+      '<cmd>lua require("refactoring").debug.print_var()<CR>',
+      mode = { 'x', 'n' },
+      desc = 'Debug print [V]ariable',
+    },
+    {
+      '<leader>dC',
+      '<cmd>lua require("refactoring").debug.cleanup({})<CR>',
+      mode = 'n',
+      desc = 'Debug print [C]leanup',
+    },
   },
   dependencies = {
     'nvim-lua/plenary.nvim',
     'nvim-treesitter/nvim-treesitter',
+  },
+  opts = {
+    -- prompt for return type
+    prompt_func_return_type = {
+      go = true,
+      cpp = true,
+      c = true,
+      java = true,
+    },
+    -- prompt for function parameters
+    prompt_func_param_type = {
+      go = true,
+      cpp = true,
+      c = true,
+      java = true,
+    },
   },
 }

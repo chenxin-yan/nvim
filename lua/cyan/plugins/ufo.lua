@@ -69,8 +69,11 @@ return {
       table.insert(newVirtText, { suffix, 'MoreMsg' })
       return newVirtText
     end
-
     ufo.setup {
+      -- comment out provider_selector to use LSP as provider for folding
+      provider_selector = function(bufnr, filetype, buftype)
+        return { 'treesitter', 'indent' }
+      end,
       preview = {
         win_config = {
           winblend = 0,

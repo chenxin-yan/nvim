@@ -27,7 +27,6 @@ return {
     {
       'microsoft/vscode-js-debug',
       opt = true,
-      -- WARN: uncomment this once to install the vscode-js-debug
       build = 'npm install --legacy-peer-deps && npx gulp vsDebugServerBundle && mv dist out',
     },
     {
@@ -69,14 +68,14 @@ return {
     }
 
     -- Basic debugging keymaps, feel free to change to your liking!
-    vim.keymap.set('n', '<F5>', dap.continue, { desc = 'Debug: Start/Continue' })
-    vim.keymap.set('n', '<F1>', dap.step_into, { desc = 'Debug: Step Into' })
-    vim.keymap.set('n', '<F2>', dap.step_over, { desc = 'Debug: Step Over' })
-    vim.keymap.set('n', '<F3>', dap.step_out, { desc = 'Debug: Step Out' })
-    vim.keymap.set('n', '<leader>cb', dap.toggle_breakpoint, { desc = 'Debug: Toggle Breakpoint' })
-    vim.keymap.set('n', '<leader>cB', function()
+    vim.keymap.set('n', '<F5>', dap.continue, { desc = 'Debuger: Start/Continue' })
+    vim.keymap.set('n', '<F1>', dap.step_into, { desc = 'Debuger: Step Into' })
+    vim.keymap.set('n', '<F2>', dap.step_over, { desc = 'Debuger: Step Over' })
+    vim.keymap.set('n', '<F3>', dap.step_out, { desc = 'Debuger: Step Out' })
+    vim.keymap.set('n', '<leader>db', dap.toggle_breakpoint, { desc = 'Debuger: Toggle Breakpoint' })
+    vim.keymap.set('n', '<leader>dB', function()
       dap.set_breakpoint(vim.fn.input 'Breakpoint condition: ')
-    end, { desc = 'Debug: Set Breakpoint' })
+    end, { desc = 'Debuger: Set Breakpoint' })
 
     -- Dap UI setup
     -- For more information, see |:help nvim-dap-ui|
