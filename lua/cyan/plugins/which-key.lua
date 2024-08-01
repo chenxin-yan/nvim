@@ -9,7 +9,7 @@ return {
       { '<leader>c', group = '󰘦 [C]ode', mode = { 'n', 'x' } },
       { '<leader>cs', group = '[S]wap' },
       { '<leader>cd', group = '[D]ebug Print', mode = { 'n', 'x' } },
-      { '<leader>d', group = '󰈙 [D]ocument' },
+      { '<leader>d', group = ' [D]bug' },
       { '<leader>s', group = ' [S]earch' },
       { '<leader>w', group = ' [W]orkspace' },
       { '<leader>t', group = '󰔡 [T]oggle' },

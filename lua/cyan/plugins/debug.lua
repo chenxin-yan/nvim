@@ -5,7 +5,6 @@
 
 return {
   'mfussenegger/nvim-dap',
-  event = { 'BufReadPre', 'BufNewFile' },
   dependencies = {
     -- Creates a beautiful debugger UI
     'rcarriga/nvim-dap-ui',
@@ -18,7 +17,7 @@ return {
     'jay-babu/mason-nvim-dap.nvim',
 
     -- display text next to variable when debugging
-    'theHamsta/nvim-dap-virtual-text',
+    { 'theHamsta/nvim-dap-virtual-text', opts = true },
 
     -- Add your own debuggers here
     -- 'leoluz/nvim-dap-go',
@@ -45,6 +44,30 @@ return {
       end,
     },
   },
+  lazy = true,
+  keys = {
+    {
+      '<leader>dc',
+      function()
+        require('dap').continue()
+      end,
+      desc = 'Debuger: Start/[C]ontinue',
+    },
+    {
+      '<leader>db',
+      function()
+        require('dap').toggle_breakpoint()
+      end,
+      desc = 'Debuger: Toggle [B]reakpoint',
+    },
+    {
+      '<leader>dB',
+      function()
+        require('dap').set_breakpoint(vim.fn.input 'Breakpoint condition: ')
+      end,
+      desc = 'Debuger: Set [B]reakpoint',
+    },
+  },
   config = function()
     local dap = require 'dap'
     local dapui = require 'dapui'
@@ -68,14 +91,9 @@ return {
     }
 
     -- Basic debugging keymaps, feel free to change to your liking!
-    vim.keymap.set('n', '<F5>', dap.continue, { desc = 'Debuger: Start/Continue' })
-    vim.keymap.set('n', '<F1>', dap.step_into, { desc = 'Debuger: Step Into' })
-    vim.keymap.set('n', '<F2>', dap.step_over, { desc = 'Debuger: Step Over' })
-    vim.keymap.set('n', '<F3>', dap.step_out, { desc = 'Debuger: Step Out' })
-    vim.keymap.set('n', '<leader>cb', dap.toggle_breakpoint, { desc = 'Debuger: Toggle [B]reakpoint' })
-    vim.keymap.set('n', '<leader>cB', function()
-      dap.set_breakpoint(vim.fn.input 'Breakpoint condition: ')
-    end, { desc = 'Debuger: Set [B]reakpoint' })
+    vim.keymap.set('n', '<leader>di', dap.step_into, { desc = 'Debuger: Step [I]nto' })
+    vim.keymap.set('n', '<leader>dj', dap.step_over, { desc = 'Debuger: Step Over' })
+    vim.keymap.set('n', '<leader>dk', dap.step_out, { desc = 'Debuger: Step Out' })
 
     -- Dap UI setup
     -- For more information, see |:help nvim-dap-ui|
@@ -106,7 +124,7 @@ return {
     sign('DapLogPoint', { text = '◆', texthl = 'DapLogPoint', linehl = '', numhl = '' })
 
     -- Toggle to see last session result. Without this, you can't see session output in case of unhandled exception.
-    vim.keymap.set('n', '<F7>', dapui.toggle, { desc = 'Debug: See last session result.' })
+    vim.keymap.set('n', '<leader>dr', dapui.toggle, { desc = 'Debug: [R]esume last session result.' })
 
     dap.listeners.after.event_initialized['dapui_config'] = dapui.open
     dap.listeners.before.event_terminated['dapui_config'] = dapui.close
@@ -121,7 +139,7 @@ return {
     --   },
     -- }
 
-    -- JavaScript: setup adapter for JavaScript/typescript
+    -- == JS/TS: setup adapter for JavaScript/typescript ==
     for _, language in ipairs { 'typescript', 'javascript', 'typescriptreact', 'javascriptreact', 'vue' } do
       dap.configurations[language] = {
         {
