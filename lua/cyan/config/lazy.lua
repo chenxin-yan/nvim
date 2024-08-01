@@ -56,7 +56,7 @@ require('lazy').setup({
     'tpope/vim-sleuth',
     event = { 'BufReadPre', 'BufNewFile' },
     config = function()
-      vim.keymap.set('n', '<leader>bi', ':Sleuth<CR>', { desc = 'Detect [B]uffer [I]ndent' })
+      vim.keymap.set('n', '<leader>bi', '<cmd>Sleuth<CR>', { desc = 'Detect [B]uffer [I]ndent' })
     end,
   }, -- Detect tabstop and shiftwidth automatically
 
@@ -75,7 +75,6 @@ require('lazy').setup({
   require 'cyan.plugins.autopairs', -- autopair brackets
   require 'cyan.plugins.gitsigns', -- git support
   require 'cyan.plugins.lint', -- linter
-  require 'cyan.plugins.inc-rename', -- incremental renaming
   require 'cyan.plugins.auto-session', -- nvim session manager
   require 'cyan.plugins.oil', -- file explorer & editor
   require 'cyan.plugins.gx', -- use gx without netrw

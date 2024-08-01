@@ -47,18 +47,18 @@ vim.keymap.set('n', '<leader>ts', '<cmd>set invspell<CR>', { desc = '[T]oggle [S
 vim.keymap.set('n', '<leader>_', '<C-w><C-s>', { desc = 'Horizontal Split' })
 vim.keymap.set('n', '<leader>|', '<C-w><C-v>', { desc = 'Vertical Split' })
 
--- workspace tab operations
-vim.keymap.set('n', '<leader>wt', '<cmd>tabnew<CR>', { desc = '[W]orkspace [T]ab new' })
+-- Tab operations
+vim.keymap.set('n', '<leader><C-t>', '<cmd>tabnew<CR>', { desc = 'Create new tab' })
 vim.keymap.set('n', ']T', '<cmd>tabn<CR>', { desc = '[N]ext tab' })
 vim.keymap.set('n', '[T', '<cmd>tabp<CR>', { desc = '[P]revious tab' })
-vim.keymap.set('n', '<leader>wd', '<cmd>tabc<CR>', { desc = '[W]orkspace tab [D]elete' })
+vim.keymap.set('n', '<leader><C-w>', '<cmd>tabc<CR>', { desc = 'Close current tab' })
 
 -- replace $ and ^ with H and L
 vim.keymap.set({ 'n', 'x' }, 'H', '^')
 vim.keymap.set({ 'n', 'x' }, 'L', '$')
 
 -- select all keymap
-vim.keymap.set({ 'n', 'x' }, '<leader>A', 'gg<s-v>G', { desc = 'Select all' })
+vim.keymap.set({ 'n', 'x' }, '<leader><C-a>', 'gg<s-v>G', { desc = 'Select all' })
 
 -- coment above & below
 vim.keymap.set('n', 'gco', 'o<esc>Vcx<esc><cmd>normal gcc<cr>fxa<bs>', { desc = 'Add Comment Below' })

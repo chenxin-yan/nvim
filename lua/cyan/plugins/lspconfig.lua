@@ -102,9 +102,9 @@ vim.list_extend(ensure_installed, {
   -- Formatters
   'stylua', -- formatter for lua
   'prettier', -- formatter for javascript
+  'markdown-toc', -- formmater for markdown toc
   -- Linters
   'markdownlint-cli2', --linter & formatter for markdown
-  'markdown-toc', -- formmater for markdown toc
   -- debugger
   'js-debug-adapter',
 })
@@ -129,6 +129,36 @@ return {
   },
 
   -- == LSP Plugins==
+  --- incremental renaming
+  {
+    'smjonas/inc-rename.nvim',
+    keys = {
+      {
+        '<leader>rn',
+        ':IncRename ',
+        desc = 'Rename',
+      },
+    },
+    config = function()
+      require('inc_rename').setup {
+        save_in_cmdline_history = false,
+      }
+    end,
+  },
+
+  -- code refactoring when rename using neotree
+  {
+    'antosha417/nvim-lsp-file-operations',
+    event = 'LspAttach',
+    dependencies = {
+      'nvim-lua/plenary.nvim',
+      'nvim-neo-tree/neo-tree.nvim',
+    },
+    config = function()
+      require('lsp-file-operations').setup()
+    end,
+  },
+
   -- `lazydev` configures Lua LSP for your Neovim config, runtime and plugins
   -- used for completion, annotations and signatures of Neovim apis
   {
@@ -151,6 +181,7 @@ return {
 
   -- JS/TS
   { 'yioneko/nvim-vtsls', lazy = true },
+  { 'dmmulroy/ts-error-translator.nvim', ft = { 'javascript', 'typescript' } }, -- make typescript error more readable
 
   -- == Main LSP configs ==
   { -- LSP Configuration & Plugins
@@ -176,21 +207,6 @@ return {
 
       -- Allows extra capabilities provided by nvim-cmp
       'hrsh7th/cmp-nvim-lsp',
-
-      -- code refactoring when rename using neotree
-      {
-        'antosha417/nvim-lsp-file-operations',
-        dependencies = {
-          'nvim-lua/plenary.nvim',
-          'nvim-neo-tree/neo-tree.nvim',
-        },
-        config = function()
-          require('lsp-file-operations').setup()
-        end,
-      },
-
-      -- make typescript error messages more readable
-      'dmmulroy/ts-error-translator.nvim',
     },
     config = function()
       -- If you're wondering about lsp vs treesitter, you can check out the wonderfully
@@ -228,11 +244,11 @@ return {
 
           -- Fuzzy find all the symbols in your current document.
           --  Symbols are things like variables, functions, types, etc.
-          map('<leader>bs', require('telescope.builtin').lsp_document_symbols, '[B]uffer [S]ymbols')
+          map('<leader>ss', require('telescope.builtin').lsp_document_symbols, 'Document [S]ymbols')
 
           -- Fuzzy find all the symbols in your current workspace.
           --  Similar to document symbols, except searches over your entire project.
-          map('<leader>ws', require('telescope.builtin').lsp_dynamic_workspace_symbols, '[W]orkspace [S]ymbols')
+          map('<leader>sS', require('telescope.builtin').lsp_dynamic_workspace_symbols, 'Workspace [S]ymbols')
 
           -- Rename the variable under your cursor.
           --  Most Language Servers support renaming across files, etc.

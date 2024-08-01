@@ -1,13 +1,15 @@
 return {
   'folke/which-key.nvim',
-  event = 'VeryLazy',
+  event = { 'BufReadPre', 'BufNewFile' },
   opts = {
     spec = {
       { ']', group = 'Next' },
       { '[', group = 'Previous' },
+      { 'gs', group = 'Surround', mode = { 'n', 'x' } },
       { '<leader>c', group = '󰘦 [C]ode', mode = { 'n', 'x' } },
-      { '<leader>d', group = ' [D]ebug', mode = { 'n', 'x' } },
-      -- { '<leader>x', group = ' [X]Diagnostics' },
+      { '<leader>cs', group = '[S]wap' },
+      { '<leader>cd', group = '[D]ebug Print', mode = { 'n', 'x' } },
+      { '<leader>d', group = '󰈙 [D]ocument' },
       { '<leader>s', group = ' [S]earch' },
       { '<leader>w', group = ' [W]orkspace' },
       { '<leader>t', group = '󰔡 [T]oggle' },

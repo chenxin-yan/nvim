@@ -46,16 +46,16 @@ nvim
 
 ## Language Support
 
-| Language              | Lsp         | Formatter                 | Linter    | Debugger           |
-| --------------------- | ----------- | ------------------------- | --------- | ------------------ |
-| lua                   | ✅ luals    | ✅ stylua                 | ❌        | ❌                 |
-| Java                  | ✅ jdtls    | ✅ jdtls                  | ❌        | ❌                 |
-| JavaScript/TypeScript | ✅ vtsls    | ✅ Prettier               | ✅ Eslint | ✅ vscode-js-debug |
-| Markdown              | ✅ marksman | ✅ Prettier, markdownlint | ❌        | ❌                 |
-| html                  | ✅ html     | ✅ Prettier               | ❌        | ❌                 |
-| css                   | ✅ cssls    | ✅ Prettier               | ❌        | ❌                 |
-| json                  | ✅ jsonls   | ✅ Prettier               | ❌        | ❌                 |
-| toml                  | ✅ taplo    | ✅ taplo                  | ❌        | ❌                 |
+| Language              | Lsp         | Formatter                 | Linter    | Debugger           | Testing |
+| --------------------- | ----------- | ------------------------- | --------- | ------------------ | ------- |
+| lua                   | ✅ luals    | ✅ stylua                 | ❌        | ❌                 | ❌      |
+| Java                  | ✅ jdtls    | ✅ jdtls                  | ❌        | ❌                 | ❌      |
+| JavaScript/TypeScript | ✅ vtsls    | ✅ Prettier               | ✅ Eslint | ✅ vscode-js-debug | ❌      |
+| Markdown              | ✅ marksman | ✅ Prettier, markdownlint | ❌        | ❌                 | ❌      |
+| html                  | ✅ html     | ✅ Prettier               | ❌        | ❌                 | ❌      |
+| css                   | ✅ cssls    | ✅ Prettier               | ❌        | ❌                 | ❌      |
+| json                  | ✅ jsonls   | ✅ Prettier               | ❌        | ❌                 | ❌      |
+| toml                  | ✅ taplo    | ✅ taplo                  | ❌        | ❌                 | ❌      |
 
 ### Lua
 

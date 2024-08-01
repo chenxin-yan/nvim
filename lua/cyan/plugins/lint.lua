@@ -2,6 +2,15 @@ return {
   { -- Linting
     'mfussenegger/nvim-lint',
     event = { 'BufReadPre', 'BufNewFile' },
+    keys = {
+      {
+        '<leader>L',
+        function()
+          require('lint').try_lint()
+        end,
+        desc = '[D]ocument [L]int',
+      },
+    },
     config = function()
       local lint = require 'lint'
       lint.linters_by_ft = {
@@ -51,11 +60,6 @@ return {
           require('lint').try_lint()
         end,
       })
-
-      -- keymap for manual linting
-      vim.keymap.set('n', '<leader>L', function()
-        lint.try_lint()
-      end, { desc = '[L]int buffer' })
     end,
   },
 }

@@ -46,12 +46,12 @@ return { -- Highlight, edit, and navigate code
       swap = {
         enable = true,
         swap_next = {
-          ['<leader>cn'] = { query = '@parameter.inner', desc = 'Swap [N]ext argument' },
-          ['<leader>cN'] = { query = '@function.outer', desc = 'Swap [N]ext function' },
+          ['<leader>csn'] = { query = '@parameter.inner', desc = 'Swap [N]ext argument' },
+          ['<leader>csN'] = { query = '@function.outer', desc = 'Swap [N]ext function' },
         },
         swap_previous = {
-          ['<leader>cp'] = { query = '@parameter.inner', desc = 'Swap [P]revious argument' },
-          ['<leader>cP'] = { query = '@function.outer', desc = 'Swap [P]revious function' },
+          ['<leader>csp'] = { query = '@parameter.inner', desc = 'Swap [P]revious argument' },
+          ['<leader>csP'] = { query = '@function.outer', desc = 'Swap [P]revious function' },
         },
       },
       move = {
@@ -70,8 +70,12 @@ return { -- Highlight, edit, and navigate code
         goto_previous_end = {
           ['[F'] = { query = '@function.outer', desc = 'Previous function/method end' },
         },
-        -- goto_next = {},
-        -- goto_previous = {},
+        goto_next = {
+          [']o'] = { query = { '@conditional.outer', '@loop.outer' }, desc = 'Next code block' },
+        },
+        goto_previous = {
+          ['[o'] = { query = { '@conditional.outer', '@loop.outer' }, desc = 'Previous code block' },
+        },
       },
     },
   },

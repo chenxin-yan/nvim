@@ -8,8 +8,8 @@ return { -- Autoformat
       function()
         require('conform').format { async = true, lsp_fallback = true }
       end,
-      mode = '',
-      desc = '[F]ormatting buffer',
+      mode = 'n',
+      desc = '[D]ocument [F]ormatting',
     },
   },
   opts = {

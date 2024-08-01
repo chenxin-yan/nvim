@@ -26,6 +26,7 @@ return { -- Collection of various small independent plugins/modules
         },
         u = ai.gen_spec.function_call(), -- u for "Usage"
         U = ai.gen_spec.function_call { name_pattern = '[%w_]' }, -- without dot in function name
+        A = ai.gen_spec.treesitter { a = '@assignment.outer', i = '@assignment.inner' }, -- assignment
       },
     }
 

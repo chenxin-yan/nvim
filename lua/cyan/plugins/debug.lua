@@ -23,7 +23,7 @@ return {
     -- Add your own debuggers here
     -- 'leoluz/nvim-dap-go',
 
-    -- JS/TS debugger
+    -- ==  JS/TS debugger ==
     {
       'microsoft/vscode-js-debug',
       opt = true,
@@ -72,10 +72,10 @@ return {
     vim.keymap.set('n', '<F1>', dap.step_into, { desc = 'Debuger: Step Into' })
     vim.keymap.set('n', '<F2>', dap.step_over, { desc = 'Debuger: Step Over' })
     vim.keymap.set('n', '<F3>', dap.step_out, { desc = 'Debuger: Step Out' })
-    vim.keymap.set('n', '<leader>db', dap.toggle_breakpoint, { desc = 'Debuger: Toggle Breakpoint' })
-    vim.keymap.set('n', '<leader>dB', function()
+    vim.keymap.set('n', '<leader>cb', dap.toggle_breakpoint, { desc = 'Debuger: Toggle [B]reakpoint' })
+    vim.keymap.set('n', '<leader>cB', function()
       dap.set_breakpoint(vim.fn.input 'Breakpoint condition: ')
-    end, { desc = 'Debuger: Set Breakpoint' })
+    end, { desc = 'Debuger: Set [B]reakpoint' })
 
     -- Dap UI setup
     -- For more information, see |:help nvim-dap-ui|
