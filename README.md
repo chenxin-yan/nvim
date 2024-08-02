@@ -10,6 +10,7 @@
   - [Java](#java)
   - [JavaScript/TypeScript](#javascripttypescript)
 - [Keymaps](#keymaps)
+- [Roadmap](#roadmap)
 
 <!-- tocstop -->
 
@@ -46,16 +47,17 @@ nvim
 
 ## Language Support
 
-| Language              | Lsp         | Formatter                 | Linter    | Debugger           | Testing      |
-| --------------------- | ----------- | ------------------------- | --------- | ------------------ | ------------ |
-| lua                   | ✅ luals    | ✅ stylua                 | ❌        | ❌                 | ❌           |
-| Java                  | ✅ jdtls    | ✅ jdtls                  | ✅ jdtls  | ✅ jdtls           | ✅ java-test |
-| JavaScript/TypeScript | ✅ vtsls    | ✅ Prettier               | ✅ Eslint | ✅ vscode-js-debug | ❌           |
-| Markdown              | ✅ marksman | ✅ Prettier, markdownlint | ❌        | ❌                 | ❌           |
-| html                  | ✅ html     | ✅ Prettier               | ❌        | ❌                 | ❌           |
-| css                   | ✅ cssls    | ✅ Prettier               | ❌        | ❌                 | ❌           |
-| json                  | ✅ jsonls   | ✅ Prettier               | ❌        | ❌                 | ❌           |
-| toml                  | ✅ taplo    | ✅ taplo                  | ❌        | ❌                 | ❌           |
+| Language              | Lsp         | Formatter                 | Linter          | Debugger           | Testing      |
+| --------------------- | ----------- | ------------------------- | --------------- | ------------------ | ------------ |
+| lua                   | ✅ luals    | ✅ stylua                 | ❌              | ❌                 | ❌           |
+| Java                  | ✅ jdtls    | ✅ jdtls                  | ✅ jdtls        | ✅ jdtls           | ✅ java-test |
+| JavaScript/TypeScript | ✅ vtsls    | ✅ Prettier               | ✅ Eslint       | ✅ vscode-js-debug | ⏳           |
+| Golang                | ⏳          | ⏳                        | ⏳              | ⏳                 | ⏳           |
+| Markdown              | ✅ marksman | ✅ Prettier, markdownlint | ✅ markdownlint | ❌                 | ❌           |
+| html                  | ✅ html     | ✅ Prettier               | ❌              | ❌                 | ❌           |
+| css                   | ✅ cssls    | ✅ Prettier               | ❌              | ❌                 | ❌           |
+| json                  | ✅ jsonls   | ✅ Prettier               | ❌              | ❌                 | ❌           |
+| toml                  | ✅ taplo    | ✅ taplo                  | ❌              | ❌                 | ❌           |
 
 ### Lua
 
@@ -65,4 +67,13 @@ nvim
 
 ## Keymaps
 
-This config uses which-key.nvim to display available keymaps
+This config uses [which-key.nvim](https://github.com/folke/which-key.nvim) to display available keymaps
+
+## Roadmap
+
+- [ ] setup [tsc.nvim](https://github.com/dmmulroy/tsc.nvim)
+- [ ] setup [neotest](https://github.com/nvim-neotest/neotest)
+- [ ] setup tailwindcss support
+- [ ] setup [kulala.nvim](https://github.com/mistweaverco/kulala.nvim) as Rest-client
+- [ ] [Integrate prettier with ESlint](https://prettier.io/docs/en/integrating-with-linters.html)
+- [ ] add warning comments config files for hard-coded paths
