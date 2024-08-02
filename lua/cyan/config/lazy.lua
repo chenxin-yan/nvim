@@ -80,6 +80,7 @@ require('lazy').setup({
   require 'cyan.plugins.gx', -- use gx without netrw
   require 'cyan.plugins.flash', -- eazy motion alternative
   require 'cyan.plugins.grug-far', -- grep and replace
+  require 'cyan.plugins.trouble', -- better quickfix list & symbol outline
 
   -- ---- UI ----
   {

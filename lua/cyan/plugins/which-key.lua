@@ -11,6 +11,7 @@ return {
       { '<leader>cd', group = '[D]ebug Print', mode = { 'n', 'x' } },
       { '<leader>ct', group = '[T]est' },
       { '<leader>d', group = ' [D]bug' },
+      { '<leader>x', group = ' [X]Diagnostic/QuickFix' },
       { '<leader>s', group = ' [S]earch' },
       { '<leader>w', group = ' [W]orkspace' },
       { '<leader>t', group = '󰔡 [T]oggle' },

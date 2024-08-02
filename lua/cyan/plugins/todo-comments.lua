@@ -13,8 +13,11 @@ return {
       require('todo-comments').jump_prev()
     end, { desc = 'Previous todo comment' })
 
+    -- open todo comments in quickfixlist
+    vim.keymap.set('n', '<leader>xt', '<cmd>Trouble todo toggle filter = {tag = {TODO,FIX,FIXME}}<cr>', { desc = 'Trouble: [T]odos' })
+    vim.keymap.set('n', '<leader>xT', '<cmd>Trouble todo toggle<cr>', { desc = 'Trouble: Highlighted Comments' })
     -- search todo comments via telescope
     vim.keymap.set('n', '<leader>st', '<cmd>TodoTelescope keywords=TODO,FIXME,FIX<CR>', { desc = '[T]odos' })
-    vim.keymap.set('n', '<leader>sT', '<cmd>TodoTelescope<CR>', { desc = 'Highlighted [C]omments' })
+    vim.keymap.set('n', '<leader>sT', '<cmd>TodoTelescope<CR>', { desc = 'Highlighted Comments' })
   end,
 }
