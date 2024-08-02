@@ -106,7 +106,10 @@ vim.list_extend(ensure_installed, {
   -- Linters
   'markdownlint-cli2', --linter & formatter for markdown
   -- debugger
-  'js-debug-adapter',
+  'js-debug-adapter', -- JS/TS
+  'java-debug-adapter', -- java
+  -- Testing
+  'java-test',
 })
 
 return {
@@ -174,7 +177,7 @@ return {
   { 'Bilal2453/luvit-meta', lazy = true },
 
   -- java lsp config
-  { 'mfussenegger/nvim-jdtls', ft = 'java' },
+  { 'mfussenegger/nvim-jdtls', ft = 'java', dependencies = 'mfussenegger/nvim-dap' },
 
   -- json schema support
   { 'b0o/schemastore.nvim', lazy = true },
