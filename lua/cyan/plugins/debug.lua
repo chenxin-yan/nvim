@@ -1,8 +1,3 @@
--- debug.lua
---
--- Shows how to use the DAP plugin to debug your code.
---
-
 return {
   'mfussenegger/nvim-dap',
   dependencies = {
@@ -38,7 +33,6 @@ return {
             'pwa-node',
             'pwa-chrome',
             'pwa-extensionHost',
-            'node-terminal',
           },
         }
       end,

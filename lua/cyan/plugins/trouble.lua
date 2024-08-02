@@ -1,7 +1,9 @@
 return {
   {
     'folke/trouble.nvim',
-    opts = {},
+    opts = {
+      modes = { lsp_document_symbols = { format = '{kind_icon} {symbol.name}' } },
+    },
     lazy = true,
     cmd = 'Trouble',
     keys = {
@@ -17,12 +19,12 @@ return {
       },
       {
         '<leader>cl',
-        '<cmd>Trouble symbols toggle focus=false<cr>',
+        '<cmd>Trouble symbols toggle focus=false win.size=40<cr>',
         desc = 'Trouble: [L]SP Symbols',
       },
       {
         '<leader>cL',
-        '<cmd>Trouble lsp toggle focus=false win.position=right<cr>',
+        '<cmd>Trouble lsp toggle focus=false win.position=right win.size=50<cr>',
         desc = 'Trouble: [L]SP Definitions / references / ...',
       },
       {
