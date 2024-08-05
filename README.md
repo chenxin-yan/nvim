@@ -6,9 +6,10 @@
 - [Installation](#installation)
 - [Feature](#feature)
 - [Language Support](#language-support)
-  - [Lua](#lua)
-  - [Java](#java)
-  - [JavaScript/TypeScript](#javascripttypescript)
+  * [Lua](#lua)
+  * [Java](#java)
+  * [JavaScript/TypeScript](#javascripttypescript)
+  * [Golang](#golang)
 - [Keymaps](#keymaps)
 - [Roadmap](#roadmap)
 
@@ -64,6 +65,8 @@ nvim
 ### Java
 
 ### JavaScript/TypeScript
+
+### Golang
 
 ## Keymaps
 

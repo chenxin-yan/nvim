@@ -58,13 +58,13 @@ return {
     -- stylua: ignore
     dashboard.section.buttons.val = {
       dashboard.button('e', '  > New file', ':e '),
-      dashboard.button('f', '󰈞  > Find file', '<cmd>Telescope find_files<CR>'),
-      dashboard.button('g', '󰺮  > Grep text', '<cmd>Telescope live_grep<CR>'),
-      dashboard.button('w', '  > Search workspace', '<cmd>Telescope session-lens<CR>'),
-      dashboard.button('r', '󰚰  > Restore workspace', '<cmd>SessionRestore<CR>'),
-      dashboard.button('c', '  > Configration', '<cmd>cd ~/.config/nvim<CR><cmd>Telescope find_files<CR>'),
-      dashboard.button('u', '  > Update plugins', '<cmd>Lazy update<CR>'),
-      dashboard.button('q', '󰈆  > Quit NVIM', '<cmd>qa<CR>'),
+      dashboard.button('f', '󰈞  > Find file', '<cmd>Telescope find_files<cr>'),
+      dashboard.button('g', '󰺮  > Grep text', '<cmd>Telescope live_grep<cr>'),
+      dashboard.button('s', '  > Search workspace', '<cmd>Telescope session-lens<cr>'),
+      dashboard.button('r', '󰚰  > Restore workspace', '<cmd>SessionRestore<cr>'),
+      dashboard.button('c', '  > Configration', '<cmd>cd ~/.config/nvim<cr><cmd>Telescope find_files<cr>'),
+      dashboard.button('u', '  > Update plugins', '<cmd>Lazy update<cr>'),
+      dashboard.button('q', '󰈆  > Quit NVIM', '<cmd>qa<cr>'),
     }
     vim.api.nvim_set_hl(0, 'AlphaHeader', { fg = '#b4befe' })
     vim.api.nvim_set_hl(0, 'AlphaButtons', { fg = '#cdd6f4' })

@@ -51,14 +51,14 @@ require('lazy').setup({
 
   -- == plugins ==
 
-  -- ---- Core plugins ----
-  {
-    'tpope/vim-sleuth',
-    event = { 'BufReadPre', 'BufNewFile' },
-    config = function()
-      vim.keymap.set('n', '<leader>bi', '<cmd>Sleuth<CR>', { desc = 'Detect [B]uffer [I]ndent' })
-    end,
-  }, -- Detect tabstop and shiftwidth automatically
+    -- ---- Core plugins ----
+    {
+      'tpope/vim-sleuth',
+      event = { 'BufReadPre', 'BufNewFile' },
+      config = function()
+        vim.keymap.set('n', '<leader>bi', '<cmd>Sleuth<cr>', { desc = 'Detect [B]uffer [I]ndent' })
+      end,
+    }, -- Detect tabstop and shiftwidth automatically
 
   require 'cyan.plugins.fugitive', -- nvim git wraper
   require 'cyan.plugins.todo-comments', -- Highlight todo, notes, etc in comment; todo tree

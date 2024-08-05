@@ -7,7 +7,7 @@ vim.g.maplocalleader = ' '
 --  See `:help vim.keymap.set()`
 
 -- clear highlight search when pressing <Esc> in normal mode
-vim.keymap.set('n', '<Esc>', '<cmd>nohlsearch<CR>')
+vim.keymap.set('n', '<Esc>', '<cmd>nohlsearch<cr>')
 
 -- Diagnostic/todo keymaps
 vim.keymap.set('n', 'X', vim.diagnostic.open_float, { desc = 'Show diagnostic Error messages' })
@@ -18,7 +18,7 @@ vim.keymap.set('n', 'x', '"_x', { desc = 'Delete without yanking' })
 vim.keymap.set('x', 'x', '"_x', { desc = 'Delete without yanking' })
 
 -- Open/Close buildin terminal
-vim.keymap.set('n', '<C-t>', '<cmd>split<CR><cmd>terminal<CR>', { desc = 'Open [T]erminal' })
+vim.keymap.set('n', '<C-t>', '<cmd>split<cr><cmd>terminal<cr>', { desc = 'Open [T]erminal' })
 vim.keymap.set('t', '<C-c>', '<C-c><C-d>', { desc = 'Kill terminal' })
 
 -- Keybinds to make split navigation easier.
@@ -39,17 +39,17 @@ vim.keymap.set('n', 'N', 'Nzzzv')
 vim.keymap.set({ 'n', 'x' }, '<leader>y', '"+y', { desc = 'Yank into system clipboard' })
 
 -- toggle spellcheck
-vim.keymap.set('n', '<leader>ts', '<cmd>set invspell<CR>', { desc = '[T]oggle [S]pell check' })
+vim.keymap.set('n', '<leader>ts', '<cmd>set invspell<cr>', { desc = '[T]oggle [S]pell check' })
 
 -- Split windows
 vim.keymap.set('n', '<leader>_', '<C-w><C-s>', { desc = 'Horizontal Split' })
 vim.keymap.set('n', '<leader>|', '<C-w><C-v>', { desc = 'Vertical Split' })
 
 -- Tab operations
-vim.keymap.set('n', '<leader><C-t>', '<cmd>tabnew<CR>', { desc = 'Create new tab' })
-vim.keymap.set('n', ']T', '<cmd>tabn<CR>', { desc = '[N]ext tab' })
-vim.keymap.set('n', '[T', '<cmd>tabp<CR>', { desc = '[P]revious tab' })
-vim.keymap.set('n', '<leader><C-w>', '<cmd>tabc<CR>', { desc = 'Close current tab' })
+vim.keymap.set('n', '<leader><C-t>', '<cmd>tabnew<cr>', { desc = 'Create new tab' })
+vim.keymap.set('n', ']T', '<cmd>tabn<cr>', { desc = '[N]ext tab' })
+vim.keymap.set('n', '[T', '<cmd>tabp<cr>', { desc = '[P]revious tab' })
+vim.keymap.set('n', '<leader><C-w>', '<cmd>tabc<cr>', { desc = 'Close current tab' })
 
 -- replace $ and ^ with H and L
 vim.keymap.set({ 'n', 'x' }, 'H', '^')

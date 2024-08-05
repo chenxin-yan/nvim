@@ -5,35 +5,35 @@ return { -- Fuzzy Finder (files, lsp, etc)
   lazy = true,
   keys = {
     -- See `:help telescope.builtin`
-    { '<leader>sh', '<cmd>Telescope help_tags<CR>', desc = '[H]elp' },
-    { '<leader>sk', '<cmd>Telescope keymaps<CR>', desc = '[K]eymaps' },
-    { '<leader>sf', '<cmd>Telescope find_files<CR>', desc = '[F]iles' },
-    { '<leader>sw', '<cmd>Telescope grep_string<CR>', desc = 'current [W]ord' },
-    { '<leader>sg', '<cmd>Telescope live_grep<CR>', desc = 'By [G]rep' },
-    { '<leader>sd', '<cmd>Telescope diagnostics<CR>', desc = '[D]iagnostics' },
-    { '<leader>sr', '<cmd>Telescope resume<CR>', desc = '[R]esume' },
-    { '<leader>s.', '<cmd>Telescope oldfiles<CR>', desc = 'Recent Files ("." for repeat)' },
-    { '<leader>sb', '<cmd>Telescope buffers<CR>', desc = '[B]uffers' },
+    { '<leader>sh', '<cmd>Telescope help_tags<cr>', desc = '[H]elp' },
+    { '<leader>sk', '<cmd>Telescope keymaps<cr>', desc = '[K]eymaps' },
+    { '<leader>sf', '<cmd>Telescope find_files<cr>', desc = '[F]iles' },
+    { '<leader>sw', '<cmd>Telescope grep_string<cr>', desc = 'current [W]ord' },
+    { '<leader>sg', '<cmd>Telescope live_grep<cr>', desc = 'By [G]rep' },
+    { '<leader>sd', '<cmd>Telescope diagnostics<cr>', desc = '[D]iagnostics' },
+    { '<leader>sr', '<cmd>Telescope resume<cr>', desc = '[R]esume' },
+    { '<leader>s.', '<cmd>Telescope oldfiles<cr>', desc = 'Recent Files ("." for repeat)' },
+    { '<leader>sb', '<cmd>Telescope buffers<cr>', desc = '[B]uffers' },
 
     -- Slightly advanced example of overriding default behavior and theme
-    { '<leader>/', '<cmd>Telescope current_buffer_fuzzy_find theme=dropdown previewer=false<CR>', desc = '[/] Fuzzily search in current buffer' },
+    { '<leader>/', '<cmd>Telescope current_buffer_fuzzy_find theme=dropdown previewer=false<cr>', desc = '[/] Fuzzily search in current buffer' },
 
     -- It's also possible to pass additional configuration options.
     --  See `:help telescope.builtin.live_grep()` for information about particular keys
     {
       '<leader>s/',
-      '<cmd>lua require("telescope.builtin").live_grep({grep_open_files=true, prompt_title="Live Grep in Open File"})<CR>',
+      '<cmd>lua require("telescope.builtin").live_grep({grep_open_files=true, prompt_title="Live Grep in Open File"})<cr>',
       desc = '[/] in Open Files',
     },
 
     -- Shortcut for searching your Neovim configuration files
-    { '<leader>sn', '<cmd>Telescope find_files cwd=' .. vim.fn.stdpath 'config' .. '<CR>', desc = '[N]eovim files' },
+    { '<leader>sn', '<cmd>Telescope find_files cwd=' .. vim.fn.stdpath 'config' .. '<cr>', desc = '[N]eovim files' },
 
     -- Shortcut for searching spelling suggestions
-    { 'Z', '<cmd>Telescope spell_suggest theme=cursor<CR>', desc = ' Spelling Suggestions' },
+    { 'Z', '<cmd>Telescope spell_suggest theme=cursor<cr>', desc = ' Spelling Suggestions' },
 
     -- search noice message
-    { '<leader>sm', '<cmd>Telescope noice<CR>', desc = '[M]essages' },
+    { '<leader>sm', '<cmd>Telescope noice<cr>', desc = '[M]essages' },
   },
   dependencies = {
     'nvim-lua/plenary.nvim',

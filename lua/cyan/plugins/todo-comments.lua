@@ -17,7 +17,7 @@ return {
     vim.keymap.set('n', '<leader>xt', '<cmd>Trouble todo toggle filter = {tag = {TODO,FIX,FIXME}}<cr>', { desc = 'Trouble: [T]odos' })
     vim.keymap.set('n', '<leader>xT', '<cmd>Trouble todo toggle<cr>', { desc = 'Trouble: Highlighted Comments' })
     -- search todo comments via telescope
-    vim.keymap.set('n', '<leader>st', '<cmd>TodoTelescope keywords=TODO,FIXME,FIX<CR>', { desc = '[T]odos' })
-    vim.keymap.set('n', '<leader>sT', '<cmd>TodoTelescope<CR>', { desc = 'Highlighted Comments' })
+    vim.keymap.set('n', '<leader>st', '<cmd>TodoTelescope keywords=TODO,FIXME,FIX<cr>', { desc = '[T]odos' })
+    vim.keymap.set('n', '<leader>sT', '<cmd>TodoTelescope<cr>', { desc = 'Highlighted Comments' })
   end,
 }

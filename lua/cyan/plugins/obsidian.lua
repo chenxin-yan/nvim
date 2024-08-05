@@ -83,13 +83,13 @@ return {
       vim.keymap.set({ 'n', 'v' }, '<leader>o' .. key, cmd, { desc = desc })
     end
 
-    obMap('t', '<cmd>ObsidianTemplate<CR>', 'Insert [T]emplate')
-    obMap('b', '<cmd>ObsidianBacklinks<CR>', 'Search [B]acklinks')
-    obMap('l', '<cmd>Obsidianlinks<CR>', 'Search [L]inks in current note')
-    obMap('f', '<cmd>ObsidianFollowLink vsplit<CR>', '[F]ollow note to a new window')
-    obMap('o', '<cmd>ObsidianOpen<CR>', '[O]pen in [O]bsidian')
+    obMap('t', '<cmd>ObsidianTemplate<cr>', 'Insert [T]emplate')
+    obMap('b', '<cmd>ObsidianBacklinks<cr>', 'Search [B]acklinks')
+    obMap('l', '<cmd>Obsidianlinks<cr>', 'Search [L]inks in current note')
+    obMap('f', '<cmd>ObsidianFollowLink vsplit<cr>', '[F]ollow note to a new window')
+    obMap('o', '<cmd>ObsidianOpen<cr>', '[O]pen in [O]bsidian')
     obMap('e', ':ObsidianExtractNote ', '[E]xtract to a new note')
-    obMap('g', '<cmd>ObsidianSearch<CR>', '[G]rep [O]bsidian Vault')
+    obMap('g', '<cmd>ObsidianSearch<cr>', '[G]rep [O]bsidian Vault')
 
     require('which-key').add { '<leader>o', group = ' [O]bsidian' }
   end,

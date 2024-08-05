@@ -34,19 +34,19 @@ if vim.g.has_bufferline then
       local function buffer_map(key, cmd, desc)
         vim.keymap.set('n', key, cmd, { desc = 'Bufline: ' .. desc })
       end
-      buffer_map(']b', '<cmd>BufferLineCycleNext<CR>', 'Goto next buffer')
-      buffer_map('[b', '<cmd>BufferLineCyclePrev<CR>', 'Goto previous buffer')
+      buffer_map(']b', '<cmd>BufferLineCycleNext<cr>', 'Goto next buffer')
+      buffer_map('[b', '<cmd>BufferLineCyclePrev<cr>', 'Goto previous buffer')
 
-      buffer_map('<leader>bc', '<cmd>BufferLineGroupClose ungrouped<CR>', '[C]lose unpined buffers ')
-      buffer_map('<leader>bD', '<cmd>BufferLineCloseOthers<CR>', '[D]elete other buffers')
-      buffer_map('<leader>bp', '<cmd>BufferLineTogglePin<CR>', '[P]in buffer')
+      buffer_map('<leader>bc', '<cmd>BufferLineGroupClose ungrouped<cr>', '[C]lose unpined buffers ')
+      buffer_map('<leader>bD', '<cmd>BufferLineCloseOthers<cr>', '[D]elete other buffers')
+      buffer_map('<leader>bp', '<cmd>BufferLineTogglePin<cr>', '[P]in buffer')
 
-      buffer_map('<leader><leader>', '<cmd>BufferLinePick<CR>', 'Buffer Pick')
+      buffer_map('<leader><leader>', '<cmd>BufferLinePick<cr>', 'Buffer Pick')
 
-      buffer_map('<leader>1', '<cmd>BufferLineGoToBuffer 1<CR>', 'Goto Buffer 1')
-      buffer_map('<leader>2', '<cmd>BufferLineGoToBuffer 2<CR>', 'Goto Buffer 2')
-      buffer_map('<leader>3', '<cmd>BufferLineGoToBuffer 3<CR>', 'Goto Buffer 3')
-      buffer_map('<leader>4', '<cmd>BufferLineGoToBuffer 4<CR>', 'Goto Buffer 4')
+      buffer_map('<leader>1', '<cmd>BufferLineGoToBuffer 1<cr>', 'Goto Buffer 1')
+      buffer_map('<leader>2', '<cmd>BufferLineGoToBuffer 2<cr>', 'Goto Buffer 2')
+      buffer_map('<leader>3', '<cmd>BufferLineGoToBuffer 3<cr>', 'Goto Buffer 3')
+      buffer_map('<leader>4', '<cmd>BufferLineGoToBuffer 4<cr>', 'Goto Buffer 4')
     end,
   }
 end

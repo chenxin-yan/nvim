@@ -28,7 +28,7 @@ return { -- Autocompletion
       config = function()
         --Load custom lua snippets
         require('luasnip.loaders.from_lua').lazy_load { paths = { '~/.config/nvim/lua/cyan/snippets/' } }
-        vim.keymap.set('n', '<leader>S', '<cmd>source ~/.config/nvim/lua/cyan/plugins/cmp.lua<CR>', { desc = '[S]ource snippets' })
+        vim.keymap.set('n', '<leader>S', '<cmd>source ~/.config/nvim/lua/cyan/plugins/cmp.lua<cr>', { desc = '[S]ource snippets' })
 
         -- set keybinds for select choice node in luasnip
         vim.keymap.set('i', '<C-n>', function()
@@ -94,7 +94,7 @@ return { -- Autocompletion
         --
         -- If you prefer more traditional completion keymaps,
         -- you can uncomment the following lines
-        -- ['<CR>'] = cmp.mapping.confirm { select = true },
+        -- ['<cr>'] = cmp.mapping.confirm { select = true },
         --['<Tab>'] = cmp.mapping.select_next_item(),
         --['<S-Tab>'] = cmp.mapping.select_prev_item(),
 

@@ -4,6 +4,6 @@ return {
     'nvim-telescope/telescope.nvim',
   },
   keys = {
-    { '<leader>gi', '<cmd>Gitignore<CR>', desc = 'generate gitignore file' },
+    { '<leader>gi', '<cmd>Gitignore<cr>', desc = 'generate gitignore file' },
   },
 }
