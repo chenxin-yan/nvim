@@ -7,7 +7,6 @@ return {
       { '[', group = 'Previous' },
       { 'gs', group = 'Surround', mode = { 'n', 'x' } },
       { '<leader>c', group = '󰘦 [C]ode', mode = { 'n', 'x' } },
-      { '<leader>cs', group = '[S]wap' },
       { '<leader>cd', group = '[D]ebug Print', mode = { 'n', 'x' } },
       { '<leader>ct', group = '[T]est' },
       { '<leader>d', group = ' [D]bug' },
@@ -35,8 +34,8 @@ return {
       mappings = false,
     },
     keys = {
-      scroll_down = '<c-s-d>', -- binding to scroll down inside the popup
-      scroll_up = '<c-s-u>', -- binding to scroll up inside the popup
+      scroll_down = '<M-d>', -- binding to scroll down inside the popup
+      scroll_up = '<M-u>', -- binding to scroll up inside the popup
     },
   },
   config = function(_, opts)

@@ -21,6 +21,13 @@ vim.opt.rtp:prepend(lazypath)
 --    :Lazy update
 --
 require('lazy').setup({
+  -- {
+  --   dir = '~/Dev/footnote.nvim/',
+  --   config = function()
+  --     require('footnote').setup()
+  --   end,
+  -- },
+
   -- == theme ==
   {
     'catppuccin/nvim',
@@ -51,14 +58,14 @@ require('lazy').setup({
 
   -- == plugins ==
 
-    -- ---- Core plugins ----
-    {
-      'tpope/vim-sleuth',
-      event = { 'BufReadPre', 'BufNewFile' },
-      config = function()
-        vim.keymap.set('n', '<leader>bi', '<cmd>Sleuth<cr>', { desc = 'Detect [B]uffer [I]ndent' })
-      end,
-    }, -- Detect tabstop and shiftwidth automatically
+  -- ---- Core plugins ----
+  {
+    'tpope/vim-sleuth',
+    event = { 'BufReadPre', 'BufNewFile' },
+    config = function()
+      vim.keymap.set('n', '<leader>bi', '<cmd>Sleuth<cr>', { desc = 'Detect [B]uffer [I]ndent' })
+    end,
+  }, -- Detect tabstop and shiftwidth automatically
 
   require 'cyan.plugins.fugitive', -- nvim git wraper
   require 'cyan.plugins.todo-comments', -- Highlight todo, notes, etc in comment; todo tree
@@ -81,6 +88,7 @@ require('lazy').setup({
   require 'cyan.plugins.flash', -- eazy motion alternative
   require 'cyan.plugins.grug-far', -- grep and replace
   require 'cyan.plugins.trouble', -- better quickfix list & symbol outline
+  require 'cyan.plugins.harpoon', -- file switcher
 
   -- ---- UI ----
   {

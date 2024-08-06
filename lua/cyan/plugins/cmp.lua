@@ -30,12 +30,17 @@ return { -- Autocompletion
         require('luasnip.loaders.from_lua').lazy_load { paths = { '~/.config/nvim/lua/cyan/snippets/' } }
         vim.keymap.set('n', '<leader>S', '<cmd>source ~/.config/nvim/lua/cyan/plugins/cmp.lua<cr>', { desc = '[S]ource snippets' })
 
+        local ls = require 'luasnip'
         -- set keybinds for select choice node in luasnip
-        vim.keymap.set('i', '<C-n>', function()
-          require('luasnip').change_choice(1)
+        vim.keymap.set({ 'i', 'x' }, '<C-n>', function()
+          if ls.choice_active() then
+            ls.change_choice(1)
+          end
         end, { desc = '[N]ext choice' })
-        vim.keymap.set('i', '<C-p>', function()
-          require('luasnip').change_choice(-1)
+        vim.keymap.set({ 'i', 'x' }, '<C-p>', function()
+          if ls.choice_active() then
+            ls.change_choice(-1)
+          end
         end, { desc = '[P]revious choice' })
       end,
     },
@@ -83,6 +88,8 @@ return { -- Autocompletion
       mapping = cmp.mapping.preset.insert {
         ['<C-j>'] = cmp.mapping.select_next_item(),
         ['<C-k>'] = cmp.mapping.select_prev_item(),
+        ['<C-n>'] = cmp.config.disable,
+        ['<C-p>'] = cmp.config.disable,
 
         ['<C-u>'] = cmp.mapping.scroll_docs(-4),
         ['<C-d>'] = cmp.mapping.scroll_docs(4),

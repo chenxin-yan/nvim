@@ -18,12 +18,12 @@ return {
         desc = 'Trouble: Buffer Diagnostics',
       },
       {
-        '<leader>cl',
+        '<leader>cs',
         '<cmd>Trouble symbols toggle focus=false win.size=40<cr>',
-        desc = 'Trouble: [L]SP Symbols',
+        desc = 'Trouble: [S]ymbols',
       },
       {
-        '<leader>cL',
+        '<leader>cl',
         '<cmd>Trouble lsp toggle focus=false win.position=right win.size=50<cr>',
         desc = 'Trouble: [L]SP Definitions / references / ...',
       },

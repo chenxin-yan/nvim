@@ -18,8 +18,9 @@ return {
       desc = '[S]earch [O]bsidian Vault',
     },
     {
-      '<M-n>',
+      '<leader>O',
       ':ObsidianNew ',
+      desc = 'New [O]bsidian Note',
     },
   },
   config = function()

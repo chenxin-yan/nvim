@@ -65,3 +65,6 @@ vim.keymap.set('n', 'gcO', 'O<esc>Vcx<esc><cmd>normal gcc<cr>fxa<bs>', { desc = 
 -- add endline caracter
 vim.keymap.set('n', 'g,', 'm`A,<Esc>``', { desc = 'Add "," at the end of the line ' })
 vim.keymap.set('n', 'g;', 'm`A;<Esc>``', { desc = 'Add ";" at the end of the line' })
+
+-- switch between buffers
+vim.keymap.set('n', '<S-Tab>', '<cmd>b#<cr>', { desc = 'Goto previously opened buffer' })
