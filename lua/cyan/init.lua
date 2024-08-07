@@ -1,6 +1,7 @@
 -- == Global Variables ==
 vim.g.is_transparent = true
 vim.g.has_bufferline = true
+vim.g.is_dev = true
 
 -- == load configs ==
 if vim.g.neovide then

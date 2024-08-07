@@ -21,13 +21,6 @@ vim.opt.rtp:prepend(lazypath)
 --    :Lazy update
 --
 require('lazy').setup({
-  -- {
-  --   dir = '~/Dev/footnote.nvim/',
-  --   config = function()
-  --     require('footnote').setup()
-  --   end,
-  -- },
-
   -- == theme ==
   {
     'catppuccin/nvim',
@@ -117,6 +110,7 @@ require('lazy').setup({
   require 'cyan.plugins.markdowny', -- markdown shortcut support
   require 'cyan.plugins.markdown-preview', -- markdown preview in browser
   require 'cyan.plugins.markdown', -- better markdown render
+  require 'cyan.plugins.footnote', -- better footnote
   require 'cyan.plugins.obsidian', -- obsidian integration
 
   -- ---- extras ----
