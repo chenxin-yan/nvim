@@ -4,7 +4,7 @@ return {
     dependencies = {
       'nvim-telescope/telescope.nvim',
     },
-    event = { 'BufReadPre', 'BufNewFile' },
+    event = 'VeryLazy',
     cmd = { 'SessionSave', 'SessionRestore', 'Telescope session_lens' },
     keys = {
       { '<leader>wr', '<cmd>SessionRestore<cr>', desc = 'Session: [W]orkspace [R]estore for current directory' },
@@ -16,7 +16,7 @@ return {
       require('auto-session').setup {
         log_level = 'error',
         auto_restore_enabled = false,
-        auto_session_allowed_dirs = { '~/Dev/*' },
+        auto_session_allowed_dirs = { '~/dev/*' },
         session_lens = {
           load_on_setup = true,
           theme_conf = { border = true },

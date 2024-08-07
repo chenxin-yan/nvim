@@ -1,6 +1,6 @@
 return {
   'folke/which-key.nvim',
-  event = { 'BufReadPre', 'BufNewFile' },
+  event = 'VeryLazy',
   opts = {
     spec = {
       { ']', group = 'Next' },
