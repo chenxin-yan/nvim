@@ -81,7 +81,6 @@ require('lazy').setup({
   require 'cyan.plugins.flash', -- eazy motion alternative
   require 'cyan.plugins.grug-far', -- grep and replace
   require 'cyan.plugins.trouble', -- better quickfix list & symbol outline
-  -- require 'cyan.plugins.harpoon', -- file switcher
 
   -- ---- UI ----
   {
