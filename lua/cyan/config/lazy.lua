@@ -105,7 +105,7 @@ require('lazy').setup({
   require 'cyan.plugins.live-server', -- node live server
 
   -- markdown
-  require 'cyan.plugins.bullet', -- markdown list support
+  require 'cyan.plugins.autolist', -- markdown better list
   require 'cyan.plugins.markdowny', -- markdown shortcut support
   require 'cyan.plugins.markdown-preview', -- markdown preview in browser
   require 'cyan.plugins.markdown', -- better markdown render
