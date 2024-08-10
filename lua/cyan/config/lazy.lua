@@ -115,7 +115,6 @@ require('lazy').setup({
   require 'cyan.plugins.vim-tmux-navigator', -- tmux window navigation integration
   require 'cyan.plugins.lazygit', -- git CLI
   require 'cyan.plugins.gitignore', -- generate gitignore files
-  require 'cyan.plugins.ufo', -- better folds
   require 'cyan.plugins.neogen', -- generate annotations/documentations
   require 'cyan.plugins.undotree', -- undo history management
   require 'cyan.plugins.grug-far', -- grep and replace
