@@ -6,10 +6,11 @@ if vim.g.is_dev then
         keys = {
           new_footnote = '<C-f>',
           organize_footnotes = '<leader>cf',
-          next_footnote = ']f',
-          prev_footnote = '[f',
+          next_footnote = ']n',
+          prev_footnote = '[n',
         },
         organize_on_save = false,
+        organize_on_new = false,
       }
     end,
   }
@@ -21,11 +22,11 @@ else
       require('footnote').setup {
         keys = {
           new_footnote = '<C-f>',
-          organize_footnotes = '<leader>cf',
-          next_footnote = ']f',
-          prev_footnote = '[f',
+          organize_footnotes = '',
+          next_footnote = ']n',
+          prev_footnote = '[n',
         },
-        organize_on_save = false,
+        organize_on_new = true,
       }
     end,
   }

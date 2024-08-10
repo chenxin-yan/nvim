@@ -62,7 +62,6 @@ require('lazy').setup({
 
   require 'cyan.plugins.fugitive', -- nvim git wraper
   require 'cyan.plugins.todo-comments', -- Highlight todo, notes, etc in comment; todo tree
-  require 'cyan.plugins.undotree', -- undo history management
   require 'cyan.plugins.which-key', -- keybinding hint
   require 'cyan.plugins.telescope', -- fuzzy search
   require 'cyan.plugins.neo-tree', -- nvim file explorer
@@ -77,10 +76,7 @@ require('lazy').setup({
   require 'cyan.plugins.lint', -- linter
   require 'cyan.plugins.auto-session', -- nvim session manager
   require 'cyan.plugins.oil', -- file explorer & editor
-  require 'cyan.plugins.gx', -- use gx without netrw
   require 'cyan.plugins.flash', -- eazy motion alternative
-  require 'cyan.plugins.grug-far', -- grep and replace
-  require 'cyan.plugins.trouble', -- better quickfix list & symbol outline
 
   -- ---- UI ----
   {
@@ -97,6 +93,8 @@ require('lazy').setup({
   require 'cyan.plugins.indent-line', -- indentation guide
   require 'cyan.plugins.bufferline', -- bufferline
   require 'cyan.plugins.noice', -- UI improvement
+  require 'cyan.plugins.zen', -- Zen mode
+  require 'cyan.plugins.trouble', -- better quickfix list & symbol outline
 
   -- ---- language specific ----
 
@@ -119,6 +117,8 @@ require('lazy').setup({
   require 'cyan.plugins.gitignore', -- generate gitignore files
   require 'cyan.plugins.ufo', -- better folds
   require 'cyan.plugins.neogen', -- generate annotations/documentations
+  require 'cyan.plugins.undotree', -- undo history management
+  require 'cyan.plugins.grug-far', -- grep and replace
 }, {
   ui = {
     -- If you are using a Nerd Font: set icons to an empty table which will use the

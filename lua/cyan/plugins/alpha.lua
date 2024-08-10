@@ -60,7 +60,7 @@ return {
       dashboard.button('e', '  > New file', ':e '),
       dashboard.button('f', '󰈞  > Find file', '<cmd>Telescope find_files<cr>'),
       dashboard.button('g', '󰺮  > Grep text', '<cmd>Telescope live_grep<cr>'),
-      dashboard.button('w', '  > Search workspace', '<cmd>SessionSearch<cr>'),
+      -- dashboard.button('w', '  > Search workspace', '<cmd>SessionSearch<cr>'),
       dashboard.button('r', '󰚰  > Restore workspace', '<cmd>SessionRestore<cr>'),
       dashboard.button('c', '  > Configration', '<cmd>cd ~/.config/nvim<cr><cmd>Telescope find_files<cr>'),
       dashboard.button('u', '  > Update plugins', '<cmd>Lazy update<cr>'),
