@@ -132,35 +132,6 @@ return {
   },
 
   -- == LSP Plugins==
-  --- incremental renaming
-  {
-    'smjonas/inc-rename.nvim',
-    keys = {
-      {
-        '<leader>rn',
-        ':IncRename ',
-        desc = 'Rename',
-      },
-    },
-    config = function()
-      require('inc_rename').setup {
-        save_in_cmdline_history = false,
-      }
-    end,
-  },
-
-  -- code refactoring when rename using neotree
-  {
-    'antosha417/nvim-lsp-file-operations',
-    event = 'LspAttach',
-    dependencies = {
-      'nvim-lua/plenary.nvim',
-      'nvim-neo-tree/neo-tree.nvim',
-    },
-    config = function()
-      require('lsp-file-operations').setup()
-    end,
-  },
 
   -- `lazydev` configures Lua LSP for your Neovim config, runtime and plugins
   -- used for completion, annotations and signatures of Neovim apis
@@ -191,10 +162,27 @@ return {
     'neovim/nvim-lspconfig',
     event = { 'BufReadPre', 'BufNewFile' },
     dependencies = {
+      --- incremental renaming
+      {
+        'smjonas/inc-rename.nvim',
+        keys = {
+          {
+            '<leader>rn',
+            ':IncRename ',
+            desc = 'Rename',
+          },
+        },
+        config = function()
+          require('inc_rename').setup {
+            save_in_cmdline_history = false,
+          }
+        end,
+      },
+
       -- Automatically install LSPs and related tools to stdpath for Neovim
       { 'williamboman/mason.nvim', config = true },
       'williamboman/mason-lspconfig.nvim',
-      -- 'WhoIsSethDaniel/mason-tool-installer.nvim',
+      'WhoIsSethDaniel/mason-tool-installer.nvim',
 
       -- Useful status updates for LSP.
       {

@@ -7,4 +7,4 @@ vim.keymap.set('n', 'j', 'gj', { buffer = 0 })
 vim.keymap.set('n', 'k', 'gk', { buffer = 0 })
 
 -- Spell check
--- vim.opt_local.spell = true
+vim.opt_local.spell = true

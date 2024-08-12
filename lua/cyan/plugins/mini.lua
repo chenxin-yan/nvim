@@ -26,7 +26,7 @@ return { -- Collection of various small independent plugins/modules
         },
         u = ai.gen_spec.function_call(), -- u for "Usage"
         U = ai.gen_spec.function_call { name_pattern = '[%w_]' }, -- without dot in function name
-        A = ai.gen_spec.treesitter { a = '@assignment.outer', i = '@assignment.inner' }, -- assignment
+        ['='] = ai.gen_spec.treesitter { a = '@assignment.outer', i = '@assignment.inner' }, -- assignment
       },
     }
 
@@ -35,9 +35,9 @@ return { -- Collection of various small independent plugins/modules
       mappings = {
         add = 'gsa', -- Add surrounding in Normal and Visual modes
         delete = 'gsd', -- Delete surrounding
-        find = 'gsf', -- Find surrounding (to the right)
-        find_left = 'gsF', -- Find surrounding (to the left)
-        highlight = 'gsh', -- Highlight surrounding
+        find = '', -- Find surrounding (to the right)
+        find_left = '', -- Find surrounding (to the left)
+        highlight = '', -- Highlight surrounding
         replace = 'gsr', -- Replace surrounding
         update_n_lines = 'gsn', -- Update `n_lines`
       },

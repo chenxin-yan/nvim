@@ -1,13 +1,16 @@
-if vim.g.is_dev then
+local is_dev = false
+
+if is_dev then
   return {
     dir = '~/dev/footnote.nvim/',
     config = function()
       require('footnote').setup {
+        debug_print = true,
         keys = {
           new_footnote = '<C-f>',
           organize_footnotes = '<leader>cf',
-          next_footnote = ']n',
-          prev_footnote = '[n',
+          next_footnote = ']f',
+          prev_footnote = '[f',
         },
         organize_on_save = false,
         organize_on_new = false,
@@ -22,11 +25,11 @@ else
       require('footnote').setup {
         keys = {
           new_footnote = '<C-f>',
-          organize_footnotes = '',
-          next_footnote = ']n',
-          prev_footnote = '[n',
+          organize_footnotes = '<leader>cf',
+          next_footnote = ']f',
+          prev_footnote = '[f',
         },
-        organize_on_new = true,
+        organize_on_save = false,
       }
     end,
   }

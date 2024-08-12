@@ -97,9 +97,10 @@ require('lazy').setup({
   require 'cyan.plugins.trouble', -- better quickfix list & symbol outline
 
   -- ---- language specific ----
-
-  require 'cyan.plugins.ts-autotag', -- auto close/rename tags
   require 'cyan.plugins.refactoring', -- code refactoring
+
+  -- TS/JS
+  require 'cyan.plugins.ts-autotag', -- auto close/rename tags
   require 'cyan.plugins.live-server', -- node live server
 
   -- markdown

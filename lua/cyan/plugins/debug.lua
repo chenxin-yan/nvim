@@ -173,6 +173,8 @@ return {
         },
       }
     end
+
+    -- == JAVA ==
     dap.configurations.java = {
       {
         name = 'Debug Launch (2GB)',
