@@ -1,7 +1,13 @@
 return {
-  'mbbill/undotree',
-  cmd = 'UndotreeToggle',
-  keys = {
-    { '<leader>U', '<cmd>UndotreeToggle<cr>', desc = '[T]oggle [U]ndotree' },
+  'jiaoshijie/undotree',
+  dependencies = 'nvim-lua/plenary.nvim',
+  opts = {
+    position = 'right',
+    window = {
+      winblend = 0,
+    },
+  },
+  keys = { -- load the plugin only when using it's keybinding:
+    { '<leader>u', "<cmd>lua require('undotree').toggle()<cr>", desc = 'Open [U]ndo tree' },
   },
 }
