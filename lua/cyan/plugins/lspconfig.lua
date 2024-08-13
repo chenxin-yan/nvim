@@ -133,6 +133,19 @@ return {
 
   -- == LSP Plugins==
 
+  -- code refactoring when rename using neotree
+  {
+    'antosha417/nvim-lsp-file-operations',
+    event = 'LspAttach',
+    dependencies = {
+      'nvim-lua/plenary.nvim',
+      'nvim-neo-tree/neo-tree.nvim',
+    },
+    config = function()
+      require('lsp-file-operations').setup()
+    end,
+  },
+
   -- `lazydev` configures Lua LSP for your Neovim config, runtime and plugins
   -- used for completion, annotations and signatures of Neovim apis
   {

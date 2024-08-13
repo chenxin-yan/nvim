@@ -34,8 +34,8 @@ require('lazy').setup({
       local opts = {
         integrations = {
           fidget = true,
-          neotree = true,
           noice = true,
+          neotree = true,
           which_key = true,
           ufo = true,
           grug_far = true,
@@ -63,7 +63,6 @@ require('lazy').setup({
   require 'cyan.plugins.todo-comments', -- Highlight todo, notes, etc in comment; todo tree
   require 'cyan.plugins.which-key', -- keybinding hint
   require 'cyan.plugins.telescope', -- fuzzy search
-  require 'cyan.plugins.neo-tree', -- nvim file explorer
   require 'cyan.plugins.lspconfig', -- LSP support
   require 'cyan.plugins.conform', -- formatter support
   require 'cyan.plugins.cmp', -- autocompletion
@@ -74,8 +73,9 @@ require('lazy').setup({
   require 'cyan.plugins.gitsigns', -- git support
   require 'cyan.plugins.lint', -- linter
   require 'cyan.plugins.auto-session', -- nvim session manager
-  require 'cyan.plugins.oil', -- file explorer & editor
   require 'cyan.plugins.flash', -- eazy motion alternative
+  require 'cyan.plugins.gx', -- better gx
+  require 'cyan.plugins.neo-tree', -- better gx
 
   -- ---- UI ----
   {
@@ -118,6 +118,7 @@ require('lazy').setup({
   require 'cyan.plugins.neogen', -- generate annotations/documentations
   require 'cyan.plugins.undotree', -- undo history management
   require 'cyan.plugins.grug-far', -- grep and replace
+  require 'cyan.plugins.yazi', -- yazi file explorer
 }, {
   ui = {
     -- If you are using a Nerd Font: set icons to an empty table which will use the
