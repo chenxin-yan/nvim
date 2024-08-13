@@ -92,7 +92,7 @@ require('lazy').setup({
   require 'cyan.plugins.indent-line', -- indentation guide
   require 'cyan.plugins.bufferline', -- bufferline
   require 'cyan.plugins.noice', -- UI improvement
-  require 'cyan.plugins.zen', -- Zen mode
+  require 'cyan.plugins.twilight', -- Zen mode
   require 'cyan.plugins.trouble', -- better quickfix list & symbol outline
 
   -- ---- language specific ----
