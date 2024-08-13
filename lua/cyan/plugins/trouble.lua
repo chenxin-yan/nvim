@@ -10,32 +10,32 @@ return {
       {
         '<leader>xX',
         '<cmd>Trouble diagnostics toggle<cr>',
-        desc = 'Trouble: Workspace Diagnostics',
+        desc = 'Workspace Diagnostics',
       },
       {
         '<leader>xx',
         '<cmd>Trouble diagnostics toggle filter.buf=0<cr>',
-        desc = 'Trouble: Buffer Diagnostics',
+        desc = 'Buffer Diagnostics',
       },
       {
-        '<leader>cs',
-        '<cmd>Trouble symbols toggle focus=false win.size=40<cr>',
-        desc = 'Trouble: [S]ymbols',
+        '<leader>xf',
+        '<cmd>Trouble telescope_files toggle<cr>',
+        desc = 'Telescope files',
       },
       {
-        '<leader>cl',
-        '<cmd>Trouble lsp toggle focus=false win.position=right win.size=50<cr>',
-        desc = 'Trouble: [L]SP Definitions / references / ...',
+        '<leader>xg',
+        '<cmd>Trouble telescope toggle<cr>',
+        desc = 'Telescope grep',
       },
       {
         '<leader>xl',
         '<cmd>Trouble loclist toggle<cr>',
-        desc = 'Trouble: Location List',
+        desc = 'Location List',
       },
       {
         '<leader>xq',
         '<cmd>Trouble qflist toggle<cr>',
-        desc = 'Trouble: Quickfix List',
+        desc = 'Quickfix List',
       },
       {
         '[q',

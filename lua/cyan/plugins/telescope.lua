@@ -79,6 +79,7 @@ return { -- Fuzzy Finder (files, lsp, etc)
     -- [[ Configure Telescope ]]
     -- See `:help telescope` and `:help telescope.setup()`
     local actions = require 'telescope.actions'
+
     -- flash.nvim integration
     local function flash(prompt_bufnr)
       require('flash').jump {
@@ -98,6 +99,10 @@ return { -- Fuzzy Finder (files, lsp, etc)
         end,
       }
     end
+
+    -- trouble.nvim integration
+    local open_with_trouble = require('trouble.sources.telescope').open
+
     require('telescope').setup {
       -- You can put your default mappings / updates / etc. in here
       --  All the info you're looking for is in `:help telescope.setup()`
@@ -110,6 +115,8 @@ return { -- Fuzzy Finder (files, lsp, etc)
             ['<C-p>'] = actions.cycle_history_prev,
             -- flash.nvim integration
             ['<c-f>'] = flash,
+            -- trouble.nvim integration
+            ['<c-t>'] = open_with_trouble,
           },
         },
       },
