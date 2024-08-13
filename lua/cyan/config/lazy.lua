@@ -60,7 +60,6 @@ require('lazy').setup({
     end,
   }, -- Detect tabstop and shiftwidth automatically
 
-  require 'cyan.plugins.fugitive', -- nvim git wraper
   require 'cyan.plugins.todo-comments', -- Highlight todo, notes, etc in comment; todo tree
   require 'cyan.plugins.which-key', -- keybinding hint
   require 'cyan.plugins.telescope', -- fuzzy search
