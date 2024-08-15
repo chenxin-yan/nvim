@@ -8,9 +8,6 @@ return {
     'nvim-lua/plenary.nvim',
     'nvim-tree/nvim-web-devicons', -- not strictly required, but recommended
     'MunifTanjim/nui.nvim',
-
-    -- show diagnostics in neotree
-    'mrbjarksen/neo-tree-diagnostics.nvim',
   },
   cmd = 'Neotree',
   keys = {

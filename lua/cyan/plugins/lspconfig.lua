@@ -133,19 +133,6 @@ return {
 
   -- == LSP Plugins==
 
-  -- code refactoring when rename using neotree
-  {
-    'antosha417/nvim-lsp-file-operations',
-    event = 'LspAttach',
-    dependencies = {
-      'nvim-lua/plenary.nvim',
-      'nvim-neo-tree/neo-tree.nvim',
-    },
-    config = function()
-      require('lsp-file-operations').setup()
-    end,
-  },
-
   -- `lazydev` configures Lua LSP for your Neovim config, runtime and plugins
   -- used for completion, annotations and signatures of Neovim apis
   {
@@ -313,7 +300,6 @@ return {
       --  So, we create new capabilities with nvim cmp, and then broadcast that to the servers.
       local capabilities = vim.lsp.protocol.make_client_capabilities()
       capabilities = vim.tbl_deep_extend('force', capabilities, require('cmp_nvim_lsp').default_capabilities())
-      capabilities = vim.tbl_deep_extend('force', capabilities, require('lsp-file-operations').default_capabilities())
 
       -- setup folding capabilities if lsp is used as provider for nvim-ufo folding
       -- capabilities.textDocument.foldingRange = {

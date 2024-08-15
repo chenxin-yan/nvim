@@ -17,12 +17,6 @@ return {
             text = 'Workspace',
             text_align = 'center',
           },
-          {
-            filetype = 'undotree',
-            text = 'Undo Tree',
-            text_align = 'center',
-            separator = true,
-          },
         },
       },
 
