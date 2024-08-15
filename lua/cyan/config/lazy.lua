@@ -37,7 +37,6 @@ require('lazy').setup({
           noice = true,
           neotree = true,
           which_key = true,
-          ufo = true,
           grug_far = true,
         },
       }
@@ -76,6 +75,8 @@ require('lazy').setup({
   require 'cyan.plugins.flash', -- eazy motion alternative
   require 'cyan.plugins.gx', -- better gx
   require 'cyan.plugins.neo-tree', -- better gx
+  require 'cyan.plugins.oil', -- better file operations
+  require 'cyan.plugins.trouble', -- better diagnostic list
 
   -- ---- UI ----
   {
@@ -93,7 +94,6 @@ require('lazy').setup({
   require 'cyan.plugins.bufferline', -- bufferline
   require 'cyan.plugins.noice', -- UI improvement
   require 'cyan.plugins.twilight', -- Zen mode
-  require 'cyan.plugins.trouble', -- better quickfix list & symbol outline
 
   -- ---- language specific ----
   require 'cyan.plugins.refactoring', -- code refactoring

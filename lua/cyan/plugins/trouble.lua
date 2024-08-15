@@ -1,10 +1,7 @@
 return {
   {
     'folke/trouble.nvim',
-    opts = {
-      modes = { lsp_document_symbols = { format = '{kind_icon} {symbol.name}' } },
-    },
-    lazy = true,
+    opts = true,
     cmd = 'Trouble',
     keys = {
       {
@@ -15,17 +12,7 @@ return {
       {
         '<leader>xx',
         '<cmd>Trouble diagnostics toggle filter.buf=0<cr>',
-        desc = 'Buffer Diagnostics',
-      },
-      {
-        '<leader>xf',
-        '<cmd>Trouble telescope_files toggle<cr>',
-        desc = 'Telescope files',
-      },
-      {
-        '<leader>xg',
-        '<cmd>Trouble telescope toggle<cr>',
-        desc = 'Telescope grep',
+        desc = 'Document Diagnostics',
       },
       {
         '<leader>xl',
