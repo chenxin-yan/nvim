@@ -34,6 +34,9 @@ return { -- Fuzzy Finder (files, lsp, etc)
 
     -- search noice message
     { '<leader>sm', '<cmd>Telescope noice<cr>', desc = '[M]essages' },
+
+    --telescope undo tree
+    { '<leader>su', '<cmd>Telescope undo<cr>', desc = '[U]ndo tree' },
   },
   dependencies = {
     'nvim-lua/plenary.nvim',
@@ -55,6 +58,9 @@ return { -- Fuzzy Finder (files, lsp, etc)
 
     -- Useful for getting pretty icons, but requires a Nerd Font.
     { 'nvim-tree/nvim-web-devicons', enabled = vim.g.have_nerd_font },
+
+    -- Telescope undotree
+    'debugloop/telescope-undo.nvim',
   },
   config = function()
     -- Telescope is a fuzzy finder that comes with a lot of different things that
@@ -125,6 +131,7 @@ return { -- Fuzzy Finder (files, lsp, etc)
         ['ui-select'] = {
           require('telescope.themes').get_dropdown(),
         },
+        undo = {},
       },
     }
 
@@ -132,5 +139,6 @@ return { -- Fuzzy Finder (files, lsp, etc)
     pcall(require('telescope').load_extension, 'noice')
     pcall(require('telescope').load_extension, 'fzf')
     pcall(require('telescope').load_extension, 'ui-select')
+    pcall(require('telescope').load_extension, 'undo')
   end,
 }

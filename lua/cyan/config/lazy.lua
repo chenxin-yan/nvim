@@ -116,7 +116,6 @@ require('lazy').setup({
   require 'cyan.plugins.lazygit', -- git CLI
   require 'cyan.plugins.gitignore', -- generate gitignore files
   require 'cyan.plugins.neogen', -- generate annotations/documentations
-  require 'cyan.plugins.undotree', -- undo history management
   require 'cyan.plugins.grug-far', -- grep and replace
   require 'cyan.plugins.yazi', -- yazi file explorer
 }, {
