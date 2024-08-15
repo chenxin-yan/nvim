@@ -3,6 +3,7 @@
 return {
   'nvim-neo-tree/neo-tree.nvim',
   branch = 'v3.x',
+  event = { 'VimEnter */*,.*', 'BufNew */*,.*' },
   dependencies = {
     'nvim-lua/plenary.nvim',
     'nvim-tree/nvim-web-devicons', -- not strictly required, but recommended
@@ -15,7 +16,7 @@ return {
   opts = {
     close_if_last_window = true,
     filesystem = {
-      hijack_netrw_behavior = 'disabled',
+      hijack_netrw_behavior = 'open_current',
       window = {
         mappings = {
           ['\\'] = 'close_window',
@@ -23,6 +24,7 @@ return {
       },
     },
     event_handlers = {
+      -- account for buffers on the side
       {
         event = 'neo_tree_buffer_enter',
         handler = function()

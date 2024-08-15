@@ -77,3 +77,7 @@ vim.keymap.set('n', '<leader>gp', ':!git push', { desc = '[G]it [P]ush' })
 vim.keymap.set('n', '<leader>gP', ':!git push --force', { desc = '[G]it [P]ush force' })
 vim.keymap.set('n', '<leader>gu', ':!git reset HEAD *', { desc = '[G]it [U]nstage files' })
 vim.keymap.set('n', '<leader>gr', ':!git reset --hard HEAD *', { desc = '[G]it Hard [R]eset to last commit' })
+
+-- quickfix list operations
+vim.keymap.set('n', ']q', '<cmd>cnext<cr>', { desc = 'Next Quickfix item' })
+vim.keymap.set('n', '[q', '<cmd>cprev<cr>', { desc = 'Next Quickfix item' })

@@ -1,7 +1,6 @@
 ---@type LazySpec
 return {
   'mikavilpas/yazi.nvim',
-  event = 'VeryLazy',
   keys = {
     {
       '-',
@@ -18,7 +17,7 @@ return {
   ---@type YaziConfig
   opts = {
     -- if you want to open yazi instead of netrw, see below for more info
-    open_for_directories = true,
+    open_for_directories = false,
 
     -- enable these if you are using the latest version of yazi
     -- use_ya_for_events_reading = true,

@@ -30,6 +30,7 @@ else
           prev_footnote = '[f',
         },
         organize_on_save = false,
+        organize_on_new = false,
       }
     end,
   }
