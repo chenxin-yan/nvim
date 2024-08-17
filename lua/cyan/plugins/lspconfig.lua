@@ -106,7 +106,6 @@ vim.list_extend(ensure_installed, {
   -- Linters
   'markdownlint-cli2', --linter & formatter for markdown
   -- debugger
-  'js-debug-adapter', -- JS/TS
   'java-debug-adapter', -- java
   -- Testing
   'java-test',

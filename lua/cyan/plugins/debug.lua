@@ -16,27 +16,6 @@ return {
 
     -- Add your own debuggers here
     -- 'leoluz/nvim-dap-go',
-
-    -- ==  JS/TS debugger ==
-    {
-      'microsoft/vscode-js-debug',
-      opt = true,
-      build = 'npm install --legacy-peer-deps && npx gulp vsDebugServerBundle && mv dist out',
-    },
-    {
-      'mxsdev/nvim-dap-vscode-js',
-      config = function()
-        require('dap-vscode-js').setup {
-          debugger_path = vim.fn.resolve(vim.fn.expand '~' .. '/.local/share/nvim/lazy/vscode-js-debug'),
-          adapters = {
-            'chrome',
-            'pwa-node',
-            'pwa-chrome',
-            'pwa-extensionHost',
-          },
-        }
-      end,
-    },
   },
   lazy = true,
   keys = {
@@ -80,7 +59,6 @@ return {
       ensure_installed = {
         -- Update this to ensure that you have the debuggers for the langs you want
         -- 'delve',
-        'js-debug-adapter',
       },
     }
 
@@ -132,47 +110,6 @@ return {
     --     detached = vim.fn.has 'win32' == 0,
     --   },
     -- }
-
-    -- == JS/TS: setup adapter for JavaScript/typescript ==
-    for _, language in ipairs { 'typescript', 'javascript', 'typescriptreact', 'javascriptreact', 'vue' } do
-      dap.configurations[language] = {
-        {
-          {
-            type = 'pwa-node',
-            request = 'launch',
-            name = 'Launch file',
-            program = '${file}',
-            cwd = vim.fn.getcwd(),
-          },
-          {
-            type = 'pwa-node',
-            request = 'attach',
-            name = 'Attach',
-            processId = require('dap.utils').pick_process,
-            cwd = vim.fn.getcwd(),
-          },
-          {
-            type = 'pwa-chrome',
-            request = 'launch',
-            name = 'Start Chrome with "localhost"',
-            url = function()
-              local co = coroutine.running()
-              return coroutine.create(function()
-                vim.ui.input({ prompt = 'Enter URL: ', default = 'Http://localhost:3000' }, function(url)
-                  if url == nil or url == '' then
-                    return
-                  else
-                    coroutine.resume(co, url)
-                  end
-                end)
-              end)
-            end,
-            webRoot = vim.fn.getcwd(),
-            userDataDir = false,
-          },
-        },
-      }
-    end
 
     -- == JAVA ==
     dap.configurations.java = {

@@ -52,7 +52,7 @@ nvim
 | --------------------- | ----------- | ------------------------- | --------------- | ------------------ | ------------ |
 | lua                   | ✅ luals    | ✅ stylua                 | ❌              | ❌                 | ❌           |
 | Java                  | ✅ jdtls    | ✅ jdtls                  | ✅ jdtls        | ✅ jdtls           | ✅ java-test |
-| JavaScript/TypeScript | ✅ vtsls    | ✅ Prettier               | ✅ Eslint       | ✅ vscode-js-debug | ⏳           |
+| JavaScript/TypeScript | ✅ vtsls    | ✅ Prettier               | ✅ Eslint       | ✅ vscode-js-debug | ❌           |
 | Golang                | ⏳          | ⏳                        | ⏳              | ⏳                 | ⏳           |
 | Markdown              | ✅ marksman | ✅ Prettier, markdownlint | ✅ markdownlint | ❌                 | ❌           |
 | html                  | ✅ html     | ✅ Prettier               | ❌              | ❌                 | ❌           |

@@ -26,7 +26,6 @@ return {
       presets = {
         windows = false,
         nav = false,
-        g = false,
       },
     },
     icons = {
