@@ -71,6 +71,18 @@ require('lazy').setup({
   -- line preview when search line number
   { 'nacro90/numb.nvim', event = 'CmdlineEnter', config = true },
 
+  -- buffer increment
+  {
+    'nat-418/boole.nvim',
+    event = { 'BufReadPre', 'BufNewFile' },
+    opts = {
+      mappings = {
+        increment = '<C-a>',
+        decrement = '<C-x>',
+      },
+    },
+  },
+
   require 'cyan.plugins.todo-comments', -- Highlight todo, notes, etc in comment; todo tree
   require 'cyan.plugins.which-key', -- keybinding hint
   require 'cyan.plugins.telescope', -- fuzzy search
