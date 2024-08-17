@@ -71,11 +71,9 @@ return { -- Collection of various small independent plugins/modules
     -- move code line/block horizontally or vertically
     require('mini.move').setup {
       mappings = {
-        -- Move visual selection in Visual mode. Defaults are Alt (Meta) + hjkl.
         down = '<M-n>',
         up = '<M-p>',
 
-        -- Move current line in Normal mode
         line_down = '<M-n>',
         line_up = '<M-p>',
       },
