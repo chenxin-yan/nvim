@@ -78,3 +78,6 @@ vim.keymap.set('n', '<leader>gp', ':!git push', { desc = '[G]it [P]ush' })
 vim.keymap.set('n', '<leader>gP', ':!git push --force', { desc = '[G]it [P]ush force' })
 vim.keymap.set('n', '<leader>gu', ':!git reset HEAD *', { desc = '[G]it [U]nstage files' })
 vim.keymap.set('n', '<leader>gr', ':!git reset --hard HEAD *', { desc = '[G]it Hard [R]eset to last commit' })
+
+-- vim command shortcuts
+vim.keymap.set('n', '<C-q>', '<cmd>qa!<cr>', { desc = 'Quit All' })

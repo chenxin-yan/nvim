@@ -92,7 +92,6 @@ require('lazy').setup({
   require 'cyan.plugins.mini', -- misc tools
   require 'cyan.plugins.treesitter', -- syntax highlighting
   require 'cyan.plugins.debug', -- language debugger
-  require 'cyan.plugins.autopairs', -- autopair brackets
   require 'cyan.plugins.gitsigns', -- git support
   require 'cyan.plugins.lint', -- linter
   require 'cyan.plugins.auto-session', -- nvim session manager
@@ -101,6 +100,7 @@ require('lazy').setup({
   require 'cyan.plugins.neo-tree', -- better gx
   require 'cyan.plugins.oil', -- better file operations
   require 'cyan.plugins.trouble', -- better diagnostic list
+  require 'cyan.plugins.autolist', -- better list
 
   -- ---- UI ----
   {
@@ -126,7 +126,6 @@ require('lazy').setup({
   require 'cyan.plugins.live-server', -- node live server
 
   -- markdown
-  require 'cyan.plugins.autolist', -- markdown better list
   require 'cyan.plugins.markdowny', -- markdown shortcut support
   require 'cyan.plugins.markdown-preview', -- markdown preview in browser
   require 'cyan.plugins.markdown', -- better markdown render
