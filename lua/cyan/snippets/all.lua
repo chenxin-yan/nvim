@@ -8,4 +8,14 @@ local fmt = require('luasnip.extras.fmt').fmt
 local extras = require 'luasnip.extras'
 local rep = extras.rep
 
-return {}
+return {
+  -- snippets for emails
+  s('hi', {
+    t 'Hi ',
+    i(1, '[Name]'),
+    t { ',', '', '' },
+    i(0),
+    t { '', '', 'Sincerely,' },
+    t { '', 'Chenxin (Cyan) Yan' },
+  }),
+}

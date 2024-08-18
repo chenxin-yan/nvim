@@ -117,7 +117,6 @@ require('lazy').setup({
   require 'cyan.plugins.indent-line', -- indentation guide
   require 'cyan.plugins.bufferline', -- bufferline
   require 'cyan.plugins.noice', -- UI improvement
-  require 'cyan.plugins.twilight', -- Zen mode
 
   -- ---- language specific ----
   require 'cyan.plugins.refactoring', -- code refactoring
@@ -133,6 +132,7 @@ require('lazy').setup({
   require 'cyan.plugins.markdown', -- better markdown render
   require 'cyan.plugins.footnote', -- better footnote
   require 'cyan.plugins.obsidian', -- obsidian integration
+  require 'cyan.plugins.zen', -- Zen mode
 
   -- ---- extras ----
   require 'cyan.plugins.leetcode', -- Leetcode integration

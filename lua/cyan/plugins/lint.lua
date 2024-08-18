@@ -58,6 +58,14 @@ return {
           require('lint').try_lint()
         end,
       })
+
+      -- == config markdownlint ==
+      local markdownlint = require('lint').linters['markdownlint-cli2']
+      markdownlint.args = {
+        '-r',
+        '~MD013',
+        '~MD007',
+      }
     end,
   },
 }

@@ -56,7 +56,8 @@ vim.keymap.set({ 'n', 'x' }, 'H', '^')
 vim.keymap.set({ 'n', 'x' }, 'L', '$')
 
 -- select all keymap
-vim.keymap.set({ 'n', 'x' }, '<leader><C-a>', 'gg<s-v>G', { desc = 'Select all' })
+vim.keymap.set('n', '<leader><C-a>', 'gg<s-v>G', { desc = 'Select all' })
+vim.keymap.set('n', '<leader>A', 'gg<s-v>G"+y', { desc = 'Select all and yank into system clipboard' })
 
 -- coment above & below
 vim.keymap.set('n', 'gco', 'o<esc>Vcx<esc><cmd>normal gcc<cr>fxa<bs>', { desc = 'Add Comment Below' })
