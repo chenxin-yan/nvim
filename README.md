@@ -34,7 +34,7 @@ A minimal Catppuccin neovim config built from [kickstart.nvim](https://github.co
 
 ## Installation
 
-make sure to **backup your current config** before installation
+Make sure to **backup your current config** before installation
 
 ```bash
 git clone https://github.com/chenxin-yan/nvim.git "${XDG_CONFIG_HOME:-$HOME/.config}"/nvim

@@ -15,7 +15,7 @@ return {
     { '<c-\\>', '<cmd>NavigatorPrevious<cr>' },
   },
   opts = {
-    auto_save = 'all',
+    auto_save = false,
     disable_on_zoom = true,
   },
 }

@@ -140,6 +140,7 @@ require('lazy').setup({
   require 'cyan.plugins.gitignore', -- generate gitignore files
   require 'cyan.plugins.neogen', -- generate annotations/documentations
   require 'cyan.plugins.grug-far', -- grep and replace
+  require 'cyan.plugins.im-select', -- automatic input method switcher
 }, {
   ui = {
     -- If you are using a Nerd Font: set icons to an empty table which will use the
