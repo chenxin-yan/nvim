@@ -60,11 +60,12 @@ return {
       })
 
       -- == config markdownlint ==
+      -- WARN: change to the path to markdownlint config file
+      local markdownlintrc = vim.fn.expand '~' .. '/.markdownlint.jsonc'
       local markdownlint = require('lint').linters['markdownlint-cli2']
       markdownlint.args = {
-        '-r',
-        '~MD013',
-        '~MD007',
+        '--config',
+        markdownlintrc,
       }
     end,
   },
