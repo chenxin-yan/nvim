@@ -102,7 +102,6 @@ vim.list_extend(ensure_installed, {
   -- Formatters
   'stylua', -- formatter for lua
   'prettier', -- formatter for javascript
-  'markdown-toc', -- formmater for markdown toc
   -- Linters
   'markdownlint-cli2', --linter & formatter for markdown
   -- debugger

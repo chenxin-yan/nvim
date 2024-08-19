@@ -13,18 +13,7 @@ return { -- Autoformat
     },
   },
   opts = {
-    formatters = {
-      -- lazyload markdown-toc
-      ['markdown-toc'] = {
-        condition = function(_, ctx)
-          for _, line in ipairs(vim.api.nvim_buf_get_lines(ctx.buf, 0, -1, false)) do
-            if line:find '<!%-%- toc %-%->' then
-              return true
-            end
-          end
-        end,
-      },
-    },
+    formatters = {},
     notify_on_error = false,
     format_on_save = function(bufnr)
       -- Disable "format_on_save lsp_fallback" for languages that don't
@@ -45,7 +34,7 @@ return { -- Autoformat
       css = { 'prettier' },
       html = { 'prettier' },
       json = { 'prettier' },
-      markdown = { 'prettier', 'markdownlint-cli2', 'markdown-toc' },
+      markdown = { 'prettier', 'markdownlint-cli2' },
     },
   },
 }

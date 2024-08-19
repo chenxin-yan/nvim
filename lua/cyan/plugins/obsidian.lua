@@ -45,13 +45,6 @@ return {
           end,
           opts = { noremap = false, expr = true, buffer = true },
         },
-        -- Toggle check-boxes.
-        ['<leader>oc'] = {
-          action = function()
-            return require('obsidian').util.toggle_checkbox()
-          end,
-          opts = { desc = 'Toggle [C]heckbox', buffer = true },
-        },
         -- Smart action depending on context, either follow link or toggle checkbox.
         -- ['<cr>'] = {
         --   action = function()

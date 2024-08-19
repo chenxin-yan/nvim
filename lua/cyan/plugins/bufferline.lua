@@ -29,11 +29,11 @@ return {
     end
     buffer_map(']b', '<cmd>BufferLineCycleNext<cr>', 'Goto next buffer')
     buffer_map('[b', '<cmd>BufferLineCyclePrev<cr>', 'Goto previous buffer')
-    buffer_map(']B', '<cmd>BufferLineMoveNext<cr>', 'Goto next buffer')
-    buffer_map('[B', '<cmd>BufferLineMovePrev<cr>', 'Goto previous buffer')
+    buffer_map(']B', '<cmd>BufferLineMoveNext<cr>', 'Move buffer to next buffer')
+    buffer_map('[B', '<cmd>BufferLineMovePrev<cr>', 'Move buffer to previous buffer')
 
     buffer_map('<leader>bD', '<cmd>BufferLineGroupClose ungrouped<cr>', '[D]elete Unpined buffers ')
-    buffer_map('<leader>bo', '<cmd>BufferLineCloseOthers<cr>', 'Delete [O]ther buffers')
+    buffer_map('<leader>bc', '<cmd>BufferLineCloseOthers<cr>', 'Close other buffers')
     buffer_map('<leader>bp', '<cmd>BufferLineTogglePin<cr>', '[P]in buffer')
 
     buffer_map('<leader><leader>', '<cmd>BufferLinePick<cr>', 'Buffer Pick')

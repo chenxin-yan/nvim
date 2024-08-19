@@ -1,19 +1,18 @@
 # Neovim Config
 
-<!-- toc -->
+<!--toc:start-->
 
 - [Dependencies](#dependencies)
 - [Installation](#installation)
 - [Feature](#feature)
 - [Language Support](#language-support)
-    * [Lua](#lua)
-    * [Java](#java)
-    * [JavaScript/TypeScript](#javascripttypescript)
-    * [Golang](#golang)
+  - [Lua](#lua)
+  - [Java](#java)
+  - [JavaScript/TypeScript](#javascripttypescript)
+  - [Golang](#golang)
 - [Keymaps](#keymaps)
 - [Roadmap](#roadmap)
-
-<!-- tocstop -->
+<!--toc:end-->
 
 A minimal Catppuccin neovim config built from [kickstart.nvim](https://github.com/nvim-lua/kickstart.nvim)
 

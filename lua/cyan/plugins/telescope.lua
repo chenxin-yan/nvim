@@ -37,6 +37,9 @@ return { -- Fuzzy Finder (files, lsp, etc)
 
     -- telescope undo tree
     { '<leader>su', '<cmd>Telescope undo<cr>', desc = '[U]ndo tree' },
+
+    -- telescope luasnip
+    { '<leader>sc', '<cmd>Telescope luasnip<cr>', desc = '[C]ompletion (Luasnip)' },
   },
   dependencies = {
     'nvim-lua/plenary.nvim',
@@ -61,6 +64,9 @@ return { -- Fuzzy Finder (files, lsp, etc)
 
     -- Telescope undotree
     'debugloop/telescope-undo.nvim',
+
+    -- Telescope luasnip integration
+    'benfowler/telescope-luasnip.nvim',
   },
   config = function()
     -- Telescope is a fuzzy finder that comes with a lot of different things that
@@ -135,5 +141,6 @@ return { -- Fuzzy Finder (files, lsp, etc)
     pcall(require('telescope').load_extension, 'fzf')
     pcall(require('telescope').load_extension, 'ui-select')
     pcall(require('telescope').load_extension, 'undo')
+    pcall(require('telescope').load_extension, 'luasnip')
   end,
 }

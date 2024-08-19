@@ -29,17 +29,20 @@ require('lazy').setup({
     init = function()
       vim.cmd.colorscheme 'catppuccin-mocha'
     end,
-
-    config = function()
-      local opts = {
-        integrations = {
-          fidget = true,
-          noice = true,
-          neotree = true,
-          which_key = true,
-          grug_far = true,
+    opts = {
+      integrations = {
+        fidget = true,
+        noice = true,
+        neotree = true,
+        which_key = true,
+        grug_far = true,
+        indent_blankline = {
+          enabled = true,
+          colored_indent_levels = false,
         },
-      }
+      },
+    },
+    config = function(_, opts)
       if not vim.g.neovide then
         require('catppuccin').setup { opts, transparent_background = vim.g.is_transparent }
       else
@@ -71,18 +74,6 @@ require('lazy').setup({
   -- line preview when search line number
   { 'nacro90/numb.nvim', event = 'CmdlineEnter', config = true },
 
-  -- buffer increment
-  {
-    'nat-418/boole.nvim',
-    event = { 'BufReadPre', 'BufNewFile' },
-    opts = {
-      mappings = {
-        increment = '<C-a>',
-        decrement = '<C-x>',
-      },
-    },
-  },
-
   require 'cyan.plugins.todo-comments', -- Highlight todo, notes, etc in comment; todo tree
   require 'cyan.plugins.which-key', -- keybinding hint
   require 'cyan.plugins.telescope', -- fuzzy search
@@ -100,7 +91,8 @@ require('lazy').setup({
   require 'cyan.plugins.neo-tree', -- better gx
   require 'cyan.plugins.oil', -- better file operations
   require 'cyan.plugins.trouble', -- better diagnostic list
-  require 'cyan.plugins.autolist', -- better list
+  require 'cyan.plugins.autolist', -- better bullet list
+  require 'cyan.plugins.autopairs', -- autopairs
 
   -- ---- UI ----
   {
