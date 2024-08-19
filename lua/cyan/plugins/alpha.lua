@@ -1,10 +1,10 @@
 return {
   'goolord/alpha-nvim',
   event = 'VimEnter',
-  enabled = true,
   init = false,
   opts = function()
     local dashboard = require 'alpha.themes.dashboard'
+    local version = vim.version()
     -- Define and set highlight groups for each logo line
     vim.api.nvim_set_hl(0, 'NeovimDashboardLogo1', { fg = '#b4befe' })
     vim.api.nvim_set_hl(0, 'NeovimDashboardLogo2', { fg = '#89b4fa' })
@@ -51,7 +51,7 @@ return {
       },
       {
         type = 'text',
-        val = ' ࣪⊹ You just face your fears and you become your heroes ⊹ ࣪',
+        val = ' ࣪⊹ ' .. os.date '  %d %B %a' .. ' • ' .. '  v' .. version.major .. '.' .. version.minor .. '.' .. version.patch .. ' ⊹ ࣪',
         opts = { hl = 'NeovimDashboardUsername', shrink_margin = false, position = 'center' },
       },
     }
