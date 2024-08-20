@@ -51,7 +51,7 @@ return {
       },
       {
         type = 'text',
-        val = ' ࣪⊹ ' .. os.date '  %d %B %a' .. ' • ' .. '  v' .. version.major .. '.' .. version.minor .. '.' .. version.patch .. ' ⊹ ࣪',
+        val = ' ࣪⊹ ' .. os.date '  %d %B' .. ' • ' .. '  v' .. version.major .. '.' .. version.minor .. '.' .. version.patch .. ' ⊹ ࣪',
         opts = { hl = 'NeovimDashboardUsername', shrink_margin = false, position = 'center' },
       },
     }

@@ -4,10 +4,7 @@ return {
     'markdown',
     'text',
   },
-  dependencies = {
-    -- autopairs has to be loaded before autolist to avoid conflict
-    'windwp/nvim-autopairs',
-  },
+  dependencies = { 'windwp/nvim-autopairs' },
   config = function()
     require('autolist').setup()
     -- vim.keymap.set('i', '<tab>', '<cmd>AutolistTab<cr>')
@@ -15,6 +12,6 @@ return {
     vim.keymap.set('i', '<CR>', '<CR><cmd>AutolistNewBullet<cr>')
     vim.keymap.set('n', 'o', 'o<cmd>AutolistNewBullet<cr>')
     vim.keymap.set('n', 'O', 'O<cmd>AutolistNewBulletBefore<cr>')
-    vim.keymap.set('n', '<CR>', '<cmd>AutolistToggleCheckbox<cr>')
+    vim.keymap.set('n', '<CR>', '<cmd>AutolistToggleCheckbox<cr><CR>')
   end,
 }
