@@ -5,6 +5,10 @@ return {
   'folke/noice.nvim',
   event = 'VeryLazy',
   version = '4.4.7',
+  keys = {
+    -- search notify message
+    { '<leader>sm', '<cmd>Telescope notify<cr>', desc = '[M]essages' },
+  },
   opts = {
     lsp = {
       progress = {
@@ -25,26 +29,50 @@ return {
       inc_rename = true, -- enables an input dialog for inc-rename.nvim
       lsp_doc_border = true, -- add a border to hover docs and signature help
     },
-    views = {
-      mini = {
-        align = 'message-left',
-        position = {
-          col = 0,
+    routes = {
+      {
+        filter = {
+          event = 'msg_show',
+          any = {
+            { find = '%d+L, %d+B' },
+            { find = '; after #%d+' },
+            { find = '; before #%d+' },
+            { find = '%d fewer lines' },
+            { find = '%d more lines' },
+          },
         },
-        win_options = {
-          winblend = 0,
-        },
+        opts = { skip = true },
       },
     },
   },
   dependencies = {
     -- if you lazy-load any plugin below, make sure to add proper `module="..."` entries
     'MunifTanjim/nui.nvim',
-    -- {
-    --   'rcarriga/nvim-notify',
-    --   opts = {
-    --     background_colour = '#000000',
-    --   },
-    -- },
+    {
+      'rcarriga/nvim-notify',
+      keys = {
+        {
+          '<leader>U',
+          function()
+            require('notify').dismiss { silent = true, pending = true }
+          end,
+          desc = 'Dismiss All Notifications',
+        },
+      },
+      opts = {
+        background_colour = '#000000',
+        stages = 'static',
+        timeout = 3000,
+        max_height = function()
+          return math.floor(vim.o.lines * 0.75)
+        end,
+        max_width = function()
+          return math.floor(vim.o.columns * 0.75)
+        end,
+        on_open = function(win)
+          vim.api.nvim_win_set_config(win, { zindex = 100 })
+        end,
+      },
+    },
   },
 }

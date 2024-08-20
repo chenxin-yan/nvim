@@ -34,21 +34,23 @@ require('lazy').setup({
         fidget = true,
         noice = true,
         neotree = true,
-        which_key = true,
         grug_far = true,
+        notify = true,
+        lsp_trouble = true,
         indent_blankline = {
           enabled = true,
+          scope_color = 'lavender',
           colored_indent_levels = false,
         },
       },
     },
     config = function(_, opts)
       if not vim.g.neovide then
-        require('catppuccin').setup { opts, transparent_background = vim.g.is_transparent }
-      else
-        require('catppuccin').setup { opts }
+        opts = vim.tbl_deep_extend('force', opts, {
+          transparent_background = true,
+        })
       end
-      vim.api.nvim_set_hl(0, 'IblScope2', { fg = '#b4befe' })
+      require('catppuccin').setup(opts)
     end,
   },
 

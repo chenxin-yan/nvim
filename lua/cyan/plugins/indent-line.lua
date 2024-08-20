@@ -5,9 +5,18 @@ return {
   ---@module "ibl"
   ---@type ibl.config
   opts = {
-    indent = { char = '▏' },
-    scope = {
-      highlight = 'IblScope2',
+    indent = { char = '▏', tab_char = '▏' },
+    exclude = {
+      filetypes = {
+        'help',
+        'alpha',
+        'neo-tree',
+        'Trouble',
+        'trouble',
+        'lazy',
+        'mason',
+        'notify',
+      },
     },
   },
 }

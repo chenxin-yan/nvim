@@ -32,9 +32,6 @@ return { -- Fuzzy Finder (files, lsp, etc)
     -- Shortcut for searching spelling suggestions
     { 'Z', '<cmd>Telescope spell_suggest theme=cursor<cr>', desc = ' Spelling Suggestions' },
 
-    -- search noice message
-    { '<leader>sm', '<cmd>Telescope noice<cr>', desc = '[M]essages' },
-
     -- telescope undo tree
     { '<leader>su', '<cmd>Telescope undo<cr>', desc = '[U]ndo tree' },
 
