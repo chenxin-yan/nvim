@@ -81,3 +81,6 @@ vim.keymap.set('n', '<leader>gr', ':!git reset --hard HEAD *', { desc = '[G]it H
 
 -- vim command shortcuts
 vim.keymap.set('n', '<C-q>', '<cmd>qa!<cr>', { desc = 'Quit All' })
+
+-- delete all buffers
+vim.keymap.set('n', '<leader>bD', '<cmd>%bd<cr>', { desc = 'Delete all buffers' })

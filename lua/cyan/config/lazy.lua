@@ -37,6 +37,7 @@ require('lazy').setup({
         grug_far = true,
         notify = true,
         lsp_trouble = true,
+        which_key = true,
         indent_blankline = {
           enabled = true,
           scope_color = 'lavender',
@@ -96,6 +97,7 @@ require('lazy').setup({
   require 'cyan.plugins.trouble', -- better diagnostic list
   require 'cyan.plugins.autolist', -- better bullet list
   require 'cyan.plugins.autopairs', -- autopairs
+  require 'cyan.plugins.harpoon', -- file switcher
 
   -- ---- UI ----
   {
@@ -110,7 +112,6 @@ require('lazy').setup({
   require 'cyan.plugins.alpha', -- neovim dashboard
   require 'cyan.plugins.feline', -- status line
   require 'cyan.plugins.indent-line', -- indentation guide
-  require 'cyan.plugins.bufferline', -- bufferline
   require 'cyan.plugins.noice', -- UI improvement
 
   -- ---- language specific ----
