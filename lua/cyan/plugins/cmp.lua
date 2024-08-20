@@ -32,12 +32,12 @@ return { -- Autocompletion
 
         local ls = require 'luasnip'
         -- set keybinds for select choice node in luasnip
-        vim.keymap.set({ 'i', 'x' }, '<C-n>', function()
+        vim.keymap.set({ 'i', 'v' }, '<C-n>', function()
           if ls.choice_active() then
             ls.change_choice(1)
           end
         end, { desc = '[N]ext choice' })
-        vim.keymap.set({ 'i', 'x' }, '<C-p>', function()
+        vim.keymap.set({ 'i', 'v' }, '<C-p>', function()
           if ls.choice_active() then
             ls.change_choice(-1)
           end
