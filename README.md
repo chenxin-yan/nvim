@@ -1,4 +1,4 @@
-# Neovim Config
+# Neovim config
 
 <!--toc:start-->
 
@@ -45,7 +45,7 @@ nvim
 - [Neovide](https://github.com/neovide/neovide) support
 - Obsidian support
 
-## Language Support
+## Language support
 
 | Language              | Lsp         | Formatter                 | Linter          | Debugger           | Testing      |
 | --------------------- | ----------- | ------------------------- | --------------- | ------------------ | ------------ |

@@ -88,12 +88,18 @@ local servers = {
   },
   jdtls = {}, -- java lsp
   taplo = {}, -- toml lsp
-  eslint = {
+  eslint = { -- linter for javascript
     settings = {
       -- helps eslint find the eslintrc when it's placed in a subfolder instead of the cwd root
       workingDirectories = { mode = 'auto' },
     },
-  }, --linter for javascript
+  },
+  vale_ls = { -- prose linter lsp
+    -- NOTE: need to sync vale packages with `vale sync` command or enable syncOnStartup
+    -- init_options = {
+    --   syncOnStartup = true,
+    -- },
+  },
 }
 -- You can add other tools here that you want Mason to install
 -- for you, so that they are available from within Neovim.
@@ -103,7 +109,8 @@ vim.list_extend(ensure_installed, {
   'stylua', -- formatter for lua
   'prettier', -- formatter for javascript
   -- Linters
-  'markdownlint-cli2', --linter & formatter for markdown
+  'markdownlint-cli2', -- linter & formatter for markdown
+  'vale', -- linter
   -- debugger
   'java-debug-adapter', -- java
   -- Testing
