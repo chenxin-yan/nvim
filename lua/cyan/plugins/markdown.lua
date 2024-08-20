@@ -1,3 +1,6 @@
+if vim.g.vscode then
+  return {}
+end
 return {
   'MeanderingProgrammer/markdown.nvim',
   dependencies = { 'nvim-treesitter/nvim-treesitter', 'echasnovski/mini.nvim' },
