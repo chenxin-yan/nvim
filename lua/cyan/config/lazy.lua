@@ -48,6 +48,7 @@ require('lazy').setup({
       else
         require('catppuccin').setup { opts }
       end
+      vim.api.nvim_set_hl(0, 'IblScope2', { fg = '#b4befe' })
     end,
   },
 
@@ -115,7 +116,6 @@ require('lazy').setup({
 
   -- TS/JS
   require 'cyan.plugins.ts-autotag', -- auto close/rename tags
-  require 'cyan.plugins.live-server', -- node live server
 
   -- markdown
   require 'cyan.plugins.markdowny', -- markdown shortcut support
@@ -129,7 +129,6 @@ require('lazy').setup({
   require 'cyan.plugins.leetcode', -- Leetcode integration
   require 'cyan.plugins.vim-tmux-navigator', -- tmux window navigation integration
   require 'cyan.plugins.lazygit', -- git CLI
-  require 'cyan.plugins.gitignore', -- generate gitignore files
   require 'cyan.plugins.neogen', -- generate annotations/documentations
   require 'cyan.plugins.grug-far', -- grep and replace
   require 'cyan.plugins.im-select', -- automatic input method switcher

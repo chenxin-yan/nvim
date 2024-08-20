@@ -6,5 +6,8 @@ return {
   ---@type ibl.config
   opts = {
     indent = { char = '▏' },
+    scope = {
+      highlight = 'IblScope2',
+    },
   },
 }
