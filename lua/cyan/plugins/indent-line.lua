@@ -10,7 +10,6 @@ return {
       filetypes = {
         'help',
         'alpha',
-        'neo-tree',
         'Trouble',
         'trouble',
         'lazy',

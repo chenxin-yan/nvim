@@ -84,4 +84,4 @@ vim.keymap.set('n', '<leader>gs', ':!git reset --hard HEAD *', { desc = 'Hard [R
 vim.keymap.set('n', '<C-q>', '<cmd>qa!<cr>', { desc = 'Quit All' })
 
 -- delete all buffers
-vim.keymap.set('n', '<leader>bD', '<cmd>%bd<cr>', { desc = 'Delete all buffers' })
+vim.keymap.set('n', '<leader>bD', '<cmd>%bd<cr>', { desc = '[B]uffer [D]elete all buffers' })

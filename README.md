@@ -5,14 +5,14 @@
 - [Dependencies](#dependencies)
 - [Installation](#installation)
 - [Feature](#feature)
-- [Language Support](#language-support)
+- [Language support](#language-support)
     - [Lua](#lua)
     - [Java](#java)
     - [JavaScript/TypeScript](#javascripttypescript)
     - [Golang](#golang)
 - [Keymaps](#keymaps)
 - [Roadmap](#roadmap)
-<!--toc:end-->
+  <!--toc:end-->
 
 A minimal Catppuccin neovim config built from [kickstart.nvim](https://github.com/nvim-lua/kickstart.nvim)
 

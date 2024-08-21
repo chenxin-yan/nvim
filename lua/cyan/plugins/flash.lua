@@ -12,9 +12,6 @@ return {
         enabled = false,
       },
     },
-    jump = {
-      autojump = true,
-    },
   },
   keys = {
     {
@@ -32,6 +29,14 @@ return {
         require('flash').treesitter()
       end,
       desc = 'Flash Treesitter',
+    },
+    {
+      '<C-/>',
+      mode = { 'c' },
+      function()
+        require('flash').toggle()
+      end,
+      desc = '[T]oggle Flash [S]earch',
     },
   },
 }
