@@ -37,6 +37,9 @@ return { -- Fuzzy Finder (files, lsp, etc)
 
     -- telescope luasnip
     { '<leader>sc', '<cmd>Telescope luasnip<cr>', desc = '[C]ompletion (Luasnip)' },
+
+    -- telescope search unstaged files
+    { '<leader>gl', '<cmd>Telescope git_status<cr>', desc = '[L]ist status' },
   },
   dependencies = {
     'nvim-lua/plenary.nvim',

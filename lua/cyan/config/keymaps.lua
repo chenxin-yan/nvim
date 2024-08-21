@@ -71,13 +71,14 @@ vim.keymap.set('n', 'g;', 'm`A;<Esc>``', { desc = 'Add ";" at the end of the lin
 vim.keymap.set('n', '<S-Tab>', '<cmd>b#<cr>', { desc = 'Goto previously opened buffer' })
 
 -- git operations
-vim.keymap.set('n', '<leader>ga', ':!git add *', { desc = '[G]it [A]dd' })
-vim.keymap.set('n', '<leader>gc', ':!git commit -m ""<left>', { desc = '[G]it commit' })
-vim.keymap.set('n', '<leader>gA', ':!git commit --amend --no-edit', { desc = '[G]it [A]mend' })
-vim.keymap.set('n', '<leader>gp', ':!git push', { desc = '[G]it [P]ush' })
-vim.keymap.set('n', '<leader>gP', ':!git push --force', { desc = '[G]it [P]ush force' })
-vim.keymap.set('n', '<leader>gu', ':!git reset HEAD *', { desc = '[G]it [U]nstage files' })
-vim.keymap.set('n', '<leader>gr', ':!git reset --hard HEAD *', { desc = '[G]it Hard [R]eset to last commit' })
+vim.keymap.set('n', '<leader>ga', ':!git add *', { desc = '[A]dd' })
+vim.keymap.set('n', '<leader>gc', ':!git commit -m ""<left>', { desc = '[C]ommit' })
+vim.keymap.set('n', '<leader>gA', ':!git commit --amend --no-edit', { desc = '[A]mend' })
+vim.keymap.set('n', '<leader>gp', ':!git push', { desc = '[P]ush' })
+vim.keymap.set('n', '<leader>gP', ':!git push --force', { desc = '[P]ush force' })
+vim.keymap.set('n', '<leader>gu', ':!git reset HEAD *', { desc = '[U]nstage files' })
+vim.keymap.set('n', '<leader>gr', ':!git reset --hard HEAD *', { desc = 'Hard [R]eset to last commit' })
+vim.keymap.set('n', '<leader>gs', ':!git reset --hard HEAD *', { desc = 'Hard [R]eset to last commit' })
 
 -- vim command shortcuts
 vim.keymap.set('n', '<C-q>', '<cmd>qa!<cr>', { desc = 'Quit All' })
