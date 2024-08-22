@@ -89,9 +89,7 @@ require('lazy').setup({
   require 'cyan.plugins.gitsigns', -- git support
   require 'cyan.plugins.lint', -- linter
   require 'cyan.plugins.auto-session', -- nvim session manager
-  require 'cyan.plugins.flash', -- eazy motion alternative
   require 'cyan.plugins.gx', -- better gx
-  -- require 'cyan.plugins.neo-tree', -- file explorer
   require 'cyan.plugins.oil', -- better file operations
   require 'cyan.plugins.trouble', -- better diagnostic list
   require 'cyan.plugins.autolist', -- better bullet list
