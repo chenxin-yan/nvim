@@ -1,5 +1,6 @@
 return {
   'stevearc/oil.nvim',
+  event = { 'VimEnter */*,.*', 'BufNew */*,.*' },
   cmd = 'Oil',
   dependencies = {
     'nvim-tree/nvim-web-devicons',
@@ -7,12 +8,17 @@ return {
   keys = {
     {
       '-',
-      '<CMD>Oil<cr>',
+      '<CMD>Oil --float<cr>',
       desc = 'Open parent directory',
+    },
+    {
+      '\\',
+      '<CMD>Oil --float .<cr>',
+      desc = 'Open current working directory',
     },
   },
   opts = {
-    default_file_explorer = false,
+    default_file_explorer = true,
     skip_confirm_for_simple_edits = true,
     keymaps = {
       ['<C-v>'] = { 'actions.select', opts = { vertical = true }, desc = 'Open the entry in a vertical split' },
