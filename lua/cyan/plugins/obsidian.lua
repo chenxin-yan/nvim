@@ -18,6 +18,11 @@ return {
       desc = '[S]earch [O]bsidian Vault',
     },
     {
+      '<leader>sO',
+      '<cmd>ObsidianSearch<cr>',
+      desc = 'Grep [O]bsidian Vault',
+    },
+    {
       '<leader>O',
       ':ObsidianNew ',
       desc = 'New [O]bsidian Note',
@@ -83,7 +88,6 @@ return {
     obMap('f', '<cmd>ObsidianFollowLink vsplit<cr>', '[F]ollow note to a new window')
     obMap('o', '<cmd>ObsidianOpen<cr>', '[O]pen in [O]bsidian')
     obMap('e', ':ObsidianExtractNote ', '[E]xtract to a new note')
-    obMap('g', '<cmd>ObsidianSearch<cr>', '[G]rep [O]bsidian Vault')
 
     require('which-key').add { '<leader>o', group = ' [O]bsidian' }
   end,

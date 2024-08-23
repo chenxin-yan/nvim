@@ -14,6 +14,14 @@ local servers = {
   -- rust_analyzer = {},
   -- ... etc. See `:help lspconfig-all` for a list of all the pre-configured LSPs
   vtsls = {
+    filetypes = {
+      'javascript',
+      'javascriptreact',
+      'javascript.jsx',
+      'typescript',
+      'typescriptreact',
+      'typescript.tsx',
+    },
     settings = {
       complete_function_calls = true,
       vtsls = {

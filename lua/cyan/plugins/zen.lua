@@ -30,6 +30,7 @@ return {
         },
       },
       plugins = {
+        twilight = { enabled = false },
         gitsigns = { enabled = true },
       },
       neovide = {
