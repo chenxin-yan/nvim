@@ -283,6 +283,21 @@ return {
                 vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled { bufnr = event.buf })
               end, '[T]oggle Inlay [H]ints')
             end
+
+            -- setup vtsls keymaps for JS/TS
+            if client and client.name == 'vtsls' then
+              local vtsls = require 'vtsls'
+              vim.keymap.set('n', '<leader>co', function()
+                vtsls.commands['organize_imports'](0)
+              end, { desc = 'vtsls: [O]rganize imports' })
+              vim.keymap.set('n', '<leader>cc', function()
+                vtsls.commands['goto_project_config'](0)
+              end, { desc = 'vtsls: Go to Project [C]onfig' })
+              vim.keymap.set('n', '<leader>cf', function()
+                vtsls.commands['fix_all'](0)
+              end, { desc = 'vtsls: [F]ix all' })
+              vim.keymap.set('n', '<leader>cF', '<cmd>EslintFixAll<cr>', { desc = 'Eslint: [F]ix all', buffer = 0 })
+            end
           end
         end,
       })
