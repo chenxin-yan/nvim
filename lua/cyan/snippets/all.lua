@@ -8,4 +8,6 @@ local fmt = require('luasnip.extras.fmt').fmt
 local extras = require 'luasnip.extras'
 local rep = extras.rep
 
-return {}
+return {
+  s('~', { t '/Users/yanchenxin/' }),
+}

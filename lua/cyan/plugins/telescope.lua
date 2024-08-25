@@ -40,6 +40,9 @@ return { -- Fuzzy Finder (files, lsp, etc)
 
     -- telescope search unstaged files
     { '<leader>gl', '<cmd>Telescope git_status<cr>', desc = '[L]ist status' },
+
+    --
+    { '<C-b>', '<cmd>Telescope bibtex<cr>', desc = 'Search [B]ibTex', ft = 'markdown', mode = 'i' },
   },
   dependencies = {
     'nvim-lua/plenary.nvim',
@@ -67,6 +70,9 @@ return { -- Fuzzy Finder (files, lsp, etc)
 
     -- Telescope luasnip integration
     'benfowler/telescope-luasnip.nvim',
+
+    -- search bibtex
+    'nvim-telescope/telescope-bibtex.nvim',
   },
   config = function()
     -- Telescope is a fuzzy finder that comes with a lot of different things that
@@ -111,6 +117,17 @@ return { -- Fuzzy Finder (files, lsp, etc)
           require('telescope.themes').get_dropdown(),
         },
         undo = {},
+        bibtex = {
+          -- Use context awareness
+          context = true,
+          -- Use non-contextual behavior if no context found
+          -- This setting has no effect if context = false
+          context_fallback = true,
+          custom_formats = {
+            { id = 'citeproc', cite_marker = '[@%s]' },
+          },
+          format = 'citeproc',
+        },
       },
     }
 
@@ -120,5 +137,6 @@ return { -- Fuzzy Finder (files, lsp, etc)
     pcall(require('telescope').load_extension, 'ui-select')
     pcall(require('telescope').load_extension, 'undo')
     pcall(require('telescope').load_extension, 'luasnip')
+    pcall(require('telescope').load_extension, 'bibtex')
   end,
 }
