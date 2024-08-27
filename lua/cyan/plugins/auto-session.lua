@@ -10,19 +10,22 @@ return {
       { '<leader>wr', '<cmd>SessionRestore<cr>', desc = 'Session: [W]orkspace [R]estore for current directory' },
       { '<leader>wS', '<cmd>SessionSave<cr>', desc = 'Session: [W]orkspace [S]ave' },
       { '<leader>wc', '<cmd>SessionPurgeOrphaned<cr>', desc = 'Session: [W]orkspace [C]lear' },
-      { '<leader>ws', '<cmd>SessionSearch<cr>', desc = 'Session: [W]orkspace [S]earch' },
+      { '<leader>sw', '<cmd>SessionSearch<cr>', desc = 'Session: [W]orkspace' },
     },
-    config = function()
-      require('auto-session').setup {
-        auto_restore_enabled = false,
-        auto_session_allowed_dirs = { '~/dev/*' },
-        session_lens = {
-          load_on_setup = true,
-          theme_conf = { border = true },
-          previewer = false,
+    ---enables autocomplete for opts
+    ---@module "auto-session"
+    ---@type AutoSession.Config
+    opts = {
+      allowed_dirs = { '~/dev/*' },
+      auto_restore = false,
+      bypass_save_filetypes = { 'alpha' },
+      session_lens = {
+        load_on_setup = true,
+        previewer = false,
+        theme_conf = {
+          border = true,
         },
-        bypass_session_save_file_types = { 'alpha' },
-      }
-    end,
+      },
+    },
   },
 }
