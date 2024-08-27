@@ -25,7 +25,6 @@ local servers = {
     settings = {
       complete_function_calls = true,
       vtsls = {
-        enableMoveToFileCodeAction = true,
         autoUseWorkspaceTsdk = true,
         experimental = {
           completion = {
@@ -34,7 +33,6 @@ local servers = {
         },
       },
       typescript = {
-        updateImportsOnFileMove = { enabled = 'always' },
         suggest = {
           completeFunctionCalls = true,
         },
@@ -48,7 +46,6 @@ local servers = {
         },
       },
       javascript = {
-        updateImportsOnFileMove = { enabled = 'always' },
         suggest = {
           completeFunctionCalls = true,
         },
@@ -73,6 +70,9 @@ local servers = {
       Lua = {
         completion = {
           callSnippet = 'Replace',
+        },
+        doc = {
+          privateName = { '^_' },
         },
         -- You can toggle below to ignore Lua_LS's noisy `missing-fields` warnings
         diagnostics = { disable = { 'missing-fields' } },
@@ -114,12 +114,13 @@ local servers = {
 local ensure_installed = vim.tbl_keys(servers or {})
 vim.list_extend(ensure_installed, {
   -- Formatters
-  'stylua', -- formatter for lua
-  'prettier', -- formatter for javascript
+  'stylua', -- lua formatter
+  'prettier', -- javascript formatter
   -- Linters
-  'markdownlint-cli2', -- linter & formatter for markdown
-  'vale', -- linter
+  'markdownlint-cli2', -- markdown linter & formatter
+  'vale', -- prose linter
   -- debugger
+  'js-debug-adapter', -- java debugger
   'java-debug-adapter', -- java
   -- Testing
   'java-test',
@@ -298,7 +299,7 @@ return {
               vim.keymap.set('n', '<leader>co', function()
                 vtsls.commands['organize_imports'](0)
               end, { desc = 'vtsls: [O]rganize imports' })
-              vim.keymap.set('n', '<leader>cc', function()
+              vim.keymap.set('n', '<leader>cC', function()
                 vtsls.commands['goto_project_config'](0)
               end, { desc = 'vtsls: Go to Project [C]onfig' })
               vim.keymap.set('n', '<leader>cf', function()
@@ -317,11 +318,8 @@ return {
       local capabilities = vim.lsp.protocol.make_client_capabilities()
       capabilities = vim.tbl_deep_extend('force', capabilities, require('cmp_nvim_lsp').default_capabilities())
 
-      -- setup folding capabilities if lsp is used as provider for nvim-ufo folding
-      -- capabilities.textDocument.foldingRange = {
-      --   dynamicRegistration = false,
-      --   lineFoldingOnly = true,
-      -- }
+      -- get default config from nvim-vtsls
+      require('lspconfig.configs').vtsls = require('vtsls').lspconfig
 
       require('mason-lspconfig').setup {
         handlers = {

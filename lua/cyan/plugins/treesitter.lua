@@ -7,7 +7,6 @@ return { -- Highlight, edit, and navigate code
     ensure_installed = {
       'bash',
       'regex',
-      'c',
       'diff',
       'lua',
       'luadoc',
