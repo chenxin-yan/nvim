@@ -3,6 +3,8 @@ return { -- Highlight, edit, and navigate code
   build = ':TSUpdate',
   event = { 'BufReadPre', 'BufNewFile' },
   dependencies = { 'nvim-treesitter/nvim-treesitter-context', 'nvim-treesitter/nvim-treesitter-textobjects' },
+  main = 'nvim-treesitter.configs', -- Sets main module to use for opts
+  -- [[ Configure Treesitter ]] See `:help nvim-treesitter`
   opts = {
     ensure_installed = {
       'bash',
