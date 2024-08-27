@@ -67,12 +67,6 @@ require('lazy').setup({
   },
 
   -- change keyword cases
-  {
-    'gregorias/coerce.nvim',
-    event = { 'BufReadPre', 'BufNewFile' },
-    tag = 'v3.0.0',
-    config = true,
-  },
 
   -- line preview when search line number
   { 'nacro90/numb.nvim', event = 'CmdlineEnter', config = true },

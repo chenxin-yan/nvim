@@ -8,12 +8,12 @@ return { -- Fuzzy Finder (files, lsp, etc)
     { '<leader>sh', '<cmd>Telescope help_tags<cr>', desc = '[H]elp' },
     { '<leader>sk', '<cmd>Telescope keymaps<cr>', desc = '[K]eymaps' },
     { '<leader>sf', '<cmd>Telescope find_files<cr>', desc = '[F]iles' },
-    { '<leader>sw', '<cmd>Telescope grep_string<cr>', desc = 'current [W]ord' },
+    { '<leader>s*', '<cmd>Telescope grep_string<cr>', desc = 'current [W]ord' },
     { '<leader>sg', '<cmd>Telescope live_grep<cr>', desc = 'By [G]rep' },
     { '<leader>sd', '<cmd>Telescope diagnostics<cr>', desc = '[D]iagnostics' },
     { '<leader>sr', '<cmd>Telescope resume<cr>', desc = '[R]esume' },
     { '<leader>s.', '<cmd>Telescope oldfiles<cr>', desc = 'Recent Files ("." for repeat)' },
-    { '<leader><leader>', '<cmd>Telescope buffers<cr>', desc = 'Open [B]uffers' },
+    { '<leader><leader>', '<cmd>Telescope buffers<cr>', desc = 'Search Open [B]uffers' },
 
     -- Slightly advanced example of overriding default behavior and theme
     { '<leader>/', '<cmd>Telescope current_buffer_fuzzy_find theme=dropdown previewer=false<cr>', desc = '[/] Fuzzily search in current buffer' },

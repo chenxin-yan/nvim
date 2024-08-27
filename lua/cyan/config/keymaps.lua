@@ -80,8 +80,5 @@ vim.keymap.set('n', '<leader>gu', ':!git reset HEAD *', { desc = '[U]nstage file
 vim.keymap.set('n', '<leader>gr', ':!git reset --hard HEAD *', { desc = 'Hard [R]eset to last commit' })
 vim.keymap.set('n', '<leader>gs', ':!git reset --hard HEAD *', { desc = 'Hard [R]eset to last commit' })
 
--- vim command shortcuts
-vim.keymap.set('n', '<C-q>', '<cmd>qa!<cr>', { desc = 'Quit All' })
-
 -- delete all buffers
-vim.keymap.set('n', '<leader>bD', '<cmd>%bd<cr>', { desc = '[B]uffer [D]elete all buffers' })
+vim.keymap.set('n', '<leader>bD', '<cmd>wa<bar>%bd<bar>e#<bar>bd#<cr>', { desc = '[B]uffer [D]elete all buffers' })
