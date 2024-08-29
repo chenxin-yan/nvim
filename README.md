@@ -20,6 +20,8 @@ A minimal Catppuccin neovim config built from [kickstart.nvim](https://github.co
 
 ![Preview 2](./Preview_2.jpg)
 
+![Preview 3](./Preview_3.jpg)
+
 ## Dependencies
 
 1. Basic utils: git, make, unzip, C Compiler (gcc)
@@ -59,14 +61,6 @@ nvim
 | json                  | ✅ jsonls   | ✅ Prettier               | ❌              | ❌                 | ❌           |
 | toml                  | ✅ taplo    | ✅ taplo                  | ❌              | ❌                 | ❌           |
 
-### Lua
-
-### Java
-
-### JavaScript/TypeScript
-
-### Golang
-
 ## Keymaps
 
 This config uses [which-key.nvim](https://github.com/folke/which-key.nvim) to display available keymaps
@@ -75,6 +69,7 @@ This config uses [which-key.nvim](https://github.com/folke/which-key.nvim) to di
 
 - [ ] setup [tsc.nvim](https://github.com/dmmulroy/tsc.nvim)
 - [ ] setup tailwindcss support
+- [ ] setup [vim-dadbod](https://github.com/tpope/vim-dadbod)
 - [ ] setup [kulala.nvim](https://github.com/mistweaverco/kulala.nvim) as Rest-client
 - [ ] [Integrate prettier with ESlint](https://prettier.io/docs/en/integrating-with-linters.html)
 - [ ] add warning comments config files for hard-coded paths
