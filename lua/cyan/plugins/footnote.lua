@@ -9,8 +9,8 @@ if is_dev then
         keys = {
           new_footnote = '<C-f>',
           organize_footnotes = '<leader>cf',
-          next_footnote = ']f',
-          prev_footnote = '[f',
+          next_footnote = ']x',
+          prev_footnote = '[x',
         },
         organize_on_save = false,
         organize_on_new = false,
@@ -26,8 +26,8 @@ else
         keys = {
           new_footnote = '<C-f>',
           organize_footnotes = '<leader>cf',
-          next_footnote = ']f',
-          prev_footnote = '[f',
+          next_footnote = '',
+          prev_footnote = '',
         },
         organize_on_save = false,
         organize_on_new = false,

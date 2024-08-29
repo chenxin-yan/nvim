@@ -48,11 +48,9 @@ return { -- Highlight, edit, and navigate code
         enable = true,
         swap_next = {
           ['<leader>c]'] = { query = '@parameter.inner', desc = 'Swap [N]ext argument' },
-          ['<leader>c}'] = { query = '@function.outer', desc = 'Swap [N]ext function' },
         },
         swap_previous = {
           ['<leader>c['] = { query = '@parameter.inner', desc = 'Swap [P]revious argument' },
-          ['<leader>c{'] = { query = '@function.outer', desc = 'Swap [P]revious function' },
         },
       },
       move = {
@@ -72,10 +70,20 @@ return { -- Highlight, edit, and navigate code
           ['[F'] = { query = '@function.outer', desc = 'Previous function/method end' },
         },
         goto_next = {
-          [']o'] = { query = { '@conditional.outer', '@loop.outer' }, desc = 'Next code block' },
+          [']o'] = { query = { '@block.outer', '@conditional.outer', '@loop.outer' }, desc = 'Next code block' },
         },
         goto_previous = {
-          ['[o'] = { query = { '@conditional.outer', '@loop.outer' }, desc = 'Previous code block' },
+          ['[o'] = { query = { '@block.outer', '@conditional.outer', '@loop.outer' }, desc = 'Previous code block' },
+        },
+      },
+      lsp_interop = {
+        enable = true,
+        floating_preview_opts = {
+          border = 'rounded',
+        },
+        peek_definition_code = {
+          ['<leader>cp'] = '@function.outer',
+          ['<leader>cP'] = '@class.outer',
         },
       },
     },
