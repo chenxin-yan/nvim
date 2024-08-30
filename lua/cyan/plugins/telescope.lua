@@ -38,8 +38,10 @@ return { -- Fuzzy Finder (files, lsp, etc)
     -- telescope luasnip
     { '<leader>sc', '<cmd>Telescope luasnip<cr>', desc = '[C]ompletion (Luasnip)' },
 
-    -- telescope search unstaged files
+    -- telescope git pickers
     { '<leader>gl', '<cmd>Telescope git_status<cr>', desc = '[L]ist status' },
+    { '<leader>bc', '<cmd>Telescope git_bcommits<cr>', desc = '[B]uffer commits' },
+    { '<leader>gb', '<cmd>Telescope git_branches<cr>', desc = '[B]ranches' },
 
     --
     { '<C-b>', '<cmd>Telescope bibtex<cr>', desc = 'Search [B]ibTex', ft = 'markdown', mode = 'i' },

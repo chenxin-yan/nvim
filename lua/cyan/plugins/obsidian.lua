@@ -15,7 +15,7 @@ return {
       function()
         require('telescope.builtin').find_files { cwd = vault_path }
       end,
-      desc = '[S]earch [O]bsidian Vault',
+      desc = '[O]bsidian Vault',
     },
     {
       '<leader>sO',
