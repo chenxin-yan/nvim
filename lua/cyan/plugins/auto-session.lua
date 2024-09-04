@@ -16,7 +16,7 @@ return {
     ---@module "auto-session"
     ---@type AutoSession.Config
     opts = {
-      allowed_dirs = { '~/dev/*' },
+      allowed_dirs = { '~/dev/*', '/Users/yanchenxin/Library/Mobile Documents/com~apple~CloudDocs/PARA/Projects/*' },
       auto_restore = false,
       bypass_save_filetypes = { 'alpha' },
       session_lens = {

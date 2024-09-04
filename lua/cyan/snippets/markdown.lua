@@ -48,11 +48,22 @@ return {
   s('---mla', {
     t '---',
     t { '', 'bibliography: ' },
-    i(0),
+    i(1),
     t '.bib',
     t { '', 'csl: /Users/yanchenxin/.pandoc/styles/mla.csl' },
     t { '', 'nocite:' },
     t { '', '---', '' },
+    i(0),
+  }),
+  s('---doc', {
+    t '---',
+    t { '', 'title: "' },
+    i(1),
+    t { '"', 'author: [Chenxin Yan]' },
+    t { '', 'date: "' },
+    i(2),
+    t { '"', '---', '' },
+    i(0),
   }),
   s('mla-title', {
     t '###### Chenxin Yan',
