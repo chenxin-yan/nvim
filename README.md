@@ -52,6 +52,7 @@ nvim
 | Language              | Lsp         | Formatter                 | Linter          | Debugger           | Testing      |
 | --------------------- | ----------- | ------------------------- | --------------- | ------------------ | ------------ |
 | lua                   | ✅ luals    | ✅ stylua                 | ❌              | ❌                 | ❌           |
+| C/C++                 | ✅ clangd   | ✅ clangd                 | ✅ clangd       | ✅ codelldb        | ❌           |
 | Java                  | ✅ jdtls    | ✅ jdtls                  | ✅ jdtls        | ✅ jdtls           | ✅ java-test |
 | JavaScript/TypeScript | ✅ vtsls    | ✅ Prettier               | ✅ Eslint       | ✅ vscode-js-debug | ❌           |
 | Golang                | ⏳          | ⏳                        | ⏳              | ⏳                 | ⏳           |

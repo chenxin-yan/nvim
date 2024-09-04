@@ -10,6 +10,7 @@ return { -- Highlight, edit, and navigate code
       'bash',
       'regex',
       'diff',
+      'cpp',
       'lua',
       'luadoc',
       'markdown',

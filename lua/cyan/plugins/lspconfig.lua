@@ -8,7 +8,38 @@
 --  - settings (table): Override the default settings passed when initializing the server.
 --        For example, to see the options for `lua_ls`, you could go to: https://luals.github.io/wiki/settings/
 local servers = {
-  -- clangd = {},
+  clangd = {
+    root_dir = function(fname)
+      return require('lspconfig.util').root_pattern(
+        'Makefile',
+        'configure.ac',
+        'configure.in',
+        'config.h.in',
+        'meson.build',
+        'meson_options.txt',
+        'build.ninja'
+      )(fname) or require('lspconfig.util').root_pattern('compile_commands.json', 'compile_flags.txt')(fname) or require('lspconfig.util').find_git_ancestor(
+        fname
+      )
+    end,
+    capabilities = {
+      offsetEncoding = { 'utf-16' },
+    },
+    cmd = {
+      'clangd',
+      '--background-index',
+      '--clang-tidy',
+      '--header-insertion=iwyu',
+      '--completion-style=detailed',
+      '--function-arg-placeholders',
+      '--fallback-style=llvm',
+    },
+    init_options = {
+      usePlaceholders = true,
+      completeUnimported = true,
+      clangdFileStatus = true,
+    },
+  }, -- C/C++ lsp
   -- gopls = {},
   marksman = {}, -- markdown lsp
   -- rust_analyzer = {},
@@ -120,8 +151,9 @@ vim.list_extend(ensure_installed, {
   'markdownlint-cli2', -- markdown linter & formatter
   'vale', -- prose linter
   -- debugger
-  'js-debug-adapter', -- java debugger
-  'java-debug-adapter', -- java
+  'js-debug-adapter', -- javascript debugger
+  'java-debug-adapter', -- java debugger
+  'codelldb', -- C/C++ debugger
   -- Testing
   'java-test',
 })
@@ -186,6 +218,9 @@ return {
   -- JS/TS
   { 'yioneko/nvim-vtsls', lazy = true },
   { 'dmmulroy/ts-error-translator.nvim', ft = { 'javascript', 'typescript' } }, -- make typescript error more readable
+
+  -- C/C++
+  { 'p00f/clangd_extensions.nvim', lazy = true },
 
   -- == Main LSP configs ==
   { -- LSP Configuration & Plugins
@@ -295,8 +330,8 @@ return {
               end, '[T]oggle Inlay [H]ints')
             end
 
-            -- setup vtsls keymaps for JS/TS
             if client and client.name == 'vtsls' then
+              -- setup vtsls keymaps for JS/TS
               local vtsls = require 'vtsls'
               vim.keymap.set('n', '<leader>co', function()
                 vtsls.commands['organize_imports'](0)
@@ -308,6 +343,34 @@ return {
                 vtsls.commands['fix_all'](0)
               end, { desc = 'vtsls: [F]ix all' })
               vim.keymap.set('n', '<leader>cF', '<cmd>EslintFixAll<cr>', { desc = 'Eslint: [F]ix all', buffer = 0 })
+            elseif client and client.name == 'clangd' then
+              -- setup clangd keymaps for cs/c++
+              vim.keymap.set('n', '<leader>ch', '"<cmd>ClangdSwitchSourceHeader<cr>"', { desc = 'Switch Source/Header (C/C++)', buffer = 0 })
+              require('clangd_extensions').setup {
+                inlay_hints = {
+                  inline = false,
+                },
+                ast = {
+                  --These require codicons (https://github.com/microsoft/vscode-codicons)
+                  role_icons = {
+                    type = '',
+                    declaration = '',
+                    expression = '',
+                    specifier = '',
+                    statement = '',
+                    ['template argument'] = '',
+                  },
+                  kind_icons = {
+                    Compound = '',
+                    Recovery = '',
+                    TranslationUnit = '',
+                    PackExpansion = '',
+                    TemplateTypeParm = '',
+                    TemplateTemplateParm = '',
+                    TemplateParamObject = '',
+                  },
+                },
+              }
             end
           end
         end,
