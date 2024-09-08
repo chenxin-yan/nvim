@@ -12,9 +12,7 @@ return {
   keys = {
     {
       '<leader>so',
-      function()
-        require('telescope.builtin').find_files { cwd = vault_path }
-      end,
+      '<cmd>ObsidianQuickSwitch<cr>',
       desc = '[O]bsidian Vault',
     },
     {
@@ -23,9 +21,9 @@ return {
       desc = 'Grep [O]bsidian Vault',
     },
     {
-      '<leader>O',
+      '<leader>on',
       ':ObsidianNew ',
-      desc = 'New [O]bsidian Note',
+      desc = '[O]bsidian [N]ew note',
     },
   },
   config = function()
@@ -84,11 +82,12 @@ return {
 
     obMap('t', '<cmd>ObsidianTemplate<cr>', 'Insert [T]emplate')
     obMap('b', '<cmd>ObsidianBacklinks<cr>', 'Search [B]acklinks')
-    obMap('l', '<cmd>Obsidianlinks<cr>', 'Search [L]inks in current note')
+    obMap('l', '<cmd>ObsidianLinks<cr>', 'Search [L]inks in current note')
+    obMap('L', '<cmd>ObsidianLinkNew<cr>', 'Create new note with a [L]ink')
     obMap('f', '<cmd>ObsidianFollowLink vsplit<cr>', '[F]ollow note to a new window')
     obMap('o', '<cmd>ObsidianOpen<cr>', '[O]pen in [O]bsidian')
     obMap('e', ':ObsidianExtractNote ', '[E]xtract to a new note')
 
-    require('which-key').add { '<leader>o', group = ' [O]bsidian' }
+    require('which-key').add { '<leader>o', group = ' [O]bsidian', mode = { 'n', 'x' } }
   end,
 }
