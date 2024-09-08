@@ -126,6 +126,7 @@ require('lazy').setup({
   require 'cyan.plugins.neogen', -- generate annotations/documentations
   require 'cyan.plugins.grug-far', -- grep and replace
   require 'cyan.plugins.im-select', -- automatic input method switcher
+  require 'cyan.plugins.yazi', -- yazi integration
 }, {
   ui = {
     -- If you are using a Nerd Font: set icons to an empty table which will use the

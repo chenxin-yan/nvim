@@ -11,11 +11,11 @@ return {
       '<CMD>Oil --float<cr>',
       desc = 'Open parent directory',
     },
-    {
-      '<leader>e',
-      '<CMD>Oil --float .<cr>',
-      desc = 'Open current working directory',
-    },
+    -- {
+    --   '<leader>e',
+    --   '<CMD>Oil --float .<cr>',
+    --   desc = 'Open current working directory',
+    -- },
   },
   opts = {
     default_file_explorer = true,

@@ -31,7 +31,8 @@ A minimal Catppuccin neovim config built from [kickstart.nvim](https://github.co
 5. A [Nerd Font](https://www.nerdfonts.com/#home)
 6. [Neovim](https://neovim.io)
 7. [Lazygit](https://github.com/jesseduffield/lazygit)
-8. Language dependencies (see [Language Support](#language-support))
+8. [Yazi](https://yazi-rs.github.io)
+9. Language dependencies (see [Language Support](#language-support))
 
 ## Installation
 
