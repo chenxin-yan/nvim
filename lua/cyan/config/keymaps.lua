@@ -14,8 +14,7 @@ vim.keymap.set('n', 'X', vim.diagnostic.open_float, { desc = 'Show diagnostic Er
 
 --  deleting/paste without yanking the deleted text into the register
 vim.keymap.set('x', '<leader>p', '"_dP', { desc = 'Paste in without yanking selected text' })
-vim.keymap.set('n', 'x', '"_x', { desc = 'Delete without yanking' })
-vim.keymap.set('x', 'x', '"_x', { desc = 'Delete without yanking' })
+vim.keymap.set({ 'n', 'x' }, 'x', '"_x', { desc = 'Delete without yanking' })
 
 -- Open/Close buildin terminal
 vim.keymap.set('n', '<C-t>', '<cmd>split<cr><cmd>terminal<cr>', { desc = 'Open [T]erminal' })

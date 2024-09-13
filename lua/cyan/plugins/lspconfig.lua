@@ -330,6 +330,7 @@ return {
               end, '[T]oggle Inlay [H]ints')
             end
 
+            -- == config specific to language ==
             if client and client.name == 'vtsls' then
               -- setup vtsls keymaps for JS/TS
               local vtsls = require 'vtsls'
@@ -345,7 +346,7 @@ return {
               vim.keymap.set('n', '<leader>cF', '<cmd>EslintFixAll<cr>', { desc = 'Eslint: [F]ix all', buffer = 0 })
             elseif client and client.name == 'clangd' then
               -- setup clangd keymaps for cs/c++
-              vim.keymap.set('n', '<leader>ch', '"<cmd>ClangdSwitchSourceHeader<cr>"', { desc = 'Switch Source/Header (C/C++)', buffer = 0 })
+              vim.keymap.set('n', '<leader>ch', '"<cmd>ClangdSwitchSourceHeader<cr>"', { desc = 'Clangd: Switch Source/[H]eader (C/C++)', buffer = 0 })
               require('clangd_extensions').setup {
                 inlay_hints = {
                   inline = false,
@@ -371,6 +372,7 @@ return {
                   },
                 },
               }
+              require('clangd_extensions.inlay_hints').setup_autocmd()
             end
           end
         end,

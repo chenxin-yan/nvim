@@ -10,7 +10,7 @@ if vim.g.is_transparent then
 end
 
 vim.g.neovide_cursor_animation_length = 0.05
-vim.g.neovide_cursor_trail_size = 0.3
+vim.g.neovide_cursor_trail_size = 0.4
 vim.g.neovide_cursor_smooth_blink = true
 vim.g.neovide_cursor_antialiasing = true
 
