@@ -10,25 +10,25 @@ local rep = extras.rep
 
 return {
   s('info', {
-    t '> [!Info] ',
+    t '> [!INFO] ',
     i(1),
     t { '', '> ' },
     i(0),
   }),
   s('ex', {
-    t '> [!Example] ',
+    t '> [!EXAMPLE] ',
     i(1),
     t { '', '> ' },
     i(0),
   }),
   s('tip', {
-    t '> [!Tip] ',
+    t '> [!TIP] ',
     i(1),
     t { '', '> ' },
     i(0),
   }),
   s('warn', {
-    t '> [!Warning] ',
+    t '> [!WARNING] ',
     i(1),
     t { '', '> ' },
     i(0),

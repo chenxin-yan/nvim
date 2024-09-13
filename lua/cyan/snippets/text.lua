@@ -11,8 +11,7 @@ local rep = extras.rep
 
 return {
   s({ trig = 'hi', desc = 'Email template' }, {
-    c(1, { t 'Hi', t 'Hello', t 'Dear' }),
-    c(2, { sn(nil, { t ' ', i(1, '[Name]') }), t ' Professor', sn(nil, { t ' Professor ', i(1, '[Name]') }), t '' }),
+    i(1),
     t { ',', '', '' },
     i(0),
     t { '', '', 'Sincerely,' },
