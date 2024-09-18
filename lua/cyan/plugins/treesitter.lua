@@ -40,7 +40,7 @@ return { -- Highlight, edit, and navigate code
       keymaps = {
         init_selection = '<c-;>',
         node_incremental = '<c-;>',
-        scope_incremental = "<c-'>",
+        scope_incremental = false,
         node_decremental = '<c-,>',
       },
     },

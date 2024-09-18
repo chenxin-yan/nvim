@@ -9,9 +9,7 @@ return {
     'BufReadPre ' .. vault_path .. '/**.md',
     'BufNewFile ' .. vault_path .. '/**.md',
   },
-  init = function()
-    require('which-key').add { '<leader>o', group = ' [O]bsidian', mode = { 'n', 'x' } }
-  end,
+  init = function() end,
   keys = {
     {
       '<leader>so',
@@ -90,5 +88,6 @@ return {
     obMap('f', '<cmd>ObsidianFollowLink vsplit<cr>', '[F]ollow note to a new window')
     obMap('o', '<cmd>ObsidianOpen<cr>', '[O]pen in [O]bsidian')
     obMap('e', ':ObsidianExtractNote ', '[E]xtract to a new note')
+    require('which-key').add { '<leader>o', group = ' [O]bsidian', mode = { 'n', 'x' } }
   end,
 }
