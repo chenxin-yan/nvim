@@ -1,7 +1,7 @@
----@type LazySpec
 return {
   'mikavilpas/yazi.nvim',
   event = 'VeryLazy',
+  -- dir = '~/dev/yazi.nvim/',
   keys = {
     {
       '-',
@@ -22,12 +22,13 @@ return {
       desc = 'Resume the last yazi session',
     },
   },
-  ---@type YaziConfig
   opts = {
     -- if you want to open yazi instead of netrw, see below for more info
     open_for_directories = true,
     keymaps = {
       show_help = '<f1>',
+      grep_in_directory = '<c-g>',
+      replace_in_directory = '<c-r>',
     },
   },
 }
