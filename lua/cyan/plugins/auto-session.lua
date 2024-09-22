@@ -9,7 +9,7 @@ return {
     keys = {
       { '<leader>wr', '<cmd>SessionRestore<cr>', desc = 'Session: [W]orkspace [R]estore for current directory' },
       { '<leader>wS', '<cmd>SessionSave<cr>', desc = 'Session: [W]orkspace [S]ave' },
-      { '<leader>wc', '<cmd>SessionPurgeOrphaned<cr>', desc = 'Session: [W]orkspace [C]lear' },
+      { '<leader>wc', '<cmd>SessionPurgeOrphaned<cr>', desc = 'Session: [W]orkspace [C]lean up' },
       { '<leader>sw', '<cmd>SessionSearch<cr>', desc = 'Session: [W]orkspace' },
     },
     ---enables autocomplete for opts

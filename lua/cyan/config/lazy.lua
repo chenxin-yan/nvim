@@ -106,6 +106,7 @@ require('lazy').setup({
 
   -- ---- language specific ----
   require 'cyan.plugins.refactoring', -- code refactoring
+  require 'cyan.plugins.neogen', -- generate annotations/documentations
 
   -- TS/JS
   require 'cyan.plugins.ts-autotag', -- auto close/rename tags
@@ -122,7 +123,6 @@ require('lazy').setup({
   require 'cyan.plugins.leetcode', -- Leetcode integration
   require 'cyan.plugins.vim-tmux-navigator', -- tmux window navigation integration
   require 'cyan.plugins.lazygit', -- git CLI
-  require 'cyan.plugins.neogen', -- generate annotations/documentations
   require 'cyan.plugins.grug-far', -- grep and replace
   require 'cyan.plugins.im-select', -- automatic input method switcher
   require 'cyan.plugins.yazi', -- yazi integration

@@ -3,6 +3,36 @@ return { -- Fuzzy Finder (files, lsp, etc)
   branch = '0.1.x',
   cmd = 'Telescope',
   lazy = true,
+  dependencies = {
+    'nvim-lua/plenary.nvim',
+    { -- If encountering errors, see telescope-fzf-native README for installation instructions
+      'nvim-telescope/telescope-fzf-native.nvim',
+
+      -- `build` is used to run some command when the plugin is installed/updated.
+      -- This is only run then, not every time Neovim starts up.
+      build = 'make',
+
+      -- `cond` is a condition used to determine whether this plugin should be
+      -- installed and loaded.
+      cond = function()
+        return vim.fn.executable 'make' == 1
+      end,
+    },
+
+    'nvim-telescope/telescope-ui-select.nvim',
+
+    -- Useful for getting pretty icons, but requires a Nerd Font.
+    { 'nvim-tree/nvim-web-devicons', enabled = vim.g.have_nerd_font },
+
+    -- Telescope undotree
+    'debugloop/telescope-undo.nvim',
+
+    -- Telescope luasnip integration
+    'benfowler/telescope-luasnip.nvim',
+
+    -- search bibtex
+    'nvim-telescope/telescope-bibtex.nvim',
+  },
   keys = {
     -- See `:help telescope.builtin`
     { '<leader>sh', '<cmd>Telescope help_tags<cr>', desc = '[H]elp' },
@@ -46,36 +76,6 @@ return { -- Fuzzy Finder (files, lsp, etc)
 
     --
     { '<C-b>', '<cmd>Telescope bibtex<cr>', desc = 'Search [B]ibTex', ft = 'markdown', mode = 'i' },
-  },
-  dependencies = {
-    'nvim-lua/plenary.nvim',
-    { -- If encountering errors, see telescope-fzf-native README for installation instructions
-      'nvim-telescope/telescope-fzf-native.nvim',
-
-      -- `build` is used to run some command when the plugin is installed/updated.
-      -- This is only run then, not every time Neovim starts up.
-      build = 'make',
-
-      -- `cond` is a condition used to determine whether this plugin should be
-      -- installed and loaded.
-      cond = function()
-        return vim.fn.executable 'make' == 1
-      end,
-    },
-
-    'nvim-telescope/telescope-ui-select.nvim',
-
-    -- Useful for getting pretty icons, but requires a Nerd Font.
-    { 'nvim-tree/nvim-web-devicons', enabled = vim.g.have_nerd_font },
-
-    -- Telescope undotree
-    'debugloop/telescope-undo.nvim',
-
-    -- Telescope luasnip integration
-    'benfowler/telescope-luasnip.nvim',
-
-    -- search bibtex
-    'nvim-telescope/telescope-bibtex.nvim',
   },
   config = function()
     -- Telescope is a fuzzy finder that comes with a lot of different things that
