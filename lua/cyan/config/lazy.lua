@@ -88,6 +88,7 @@ require('lazy').setup({
   require 'cyan.plugins.autolist', -- better bullet list
   require 'cyan.plugins.autopairs', -- autopairs
   require 'cyan.plugins.harpoon', -- file switcher
+  require 'cyan.plugins.flash', -- buffer fast navigation
 
   -- ---- UI ----
   {
