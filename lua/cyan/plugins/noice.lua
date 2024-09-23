@@ -4,7 +4,6 @@ end
 return {
   'folke/noice.nvim',
   event = 'VeryLazy',
-  version = '4.4.7',
   keys = {
     -- search notify message
     { '<leader>sm', '<cmd>Telescope notify<cr>', desc = '[M]essages' },
