@@ -89,6 +89,7 @@ require('lazy').setup({
   require 'cyan.plugins.autopairs', -- autopairs
   require 'cyan.plugins.harpoon', -- file switcher
   require 'cyan.plugins.flash', -- buffer fast navigation
+  require 'cyan.plugins.neoclip', -- neovim clipboard manager
 
   -- ---- UI ----
   {
@@ -110,6 +111,11 @@ require('lazy').setup({
   require 'cyan.plugins.neogen', -- generate annotations/documentations
 
   -- TS/JS
+  {
+    'dmmulroy/tsc.nvim', -- TypeScript project wide type check
+    cmd = { 'TSC' },
+    config = true,
+  },
   require 'cyan.plugins.ts-autotag', -- auto close/rename tags
 
   -- markdown
@@ -117,7 +123,6 @@ require('lazy').setup({
   require 'cyan.plugins.markdown-preview', -- markdown preview in browser
   require 'cyan.plugins.markdown', -- better markdown render
   require 'cyan.plugins.footnote', -- better footnote
-  require 'cyan.plugins.obsidian', -- obsidian integration
   require 'cyan.plugins.zen', -- Zen mode
 
   -- ---- extras ----
@@ -127,6 +132,7 @@ require('lazy').setup({
   require 'cyan.plugins.grug-far', -- grep and replace
   require 'cyan.plugins.im-select', -- automatic input method switcher
   require 'cyan.plugins.yazi', -- yazi integration
+  require 'cyan.plugins.obsidian', -- obsidian integration
 }, {
   ui = {
     -- If you are using a Nerd Font: set icons to an empty table which will use the
