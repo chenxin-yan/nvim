@@ -66,8 +66,6 @@ require('lazy').setup({
     end,
   },
 
-  -- change keyword cases
-
   -- line preview when search line number
   { 'nacro90/numb.nvim', event = 'CmdlineEnter', config = true },
 
@@ -90,6 +88,7 @@ require('lazy').setup({
   require 'cyan.plugins.harpoon', -- file switcher
   require 'cyan.plugins.flash', -- buffer fast navigation
   require 'cyan.plugins.neoclip', -- neovim clipboard manager
+  require 'cyan.plugins.FTerm', -- floating terminal
 
   -- ---- UI ----
   {
