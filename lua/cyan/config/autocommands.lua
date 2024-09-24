@@ -21,3 +21,13 @@ vim.api.nvim_create_autocmd('TermOpen', {
     end
   end,
 })
+
+-- Source ftplugin when open with harpoon
+vim.api.nvim_create_autocmd({ 'BufEnter' }, {
+  desc = 'Source ftplugin/$1.lua to override Issue #626',
+  group = vim.api.nvim_create_augroup('Harpoon_Optlocal', { clear = true }),
+  callback = function()
+    local ft = vim.bo.filetype
+    vim.cmd('silent! source $XDG_CONFIG_HOME/nvim/after/ftplugin/' .. ft .. '.lua')
+  end,
+})
