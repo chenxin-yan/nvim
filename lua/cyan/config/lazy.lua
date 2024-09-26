@@ -87,7 +87,6 @@ require('lazy').setup({
   require 'cyan.plugins.autopairs', -- autopairs
   require 'cyan.plugins.harpoon', -- file switcher
   require 'cyan.plugins.flash', -- buffer fast navigation
-  require 'cyan.plugins.neoclip', -- neovim clipboard manager
   require 'cyan.plugins.FTerm', -- floating terminal
 
   -- ---- UI ----
