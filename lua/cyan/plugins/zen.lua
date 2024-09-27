@@ -7,7 +7,7 @@ return {
     },
     opts = {
       dimming = {
-        alpha = 0.40,
+        alpha = 0.45,
       },
     },
   },

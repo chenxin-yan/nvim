@@ -46,7 +46,7 @@ return {
       desc = 'Flash with word under cursor',
     },
     {
-      '<C-s>',
+      '<C-/>',
       mode = { 'c' },
       function()
         require('flash').toggle()

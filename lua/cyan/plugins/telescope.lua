@@ -111,6 +111,7 @@ return { -- Fuzzy Finder (files, lsp, etc)
             ['<C-k>'] = actions.move_selection_previous,
             ['<C-n>'] = actions.cycle_history_next,
             ['<C-p>'] = actions.cycle_history_prev,
+            ['<C-d>'] = actions.delete_buffer,
           },
         },
       },

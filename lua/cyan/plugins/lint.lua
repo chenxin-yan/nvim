@@ -4,7 +4,7 @@ return {
     event = { 'BufReadPre', 'BufNewFile' },
     keys = {
       {
-        '<leader>l',
+        '<leader>L',
         function()
           require('lint').try_lint()
         end,

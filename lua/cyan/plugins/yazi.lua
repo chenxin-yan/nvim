@@ -1,6 +1,6 @@
 return {
   'mikavilpas/yazi.nvim',
-  -- dir = '~/dev/yazi.nvim/',
+  dir = '~/dev/yazi.nvim/',
   keys = {
     {
       '-',
@@ -25,9 +25,8 @@ return {
     -- if you want to open yazi instead of netrw, see below for more info
     open_for_directories = false,
     keymaps = {
-      show_help = '<f1>',
-      grep_in_directory = '<c-g>',
       replace_in_directory = '<c-r>',
+      change_working_directory = '`',
     },
   },
 }
