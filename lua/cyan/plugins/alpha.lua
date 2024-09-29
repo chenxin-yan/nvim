@@ -57,7 +57,7 @@ return {
     }
     -- stylua: ignore
     dashboard.section.buttons.val = {
-      dashboard.button('e', '  > New file', '<cmd> ene <BAR> startinsert <cr>'),
+      -- dashboard.button('e', '  > New file', '<cmd> ene <BAR> startinsert <cr>'),
       dashboard.button('f', '󰈞  > Find file', '<cmd>Telescope find_files<cr>'),
       dashboard.button('g', '󰺮  > Grep text', '<cmd>Telescope live_grep<cr>'),
       dashboard.button('s', '󱊒  > Search workspace ', '<cmd>SessionSearch<cr>'),

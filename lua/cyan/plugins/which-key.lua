@@ -12,7 +12,6 @@ return {
       { '<leader>ct', group = '[T]est' },
       { '<leader>d', group = ' [D]bug' },
       { '<leader>s', group = ' [S]earch' },
-      { '<leader>w', group = ' [W]orkspace' },
       { '<leader>t', group = '󰔡 [T]oggle' },
       { '<leader>g', group = ' [G]it' },
       { '<leader>h', group = ' [H]unk', mode = { 'n', 'x' } },
