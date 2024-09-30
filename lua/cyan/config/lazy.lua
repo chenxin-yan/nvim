@@ -98,6 +98,15 @@ require('lazy').setup({
       require('rainbow-delimiters.setup').setup {}
     end,
   },
+  {
+    'eandrju/cellular-automaton.nvim',
+    cmd = { 'CellularAutomaton' },
+    keys = {
+      { '<leader>bas', '<cmd>CellularAutomaton scramble<cr>', desc = 'Buffer Animation: Scramble' },
+      { '<leader>bar', '<cmd>CellularAutomaton make_it_rain<cr>', desc = 'Buffer Animation: Make it rain' },
+      { '<leader>bal', '<cmd>CellularAutomaton game_of_life<cr>', desc = 'Buffer Animation: Game of life' },
+    },
+  },
 
   require 'cyan.plugins.alpha', -- neovim dashboard
   require 'cyan.plugins.feline', -- status line
