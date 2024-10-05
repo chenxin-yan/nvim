@@ -44,7 +44,7 @@ return { -- Fuzzy Finder (files, lsp, etc)
     { '<leader>sd', '<cmd>Telescope diagnostics bufnr=0<cr>', desc = 'Buffer [D]iagnostics' },
     { '<leader>sr', '<cmd>Telescope resume<cr>', desc = '[R]esume' },
     { '<leader>s.', '<cmd>Telescope oldfiles<cr>', desc = 'Recent Files ("." for repeat)' },
-    { '<leader><leader>', '<cmd>Telescope buffers<cr>', desc = 'Search Open [B]uffers' },
+    { '<leader>sb', '<cmd>Telescope buffers<cr>', desc = 'Open [B]uffers' },
 
     -- Slightly advanced example of overriding default behavior and theme
     { '<leader>/', '<cmd>Telescope current_buffer_fuzzy_find theme=dropdown previewer=false<cr>', desc = '[/] Fuzzily search in current buffer' },
@@ -111,7 +111,6 @@ return { -- Fuzzy Finder (files, lsp, etc)
             ['<C-k>'] = actions.move_selection_previous,
             ['<C-n>'] = actions.cycle_history_next,
             ['<C-p>'] = actions.cycle_history_prev,
-            ['<C-d>'] = actions.delete_buffer,
           },
         },
       },

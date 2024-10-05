@@ -67,7 +67,7 @@ vim.keymap.set('n', 'g,', 'm`A,<Esc>``', { desc = 'Add "," at the end of the lin
 vim.keymap.set('n', 'g;', 'm`A;<Esc>``', { desc = 'Add ";" at the end of the line' })
 
 -- switch between buffers
-vim.keymap.set('n', '<S-Tab>', '<cmd>b#<cr>', { desc = 'Goto previously opened buffer' })
+vim.keymap.set('n', '<leader><Tab>', '<cmd>b#<cr>', { desc = 'Goto previously opened buffer' })
 
 -- git operations
 vim.keymap.set('n', '<leader>ga', ':!git add *', { desc = '[A]dd all' })
@@ -79,6 +79,3 @@ vim.keymap.set('n', '<leader>gu', ':!git reset HEAD *', { desc = '[U]nstage file
 vim.keymap.set('n', '<leader>gr', ':!git reset --hard HEAD *', { desc = 'Hard [R]eset to last commit' })
 vim.keymap.set('n', '<leader>gs', ':!git reset --soft HEAD *', { desc = '[S]oft Reset to last commit' })
 vim.keymap.set('n', '<leader>gi', ':!git init', { desc = '[I]nitialize' })
-
--- delete all buffers
-vim.keymap.set('n', '<leader>bD', '<cmd>wa<bar>%bd<bar>e#<bar>bd#<cr>', { desc = '[B]uffer [D]elete all buffers' })
