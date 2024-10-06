@@ -56,7 +56,7 @@ return {
       desc = '[D]ebug print [V]ariable',
     },
     {
-      '<leader>cdC',
+      '<leader>cdc',
       '<cmd>lua require("refactoring").debug.cleanup({})<cr>',
       mode = 'n',
       desc = '[D]ebug print [C]leanup',

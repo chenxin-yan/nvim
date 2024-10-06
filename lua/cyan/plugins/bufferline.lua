@@ -19,12 +19,9 @@ return {
     local function buffer_map(key, cmd, desc)
       vim.keymap.set('n', key, cmd, { desc = 'Bufline: ' .. desc })
     end
-    buffer_map(']b', '<cmd>BufferLineCycleNext<cr>', 'Goto next buffer')
-    buffer_map('[b', '<cmd>BufferLineCyclePrev<cr>', 'Goto previous buffer')
+    buffer_map('<leader>]', '<cmd>BufferLineCycleNext<cr>', 'Goto next buffer')
+    buffer_map('<leader>[', '<cmd>BufferLineCyclePrev<cr>', 'Goto previous buffer')
 
     buffer_map('<leader><leader>', '<cmd>BufferLinePick<cr>', 'Buffer Pick')
-
-    -- delete all buffers
-    vim.keymap.set('n', '<leader>bD', '<cmd>wa<bar>%bd<bar>e#<bar>bd#<cr>', { desc = '[B]uffer [D]elete all buffers' })
   end,
 }

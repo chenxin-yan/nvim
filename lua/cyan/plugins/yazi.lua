@@ -1,6 +1,6 @@
 return {
   'mikavilpas/yazi.nvim',
-  dir = '~/dev/yazi.nvim/',
+  -- dir = '~/dev/yazi.nvim/',
   keys = {
     {
       '-',

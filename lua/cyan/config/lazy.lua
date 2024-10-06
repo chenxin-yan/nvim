@@ -83,10 +83,9 @@ require('lazy').setup({
   require 'cyan.plugins.auto-session', -- nvim session manager
   require 'cyan.plugins.gx', -- better gx
   require 'cyan.plugins.trouble', -- better diagnostic list
-  require 'cyan.plugins.autolist', -- better bullet list
   require 'cyan.plugins.autopairs', -- autopairs
   require 'cyan.plugins.harpoon', -- file switcher
-  require 'cyan.plugins.flash', -- buffer fast navigation
+  require 'cyan.plugins.flash', -- fast navigation
   require 'cyan.plugins.FTerm', -- floating terminal
 
   -- ---- UI ----
@@ -132,6 +131,7 @@ require('lazy').setup({
   require 'cyan.plugins.markdown', -- better markdown render
   require 'cyan.plugins.footnote', -- better footnote
   require 'cyan.plugins.zen', -- Zen mode
+  require 'cyan.plugins.autolist', -- better bullet list
 
   -- ---- extras ----
   require 'cyan.plugins.leetcode', -- Leetcode integration
