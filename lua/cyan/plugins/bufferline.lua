@@ -19,8 +19,8 @@ return {
     local function buffer_map(key, cmd, desc)
       vim.keymap.set('n', key, cmd, { desc = 'Bufline: ' .. desc })
     end
-    buffer_map('<leader>]', '<cmd>BufferLineCycleNext<cr>', 'Goto next buffer')
-    buffer_map('<leader>[', '<cmd>BufferLineCyclePrev<cr>', 'Goto previous buffer')
+    buffer_map('<c-]>', '<cmd>BufferLineCycleNext<cr>', 'Goto next buffer')
+    buffer_map('<c-[>', '<cmd>BufferLineCyclePrev<cr>', 'Goto previous buffer')
 
     buffer_map('<leader><leader>', '<cmd>BufferLinePick<cr>', 'Buffer Pick')
   end,

@@ -85,7 +85,7 @@ return { -- Collection of various small independent plugins/modules
     -- smart buffer deletion
     local bufr = require 'mini.bufremove'
     bufr.setup()
-    vim.keymap.set('n', '<leader>bd', function()
+    vim.keymap.set('n', '<c-x>', function()
       bufr.delete(0, false)
     end, { desc = '[B]uffer [D]elete current' })
   end,
