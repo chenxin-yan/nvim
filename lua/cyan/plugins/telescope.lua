@@ -37,7 +37,14 @@ return { -- Fuzzy Finder (files, lsp, etc)
     -- See `:help telescope.builtin`
     { '<leader>sh', '<cmd>Telescope help_tags<cr>', desc = '[H]elp' },
     { '<leader>sk', '<cmd>Telescope keymaps<cr>', desc = '[K]eymaps' },
-    { '<leader>sf', '<cmd>Telescope find_files<cr>', desc = '[F]iles' },
+    { '<leader>sf', "<CMD>lua require'cyan.helpers.telescope-config'.project_files()<CR>", desc = 'Git [F]iles' },
+    { '<leader>sF', '<cmd>Telescope find_files find_command=rg,--files,--hidden,--glob,!**/.git/*<cr>', desc = '[F]iles' },
+    {
+      '<leader>-',
+      function()
+        require('telescope.builtin').find_files { cwd = vim.fn.expand '%:p:h' }
+      end,
+    },
     { '<leader>s*', '<cmd>Telescope grep_string<cr>', desc = 'current [W]ord' },
     { '<leader>sg', '<cmd>Telescope live_grep<cr>', desc = 'By [G]rep' },
     { '<leader>sD', '<cmd>Telescope diagnostics<cr>', desc = 'Workspace [D]iagnostics' },
@@ -128,6 +135,7 @@ return { -- Fuzzy Finder (files, lsp, etc)
         mappings = {
           n = { s = flash },
           i = {
+            ['<esc>'] = actions.close,
             ['<C-j>'] = actions.move_selection_next,
             ['<C-k>'] = actions.move_selection_previous,
             ['<C-n>'] = actions.cycle_history_next,
