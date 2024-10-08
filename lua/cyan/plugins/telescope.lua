@@ -101,16 +101,38 @@ return { -- Fuzzy Finder (files, lsp, etc)
     -- See `:help telescope` and `:help telescope.setup()`
     local actions = require 'telescope.actions'
 
+    -- flash integrations
+    local function flash(prompt_bufnr)
+      require('flash').jump {
+        pattern = '^',
+        label = { after = { 0, 0 } },
+        search = {
+          mode = 'search',
+          exclude = {
+            function(win)
+              return vim.bo[vim.api.nvim_win_get_buf(win)].filetype ~= 'TelescopeResults'
+            end,
+          },
+        },
+        action = function(match)
+          local picker = require('telescope.actions.state').get_current_picker(prompt_bufnr)
+          picker:set_selection(match.pos[1] - 1)
+        end,
+      }
+    end
+
     require('telescope').setup {
       -- You can put your default mappings / updates / etc. in here
       --  All the info you're looking for is in `:help telescope.setup()`
       defaults = {
         mappings = {
+          n = { s = flash },
           i = {
             ['<C-j>'] = actions.move_selection_next,
             ['<C-k>'] = actions.move_selection_previous,
             ['<C-n>'] = actions.cycle_history_next,
             ['<C-p>'] = actions.cycle_history_prev,
+            ['<c-s>'] = flash,
           },
         },
       },
