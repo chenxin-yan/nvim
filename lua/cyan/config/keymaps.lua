@@ -82,3 +82,6 @@ vim.keymap.set('n', '<leader>gi', ':!git init', { desc = '[I]nitialize' })
 
 -- delete all buffers
 vim.keymap.set('n', '<leader>bD', '<cmd>wa<bar>%bd<bar>e#<bar>bd#<cr>', { desc = '[B]uffer [D]elete all buffers' })
+
+-- close window
+vim.keymap.set('n', '<C-q>', '<cmd>q<cr>', { desc = 'Close window' })

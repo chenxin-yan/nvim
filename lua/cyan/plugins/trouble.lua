@@ -16,12 +16,12 @@ return {
       },
       {
         '<leader>cs',
-        '<cmd>Trouble symbols toggle focus=false win.size=100<cr>',
+        '<cmd>Trouble symbols toggle focus=false win.size=65<cr>',
         desc = 'Symbols (Trouble)',
       },
       {
         '<leader>cl',
-        '<cmd>Trouble lsp toggle focus=false win.position=right win.size=100<cr>',
+        '<cmd>Trouble lsp toggle focus=false win.position=right win.size=65<cr>',
         desc = 'LSP Definitions / references / ... (Trouble)',
       },
       {
