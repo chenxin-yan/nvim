@@ -70,13 +70,13 @@ return { -- Collection of various small independent plugins/modules
     -- move code line/block horizontally or vertically
     require('mini.move').setup {
       mappings = {
-        left = '',
-        right = '',
+        left = '<M-,>',
+        right = '<M-.>',
         down = '<M-n>',
         up = '<M-p>',
 
-        line_left = '',
-        line_right = '',
+        line_left = '<M-,>',
+        line_right = '<M-.>',
         line_down = '<M-n>',
         line_up = '<M-p>',
       },
@@ -85,7 +85,10 @@ return { -- Collection of various small independent plugins/modules
     -- smart buffer deletion
     local bufr = require 'mini.bufremove'
     bufr.setup()
-    vim.keymap.set('n', '<c-x>', function()
+    vim.keymap.set('n', '<c-q>', function()
+      bufr.delete(0, false)
+    end, { desc = '[B]uffer [D]elete current' })
+    vim.keymap.set('n', '<leader>bd', function()
       bufr.delete(0, false)
     end, { desc = '[B]uffer [D]elete current' })
   end,

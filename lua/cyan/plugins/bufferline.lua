@@ -10,8 +10,13 @@ return {
       options = {
         diagnostics = 'nvim_lsp',
         show_buffer_close_icons = false,
+        offsets = {
+          {
+            filetype = 'trouble',
+            text_align = 'center',
+          },
+        },
       },
-
       highlights = require('catppuccin.groups.integrations.bufferline').get(),
     }
 
