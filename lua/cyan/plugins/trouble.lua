@@ -1,7 +1,7 @@
 return {
   {
     'folke/trouble.nvim',
-    opts = true,
+    opts = { modes = { lsp_document_symbols = { format = '{kind_icon} {symbol.name}' } } },
     cmd = 'Trouble',
     keys = {
       {
@@ -16,7 +16,7 @@ return {
       },
       {
         '<leader>cs',
-        '<cmd>Trouble symbols toggle focus=false win.size=65<cr>',
+        '<cmd>Trouble symbols toggle focus=false win.size=30 win.position=left<cr>',
         desc = 'Symbols (Trouble)',
       },
       {

@@ -194,6 +194,20 @@ return {
       }
     end,
   },
+  {
+    'SmiteshP/nvim-navic',
+    lazy = true,
+    init = function()
+      vim.g.navic_silence = true
+    end,
+    opts = function()
+      return {
+        highlight = true,
+        depth_limit = 5,
+        lazy_update_context = true,
+      }
+    end,
+  },
 
   -- `lazydev` configures Lua LSP for your Neovim config, runtime and plugins
   -- used for completion, annotations and signatures of Neovim apis
@@ -328,6 +342,12 @@ return {
               map('<leader>th', function()
                 vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled { bufnr = event.buf })
               end, '[T]oggle Inlay [H]ints')
+            end
+
+            local navic = require 'nvim-navic'
+            -- navic.nvim attach to lsp server
+            if client.server_capabilities.documentSymbolProvider then
+              navic.attach(client, event.buf)
             end
 
             -- == config specific to language ==
