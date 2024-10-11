@@ -50,9 +50,11 @@ return { -- Highlight, edit, and navigate code
         enable = true,
         swap_next = {
           ['<leader>c]'] = { query = '@parameter.inner', desc = 'Swap [N]ext argument' },
+          ['<leader>c}'] = { query = '@function.outer', desc = 'Swap [N]ext function' },
         },
         swap_previous = {
           ['<leader>c['] = { query = '@parameter.inner', desc = 'Swap [P]revious argument' },
+          ['<leader>c{'] = { query = '@function.outer', desc = 'Swap [N]ext funtion' },
         },
       },
       move = {
