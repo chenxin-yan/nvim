@@ -65,7 +65,6 @@ This config uses [which-key.nvim](https://github.com/folke/which-key.nvim) to di
 
 ## Roadmap
 
-- [ ] setup [tsc.nvim](https://github.com/dmmulroy/tsc.nvim)
 - [ ] setup [neotest](https://github.com/nvim-neotest/neotest)
 - [ ] setup [kulala.nvim](https://github.com/mistweaverco/kulala.nvim) as Rest-client
 - [ ] [Integrate prettier with ESlint](https://prettier.io/docs/en/integrating-with-linters.html)

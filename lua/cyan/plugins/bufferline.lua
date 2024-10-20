@@ -27,6 +27,6 @@ return {
     buffer_map('<c-]>', '<cmd>BufferLineCycleNext<cr>', 'Goto next buffer')
     buffer_map('<c-[>', '<cmd>BufferLineCyclePrev<cr>', 'Goto previous buffer')
 
-    buffer_map('<leader>p', '<cmd>BufferLinePick<cr>', 'Buffer [P]ick')
+    buffer_map('<leader>S', '<cmd>BufferLinePick<cr>', 'Buffer [P]ick')
   end,
 }

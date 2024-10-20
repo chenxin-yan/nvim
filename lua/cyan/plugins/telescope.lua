@@ -40,10 +40,11 @@ return { -- Fuzzy Finder (files, lsp, etc)
     { '<leader>sf', "<CMD>lua require'cyan.helpers.telescope-config'.project_files()<CR>", desc = 'Git [F]iles' },
     { '<leader>sF', '<cmd>Telescope find_files find_command=rg,--files,--hidden,--glob,!**/.git/*<cr>', desc = '[F]iles' },
     {
-      '<leader>-',
+      '<leader>s-',
       function()
         require('telescope.builtin').find_files { cwd = vim.fn.expand '%:p:h' }
       end,
+      desc = 'Parent directory',
     },
     { '<leader>s*', '<cmd>Telescope grep_string<cr>', desc = 'current [W]ord' },
     { '<leader>sg', '<cmd>Telescope live_grep<cr>', desc = 'By [G]rep' },
