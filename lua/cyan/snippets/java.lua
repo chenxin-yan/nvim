@@ -8,10 +8,4 @@ local fmt = require('luasnip.extras.fmt').fmt
 local extras = require 'luasnip.extras'
 local rep = extras.rep
 
-return {
-  s('sout', {
-    t 'System.out.println(',
-    i(0),
-    t ');',
-  }),
-}
+return {}
