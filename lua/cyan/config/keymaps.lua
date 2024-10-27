@@ -46,9 +46,9 @@ vim.keymap.set('n', '<leader>|', '<C-w><C-v>', { desc = 'Vertical Split' })
 
 -- Tab operations
 vim.keymap.set('n', '<leader><C-t>', '<cmd>tabnew<cr>', { desc = 'Create new tab' })
-vim.keymap.set('n', '<C-}>', '<cmd>tabn<cr>', { desc = '[N]ext tab' })
-vim.keymap.set('n', '<C-{>', '<cmd>tabp<cr>', { desc = '[P]revious tab' })
 vim.keymap.set('n', '<leader><C-w>', '<cmd>tabc<cr>', { desc = 'Close current tab' })
+vim.keymap.set('n', ']T', '<cmd>tabn<cr>', { desc = '[N]ext tab' })
+vim.keymap.set('n', '[T', '<cmd>tabp<cr>', { desc = '[P]revious tab' })
 
 -- replace $ and ^ with H and L
 vim.keymap.set({ 'n', 'x' }, 'H', '^')
@@ -82,3 +82,6 @@ vim.keymap.set('n', '<leader>gi', ':!git init', { desc = '[I]nitialize' })
 
 -- delete all buffers
 vim.keymap.set('n', '<leader>bD', '<cmd>wa<bar>%bd<bar>e#<bar>bd#<cr>', { desc = '[B]uffer [D]elete all buffers' })
+
+-- select pasted text
+vim.keymap.set('n', 'gp', '`[v`]', { desc = 'Select Pasted Text' })
