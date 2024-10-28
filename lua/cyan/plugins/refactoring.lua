@@ -1,5 +1,6 @@
 return {
   'ThePrimeagen/refactoring.nvim',
+  cmd = 'Refactor',
   keys = {
     {
       '<leader>rf',
