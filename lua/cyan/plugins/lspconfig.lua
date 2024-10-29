@@ -56,6 +56,7 @@ local servers = {
     settings = {
       complete_function_calls = true,
       vtsls = {
+        enableMoveToFileCodeAction = true,
         autoUseWorkspaceTsdk = true,
         experimental = {
           completion = {
@@ -64,6 +65,7 @@ local servers = {
         },
       },
       typescript = {
+        updateImportsOnFileMove = { enabled = 'always' },
         suggest = {
           completeFunctionCalls = true,
         },
@@ -77,6 +79,7 @@ local servers = {
         },
       },
       javascript = {
+        updateImportsOnFileMove = { enabled = 'always' },
         suggest = {
           completeFunctionCalls = true,
         },
@@ -101,6 +104,9 @@ local servers = {
       Lua = {
         completion = {
           callSnippet = 'Replace',
+        },
+        codeLens = {
+          enable = true,
         },
         doc = {
           privateName = { '^_' },
@@ -344,8 +350,18 @@ return {
               end, '[T]oggle Inlay [H]ints')
             end
 
-            local navic = require 'nvim-navic'
+            -- lsp codelens
+            if vim.lsp.codelens and vim.lsp.protocol.Methods.textDocument_codeLens then
+              map('<leader>cc', vim.lsp.codelens.run, 'Run [C]odelens', 'n')
+              vim.lsp.codelens.refresh()
+              vim.api.nvim_create_autocmd({ 'BufEnter', 'InsertLeave' }, {
+                buffer = 0,
+                callback = vim.lsp.codelens.refresh,
+              })
+            end
+
             -- navic.nvim attach to lsp server
+            local navic = require 'nvim-navic'
             if client.server_capabilities.documentSymbolProvider then
               navic.attach(client, event.buf)
             end
@@ -363,7 +379,20 @@ return {
               vim.keymap.set('n', '<leader>cf', function()
                 vtsls.commands['fix_all'](0)
               end, { desc = 'vtsls: [F]ix all' })
+              vim.keymap.set('n', '<leader>cA', function()
+                vtsls.commands['source_actions'](0)
+              end, { desc = 'vtsls: Source [A]ction' })
               vim.keymap.set('n', '<leader>cF', '<cmd>EslintFixAll<cr>', { desc = 'Eslint: [F]ix all', buffer = 0 })
+
+              -- setup codelens for JS/TS
+              vim.lsp.commands['editor.action.showReferences'] = function(command, ctx)
+                local locations = command.arguments[3]
+                if locations and #locations > 0 then
+                  local items = vim.lsp.util.locations_to_items(locations, client.offset_encoding)
+                  vim.fn.setloclist(0, {}, ' ', { title = 'References', items = items, context = ctx })
+                  vim.api.nvim_command 'lopen'
+                end
+              end
             elseif client and client.name == 'clangd' then
               -- setup clangd keymaps for cs/c++
               vim.keymap.set('n', '<leader>ch', '"<cmd>ClangdSwitchSourceHeader<cr>"', { desc = 'Clangd: Switch Source/[H]eader (C/C++)', buffer = 0 })
