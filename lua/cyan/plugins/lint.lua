@@ -67,6 +67,13 @@ return {
         '--config',
         markdownlintrc,
       }
+
+      -- == config sqlfluff ==
+      local sql_ft = { 'sql', 'mysql', 'plsql' }
+      for _, ft in ipairs(sql_ft) do
+        lint.linters_by_ft[ft] = lint.linters_by_ft[ft] or {}
+        table.insert(lint.linters_by_ft[ft], 'sqlfluff')
+      end
     end,
   },
 }

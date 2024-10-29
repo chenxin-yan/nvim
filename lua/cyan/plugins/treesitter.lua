@@ -13,6 +13,7 @@ return { -- Highlight, edit, and navigate code
       'cpp',
       'lua',
       'luadoc',
+      'sql',
       'markdown',
       'markdown_inline',
       'latex',

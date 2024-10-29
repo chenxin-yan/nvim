@@ -108,6 +108,7 @@ require('lazy').setup({
   -- ---- language specific ----
   require 'cyan.plugins.refactoring', -- code refactoring
   require 'cyan.plugins.neogen', -- generate annotations/documentations
+  require 'cyan.plugins.sql', -- sql support
 
   -- TS/JS
   {
