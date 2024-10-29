@@ -355,7 +355,7 @@ return {
             if vim.lsp.codelens and vim.lsp.protocol.Methods.textDocument_codeLens then
               map('<leader>cc', vim.lsp.codelens.run, 'Run [C]odelens', 'n')
               vim.lsp.codelens.refresh()
-              vim.api.nvim_create_autocmd({ 'BufEnter', 'InsertLeave' }, {
+              vim.api.nvim_create_autocmd({ 'BufReadPre', 'InsertLeave', 'BufEnter' }, {
                 buffer = 0,
                 callback = vim.lsp.codelens.refresh,
               })

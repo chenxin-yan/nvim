@@ -1,3 +1,4 @@
+-- modified from LazyVim: http://www.lazyvim.org/extras/lang/sql
 local sql_ft = { 'sql', 'mysql', 'plsql' }
 return {
   {
