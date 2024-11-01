@@ -84,7 +84,6 @@ require('lazy').setup({
   require 'cyan.plugins.gx', -- better gx
   require 'cyan.plugins.trouble', -- better diagnostic list
   require 'cyan.plugins.autopairs', -- autopairs
-  require 'cyan.plugins.harpoon', -- file switcher
   require 'cyan.plugins.flash', -- fast navigation
   require 'cyan.plugins.FTerm', -- floating terminal
 

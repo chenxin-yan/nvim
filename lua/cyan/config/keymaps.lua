@@ -82,8 +82,5 @@ vim.keymap.set('n', '<leader>gi', ':!git init', { desc = '[I]nitialize' })
 
 vim.keymap.set('n', '<leader>gB', require 'cyan.helpers.git-browse', { desc = '[B]rowse Repo' })
 
--- delete all buffers
-vim.keymap.set('n', '<leader>bD', '<cmd>wa<bar>%bd<bar>e#<bar>bd#<cr>', { desc = '[B]uffer [D]elete all buffers' })
-
 -- select pasted text
 vim.keymap.set('n', 'gp', '`[v`]', { desc = 'Select Pasted Text' })
