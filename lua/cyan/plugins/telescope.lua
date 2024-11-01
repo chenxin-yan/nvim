@@ -37,7 +37,7 @@ return { -- Fuzzy Finder (files, lsp, etc)
     -- See `:help telescope.builtin`
     { '<leader>sh', '<cmd>Telescope help_tags<cr>', desc = '[H]elp' },
     { '<leader>sk', '<cmd>Telescope keymaps<cr>', desc = '[K]eymaps' },
-    { '<leader>sf', "<CMD>lua require'cyan.helpers.telescope-config'.project_files()<CR>", desc = 'Git [F]iles' },
+    { '<leader>sf', "<CMD>lua require'cyan.helpers.telescope-config'.project_files()<CR>", desc = 'Project [F]iles' },
     { '<leader>sF', '<cmd>Telescope find_files find_command=rg,--files,--hidden,--glob,!**/.git/*<cr>', desc = '[F]iles' },
     {
       '<leader>s-',
@@ -46,7 +46,7 @@ return { -- Fuzzy Finder (files, lsp, etc)
       end,
       desc = 'Parent directory',
     },
-    { '<leader>s*', '<cmd>Telescope grep_string<cr>', desc = 'current [W]ord' },
+    { '<leader>s*', '<cmd>Telescope grep_string<cr>', desc = 'Current [W]ord' },
     { '<leader>sg', '<cmd>Telescope live_grep<cr>', desc = 'By [G]rep' },
     { '<leader>sD', '<cmd>Telescope diagnostics<cr>', desc = 'Workspace [D]iagnostics' },
     { '<leader>sd', '<cmd>Telescope diagnostics bufnr=0<cr>', desc = 'Buffer [D]iagnostics' },
@@ -66,7 +66,7 @@ return { -- Fuzzy Finder (files, lsp, etc)
     },
 
     -- Shortcut for searching your Neovim configuration files
-    { '<leader>sn', '<cmd>Telescope find_files cwd=' .. vim.fn.stdpath 'config' .. '<cr>', desc = '[N]eovim files' },
+    { '<leader>sn', '<cmd>Telescope find_files cwd=' .. vim.fn.stdpath 'config' .. '<cr>', desc = '[N]eovim Config' },
 
     -- Shortcut for searching spelling suggestions
     { 'Z', '<cmd>Telescope spell_suggest theme=cursor<cr>', desc = ' Spelling Suggestions' },
