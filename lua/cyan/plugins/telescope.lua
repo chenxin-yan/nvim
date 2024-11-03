@@ -38,7 +38,7 @@ return { -- Fuzzy Finder (files, lsp, etc)
     { '<leader>sh', '<cmd>Telescope help_tags<cr>', desc = '[H]elp' },
     { '<leader>sk', '<cmd>Telescope keymaps<cr>', desc = '[K]eymaps' },
     { '<leader>sf', "<CMD>lua require'cyan.helpers.telescope-config'.project_files()<CR>", desc = 'Project [F]iles' },
-    { '<leader>sF', '<cmd>Telescope find_files find_command=rg,--files,--hidden,--glob,!**/.git/*<cr>', desc = '[F]iles' },
+    { '<leader>sF', '<cmd>Telescope find_files find_command=rg,--files,--hidden,--glob,!**/.git/*<cr>', desc = 'Cwd [F]iles' },
     {
       '<leader>s-',
       function()
