@@ -126,6 +126,11 @@ require('lazy').setup({
   require 'cyan.plugins.autolist', -- better bullet list
 
   -- ---- extras ----
+  {
+    'IogaMaster/neocord',
+    event = 'VeryLazy',
+    opts = {},
+  },
   require 'cyan.plugins.leetcode', -- Leetcode integration
   require 'cyan.plugins.vim-tmux-navigator', -- tmux window navigation integration
   require 'cyan.plugins.lazygit', -- git CLI
