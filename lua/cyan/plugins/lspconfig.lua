@@ -201,6 +201,8 @@ return {
       }
     end,
   },
+
+  -- lsp symbol bar
   {
     'SmiteshP/nvim-navic',
     lazy = true,
