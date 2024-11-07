@@ -1,4 +1,4 @@
-local vault_path = vim.fn.expand '~' .. '/Documents/Ideaverse'
+local vault_path = vim.fn.expand '~' .. '/Ideaverse'
 return {
   'epwalsh/obsidian.nvim',
   version = '*',
@@ -37,7 +37,7 @@ return {
       workspaces = {
         {
           name = 'Ideaverse',
-          path = vim.fn.expand '~' .. '/Documents/Ideaverse',
+          path = vault_path,
         },
       },
 
