@@ -37,8 +37,7 @@ return { -- Fuzzy Finder (files, lsp, etc)
     -- See `:help telescope.builtin`
     { '<leader>sh', '<cmd>Telescope help_tags<cr>', desc = '[H]elp' },
     { '<leader>sk', '<cmd>Telescope keymaps<cr>', desc = '[K]eymaps' },
-    { '<leader>sf', "<CMD>lua require'cyan.helpers.telescope-config'.project_files()<CR>", desc = 'Project [F]iles' },
-    { '<leader>sF', '<cmd>Telescope find_files find_command=rg,--files,--hidden,--glob,!**/.git/*<cr>', desc = 'Cwd [F]iles' },
+    { '<leader>sf', "<CMD>lua require'cyan.helpers.telescope-helpers'.find_files_from_project_git_root()<CR>", desc = 'Project [F]iles' },
     {
       '<leader>s-',
       function()
@@ -47,7 +46,7 @@ return { -- Fuzzy Finder (files, lsp, etc)
       desc = 'Parent directory',
     },
     { '<leader>s*', '<cmd>Telescope grep_string<cr>', desc = 'Current [W]ord' },
-    { '<leader>sg', '<cmd>Telescope live_grep<cr>', desc = 'By [G]rep' },
+    { '<leader>sg', "<CMD>lua require'cyan.helpers.telescope-helpers'.live_grep_from_project_git_root()<CR>", desc = '[G]rep project' },
     { '<leader>sD', '<cmd>Telescope diagnostics<cr>', desc = 'Workspace [D]iagnostics' },
     { '<leader>sd', '<cmd>Telescope diagnostics bufnr=0<cr>', desc = 'Buffer [D]iagnostics' },
     { '<leader>sr', '<cmd>Telescope resume<cr>', desc = '[R]esume' },
@@ -79,10 +78,10 @@ return { -- Fuzzy Finder (files, lsp, etc)
 
     -- telescope git pickers
     { '<leader>gl', '<cmd>Telescope git_status<cr>', desc = '[L]ist status' },
-    { '<leader>bc', '<cmd>Telescope git_bcommits<cr>', desc = '[C]ommits history' },
+    { '<leader>gC', '<cmd>Telescope git_bcommits<cr>', desc = '[C]ommits history' },
     { '<leader>gb', '<cmd>Telescope git_branches<cr>', desc = '[B]ranches' },
 
-    --
+    -- telescope bibtex
     { '<C-b>', '<cmd>Telescope bibtex<cr>', desc = 'Search [B]ibTex', ft = 'markdown', mode = 'i' },
   },
   config = function()
