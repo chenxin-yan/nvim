@@ -16,9 +16,9 @@ return {
             text_align = 'center',
           },
         },
-        numbers = function(opts)
-          return string.format('%s', opts.raise(opts.ordinal))
-        end,
+        -- numbers = function(opts)
+        --   return string.format('%s', opts.raise(opts.ordinal))
+        -- end,
       },
       highlights = require('catppuccin.groups.integrations.bufferline').get(),
     }
@@ -32,13 +32,11 @@ return {
     buffer_map('<c-{>', '<cmd>BufferLineMovePrev<cr>', 'Move buffer next')
     buffer_map('<c-}>', '<cmd>BufferLineMoveNext<cr>', 'Move buffer previous')
 
-    buffer_map('<leader>bp', '<cmd>BufferLineTogglePin<cr>', '[P]ing Buffer')
-    buffer_map('<leader>bP', '<cmd>BufferLineGroupClose ungrouped<cr>', 'Delete unpinged buffers')
-    buffer_map('<leader>bo', '<cmd>BufferLineCloseOthers<cr>', 'Delete [O]ther Buffers')
+    buffer_map('<leader>bD', '<cmd>BufferLineCloseOthers<cr>', '[D]elete Other Buffers')
 
-    for i = 1, 6 do
-      buffer_map('<leader>' .. i, '<cmd>BufferLineGoToBuffer ' .. i .. '<cr>', 'Goto Buffer ' .. i)
-    end
+    -- for i = 1, 6 do
+    --   buffer_map('<leader>' .. i, '<cmd>BufferLineGoToBuffer ' .. i .. '<cr>', 'Goto Buffer ' .. i)
+    -- end
     buffer_map('gb', '<cmd>BufferLinePick<cr>', '[G]oto [B]uffer Pick')
   end,
 }
