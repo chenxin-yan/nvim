@@ -49,7 +49,7 @@ return { -- Fuzzy Finder (files, lsp, etc)
     { '<leader>sg', "<CMD>lua require'cyan.helpers.telescope-helpers'.live_grep_from_project_git_root()<CR>", desc = '[G]rep project' },
     { '<leader>sD', '<cmd>Telescope diagnostics<cr>', desc = 'Workspace [D]iagnostics' },
     { '<leader>sd', '<cmd>Telescope diagnostics bufnr=0<cr>', desc = 'Buffer [D]iagnostics' },
-    { '<leader>sr', '<cmd>Telescope resume<cr>', desc = '[R]esume' },
+    -- { '<leader>sr', '<cmd>Telescope resume<cr>', desc = '[R]esume' },
     { '<leader>s.', '<cmd>Telescope oldfiles<cr>', desc = 'Recent Files ("." for repeat)' },
     { '<leader><leader>', '<cmd>Telescope buffers<cr>', desc = 'Search Open Buffers' },
 
