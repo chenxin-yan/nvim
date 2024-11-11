@@ -47,6 +47,8 @@ M.live_grep_from_project_git_root = function()
     },
     additional_args = {
       '--hidden',
+      '--glob',
+      '!**/.git/*',
     },
   }
 
