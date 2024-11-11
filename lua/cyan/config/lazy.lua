@@ -140,6 +140,7 @@ require('lazy').setup({
   require 'cyan.plugins.im-select', -- automatic input method switcher
   require 'cyan.plugins.yazi', -- yazi integration
   require 'cyan.plugins.obsidian', -- obsidian integration
+  require 'cyan.plugins.kulala', -- REST-client interface
 }, {
   ui = {
     -- If you are using a Nerd Font: set icons to an empty table which will use the

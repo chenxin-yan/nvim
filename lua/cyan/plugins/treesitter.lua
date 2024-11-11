@@ -14,6 +14,8 @@ return { -- Highlight, edit, and navigate code
       'lua',
       'luadoc',
       'sql',
+      'http',
+      'graphql',
       'markdown',
       'markdown_inline',
       'latex',
