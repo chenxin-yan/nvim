@@ -110,6 +110,7 @@ require('lazy').setup({
   require 'cyan.plugins.refactoring', -- code refactoring
   require 'cyan.plugins.neogen', -- generate annotations/documentations
   require 'cyan.plugins.sql', -- sql support
+  require 'cyan.plugins.emmet', -- nvim emmet support
 
   -- TS/JS
   {
