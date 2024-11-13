@@ -66,5 +66,4 @@ This config uses [which-key.nvim](https://github.com/folke/which-key.nvim) to di
 ## Roadmap
 
 - [ ] setup [neotest](https://github.com/nvim-neotest/neotest)
-- [ ] [Integrate prettier with ESlint](https://prettier.io/docs/en/integrating-with-linters.html)
 - [ ] add warning comments config files for hard-coded paths
