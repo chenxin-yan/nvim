@@ -39,6 +39,11 @@ local servers = {
       completeUnimported = true,
       clangdFileStatus = true,
     },
+    on_attach = function(client, buffer)
+      -- setup clangd keymaps for cs/c++
+      vim.keymap.set('n', '<leader>ch', '"<cmd>ClangdSwitchSourceHeader<cr>"', { desc = 'Clangd: Switch Source/[H]eader (C/C++)', buffer = buffer })
+      require('clangd_extensions.inlay_hints').setup_autocmd()
+    end,
   }, -- C/C++ lsp
   -- gopls = {},
   marksman = {}, -- markdown lsp
@@ -93,6 +98,38 @@ local servers = {
         },
       },
     },
+    on_attach = function(client, buffer)
+      -- setup vtsls keymaps for JS/TS
+      local vtsls = require 'vtsls'
+      vim.keymap.set('n', '<leader>co', function()
+        vtsls.commands['organize_imports'](0)
+      end, { desc = 'vtsls: [O]rganize imports', buffer = buffer })
+      vim.keymap.set('n', '<leader>cC', function()
+        vtsls.commands['goto_project_config'](0)
+      end, { desc = 'vtsls: Go to Project [C]onfig', buffer = buffer })
+      vim.keymap.set('n', '<leader>cf', function()
+        vtsls.commands['fix_all'](0)
+      end, { desc = 'vtsls: [F]ix all', buffer = buffer })
+      vim.keymap.set('n', '<leader>cA', function()
+        vtsls.commands['source_actions'](0)
+      end, { desc = 'vtsls: Source [A]ction', buffer = buffer })
+      vim.keymap.set('n', 'gR', function()
+        vtsls.commands['file_references'](0)
+      end, { desc = 'vtsls: [G]oto file [R]eferences', buffer = buffer })
+      vim.keymap.set('n', 'gD', function()
+        vtsls.commands['goto_source_definition'](0)
+      end, { desc = 'vtsls: [G]oto source [D]efinition', buffer = buffer })
+
+      -- setup codelens for JS/TS
+      vim.lsp.commands['editor.action.showReferences'] = function(command, ctx)
+        local locations = command.arguments[3]
+        if locations and #locations > 0 then
+          local items = vim.lsp.util.locations_to_items(locations, client.offset_encoding)
+          vim.fn.setloclist(0, {}, ' ', { title = 'References', items = items, context = ctx })
+          vim.api.nvim_command 'lopen'
+        end
+      end
+    end,
   },
   html = {}, -- HTML lsp
   cssls = {}, -- CSS lsp
@@ -137,7 +174,11 @@ local servers = {
     settings = {
       -- helps eslint find the eslintrc when it's placed in a subfolder instead of the cwd root
       workingDirectories = { mode = 'auto' },
+      format = true,
     },
+    on_attach = function(client, buffer)
+      vim.keymap.set('n', '<leader>cF', '<cmd>EslintFixAll<cr>', { desc = 'Eslint: [F]ix all', buffer = buffer })
+    end,
   },
   vale_ls = { -- prose linter lsp
     -- NOTE: need to sync vale packages with `vale sync` command or enable syncOnStartup
@@ -244,7 +285,35 @@ return {
   { 'dmmulroy/ts-error-translator.nvim', ft = { 'javascript', 'typescript' } }, -- make typescript error more readable
 
   -- C/C++
-  { 'p00f/clangd_extensions.nvim', lazy = true },
+  {
+    'p00f/clangd_extensions.nvim',
+    lazy = true,
+    opts = {
+      inlay_hints = {
+        inline = false,
+      },
+      ast = {
+        --These require codicons (https://github.com/microsoft/vscode-codicons)
+        role_icons = {
+          type = '',
+          declaration = '',
+          expression = '',
+          specifier = '',
+          statement = '',
+          ['template argument'] = '',
+        },
+        kind_icons = {
+          Compound = '',
+          Recovery = '',
+          TranslationUnit = '',
+          PackExpansion = '',
+          TemplateTypeParm = '',
+          TemplateTemplateParm = '',
+          TemplateParamObject = '',
+        },
+      },
+    },
+  },
 
   -- == Main LSP configs ==
   { -- LSP Configuration & Plugins
@@ -314,14 +383,16 @@ return {
 
           -- This is not Goto Definition, this is Goto Declaration.
           --  For example, in C this would take you to the header.
-          map('gD', vim.lsp.buf.declaration, '[G]oto [D]eclaration')
+          local client = vim.lsp.get_client_by_id(event.data.client_id)
+          if client and client.supports_method(vim.lsp.protocol.Methods.textDocument_declaration) then
+            map('gD', vim.lsp.buf.declaration, '[G]oto [D]eclaration')
+          end
 
           -- The following two autocommands are used to highlight references of the
           -- word under your cursor when your cursor rests there for a little while.
           --    See `:help CursorHold` for information about when this is executed
           --
           -- When you move your cursor, the highlights will be cleared (the second autocommand).
-          local client = vim.lsp.get_client_by_id(event.data.client_id)
           if client and client.supports_method(vim.lsp.protocol.Methods.textDocument_documentHighlight) then
             local highlight_augroup = vim.api.nvim_create_augroup('lsp-highlight', { clear = false })
             vim.api.nvim_create_autocmd({ 'CursorHold', 'CursorHoldI' }, {
@@ -368,64 +439,6 @@ return {
             local navic = require 'nvim-navic'
             if client.server_capabilities.documentSymbolProvider then
               navic.attach(client, event.buf)
-            end
-
-            -- == config specific to language ==
-            if client and client.name == 'vtsls' then
-              -- setup vtsls keymaps for JS/TS
-              local vtsls = require 'vtsls'
-              vim.keymap.set('n', '<leader>co', function()
-                vtsls.commands['organize_imports'](0)
-              end, { desc = 'vtsls: [O]rganize imports' })
-              vim.keymap.set('n', '<leader>cC', function()
-                vtsls.commands['goto_project_config'](0)
-              end, { desc = 'vtsls: Go to Project [C]onfig' })
-              vim.keymap.set('n', '<leader>cf', function()
-                vtsls.commands['fix_all'](0)
-              end, { desc = 'vtsls: [F]ix all' })
-              vim.keymap.set('n', '<leader>cA', function()
-                vtsls.commands['source_actions'](0)
-              end, { desc = 'vtsls: Source [A]ction' })
-              vim.keymap.set('n', '<leader>cF', '<cmd>EslintFixAll<cr>', { desc = 'Eslint: [F]ix all', buffer = 0 })
-
-              -- setup codelens for JS/TS
-              vim.lsp.commands['editor.action.showReferences'] = function(command, ctx)
-                local locations = command.arguments[3]
-                if locations and #locations > 0 then
-                  local items = vim.lsp.util.locations_to_items(locations, client.offset_encoding)
-                  vim.fn.setloclist(0, {}, ' ', { title = 'References', items = items, context = ctx })
-                  vim.api.nvim_command 'lopen'
-                end
-              end
-            elseif client and client.name == 'clangd' then
-              -- setup clangd keymaps for cs/c++
-              vim.keymap.set('n', '<leader>ch', '"<cmd>ClangdSwitchSourceHeader<cr>"', { desc = 'Clangd: Switch Source/[H]eader (C/C++)', buffer = 0 })
-              require('clangd_extensions').setup {
-                inlay_hints = {
-                  inline = false,
-                },
-                ast = {
-                  --These require codicons (https://github.com/microsoft/vscode-codicons)
-                  role_icons = {
-                    type = '',
-                    declaration = '',
-                    expression = '',
-                    specifier = '',
-                    statement = '',
-                    ['template argument'] = '',
-                  },
-                  kind_icons = {
-                    Compound = '',
-                    Recovery = '',
-                    TranslationUnit = '',
-                    PackExpansion = '',
-                    TemplateTypeParm = '',
-                    TemplateTemplateParm = '',
-                    TemplateParamObject = '',
-                  },
-                },
-              }
-              require('clangd_extensions.inlay_hints').setup_autocmd()
             end
           end
         end,
