@@ -33,9 +33,6 @@ return {
         twilight = { enabled = false },
         gitsigns = { enabled = true },
       },
-      neovide = {
-        enabled = vim.g.neovide,
-      },
     },
   },
 }

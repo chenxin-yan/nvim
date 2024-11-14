@@ -48,16 +48,16 @@ nvim
 
 | Language              | Lsp         | Formatter                 | Linter          | Debugger           | Testing      |
 | --------------------- | ----------- | ------------------------- | --------------- | ------------------ | ------------ |
-| lua                   | ✅ luals    | ✅ stylua                 | ❌              | ❌                 | ❌           |
+| Lua                   | ✅ luals    | ✅ stylua                 | ❌              | ❌                 | ❌           |
 | C/C++                 | ✅ clangd   | ✅ clangd                 | ✅ clangd       | ✅ codelldb        | ❌           |
 | Java                  | ✅ jdtls    | ✅ jdtls                  | ✅ jdtls        | ✅ jdtls           | ✅ java-test |
 | JavaScript/TypeScript | ✅ vtsls    | ✅ Prettier               | ✅ Eslint       | ✅ vscode-js-debug | ❌           |
 | Golang                | ⏳          | ⏳                        | ⏳              | ⏳                 | ⏳           |
 | Markdown              | ✅ marksman | ✅ Prettier, markdownlint | ✅ markdownlint | ❌                 | ❌           |
-| html                  | ✅ html     | ✅ Prettier               | ❌              | ❌                 | ❌           |
-| css                   | ✅ cssls    | ✅ Prettier               | ❌              | ❌                 | ❌           |
-| json                  | ✅ jsonls   | ✅ Prettier               | ❌              | ❌                 | ❌           |
-| toml                  | ✅ taplo    | ✅ taplo                  | ❌              | ❌                 | ❌           |
+| HTML                  | ✅ html     | ✅ Prettier               | ❌              | ❌                 | ❌           |
+| CSS                   | ✅ cssls    | ✅ Prettier               | ❌              | ❌                 | ❌           |
+| JSON                  | ✅ jsonls   | ✅ Prettier               | ❌              | ❌                 | ❌           |
+| TOML                  | ✅ taplo    | ✅ taplo                  | ❌              | ❌                 | ❌           |
 
 ## Keymaps
 
