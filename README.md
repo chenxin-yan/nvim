@@ -51,12 +51,12 @@ nvim
 | Lua                   | ✅ luals    | ✅ stylua                 | ❌              | ❌                 | ❌           |
 | C/C++                 | ✅ clangd   | ✅ clangd                 | ✅ clangd       | ✅ codelldb        | ❌           |
 | Java                  | ✅ jdtls    | ✅ jdtls                  | ✅ jdtls        | ✅ jdtls           | ✅ java-test |
-| JavaScript/TypeScript | ✅ vtsls    | ✅ Prettier               | ✅ Eslint       | ✅ vscode-js-debug | ❌           |
+| JavaScript/TypeScript | ✅ vtsls    | ✅ Biome/Prettier         | ✅ Biome/Eslint | ✅ vscode-js-debug | ❌           |
 | Golang                | ⏳          | ⏳                        | ⏳              | ⏳                 | ⏳           |
 | Markdown              | ✅ marksman | ✅ Prettier, markdownlint | ✅ markdownlint | ❌                 | ❌           |
-| HTML                  | ✅ html     | ✅ Prettier               | ❌              | ❌                 | ❌           |
-| CSS                   | ✅ cssls    | ✅ Prettier               | ❌              | ❌                 | ❌           |
-| JSON                  | ✅ jsonls   | ✅ Prettier               | ❌              | ❌                 | ❌           |
+| HTML                  | ✅ html-lsp | ✅ Prettier               | ❌              | ❌                 | ❌           |
+| CSS                   | ✅ css-lsp  | ✅ Biome/Prettier         | ❌              | ❌                 | ❌           |
+| JSON                  | ✅ jsonls   | ✅ Biome/Prettier         | ❌              | ❌                 | ❌           |
 | TOML                  | ✅ taplo    | ✅ taplo                  | ❌              | ❌                 | ❌           |
 
 ## Keymaps
