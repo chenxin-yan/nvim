@@ -22,8 +22,11 @@ return { -- Autoformat
         sqlfluff = {
           args = { 'format', '--dialect=ansi', '-' },
         },
+        biome = {
+          require_cwd = true,
+        },
       },
-      notify_on_error = false,
+      notify_on_error = true,
       format_on_save = function(bufnr)
         -- Disable "format_on_save lsp_fallback" for languages that don't
         -- have a well standardized coding style. You can add additional
@@ -42,19 +45,35 @@ return { -- Autoformat
       end,
       formatters_by_ft = {
         lua = { 'stylua' },
-        javascript = { 'prettier' },
-        typescript = { 'prettier' },
-        javascriptreact = { 'prettier' },
-        typescriptreact = { 'prettier' },
-        css = { 'prettier' },
         html = { 'prettier' },
-        json = { 'prettier' },
+        yaml = { 'prettier' },
         markdown = { 'prettier', 'markdownlint-cli2' },
-        sql = 'sqlfluff',
-        mysql = 'sqlfluff',
-        plsql = 'sqlfluff',
+        sql = { 'sqlfluff' },
+        mysql = { 'sqlfluff' },
+        plsql = { 'sqlfluff' },
       },
     }
+
+    -- setup biome & prettier
+    local biome_supported = {
+      'css',
+      'javascript',
+      'javascriptreact',
+      'json',
+      'jsonc',
+      'typescript',
+      'typescriptreact',
+      'vue',
+    }
+    for _, ft in ipairs(biome_supported) do
+      opts.formatters_by_ft[ft] = function(bufnr)
+        if require('conform').get_formatter_info('biome', bufnr).available then
+          return { 'biome' }
+        else
+          return { 'prettier' }
+        end
+      end
+    end
 
     return opts
   end,
