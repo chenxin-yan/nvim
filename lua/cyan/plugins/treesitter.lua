@@ -28,6 +28,7 @@ return { -- Highlight, edit, and navigate code
       'css',
       'json5',
       'java',
+      'dockerfile',
     },
     -- Autoinstall languages that are not installed
     auto_install = true,

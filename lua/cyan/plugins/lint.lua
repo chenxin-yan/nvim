@@ -15,6 +15,7 @@ return {
       local lint = require 'lint'
       lint.linters_by_ft = {
         markdown = { 'markdownlint-cli2' },
+        dockerfile = { 'hadolint' },
       }
 
       -- Create autocommand which carries out the actual linting

@@ -186,12 +186,15 @@ local servers = {
     --   syncOnStartup = true,
     -- },
   },
-  emmet_language_server = {},
+  emmet_language_server = {}, -- emmet support
+  dockerls = {}, -- docker lsp
+  docker_compose_language_service = {}, -- docker lsp
 }
 -- You can add other tools here that you want Mason to install
 -- for you, so that they are available from within Neovim.
 local ensure_installed = vim.tbl_keys(servers or {})
 vim.list_extend(ensure_installed, {
+
   -- Formatters
   'stylua', -- lua formatter
   'prettier', -- javascript formatter
@@ -199,6 +202,7 @@ vim.list_extend(ensure_installed, {
   -- Linters
   'markdownlint-cli2', -- markdown linter & formatter
   'vale', -- prose linter
+  'hadolint', -- docker linter
   -- debugger
   'js-debug-adapter', -- javascript debugger
   'java-debug-adapter', -- java debugger
