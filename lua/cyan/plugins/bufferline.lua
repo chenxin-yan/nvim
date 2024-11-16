@@ -37,6 +37,5 @@ return {
     -- for i = 1, 6 do
     --   buffer_map('<leader>' .. i, '<cmd>BufferLineGoToBuffer ' .. i .. '<cr>', 'Goto Buffer ' .. i)
     -- end
-    buffer_map('gb', '<cmd>BufferLinePick<cr>', '[G]oto [B]uffer Pick')
   end,
 }

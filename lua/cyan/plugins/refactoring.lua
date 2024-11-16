@@ -45,22 +45,22 @@ return {
       desc = 'Extract [B]lock to file',
     },
     {
-      '<leader>cdp',
+      '<leader>dp',
       '<cmd>lua require("refactoring").debug.printf({below = false})<cr>',
       mode = 'n',
       desc = '[D]ebug [P]rint',
     },
     {
-      '<leader>cdv',
+      '<leader>dv',
       '<cmd>lua require("refactoring").debug.print_var()<cr>',
       mode = { 'x', 'n' },
       desc = '[D]ebug print [V]ariable',
     },
     {
-      '<leader>cdc',
+      '<leader>dx',
       '<cmd>lua require("refactoring").debug.cleanup({})<cr>',
       mode = 'n',
-      desc = '[D]ebug print [C]leanup',
+      desc = '[D]ebug print Cleanup',
     },
   },
   dependencies = {

@@ -50,14 +50,12 @@ return { -- Autoformat
         html = { 'prettier' },
         json = { 'prettier' },
         markdown = { 'prettier', 'markdownlint-cli2' },
+        sql = 'sqlfluff',
+        mysql = 'sqlfluff',
+        plsql = 'sqlfluff',
       },
     }
 
-    local sql_ft = { 'sql', 'mysql', 'plsql' }
-    for _, ft in ipairs(sql_ft) do
-      opts.formatters_by_ft[ft] = opts.formatters_by_ft[ft] or {}
-      table.insert(opts.formatters_by_ft[ft], 'sqlfluff')
-    end
     return opts
   end,
 }
