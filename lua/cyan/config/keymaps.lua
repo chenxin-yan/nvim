@@ -70,16 +70,14 @@ vim.keymap.set('n', 'g;', 'm`A;<Esc>``', { desc = 'Add ";" at the end of the lin
 vim.keymap.set('n', '<leader><Tab>', '<cmd>b#<cr>', { desc = 'Goto previously opened buffer' })
 
 -- git operations
-vim.keymap.set('n', '<leader>ga', ':!git add *', { desc = '[A]dd all' })
+vim.keymap.set('n', '<leader>ga', ':!git add %', { desc = '[A]dd current file' })
 vim.keymap.set('n', '<leader>gc', ':!git commit -m ""<left>', { desc = '[C]ommit' })
 vim.keymap.set('n', '<leader>gA', ':!git commit --amend --no-edit', { desc = '[A]mend' })
 vim.keymap.set('n', '<leader>gp', ':!git pull', { desc = '[P]ull' })
 vim.keymap.set('n', '<leader>gP', ':!git push', { desc = '[P]ush' })
 vim.keymap.set('n', '<leader>gu', ':!git reset HEAD *', { desc = '[U]nstage files' })
 vim.keymap.set('n', '<leader>gr', ':!git reset --hard HEAD *', { desc = 'Hard [R]eset to last commit' })
-vim.keymap.set('n', '<leader>gs', ':!git reset --soft HEAD *', { desc = '[S]oft Reset to last commit' })
 vim.keymap.set('n', '<leader>gi', ':!git init', { desc = '[I]nitialize' })
-
 vim.keymap.set('n', '<leader>gB', require 'cyan.helpers.git-browse', { desc = '[B]rowse Repo' })
 
 -- select pasted text

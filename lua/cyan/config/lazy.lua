@@ -87,7 +87,6 @@ require('lazy').setup({
   require 'cyan.plugins.flash', -- fast navigation
   require 'cyan.plugins.FTerm', -- floating terminal
   require 'cyan.plugins.grapple', -- bookmark files for easy navigation
-  require 'cyan.plugins.marks', -- better marks
 
   -- ---- UI ----
   {
