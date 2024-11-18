@@ -1,6 +1,14 @@
 return {
   'windwp/nvim-ts-autotag',
-  event = { 'BufReadPre', 'BufNewFile' },
+  ft = {
+    'html',
+    'javascript',
+    'javascriptreact',
+    'json',
+    'jsonc',
+    'typescript',
+    'typescriptreact',
+  },
   config = function()
     require('nvim-ts-autotag').setup()
   end,

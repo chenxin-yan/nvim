@@ -66,6 +66,7 @@ return { -- Autoformat
       'vue',
     }
     for _, ft in ipairs(biome_supported) do
+      ---@diagnostic disable-next-line: assign-type-mismatch
       opts.formatters_by_ft[ft] = function(bufnr)
         if require('conform').get_formatter_info('biome', bufnr).available then
           return { 'biome' }
