@@ -29,8 +29,6 @@ return {
     end
     buffer_map('<c-]>', '<cmd>BufferLineCycleNext<cr>', 'Goto next buffer')
     buffer_map('<c-[>', '<cmd>BufferLineCyclePrev<cr>', 'Goto previous buffer')
-    buffer_map('<c-{>', '<cmd>BufferLineMovePrev<cr>', 'Move buffer next')
-    buffer_map('<c-}>', '<cmd>BufferLineMoveNext<cr>', 'Move buffer previous')
 
     buffer_map('<leader>bD', '<cmd>BufferLineCloseOthers<cr>', '[D]elete Other Buffers')
 

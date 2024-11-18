@@ -47,8 +47,8 @@ vim.keymap.set('n', '<leader>|', '<C-w><C-v>', { desc = 'Vertical Split' })
 -- Tab operations
 vim.keymap.set('n', '<leader><C-t>', '<cmd>tabnew<cr>', { desc = 'Create new tab' })
 vim.keymap.set('n', '<leader><C-w>', '<cmd>tabc<cr>', { desc = 'Close current tab' })
-vim.keymap.set('n', ']T', '<cmd>tabn<cr>', { desc = '[N]ext tab' })
-vim.keymap.set('n', '[T', '<cmd>tabp<cr>', { desc = '[P]revious tab' })
+vim.keymap.set('n', '<c-{>', '<cmd>tabn<cr>', { desc = '[N]ext tab' })
+vim.keymap.set('n', '<c-}>', '<cmd>tabp<cr>', { desc = '[P]revious tab' })
 
 -- replace $ and ^ with H and L
 vim.keymap.set({ 'n', 'x' }, 'H', '^')
