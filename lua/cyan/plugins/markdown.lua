@@ -2,7 +2,7 @@ if vim.g.vscode then
   return {}
 end
 return {
-  'MeanderingProgrammer/markdown.nvim',
+  'MeanderingProgrammer/render-markdown.nvim',
   dependencies = { 'nvim-treesitter/nvim-treesitter', 'echasnovski/mini.nvim' },
   keys = {
     {
@@ -12,8 +12,10 @@ return {
       ft = 'markdown',
     },
   },
+  ft = { 'markdown', 'Avante' },
   opts = {
-    file_types = { 'markdown' },
+    opts = {},
+    file_types = { 'markdown', 'Avante' },
     code = {
       sign = false,
       width = 'block',
@@ -27,5 +29,4 @@ return {
       enabled = false,
     },
   },
-  ft = { 'markdown' },
 }

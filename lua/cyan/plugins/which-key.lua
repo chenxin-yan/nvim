@@ -6,6 +6,7 @@ return {
       { ']', group = 'Next' },
       { '[', group = 'Previous' },
       { 'gs', group = 'Surround', mode = { 'n', 'x' } },
+      { '<leader>a', group = ' [A]I', mode = { 'n', 'x' } },
       { '<leader>c', group = '󰘦 [C]ode', mode = { 'n', 'x' } },
       { '<leader>x', group = ' [X]Diagnostic/QuickFix' },
       { '<leader>cd', group = '[D]ebug Print', mode = { 'n', 'x' } },

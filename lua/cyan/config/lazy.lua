@@ -109,7 +109,6 @@ require('lazy').setup({
   require 'cyan.plugins.refactoring', -- code refactoring
   require 'cyan.plugins.neogen', -- generate annotations/documentations
   require 'cyan.plugins.sql', -- sql support
-  require 'cyan.plugins.emmet', -- nvim emmet support
 
   -- TS/JS
   {
@@ -141,6 +140,7 @@ require('lazy').setup({
   require 'cyan.plugins.yazi', -- yazi integration
   require 'cyan.plugins.obsidian', -- obsidian integration
   require 'cyan.plugins.kulala', -- REST-client interface
+  require 'cyan.plugins.avante', -- AI coding assistance
 }, {
   ui = {
     -- If you are using a Nerd Font: set icons to an empty table which will use the

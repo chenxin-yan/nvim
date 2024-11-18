@@ -57,10 +57,10 @@ return {
       desc = '[D]ebug print [V]ariable',
     },
     {
-      '<leader>dx',
+      '<leader>du',
       '<cmd>lua require("refactoring").debug.cleanup({})<cr>',
       mode = 'n',
-      desc = '[D]ebug print Cleanup',
+      desc = '[D]ebug print Clean[U]p',
     },
   },
   dependencies = {
