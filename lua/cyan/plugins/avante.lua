@@ -4,6 +4,14 @@ return {
   version = false, -- set this if you want to always pull the latest change
   opts = {
     -- hints = { enabled = false }
+    mappings = {
+      suggestion = {
+        accept = '<M-y>',
+        next = '<M-]>',
+        prev = '<M-[>',
+        dismiss = '<C-c>',
+      },
+    },
   },
   -- if you want to build from source then do `make BUILD_FROM_SOURCE=true`
   build = 'make',
