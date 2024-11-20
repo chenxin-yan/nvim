@@ -69,6 +69,14 @@ require('lazy').setup({
   -- line preview when search line number
   { 'nacro90/numb.nvim', event = 'CmdlineEnter', config = true },
 
+  -- better change work cases
+  {
+    'gregorias/coerce.nvim',
+    event = { 'BufReadPre', 'BufNewFile' },
+    tag = 'v3.0.0',
+    config = true,
+  },
+
   require 'cyan.plugins.todo-comments', -- Highlight todo, notes, etc in comment; todo tree
   require 'cyan.plugins.which-key', -- keybinding hint
   require 'cyan.plugins.telescope', -- fuzzy search
