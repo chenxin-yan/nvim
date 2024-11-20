@@ -4,13 +4,26 @@ return {
   event = 'VeryLazy',
   version = '*',
   dependencies = {
-    'SmiteshP/nvim-navic',
+    {
+      'SmiteshP/nvim-navic',
+      lazy = true,
+      init = function()
+        vim.g.navic_silence = true
+      end,
+      opts = function()
+        return {
+          highlight = true,
+          depth_limit = 5,
+          lazy_update_context = true,
+        }
+      end,
+    },
     'nvim-tree/nvim-web-devicons', -- optional dependency
   },
   config = function()
     require('barbecue').setup {
       create_autocmd = false, -- prevent barbecue from updating itself automatically
-      attach_navic = false,
+      attach_navic = true,
       show_dirname = false,
       show_basename = false,
     }

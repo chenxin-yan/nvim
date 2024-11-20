@@ -16,9 +16,9 @@ return {
             text_align = 'center',
           },
         },
-        -- numbers = function(opts)
-        --   return string.format('%s', opts.raise(opts.ordinal))
-        -- end,
+        numbers = function(opts)
+          return string.format('%s', opts.raise(opts.ordinal))
+        end,
       },
       highlights = require('catppuccin.groups.integrations.bufferline').get(),
     }
@@ -32,8 +32,8 @@ return {
 
     buffer_map('<leader>bD', '<cmd>BufferLineCloseOthers<cr>', '[D]elete Other Buffers')
 
-    -- for i = 1, 6 do
-    --   buffer_map('<leader>' .. i, '<cmd>BufferLineGoToBuffer ' .. i .. '<cr>', 'Goto Buffer ' .. i)
-    -- end
+    for i = 1, 6 do
+      buffer_map('<leader>' .. i, '<cmd>BufferLineGoToBuffer ' .. i .. '<cr>', 'Goto Buffer ' .. i)
+    end
   end,
 }
