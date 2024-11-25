@@ -202,7 +202,6 @@ vim.list_extend(ensure_installed, {
   'sqlfluff', -- SQL formmater & linter
   -- Linters
   'markdownlint-cli2', -- markdown linter & formatter
-  'vale', -- prose linter
   'hadolint', -- docker linter
   -- debugger
   'js-debug-adapter', -- javascript debugger

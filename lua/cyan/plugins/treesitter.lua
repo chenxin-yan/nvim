@@ -63,6 +63,7 @@ return { -- Highlight, edit, and navigate code
       },
       move = {
         enable = true,
+        disable = { 'markdown' },
         goto_next_start = {
           [']f'] = { query = '@function.outer', desc = 'Next function/method start' },
           [']a'] = { query = '@parameter.outer', desc = 'Next argument' },

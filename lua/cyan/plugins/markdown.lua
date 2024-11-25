@@ -14,7 +14,6 @@ return {
   },
   ft = { 'markdown', 'Avante' },
   opts = {
-    opts = {},
     file_types = { 'markdown', 'Avante' },
     code = {
       sign = false,
