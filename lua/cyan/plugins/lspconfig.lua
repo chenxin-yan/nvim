@@ -176,7 +176,7 @@ local servers = {
       workingDirectories = { mode = 'auto' },
       format = true,
     },
-    on_attach = function(client, buffer)
+    on_attach = function(_, buffer)
       vim.keymap.set('n', '<leader>cF', '<cmd>EslintFixAll<cr>', { desc = 'Eslint: [F]ix all', buffer = buffer })
     end,
   },
@@ -189,6 +189,38 @@ local servers = {
   emmet_language_server = {}, -- emmet support
   dockerls = {}, -- docker lsp
   docker_compose_language_service = {}, -- docker lsp
+  yamlls = {
+    -- Have to add this for yamlls to understand that we support line folding
+    capabilities = {
+      textDocument = {
+        foldingRange = {
+          dynamicRegistration = false,
+          lineFoldingOnly = true,
+        },
+      },
+    },
+    -- lazy-load schemastore when needed
+    on_new_config = function(new_config)
+      new_config.settings.yaml.schemas = vim.tbl_deep_extend('force', new_config.settings.yaml.schemas or {}, require('schemastore').yaml.schemas())
+    end,
+    settings = {
+      redhat = { telemetry = { enabled = false } },
+      yaml = {
+        keyOrdering = false,
+        format = {
+          enable = true,
+        },
+        validate = true,
+        schemaStore = {
+          -- Must disable built-in schemaStore support to use
+          -- schemas from SchemaStore.nvim plugin
+          enable = false,
+          -- Avoid TypeError: Cannot read properties of undefined (reading 'length')
+          url = '',
+        },
+      },
+    },
+  }, -- YAML lsp
 }
 -- You can add other tools here that you want Mason to install
 -- for you, so that they are available from within Neovim.
@@ -267,8 +299,8 @@ return {
   -- java lsp config
   { 'mfussenegger/nvim-jdtls', lazy = true, ft = 'java', dependencies = 'mfussenegger/nvim-dap' },
 
-  -- json schema support
-  { 'b0o/schemastore.nvim', lazy = true },
+  -- json/yaml schema support
+  { 'b0o/schemastore.nvim', lazy = true, version = false },
 
   -- JS/TS
   { 'yioneko/nvim-vtsls', lazy = true },

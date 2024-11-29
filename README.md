@@ -59,6 +59,7 @@ nvim
 | CSS                   | ✅ css-lsp  | ✅ Biome/Prettier         | ❌              | ❌                 | ❌           |
 | JSON                  | ✅ jsonls   | ✅ Biome/Prettier         | ❌              | ❌                 | ❌           |
 | TOML                  | ✅ taplo    | ✅ taplo                  | ❌              | ❌                 | ❌           |
+| YAML                  | ✅ yamlls   | ✅ yamlls                 | ❌              | ❌                 | ❌           |
 
 ## Keymaps
 
