@@ -4,11 +4,11 @@ return {
     event = { 'BufReadPre', 'BufNewFile' },
     keys = {
       {
-        '<leader>L',
+        '<leader>bl',
         function()
           require('lint').try_lint()
         end,
-        desc = '[L]int file',
+        desc = '[L]int buffer',
       },
     },
     config = function()

@@ -32,7 +32,7 @@ return {
 
     buffer_map('<leader>bD', '<cmd>BufferLineCloseOthers<cr>', '[D]elete Other Buffers')
 
-    for i = 1, 6 do
+    for i = 1, 5 do
       buffer_map('<leader>' .. i, '<cmd>BufferLineGoToBuffer ' .. i .. '<cr>', 'Goto Buffer ' .. i)
     end
   end,

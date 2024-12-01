@@ -16,10 +16,6 @@ vim.keymap.set('n', 'X', vim.diagnostic.open_float, { desc = 'Show diagnostic Er
 vim.keymap.set('x', '<leader>p', '"_dP', { desc = 'Paste in without yanking selected text' })
 vim.keymap.set({ 'n', 'x' }, 'x', '"_x', { desc = 'Delete without yanking' })
 
--- Open/Close buildin terminal
--- vim.keymap.set('n', '<C-t>', '<cmd>split<cr><cmd>terminal<cr>', { desc = 'Open [T]erminal' })
--- vim.keymap.set('t', '<C-c>', '<C-c><C-d>', { desc = 'Kill terminal' })
-
 -- Keybinds to make split navigation easier.
 --  Use CTRL+<hjkl> to switch between windows
 --  See `:help wincmd` for a list of all window commands

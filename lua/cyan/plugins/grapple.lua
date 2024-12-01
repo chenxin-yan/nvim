@@ -6,7 +6,7 @@ return {
   event = { 'BufReadPost', 'BufNewFile' },
   cmd = 'Grapple',
   keys = {
-    { '<leader>m', '<cmd>Grapple toggle<cr>', desc = '[M]ark File' },
+    { '<leader>bm', '<cmd>Grapple toggle<cr>', desc = '[M]ark buffer' },
     { '<leader>M', '<cmd>Grapple toggle_tags<cr>', desc = 'Open [M] window' },
     { '<C-S-n>', '<cmd>Grapple cycle_tags next<cr>', desc = 'Grapple cycle next tag' },
     { '<C-S-p>', '<cmd>Grapple cycle_tags prev<cr>', desc = 'Grapple cycle previous tag' },

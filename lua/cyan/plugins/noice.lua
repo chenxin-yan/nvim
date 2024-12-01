@@ -51,15 +51,15 @@ return {
     'MunifTanjim/nui.nvim',
     {
       'rcarriga/nvim-notify',
-      keys = {
-        {
-          '<leader>U',
-          function()
-            require('notify').dismiss { silent = true, pending = true }
-          end,
-          desc = 'Dismiss All Notifications',
-        },
-      },
+      -- keys = {
+      --   {
+      --     '<leader>',
+      --     function()
+      --       require('notify').dismiss { silent = true, pending = true }
+      --     end,
+      --     desc = 'Dismiss All Notifications',
+      --   },
+      -- },
       opts = {
         background_colour = '#000000',
         stages = 'static',
