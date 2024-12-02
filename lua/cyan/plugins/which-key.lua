@@ -19,6 +19,7 @@ return {
       { '<leader>b', group = ' [B]uffer' },
       { '<leader>r', group = ' [R]efactor', mode = { 'n', 'x' } },
       { '<leader>o', group = ' [O]bsidian' },
+      { '<leader>R', group = '󰒲 [R]est' },
     },
     plugins = {
       spelling = {
