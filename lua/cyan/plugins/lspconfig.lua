@@ -50,18 +50,10 @@ local servers = {
   -- rust_analyzer = {},
   -- ... etc. See `:help lspconfig-all` for a list of all the pre-configured LSPs
   vtsls = {
-    filetypes = {
-      'javascript',
-      'javascriptreact',
-      'javascript.jsx',
-      'typescript',
-      'typescriptreact',
-      'typescript.tsx',
-    },
     settings = {
       complete_function_calls = true,
       vtsls = {
-        enableMoveToFileCodeAction = true,
+        enableMoveToFileCodeAction = false,
         autoUseWorkspaceTsdk = true,
         experimental = {
           completion = {
@@ -73,6 +65,9 @@ local servers = {
         updateImportsOnFileMove = { enabled = 'always' },
         suggest = {
           completeFunctionCalls = true,
+        },
+        suggestionActions = {
+          enabled = false,
         },
         inlayHints = {
           enumMemberValues = { enabled = true },
@@ -87,6 +82,9 @@ local servers = {
         updateImportsOnFileMove = { enabled = 'always' },
         suggest = {
           completeFunctionCalls = true,
+        },
+        suggestionActions = {
+          enabled = false,
         },
         inlayHints = {
           enumMemberValues = { enabled = true },
@@ -113,6 +111,9 @@ local servers = {
       vim.keymap.set('n', '<leader>cA', function()
         vtsls.commands['source_actions'](0)
       end, { desc = 'vtsls: Source [A]ction', buffer = buffer })
+      vim.keymap.set('n', '<leader>cV', function()
+        vtsls.commands['select_ts_version'](0)
+      end, { desc = 'vtsls: Select TypeScript [V]ersion', buffer = buffer })
       vim.keymap.set('n', 'gR', function()
         vtsls.commands['file_references'](0)
       end, { desc = 'vtsls: [G]oto file [R]eferences', buffer = buffer })

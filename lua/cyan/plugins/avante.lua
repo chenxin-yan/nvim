@@ -6,7 +6,7 @@ return {
     -- hints = { enabled = false }
     mappings = {
       suggestion = {
-        accept = '<M-y>',
+        accept = '<tab>',
         next = '<M-]>',
         prev = '<M-[>',
         dismiss = '<C-c>',
