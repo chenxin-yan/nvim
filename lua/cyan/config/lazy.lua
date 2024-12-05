@@ -140,6 +140,12 @@ require('lazy').setup({
     event = 'VeryLazy',
     opts = {},
   },
+  {
+    'wintermute-cell/gitignore.nvim',
+    keys = {
+      { '<leader>gI', '<cmd>lua require("gitignore").generate()<cr>', desc = 'Generate .gitignore' },
+    },
+  },
   require 'cyan.plugins.leetcode', -- Leetcode integration
   require 'cyan.plugins.vim-tmux-navigator', -- tmux window navigation integration
   require 'cyan.plugins.lazygit', -- git CLI
