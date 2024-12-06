@@ -57,11 +57,11 @@ return {
     }
     -- stylua: ignore
     dashboard.section.buttons.val = {
-      dashboard.button('e', '  > New file', '<cmd> ene <BAR> startinsert <cr>'),
+      dashboard.button('e', '  > New file', ':e '),
       dashboard.button('f', '󰈞  > Find file', "<CMD>lua require'cyan.helpers.telescope-helpers'.find_files_from_project_git_root()<CR>"),
       dashboard.button('g', '󰺮  > Grep text', "<CMD>lua require'cyan.helpers.telescope-helpers'.live_grep_from_project_git_root()<CR>"),
-      dashboard.button('s', '󱊒  > Search workspace ', '<cmd>SessionSearch<cr>'),
-      dashboard.button('r', '󰚰  > Restore workspace', '<cmd>SessionRestore<cr>'),
+      dashboard.button('s', '󱊒  > Search Session ', '<cmd>lua require("persistence").select()<cr>'),
+      dashboard.button('r', '󰚰  > Restore Session', '<cmd>lua require("persistence").load()<cr>'),
       dashboard.button('u', '  > Update plugins', '<cmd>Lazy update<cr>'),
       dashboard.button('q', '󰈆  > Quit NVIM', '<cmd>qa<cr>'),
     }
