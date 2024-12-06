@@ -20,7 +20,6 @@ return {
       { '<leader>r', group = ' [R]efactor', mode = { 'n', 'x' } },
       { '<leader>o', group = ' [O]bsidian' },
       { '<leader>q', group = ' [Q]Session' },
-      { '<leader>R', group = '󰒲 [R]est' },
     },
     plugins = {
       spelling = {
