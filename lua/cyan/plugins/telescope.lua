@@ -78,7 +78,7 @@ return { -- Fuzzy Finder (files, lsp, etc)
 
     -- telescope git pickers
     { '<leader>gl', '<cmd>Telescope git_status<cr>', desc = '[L]ist status' },
-    { '<leader>gC', '<cmd>Telescope git_bcommits<cr>', desc = '[C]ommits history' },
+    { '<leader>gf', '<cmd>Telescope git_bcommits<cr>', desc = '[F]ile Commits history' },
     { '<leader>gb', '<cmd>Telescope git_branches<cr>', desc = '[B]ranches' },
 
     -- telescope bibtex
@@ -165,7 +165,6 @@ return { -- Fuzzy Finder (files, lsp, etc)
     }
 
     -- Enable Telescope extensions if they are installed
-    pcall(require('telescope').load_extension, 'noice')
     pcall(require('telescope').load_extension, 'fzf')
     pcall(require('telescope').load_extension, 'ui-select')
     pcall(require('telescope').load_extension, 'undo')

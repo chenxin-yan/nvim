@@ -77,6 +77,7 @@ require('lazy').setup({
     config = true,
   },
 
+  require 'cyan.plugins.snack', -- QoL plugins
   require 'cyan.plugins.todo-comments', -- Highlight todo, notes, etc in comment; todo tree
   require 'cyan.plugins.which-key', -- keybinding hint
   require 'cyan.plugins.telescope', -- fuzzy search
@@ -148,7 +149,6 @@ require('lazy').setup({
   },
   require 'cyan.plugins.leetcode', -- Leetcode integration
   require 'cyan.plugins.vim-tmux-navigator', -- tmux window navigation integration
-  require 'cyan.plugins.lazygit', -- git CLI
   require 'cyan.plugins.grug-far', -- grep and replace
   require 'cyan.plugins.im-select', -- automatic input method switcher
   require 'cyan.plugins.yazi', -- yazi integration

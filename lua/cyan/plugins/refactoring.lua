@@ -5,7 +5,7 @@ return {
     {
       '<leader>rf',
       "<cmd>lua require('refactoring').refactor('Extract Function')<cr>",
-      desc = '[E]xtract [F]unction',
+      desc = 'Extract [F]unction',
       mode = 'x',
     },
     {

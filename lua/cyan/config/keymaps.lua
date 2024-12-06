@@ -73,7 +73,6 @@ vim.keymap.set('n', '<leader>gP', ':!git push', { desc = '[P]ush' })
 vim.keymap.set('n', '<leader>gu', ':!git reset HEAD *', { desc = '[U]nstage files' })
 vim.keymap.set('n', '<leader>gr', ':!git reset --hard HEAD *', { desc = 'Hard [R]eset to last commit' })
 vim.keymap.set('n', '<leader>gi', ':!git init', { desc = '[I]nitialize' })
-vim.keymap.set('n', '<leader>gB', require 'cyan.helpers.git-browse', { desc = '[B]rowse Repo' })
 
 -- select pasted text
 vim.keymap.set('n', 'gp', '`[v`]', { desc = 'Select Pasted Text' })

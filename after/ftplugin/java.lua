@@ -144,5 +144,5 @@ vim.keymap.set('v', '<leader>rv', "<Esc><Cmd>lua require('jdtls').extract_variab
 vim.keymap.set('n', '<leader>rc', "<Cmd>lua require('jdtls').extract_constant()<cr>", { desc = 'jdtls: Extract [C]onstant', buffer = 0 })
 vim.keymap.set('v', '<leader>rc', "<Esc><Cmd>lua require('jdtls').extract_constant(true)<cr>", { desc = 'jdtls: Extract [C]onstant', buffer = 0 })
 vim.keymap.set('v', '<leader>rm', "<Esc><Cmd>lua require('jdtls').extract_method(true)<cr>", { desc = 'jdtls: Extract [M]ethod', buffer = 0 })
-vim.keymap.set('n', '<leader>ctc', "<Cmd>lua require('jdtls').test_class()<cr>", { desc = 'jdtls: [C]lass', buffer = 0 })
-vim.keymap.set('n', '<leader>ctm', "<Cmd>lua require('jdtls').test_nearest_method()<cr>", { desc = 'jdtls: [M]ethod', buffer = 0 })
+vim.keymap.set('n', '<leader>ctc', "<Cmd>lua require('jdtls').test_class()<cr>", { desc = 'jdtls: [T]est [C]lass', buffer = 0 })
+vim.keymap.set('n', '<leader>ctm', "<Cmd>lua require('jdtls').test_nearest_method()<cr>", { desc = 'jdtls: [T]est nearest [M]ethod', buffer = 0 })
