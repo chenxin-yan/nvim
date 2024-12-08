@@ -19,6 +19,7 @@ return {
     open_for_directories = false,
     keymaps = {
       replace_in_directory = '<c-r>',
+      grep_in_directory = '<c-g>',
       change_working_directory = '`',
     },
   },

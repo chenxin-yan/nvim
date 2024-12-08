@@ -20,20 +20,6 @@ return {
     local Snacks = require 'snacks'
     return {
       {
-        '<leader>.',
-        function()
-          Snacks.scratch()
-        end,
-        desc = 'Toggle Scratch Buffer',
-      },
-      {
-        '<leader>S',
-        function()
-          Snacks.scratch.select()
-        end,
-        desc = 'Select Scratch Buffer',
-      },
-      {
         '<leader>sm',
         function()
           Snacks.notifier.show_history()
