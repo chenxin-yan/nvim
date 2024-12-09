@@ -77,7 +77,7 @@ return { -- Fuzzy Finder (files, lsp, etc)
     { '<leader>sc', '<cmd>Telescope luasnip<cr>', desc = '[C]ompletion (Luasnip)' },
 
     -- telescope git pickers
-    { '<leader>gl', '<cmd>Telescope git_status<cr>', desc = '[L]ist status' },
+    { '<leader>gs', '<cmd>Telescope git_status<cr>', desc = 'Git [S]tatus' },
     { '<leader>gf', '<cmd>Telescope git_bcommits<cr>', desc = '[F]ile Commits history' },
     { '<leader>gb', '<cmd>Telescope git_branches<cr>', desc = '[B]ranches' },
 

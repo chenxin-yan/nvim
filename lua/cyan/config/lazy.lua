@@ -77,6 +77,19 @@ require('lazy').setup({
     config = true,
   },
 
+  -- toggle comma semicolon
+  {
+    'saifulapm/commasemi.nvim',
+    lazy = false,
+    init = function()
+      vim.g.commasemi_disable_commands = true -- disable commands before plugin loads
+    end,
+    opts = {
+      keymaps = true,
+      commands = false,
+    },
+  },
+
   require 'cyan.plugins.snack', -- QoL plugins
   require 'cyan.plugins.todo-comments', -- Highlight todo, notes, etc in comment; todo tree
   require 'cyan.plugins.which-key', -- keybinding hint
@@ -96,6 +109,8 @@ require('lazy').setup({
   require 'cyan.plugins.flash', -- fast navigation
   require 'cyan.plugins.FTerm', -- floating terminal
   require 'cyan.plugins.grapple', -- bookmark files for easy navigation
+  require 'cyan.plugins.zen', -- Zen mode
+  require 'cyan.plugins.ufo', -- better folds
 
   -- ---- UI ----
   {
@@ -132,7 +147,6 @@ require('lazy').setup({
   require 'cyan.plugins.markdown-preview', -- markdown preview in browser
   require 'cyan.plugins.markdown', -- better markdown render
   require 'cyan.plugins.footnote', -- better footnote
-  require 'cyan.plugins.zen', -- Zen mode
   require 'cyan.plugins.autolist', -- better bullet list
 
   -- ---- extras ----

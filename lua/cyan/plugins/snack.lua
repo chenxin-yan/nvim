@@ -48,7 +48,7 @@ return {
         desc = 'Lazygit',
       },
       {
-        '<leader>gL',
+        '<leader>gl',
         function()
           Snacks.lazygit.log()
         end,

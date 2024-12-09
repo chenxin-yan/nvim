@@ -57,10 +57,6 @@ vim.keymap.set('n', '<leader><C-a>', 'gg<s-v>G', { desc = 'Select all' })
 vim.keymap.set('n', 'gco', 'o<esc>Vcx<esc><cmd>normal gcc<cr>fxa<bs>', { desc = 'Add Comment Below' })
 vim.keymap.set('n', 'gcO', 'O<esc>Vcx<esc><cmd>normal gcc<cr>fxa<bs>', { desc = 'Add Comment Above' })
 
--- add endline caracter
-vim.keymap.set('n', 'g,', 'm`A,<Esc>``', { desc = 'Add "," at the end of the line ' })
-vim.keymap.set('n', 'g;', 'm`A;<Esc>``', { desc = 'Add ";" at the end of the line' })
-
 -- switch between buffers
 vim.keymap.set('n', '<leader><Tab>', '<cmd>b#<cr>', { desc = 'Goto previously opened buffer' })
 
