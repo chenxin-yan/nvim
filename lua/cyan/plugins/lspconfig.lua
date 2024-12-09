@@ -41,7 +41,7 @@ local servers = {
     },
     on_attach = function(client, buffer)
       -- setup clangd keymaps for cs/c++
-      vim.keymap.set('n', '<leader>ch', '"<cmd>ClangdSwitchSourceHeader<cr>"', { desc = 'Clangd: Switch Source/[H]eader (C/C++)', buffer = buffer })
+      vim.keymap.set('n', '<leader>ch', '<cmd>ClangdSwitchSourceHeader<cr>', { desc = 'Clangd: Switch Source/[H]eader (C/C++)', buffer = buffer })
       require('clangd_extensions.inlay_hints').setup_autocmd()
     end,
   }, -- C/C++ lsp
@@ -311,6 +311,9 @@ return {
   {
     'p00f/clangd_extensions.nvim',
     lazy = true,
+    cmd = {
+      'ClangdSwitchSourceHeader',
+    },
     opts = {
       inlay_hints = {
         inline = false,
