@@ -1,6 +1,9 @@
 return {
   'folke/persistence.nvim',
   event = 'BufReadPre',
+  dependencies = {
+    'nvim-telescope/telescope.nvim',
+  },
   lazy = true,
   opts = {},
   keys = {
