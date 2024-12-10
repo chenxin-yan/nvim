@@ -169,6 +169,7 @@ require('lazy').setup({
   require 'cyan.plugins.obsidian', -- obsidian integration
   require 'cyan.plugins.kulala', -- REST-client interface
   require 'cyan.plugins.avante', -- AI coding assistance
+  require 'cyan.plugins.copilot', -- AI autosuggestions
 }, {
   ui = {
     -- If you are using a Nerd Font: set icons to an empty table which will use the
