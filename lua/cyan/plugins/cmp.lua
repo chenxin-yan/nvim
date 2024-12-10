@@ -44,6 +44,27 @@ return { -- Autocompletion
         end, { desc = '[P]revious choice' })
       end,
     },
+
+    -- cmp source for github copilot
+    {
+      'zbirenbaum/copilot-cmp',
+      config = function(_, opts)
+        local copilot_cmp = require 'copilot_cmp'
+        copilot_cmp.setup(opts)
+        -- attach cmp source whenever copilot attaches
+        -- fixes lazy-loading issues with the copilot cmp source
+        vim.api.nvim_create_autocmd('LspAttach', {
+          callback = function(args)
+            local buffer = args.buf ---@type number
+            local client = vim.lsp.get_client_by_id(args.data.client_id)
+            if client and (not 'copilot' or client.name == 'copilot') then
+              return copilot_cmp._on_insert_enter { client, buffer }
+            end
+          end,
+        })
+      end,
+    },
+
     'saadparwaiz1/cmp_luasnip',
 
     -- Adds other completion capabilities.
@@ -62,6 +83,13 @@ return { -- Autocompletion
     luasnip.config.setup {
       update_events = { 'TextChanged', 'TextChangedI' },
       enable_autosnippets = true,
+    }
+
+    -- Setup lspkind github copilot symbol
+    lspkind.init {
+      symbol_map = {
+        Copilot = '',
+      },
     }
 
     cmp.setup {
@@ -144,6 +172,7 @@ return { -- Autocompletion
         --    https://github.com/L3MON4D3/LuaSnip?tab=readme-ov-file#keymaps
       },
       sources = {
+        { name = 'copilot', group_index = 1 },
         { name = 'nvim_lsp' },
         { name = 'luasnip' },
         { name = 'path' },
@@ -155,7 +184,9 @@ return { -- Autocompletion
         },
       },
       sorting = {
+        priority_weight = 2,
         comparators = {
+          require('copilot_cmp.comparators').prioritize,
           cmp.config.compare.offset,
           cmp.config.compare.exact,
           cmp.config.compare.recently_used,
