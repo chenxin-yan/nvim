@@ -1,14 +1,13 @@
 return {
   'yetone/avante.nvim',
-  event = { 'BufReadPre', 'BufNewFile' },
+  event = 'VeryLazy',
   version = false, -- set this if you want to always pull the latest change
-  opts = {},
   build = 'make',
   dependencies = {
     'stevearc/dressing.nvim',
     'nvim-lua/plenary.nvim',
     'MunifTanjim/nui.nvim',
-    'nvim-tree/nvim-web-devicons', -- or echasnovski/mini.icons
+    'nvim-tree/nvim-web-devicons',
   },
   config = function(_, opts)
     require('avante').setup(opts)
