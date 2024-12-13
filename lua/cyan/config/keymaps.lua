@@ -61,7 +61,6 @@ vim.keymap.set('n', 'gcO', 'O<esc>Vcx<esc><cmd>normal gcc<cr>fxa<bs>', { desc = 
 vim.keymap.set('n', '<leader><Tab>', '<cmd>b#<cr>', { desc = 'Goto previously opened buffer' })
 
 -- git operations
-vim.keymap.set('n', '<leader>ga', ':!git add %', { desc = '[A]dd current file' })
 vim.keymap.set('n', '<leader>gc', ':!git commit -m ""<left>', { desc = '[C]ommit' })
 vim.keymap.set('n', '<leader>gA', ':!git commit --amend --no-edit', { desc = '[A]mend' })
 vim.keymap.set('n', '<leader>gp', ':!git pull', { desc = '[P]ull' })
