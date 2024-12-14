@@ -105,7 +105,6 @@ require('lazy').setup({
   require 'cyan.plugins.persisted', -- nvim session manager
   require 'cyan.plugins.gx', -- better gx
   require 'cyan.plugins.trouble', -- better diagnostic list
-  require 'cyan.plugins.autopairs', -- autopairs
   require 'cyan.plugins.flash', -- fast navigation
   require 'cyan.plugins.FTerm', -- floating terminal
   require 'cyan.plugins.grapple', -- bookmark files for easy navigation
