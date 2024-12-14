@@ -110,7 +110,7 @@ return { -- Highlight, edit, and navigate code
       multiline_threshold = 1,
       max_lines = 3,
     }
-    vim.keymap.set('n', '<leader>tc', function()
+    vim.keymap.set('n', '<leader>uc', function()
       tsc.toggle()
     end, { desc = '[T]oggle tressiter [C]ontext' })
   end,

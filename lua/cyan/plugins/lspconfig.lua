@@ -39,7 +39,7 @@ local servers = {
       completeUnimported = true,
       clangdFileStatus = true,
     },
-    on_attach = function(client, buffer)
+    on_attach = function(_, buffer)
       -- setup clangd keymaps for cs/c++
       vim.keymap.set('n', '<leader>ch', '<cmd>ClangdSwitchSourceHeader<cr>', { desc = 'Clangd: Switch Source/[H]eader (C/C++)', buffer = buffer })
       require('clangd_extensions.inlay_hints').setup_autocmd()
@@ -420,7 +420,7 @@ return {
           --
           -- This may be unwanted, since they displace some of your code
           if client and client.supports_method(vim.lsp.protocol.Methods.textDocument_inlayHint) then
-            map('<leader>th', function()
+            map('<leader>uh', function()
               vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled { bufnr = event.buf })
             end, '[T]oggle Inlay [H]ints')
           end

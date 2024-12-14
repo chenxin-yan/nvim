@@ -17,7 +17,7 @@ return {
       return true
     end,
     ignored_dirs = {
-      { '~/', exact = true },
+      { '~', exact = true },
     },
   },
 }

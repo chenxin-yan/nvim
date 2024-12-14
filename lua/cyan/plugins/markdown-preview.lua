@@ -16,6 +16,6 @@ return {
     end
   end,
   keys = {
-    { '<leader>tp', ft = 'markdown', '<cmd>MarkdownPreviewToggle<cr>', desc = '[T]oggle Markdown [P]review' },
+    { '<leader>up', ft = 'markdown', '<cmd>MarkdownPreviewToggle<cr>', desc = '[T]oggle Markdown [P]review' },
   },
 }

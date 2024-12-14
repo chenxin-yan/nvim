@@ -80,13 +80,13 @@ require('lazy').setup({
   -- toggle comma semicolon
   {
     'saifulapm/commasemi.nvim',
-    lazy = false,
-    init = function()
-      vim.g.commasemi_disable_commands = true -- disable commands before plugin loads
-    end,
+    keys = {
+      { 'g,', '<cmd>CommaToggle<cr>', desc = 'Toggle comma' },
+      { 'g;', '<cmd>SemiToggle<cr>', desc = 'Toggle semicolon' },
+    },
     opts = {
-      keymaps = true,
-      commands = false,
+      keymaps = false,
+      commands = true,
     },
   },
 
@@ -127,7 +127,6 @@ require('lazy').setup({
   require 'cyan.plugins.indent-line', -- indentation guide
   require 'cyan.plugins.noice', -- UI improvement
   require 'cyan.plugins.bufferline', -- buffer/tabline
-  require 'cyan.plugins.barbecue', -- winbar lsp symbols
 
   -- ---- language specific ----
   require 'cyan.plugins.refactoring', -- code refactoring
