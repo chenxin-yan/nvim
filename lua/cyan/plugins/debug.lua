@@ -45,6 +45,8 @@ return {
     vim.keymap.set('n', '<leader>di', dap.step_into, { desc = 'Debuger: Step [I]nto' })
     vim.keymap.set('n', '<leader>dj', dap.step_over, { desc = 'Debuger: Step Over' })
     vim.keymap.set('n', '<leader>dk', dap.step_out, { desc = 'Debuger: Step Out' })
+    vim.keymap.set('n', '<leader>du', dapui.toggle, { desc = 'Dap UI' })
+    vim.keymap.set('n', '<leader>dt', dap.terminate, { desc = 'Terminate' })
 
     -- Dap UI setup
     -- For more information, see |:help nvim-dap-ui|

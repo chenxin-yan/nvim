@@ -51,7 +51,7 @@ return {
     },
     {
       '<leader>*',
-      mode = { 'n', 'x', 'o' },
+      mode = { 'n', 'x' },
       function()
         require('flash').jump {
           pattern = vim.fn.expand '<cword>',

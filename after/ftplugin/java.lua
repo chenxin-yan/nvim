@@ -139,10 +139,6 @@ jdtls.start_or_attach(config)
 
 -- keymaps
 vim.keymap.set('n', '<leader>co', "<Cmd>lua require'jdtls'.organize_imports()<cr>", { desc = 'jdtls: [O]rganize Imports', buffer = 0 })
-vim.keymap.set('n', '<leader>rv', "<Cmd>lua require('jdtls').extract_variable()<cr>", { desc = 'jdtls: Extract [V]ariable', buffer = 0 })
-vim.keymap.set('v', '<leader>rv', "<Esc><Cmd>lua require('jdtls').extract_variable(true)<cr>", { desc = 'jdtls: Extract [V]ariable', buffer = 0 })
-vim.keymap.set('n', '<leader>rc', "<Cmd>lua require('jdtls').extract_constant()<cr>", { desc = 'jdtls: Extract [C]onstant', buffer = 0 })
-vim.keymap.set('v', '<leader>rc', "<Esc><Cmd>lua require('jdtls').extract_constant(true)<cr>", { desc = 'jdtls: Extract [C]onstant', buffer = 0 })
 vim.keymap.set('v', '<leader>rm', "<Esc><Cmd>lua require('jdtls').extract_method(true)<cr>", { desc = 'jdtls: Extract [M]ethod', buffer = 0 })
 vim.keymap.set('n', '<leader>tc', "<Cmd>lua require('jdtls').test_class()<cr>", { desc = 'jdtls: [T]est [C]lass', buffer = 0 })
 vim.keymap.set('n', '<leader>tm', "<Cmd>lua require('jdtls').test_nearest_method()<cr>", { desc = 'jdtls: [T]est nearest [M]ethod', buffer = 0 })
