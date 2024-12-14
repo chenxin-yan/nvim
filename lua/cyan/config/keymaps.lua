@@ -11,6 +11,8 @@ vim.keymap.set('n', '<Esc>', '<cmd>nohlsearch<cr>')
 
 -- Diagnostic/todo keymaps
 vim.keymap.set('n', 'X', vim.diagnostic.open_float, { desc = 'Show diagnostic Error messages' })
+vim.keymap.del('n', '<c-w>d')
+vim.keymap.del('n', '<c-w><c-d>')
 
 --  deleting/paste without yanking the deleted text into the register
 vim.keymap.set('x', '<leader>p', '"_dP', { desc = 'Paste in without yanking selected text' })
@@ -19,10 +21,10 @@ vim.keymap.set({ 'n', 'x' }, 'x', '"_x', { desc = 'Delete without yanking' })
 -- Keybinds to make split navigation easier.
 --  Use CTRL+<hjkl> to switch between windows
 --  See `:help wincmd` for a list of all window commands
-vim.keymap.set('n', '<C-h>', '<C-w><C-h>', { desc = 'Move focus to the left window' })
-vim.keymap.set('n', '<C-l>', '<C-w><C-l>', { desc = 'Move focus to the right window' })
-vim.keymap.set('n', '<C-j>', '<C-w><C-j>', { desc = 'Move focus to the lower window' })
-vim.keymap.set('n', '<C-k>', '<C-w><C-k>', { desc = 'Move focus to the upper window' })
+-- vim.keymap.set('n', '<C-h>', '<cmd>wincmd h<cr>', { desc = 'Move focus to the left window' })
+-- vim.keymap.set('n', '<C-l>', '<cmd>wincmd l<cr>', { desc = 'Move focus to the right window' })
+-- vim.keymap.set('n', '<C-j>', '<cmd>wincmd j<cr>', { desc = 'Move focus to the lower window' })
+-- vim.keymap.set('n', '<C-k>', '<cmd>wincmd k<cr>', { desc = 'Move focus to the upper window' })
 
 -- Keep cursor always in the middle when scrolling
 vim.keymap.set('n', '<C-d>', '<C-d>zz')
@@ -37,14 +39,14 @@ vim.keymap.set({ 'n', 'x' }, '<leader>y', '"+y', { desc = 'Yank into system clip
 vim.keymap.set('n', '<leader>us', '<cmd>set invspell<cr>', { desc = '[T]oggle [S]pell check' })
 
 -- Split windows
-vim.keymap.set('n', '<leader>_', '<C-w><C-s>', { desc = 'Horizontal Split' })
-vim.keymap.set('n', '<leader>|', '<C-w><C-v>', { desc = 'Vertical Split' })
+vim.keymap.set('n', '<leader>_', '<cmd>horizontal split<cr>', { desc = 'Horizontal Split' })
+vim.keymap.set('n', '<leader>|', '<cmd>vertical split<cr>', { desc = 'Vertical Split' })
 
 -- Tab operations
 vim.keymap.set('n', '<leader><C-t>', '<cmd>tabnew<cr>', { desc = 'Create new tab' })
 vim.keymap.set('n', '<leader><C-w>', '<cmd>tabc<cr>', { desc = 'Close current tab' })
-vim.keymap.set('n', '<c-{>', '<cmd>tabn<cr>', { desc = '[N]ext tab' })
-vim.keymap.set('n', '<c-}>', '<cmd>tabp<cr>', { desc = '[P]revious tab' })
+vim.keymap.set('n', '<c-]>', '<cmd>tabn<cr>', { desc = '[N]ext tab' })
+vim.keymap.set('n', '<c-]>', '<cmd>tabp<cr>', { desc = '[P]revious tab' })
 
 -- replace $ and ^ with H and L
 vim.keymap.set({ 'n', 'x' }, 'H', '^')
