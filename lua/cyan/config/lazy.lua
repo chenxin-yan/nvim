@@ -90,6 +90,12 @@ require('lazy').setup({
     },
   },
 
+  {
+    'folke/ts-comments.nvim',
+    event = 'VeryLazy',
+    opts = {},
+  },
+
   require 'cyan.plugins.snack', -- QoL plugins
   require 'cyan.plugins.todo-comments', -- Highlight todo, notes, etc in comment; todo tree
   require 'cyan.plugins.which-key', -- keybinding hint
