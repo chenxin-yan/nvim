@@ -33,10 +33,6 @@ return {
       rules = false,
       mappings = false,
     },
-    keys = {
-      scroll_down = '<M-d>', -- binding to scroll down inside the popup
-      scroll_up = '<M-u>', -- binding to scroll up inside the popup
-    },
   },
   config = function(_, opts)
     local wk = require 'which-key'

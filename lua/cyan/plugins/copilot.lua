@@ -10,8 +10,6 @@ return {
         auto_trigger = true,
         keymap = {
           accept = false,
-          next = '<M-]>',
-          prev = '<M-[>',
         },
       },
       panel = { enabled = false },
