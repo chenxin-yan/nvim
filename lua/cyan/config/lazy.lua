@@ -69,12 +69,20 @@ require('lazy').setup({
   -- line preview when search line number
   { 'nacro90/numb.nvim', event = 'CmdlineEnter', config = true },
 
-  -- better change work cases
+  -- better change cases
   {
     'gregorias/coerce.nvim',
     event = { 'BufReadPre', 'BufNewFile' },
     tag = 'v3.0.0',
-    config = true,
+    opts = {
+      default_mode_keymap_prefixes = {
+        normal_mode = 'gcr',
+        visual_mode = 'gcr',
+      },
+      default_mode_mask = {
+        motion_mode = false,
+      },
+    },
   },
 
   -- toggle comma semicolon
