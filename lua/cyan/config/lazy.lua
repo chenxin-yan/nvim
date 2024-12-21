@@ -123,6 +123,7 @@ require('lazy').setup({
   require 'cyan.plugins.grapple', -- bookmark files for easy navigation
   require 'cyan.plugins.zen', -- Zen mode
   require 'cyan.plugins.ufo', -- better folds
+  require 'cyan.plugins.ts-autotag', -- auto close/rename tags
 
   -- ---- UI ----
   {
@@ -147,11 +148,10 @@ require('lazy').setup({
 
   -- TS/JS
   {
-    'dmmulroy/tsc.nvim', -- TypeScript project wide type check
+    'dmmulroy/tsc.nvim', -- TypeScript project wide diagnostics
     cmd = { 'TSC' },
     config = true,
   },
-  require 'cyan.plugins.ts-autotag', -- auto close/rename tags
 
   -- markdown
   require 'cyan.plugins.markdowny', -- markdown shortcut support
@@ -161,17 +161,6 @@ require('lazy').setup({
   require 'cyan.plugins.autolist', -- better bullet list
 
   -- ---- extras ----
-  {
-    'IogaMaster/neocord',
-    event = 'VeryLazy',
-    opts = {},
-  },
-  {
-    'wintermute-cell/gitignore.nvim',
-    keys = {
-      { '<leader>gI', '<cmd>lua require("gitignore").generate()<cr>', desc = 'Generate .gitignore' },
-    },
-  },
   require 'cyan.plugins.leetcode', -- Leetcode integration
   require 'cyan.plugins.navigator', -- tmux integration
   require 'cyan.plugins.grug-far', -- grep and replace

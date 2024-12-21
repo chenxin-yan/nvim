@@ -11,7 +11,6 @@ return {
         },
       },
     }
-
     require('feline').setup {
       components = ctp_feline.get(),
     }

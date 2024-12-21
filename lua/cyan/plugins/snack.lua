@@ -8,8 +8,14 @@ return {
       timeout = 3000,
     },
     quickfile = { enabled = true },
+    ---@class snacks.scroll.Config
     statuscolumn = { enabled = true },
     words = { enabled = true },
+    terminal = {
+      win = {
+        style = 'minimal',
+      },
+    },
     styles = {
       notification = {
         wo = {
