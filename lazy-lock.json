@@ -1,7 +1,6 @@
 {
-  "FTerm.nvim": { "branch": "master", "commit": "d1320892cc2ebab472935242d9d992a2c9570180" },
   "LuaSnip": { "branch": "master", "commit": "33b06d72d220aa56a7ce80a0dd6f06c70cd82b9d" },
-  "Navigator.nvim": { "branch": "master", "commit": "d43816089689ccffd23543bc02331e9a68f3ec2f" },
+  "Navigator.nvim": { "branch": "master", "commit": "91d86506ac2a039504d5205d32a1d4bc7aa57072" },
   "alpha-nvim": { "branch": "main", "commit": "de72250e054e5e691b9736ee30db72c65d560771" },
   "autolist.nvim": { "branch": "main", "commit": "5f70a5f99e96c8fe3069de042abd2a8ed2deb855" },
   "avante.nvim": { "branch": "main", "commit": "01e05a538b4b7f20fb922016d72be8c42d400b0e" },
@@ -17,7 +16,7 @@
   "conform.nvim": { "branch": "master", "commit": "62055b40c4d0b001c87559c7adf96a4a464bcdd5" },
   "copilot-cmp": { "branch": "master", "commit": "15fc12af3d0109fa76b60b5cffa1373697e261d1" },
   "copilot.lua": { "branch": "master", "commit": "d3783b9283a7c35940ed8d71549030d5f5f9f980" },
-  "dressing.nvim": { "branch": "master", "commit": "fc78a3ca96f4db9f8893bb7e2fd9823e0780451b" },
+  "dressing.nvim": { "branch": "master", "commit": "8fb86f808420d5a8a1b1bf869b1609b2337dc6e0" },
   "feline.nvim": { "branch": "main", "commit": "9f1313f61a75ec5ebe805fedd46bdc130c420963" },
   "flash.nvim": { "branch": "main", "commit": "34c7be146a91fec3555c33fe89c7d643f6ef5cf1" },
   "footnote.nvim": { "branch": "main", "commit": "6c55895a90e366dca38f6041775f14cb85bce773" },

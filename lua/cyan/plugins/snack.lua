@@ -80,6 +80,14 @@ return {
         desc = 'Prev Reference',
         mode = { 'n', 't' },
       },
+      {
+        '<c-\\>',
+        function()
+          Snacks.terminal.toggle()
+        end,
+        desc = 'Toggle Terminal',
+        mode = { 'n', 't' },
+      },
     }
   end,
 }
