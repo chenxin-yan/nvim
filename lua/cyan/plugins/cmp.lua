@@ -30,18 +30,8 @@ return { -- Autocompletion
         require('luasnip.loaders.from_lua').lazy_load { paths = { '~/.config/nvim/lua/cyan/snippets/' } }
         vim.keymap.set('n', '<leader>S', '<cmd>source ~/.config/nvim/lua/cyan/plugins/cmp.lua<cr>', { desc = '[S]ource snippets' })
 
-        local ls = require 'luasnip'
         -- set keybinds for select choice node in luasnip
-        vim.keymap.set({ 'i', 'v' }, '<C-n>', function()
-          if ls.choice_active() then
-            ls.change_choice(1)
-          end
-        end, { desc = '[N]ext choice' })
-        vim.keymap.set({ 'i', 'v' }, '<C-p>', function()
-          if ls.choice_active() then
-            ls.change_choice(-1)
-          end
-        end, { desc = '[P]revious choice' })
+        vim.keymap.set({ 'i', 'v' }, '<C-s>', '<cmd>lua require("luasnip.extras.select_choice")()<cr>', { desc = '[S]elect snippet choices' })
       end,
     },
 

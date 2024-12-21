@@ -139,7 +139,7 @@ require('lazy').setup({
   require 'cyan.plugins.feline', -- status line
   require 'cyan.plugins.indent-line', -- indentation guide
   require 'cyan.plugins.noice', -- UI improvement
-  require 'cyan.plugins.bufferline', -- buffer/tabline
+  require 'cyan.plugins.barbecue', -- LSP nav bar
 
   -- ---- language specific ----
   require 'cyan.plugins.refactoring', -- code refactoring

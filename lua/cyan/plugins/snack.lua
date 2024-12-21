@@ -8,7 +8,6 @@ return {
       timeout = 3000,
     },
     quickfile = { enabled = true },
-    ---@class snacks.scroll.Config
     statuscolumn = { enabled = true },
     words = { enabled = true },
     terminal = {
@@ -93,6 +92,14 @@ return {
         end,
         desc = 'Toggle Terminal',
         mode = { 'n', 't' },
+      },
+      {
+        '<leader>bD',
+        function()
+          Snacks.bufdelete.other()
+        end,
+        desc = '[D]elete Other Buffers',
+        mode = { 'n' },
       },
     }
   end,

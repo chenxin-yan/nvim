@@ -96,13 +96,13 @@ return { -- Collection of various small independent plugins/modules
     -- move code line/block horizontally or vertically
     require('mini.move').setup {
       mappings = {
-        left = '<C-,>',
-        right = '<C-.>',
-        down = '<C-n>',
-        up = '<C-p>',
+        left = '<',
+        right = '>',
+        down = '<c-n>',
+        up = '<c-p>',
 
-        line_left = '<C-,>',
-        line_right = '<C-.>',
+        line_left = '<',
+        line_right = '>',
         line_down = '<C-n>',
         line_up = '<C-p>',
       },
