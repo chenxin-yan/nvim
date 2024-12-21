@@ -112,6 +112,6 @@ return { -- Highlight, edit, and navigate code
     }
     vim.keymap.set('n', '<leader>uc', function()
       tsc.toggle()
-    end, { desc = '[T]oggle tressiter [C]ontext' })
+    end, { desc = 'Toggle tressiter [C]ontext' })
   end,
 }

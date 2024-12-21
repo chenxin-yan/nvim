@@ -65,7 +65,7 @@ return {
       function()
         require('flash').toggle()
       end,
-      desc = '[T]oggle Flash [S]earch',
+      desc = 'Toggle Flash [S]earch',
     },
   },
 }

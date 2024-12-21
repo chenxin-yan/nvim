@@ -8,7 +8,7 @@ return {
     {
       '<leader>ur',
       '<cmd>RenderMarkdown toggle<cr>',
-      desc = '[T]oggle markdown [R]ender',
+      desc = 'Toggle markdown [R]ender',
       ft = 'markdown',
     },
   },

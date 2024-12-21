@@ -1,4 +1,4 @@
-local vault_path = vim.fn.expand '~' .. '/Ideaverse'
+local vault_path = vim.env.VAULT_PATH
 return {
   'epwalsh/obsidian.nvim',
   version = '*',

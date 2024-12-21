@@ -8,16 +8,22 @@ return {
     'SessionLoadLast',
     'SessionDelete',
   },
-  opts = {
-    use_git_branch = true,
-    should_save = function()
-      if vim.bo.filetype == 'alpha' then
-        return false
-      end
-      return true
-    end,
-    ignored_dirs = {
-      { '~', exact = true },
-    },
-  },
+  config = function()
+    local persisted = require 'persisted'
+    local utils = require 'persisted.utils'
+    local allowed_dirs = {
+      vim.env.DEV_DIR,
+      vim.env.PROJECT_DIR,
+    }
+
+    persisted.setup {
+      use_git_branch = true,
+      should_save = function()
+        if vim.bo.filetype == 'alpha' then
+          return false
+        end
+        return utils.dirs_match(vim.fn.getcwd(), allowed_dirs)
+      end,
+    }
+  end,
 }

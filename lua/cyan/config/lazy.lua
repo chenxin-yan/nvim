@@ -174,7 +174,7 @@ require('lazy').setup({
     },
   },
   require 'cyan.plugins.leetcode', -- Leetcode integration
-  require 'cyan.plugins.tmux', -- tmux integration
+  require 'cyan.plugins.navigator', -- tmux integration
   require 'cyan.plugins.grug-far', -- grep and replace
   require 'cyan.plugins.im-select', -- automatic input method switcher
   require 'cyan.plugins.yazi', -- yazi integration

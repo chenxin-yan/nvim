@@ -36,7 +36,7 @@ vim.keymap.set('n', 'N', 'Nzzzv')
 vim.keymap.set({ 'n', 'x' }, '<leader>y', '"+y', { desc = 'Yank into system clipboard' })
 
 -- toggle spellcheck
-vim.keymap.set('n', '<leader>us', '<cmd>set invspell<cr>', { desc = '[T]oggle [S]pell check' })
+vim.keymap.set('n', '<leader>us', '<cmd>set invspell<cr>', { desc = 'Toggle [S]pell check' })
 
 -- Split windows
 vim.keymap.set('n', '<leader>_', '<cmd>horizontal split<cr>', { desc = 'Horizontal Split' })
