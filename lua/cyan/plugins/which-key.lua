@@ -7,7 +7,6 @@ return {
       { ']', group = 'Next' },
       { '[', group = 'Previous' },
       { 'gs', group = 'Surround', mode = { 'n', 'x' } },
-      { '<leader>a', group = ' AI', mode = { 'n', 'x' } },
       { '<leader>c', group = '󰘦 Code', mode = { 'n', 'x' } },
       { '<leader>x', group = ' Diagnostic/QuickFix' },
       { '<leader>t', group = ' Test' },
@@ -18,7 +17,6 @@ return {
       { '<leader>h', group = ' Hunk', mode = { 'n', 'x' } },
       { '<leader>b', group = ' Buffer' },
       { '<leader>r', group = ' Refactor', mode = { 'n', 'x' } },
-      { '<leader>o', group = ' Obsidian' },
     },
     plugins = {
       spelling = {

@@ -9,7 +9,11 @@ return {
     'BufReadPre ' .. vault_path .. '/**.md',
     'BufNewFile ' .. vault_path .. '/**.md',
   },
-  init = function() end,
+  init = function()
+    require('which-key').add {
+      { '<leader>o', group = ' Obsidian' },
+    }
+  end,
   keys = {
     {
       '<leader>so',

@@ -80,6 +80,7 @@ return {
     local avante_add_tests = 'Implement tests for the following code'
 
     require('which-key').add {
+      { '<leader>a', group = ' AI', mode = { 'n', 'x' } },
       {
         mode = { 'n', 'v' },
         {
