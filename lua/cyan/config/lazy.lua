@@ -31,12 +31,13 @@ require('lazy').setup({
     end,
     opts = {
       integrations = {
-        fidget = true,
         noice = true,
         grug_far = true,
-        notify = true,
         lsp_trouble = true,
         which_key = true,
+        mason = true,
+        snacks = true,
+        dadbod_ui = true,
         indent_blankline = {
           enabled = true,
           scope_color = 'lavender',

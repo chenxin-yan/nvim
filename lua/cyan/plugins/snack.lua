@@ -7,6 +7,7 @@ return {
       enabled = true,
       timeout = 3000,
     },
+    input = { enabled = true },
     quickfile = { enabled = true },
     statuscolumn = { enabled = true },
     words = { enabled = true },
