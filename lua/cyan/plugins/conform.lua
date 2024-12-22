@@ -13,6 +13,15 @@ return { -- Autoformat
     },
   },
   opts = function()
+    -- keymap for toggling autoformat
+    vim.keymap.set('n', '<leader>uf', function()
+      if vim.g.disable_autoformat then
+        vim.g.disable_autoformat = false
+      else
+        vim.g.disable_autoformat = true
+      end
+    end, { desc = 'Toggle [F]ormat' })
+
     local opts = {
       formatters = {
         ['markdownlint-cli2'] = {
@@ -28,6 +37,11 @@ return { -- Autoformat
       },
       notify_on_error = true,
       format_on_save = function(bufnr)
+        -- Disable with a global or buffer-local variable
+        if vim.g.disable_autoformat then
+          return
+        end
+
         -- Disable "format_on_save lsp_fallback" for languages that don't
         -- have a well standardized coding style. You can add additional
         -- languages here or re-enable it for the disabled ones.
