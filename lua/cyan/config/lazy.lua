@@ -155,7 +155,11 @@ require('lazy').setup({
   },
 
   -- markdown
-  require 'cyan.plugins.markdowny', -- markdown shortcut support
+  {
+    'antonk52/markdowny.nvim',
+    ft = 'markdown',
+    config = true,
+  },
   require 'cyan.plugins.markdown-preview', -- markdown preview in browser
   require 'cyan.plugins.markdown', -- better markdown render
   require 'cyan.plugins.footnote', -- better footnote
