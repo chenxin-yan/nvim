@@ -1,3 +1,6 @@
+if vim.g.vscode then
+  return {}
+end
 vim.api.nvim_set_hl(0, 'BlinkCmpKindCopilot', { fg = '#94e2d6' })
 
 return {
