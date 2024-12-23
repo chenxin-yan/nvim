@@ -69,6 +69,7 @@ return {
     -- 'enter' for mappings similar to 'super-tab' but with 'enter' to accept
     -- See the full "keymap" documentation for information on defining your own keymap.
     keymap = {
+      preset = 'none',
       ['<C-n>'] = {
         function(cmp)
           cmp.show { providers = { 'snippets', 'luasnip' } }
@@ -166,19 +167,29 @@ return {
       default = { 'lazydev', 'lsp', 'path', 'snippets', 'luasnip', 'buffer', 'dadbod', 'copilot' },
       cmdline = {},
       providers = {
+        luasnip = {
+          score_offset = 100,
+        },
+        snippets = {
+          score_offset = 100,
+        },
+        lsp = {
+          score_offset = 50,
+        },
         lazydev = {
           name = 'LazyDev',
           module = 'lazydev.integrations.blink',
-          score_offset = 100,
+          score_offset = 90,
         },
         dadbod = {
           name = 'Dadbod',
           module = 'vim_dadbod_completion.blink',
+          score_offset = 90,
         },
         copilot = {
           name = 'copilot',
           module = 'blink-cmp-copilot',
-          score_offset = 100,
+          score_offset = 40,
           async = true,
           transform_items = function(_, items)
             local CompletionItemKind = require('blink.cmp.types').CompletionItemKind
