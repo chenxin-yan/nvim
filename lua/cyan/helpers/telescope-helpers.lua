@@ -42,9 +42,6 @@ M.live_grep_from_project_git_root = function()
   end
 
   local opts = {
-    global_pattern = {
-      '!**/.git/*',
-    },
     additional_args = {
       '--hidden',
       '--glob',

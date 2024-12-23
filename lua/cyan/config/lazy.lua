@@ -43,6 +43,7 @@ require('lazy').setup({
           scope_color = 'lavender',
           colored_indent_levels = false,
         },
+        blink_cmp = true,
       },
     },
     config = function(_, opts)
@@ -111,7 +112,7 @@ require('lazy').setup({
   require 'cyan.plugins.telescope', -- fuzzy search
   require 'cyan.plugins.lspconfig', -- LSP support
   require 'cyan.plugins.conform', -- formatter support
-  require 'cyan.plugins.cmp', -- autocompletion
+  require 'cyan.plugins.blink-cmp', -- autocompletion
   require 'cyan.plugins.mini', -- misc tools
   require 'cyan.plugins.treesitter', -- syntax highlighting
   require 'cyan.plugins.debug', -- language debugger
@@ -175,7 +176,6 @@ require('lazy').setup({
   require 'cyan.plugins.obsidian', -- obsidian integration
   require 'cyan.plugins.kulala', -- REST-client interface
   require 'cyan.plugins.avante', -- AI coding assistance
-  require 'cyan.plugins.copilot', -- AI autosuggestions
 }, {
   ui = {
     -- If you are using a Nerd Font: set icons to an empty table which will use the

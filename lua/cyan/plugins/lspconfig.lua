@@ -140,18 +140,27 @@ local servers = {
     -- capabilities = {},
     settings = {
       Lua = {
-        completion = {
-          callSnippet = 'Replace',
+        workspace = {
+          checkThirdParty = false,
         },
         codeLens = {
           enable = true,
         },
+        completion = {
+          callSnippet = 'Replace',
+        },
         doc = {
           privateName = { '^_' },
         },
-        -- You can toggle below to ignore Lua_LS's noisy `missing-fields` warnings
         diagnostics = { disable = { 'missing-fields' } },
-        hint = { enable = true },
+        hint = {
+          enable = true,
+          setType = false,
+          paramType = true,
+          paramName = 'Disable',
+          semicolon = 'Disable',
+          arrayIndex = 'Disable',
+        },
       },
     },
   },
@@ -222,7 +231,7 @@ local servers = {
       },
     },
   }, -- YAML lsp
-  tailwindcss = {},
+  tailwindcss = {}, -- tailwindcss lsp
 }
 -- You can add other tools here that you want Mason to install
 -- for you, so that they are available from within Neovim.
@@ -351,8 +360,8 @@ return {
       'williamboman/mason-lspconfig.nvim',
       'WhoIsSethDaniel/mason-tool-installer.nvim',
 
-      -- Allows extra capabilities provided by nvim-cmp
-      'hrsh7th/cmp-nvim-lsp',
+      -- -- Allows extra capabilities provided by nvim-cmp
+      -- 'hrsh7th/cmp-nvim-lsp',
     },
     config = function()
       -- If you're wondering about lsp vs treesitter, you can check out the wonderfully
@@ -440,7 +449,7 @@ return {
       --  When you add nvim-cmp, luasnip, etc. Neovim now has *more* capabilities.
       --  So, we create new capabilities with nvim cmp, and then broadcast that to the servers.
       local capabilities = vim.lsp.protocol.make_client_capabilities()
-      capabilities = vim.tbl_deep_extend('force', capabilities, require('cmp_nvim_lsp').default_capabilities())
+      capabilities = vim.tbl_deep_extend('force', capabilities, require('blink.cmp').get_lsp_capabilities())
 
       -- get default config from nvim-vtsls
       require('lspconfig.configs').vtsls = require('vtsls').lspconfig
