@@ -63,7 +63,7 @@ return {
     i(0),
     t ' -->',
   }),
-  s('---mla', {
+  s('mla-meta', {
     t '---',
     t { '', 'bibliography: ' },
     i(1),
@@ -74,7 +74,7 @@ return {
     t { '', '---', '' },
     i(0),
   }),
-  s('---doc', {
+  s('doc-meta', {
     t '---',
     t { '', 'title: "' },
     i(1),

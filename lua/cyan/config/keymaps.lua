@@ -45,8 +45,8 @@ vim.keymap.set('n', '<leader>|', '<cmd>vertical split<cr>', { desc = 'Vertical S
 -- Tab operations
 vim.keymap.set('n', '<leader><C-t>', '<cmd>tabnew<cr>', { desc = 'Create new tab' })
 vim.keymap.set('n', '<leader><C-w>', '<cmd>tabc<cr>', { desc = 'Close current tab' })
-vim.keymap.set('n', '<tab>]', '<cmd>tabn<cr>', { desc = '[N]ext tab' })
-vim.keymap.set('n', '<tab>[', '<cmd>tabp<cr>', { desc = '[P]revious tab' })
+vim.keymap.set('n', '<C-}>', '<cmd>tabn<cr>', { desc = '[N]ext tab' })
+vim.keymap.set('n', '<C-{>', '<cmd>tabp<cr>', { desc = '[P]revious tab' })
 
 -- replace $ and ^ with H and L
 vim.keymap.set({ 'n', 'x' }, 'H', '^')
@@ -61,8 +61,8 @@ vim.keymap.set('n', 'gcO', 'O<esc>Vcx<esc><cmd>normal gcc<cr>fxa<bs>', { desc = 
 
 -- switch between buffers
 vim.keymap.set('n', '<leader><Tab>', '<cmd>b#<cr>', { desc = 'Goto previously opened buffer' })
-vim.keymap.set('n', '<c-]>', '<cmd>bnext<cr>', { desc = 'Goto next buffer' })
-vim.keymap.set('n', '<c-[>', '<cmd>bprevious<cr>', { desc = 'Goto previous buffer' })
+vim.keymap.set('n', '<C-]>', '<cmd>bnext<cr>', { desc = 'Goto next buffer' })
+vim.keymap.set('n', '<C-[>', '<cmd>bprevious<cr>', { desc = 'Goto previous buffer' })
 
 -- git operations
 vim.keymap.set('n', '<leader>gc', ':!git commit -m ""<left>', { desc = '[C]ommit' })

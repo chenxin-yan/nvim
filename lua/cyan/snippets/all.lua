@@ -9,5 +9,5 @@ local extras = require 'luasnip.extras'
 local rep = extras.rep
 
 return {
-  s('~', { t '/Users/yanchenxin/' }),
+  s('home', { t(vim.env.HOME .. '/') }),
 }
