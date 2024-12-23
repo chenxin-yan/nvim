@@ -118,7 +118,7 @@ local config = {
     },
   },
   -- Needed for auto-completion with method signatures and placeholders
-  capabilities = require('cmp_nvim_lsp').default_capabilities(),
+  capabilities = require('blink.cmp').get_lsp_capabilities(),
   flags = {
     allow_incremental_sync = true,
   },
@@ -138,7 +138,16 @@ end
 jdtls.start_or_attach(config)
 
 -- keymaps
+vim.keymap.set('n', '<leader>cC', "<Cmd>lua require'jdtls'.compile()<cr>", { desc = 'jdtls: [C]ompile', buffer = 0 })
+vim.keymap.set('n', '<leader>cU', "<Cmd>lua require'jdtls'.update_project_config()<cr>", { desc = 'jdtls: [U]pdate Project Config', buffer = 0 })
 vim.keymap.set('n', '<leader>co', "<Cmd>lua require'jdtls'.organize_imports()<cr>", { desc = 'jdtls: [O]rganize Imports', buffer = 0 })
+vim.keymap.set('n', '<leader>cB', "<Cmd>lua require'jdtls'.build_projects()<cr>", { desc = 'jdtls: [B]uild projects', buffer = 0 })
+
+vim.keymap.set('n', '<leader>rv', "<Esc><Cmd>lua require('jdtls').extract_variable_all()<cr>", { desc = 'jdtls: Extract [V]ariable', buffer = 0 })
+vim.keymap.set('v', '<leader>rv', "<Esc><Cmd>lua require('jdtls').extract_variable_all(true)<cr>", { desc = 'jdtls: Extract [V]ariable', buffer = 0 })
+vim.keymap.set('n', '<leader>rc', "<Esc><Cmd>lua require('jdtls').extract_constant()<cr>", { desc = 'jdtls: Extract [C]onstant', buffer = 0 })
+vim.keymap.set('v', '<leader>rc', "<Esc><Cmd>lua require('jdtls').extract_constant(true)<cr>", { desc = 'jdtls: Extract [C]onstant', buffer = 0 })
 vim.keymap.set('v', '<leader>rm', "<Esc><Cmd>lua require('jdtls').extract_method(true)<cr>", { desc = 'jdtls: Extract [M]ethod', buffer = 0 })
+
 vim.keymap.set('n', '<leader>tc', "<Cmd>lua require('jdtls').test_class()<cr>", { desc = 'jdtls: [T]est [C]lass', buffer = 0 })
 vim.keymap.set('n', '<leader>tm', "<Cmd>lua require('jdtls').test_nearest_method()<cr>", { desc = 'jdtls: [T]est nearest [M]ethod', buffer = 0 })
