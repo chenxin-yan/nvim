@@ -1,7 +1,6 @@
 if vim.g.vscode then
   return {}
 end
-vim.api.nvim_set_hl(0, 'BlinkCmpKindCopilot', { fg = '#94e2d6' })
 
 return {
   'saghen/blink.cmp',
@@ -170,6 +169,9 @@ return {
       default = { 'lazydev', 'lsp', 'path', 'snippets', 'luasnip', 'buffer', 'dadbod', 'copilot' },
       cmdline = {},
       providers = {
+        path = {
+          score_offset = 110,
+        },
         luasnip = {
           score_offset = 100,
         },
