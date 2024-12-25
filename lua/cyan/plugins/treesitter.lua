@@ -24,6 +24,7 @@ return { -- Highlight, edit, and navigate code
       'vimdoc',
       'javascript',
       'typescript',
+      'xml',
       'html',
       'css',
       'json5',
