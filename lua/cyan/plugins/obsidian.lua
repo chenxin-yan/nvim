@@ -44,7 +44,9 @@ return {
           path = vault_path,
         },
       },
-
+      completion = {
+        nvim_cmp = false, -- disable!
+      },
       mappings = {
         -- Overrides the 'gf' mapping to work on markdown/wiki links within your vault.
         ['gf'] = {

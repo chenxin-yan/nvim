@@ -5,6 +5,7 @@ end
 return {
   'saghen/blink.cmp',
   dependencies = {
+    'saghen/blink.compat',
     {
       'L3MON4D3/LuaSnip',
       lazy = true,
@@ -178,10 +179,10 @@ return {
           score_offset = 100,
         },
         luasnip = {
-          score_offset = 60,
+          score_offset = 50,
         },
         snippets = {
-          score_offset = 60,
+          score_offset = 50,
         },
         lsp = {
           score_offset = 70,
@@ -199,7 +200,7 @@ return {
         copilot = {
           name = 'copilot',
           module = 'blink-cmp-copilot',
-          score_offset = 50,
+          score_offset = 40,
           async = true,
           transform_items = function(_, items)
             local CompletionItemKind = require('blink.cmp.types').CompletionItemKind
@@ -214,5 +215,5 @@ return {
       },
     },
   },
-  opts_extend = { 'sources.default' },
+  opts_extend = { 'sources.default', 'sources.providers' },
 }
