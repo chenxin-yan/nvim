@@ -1,4 +1,4 @@
-local vault_path = vim.env.VAULT_PATH
+local vault_path = vim.env.VAULT_PATH or ''
 return {
   'epwalsh/obsidian.nvim',
   version = '*',
@@ -6,8 +6,8 @@ return {
     'nvim-lua/plenary.nvim',
   },
   event = {
-    'BufReadPre ' .. vault_path .. '/**.md',
-    'BufNewFile ' .. vault_path .. '/**.md',
+    'BufReadPre ' .. vault_path .. '**.md',
+    'BufNewFile ' .. vault_path .. '**.md',
   },
   init = function()
     require('which-key').add {
