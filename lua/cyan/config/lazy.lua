@@ -168,7 +168,7 @@ require('lazy').setup({
   require 'cyan.plugins.markdown-preview', -- markdown preview in browser
   require 'cyan.plugins.markdown', -- better markdown render
   require 'cyan.plugins.footnote', -- better footnote
-  require 'cyan.plugins.autolist', -- better bullet list
+  require 'cyan.plugins.bullets', -- better bullet list
 
   -- ---- extras ----
   require 'cyan.plugins.leetcode', -- Leetcode integration
