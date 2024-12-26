@@ -291,6 +291,25 @@ return {
     end,
   },
 
+  -- glance lsp locations
+  {
+    'dnlhc/glance.nvim',
+    cmd = 'Glance',
+    opts = {
+      border = {
+        enable = true, -- Show window borders. Only horizontal borders allowed
+        top_char = '―',
+        bottom_char = '―',
+      },
+    },
+    keys = {
+      { 'gd', '<CMD>Glance definitions<CR>' },
+      { 'gr', '<CMD>Glance references<CR>' },
+      { 'gt', '<CMD>Glance type_definitions<CR>' },
+      { 'gI', '<CMD>Glance implementations<CR>' },
+    },
+  },
+
   -- `lazydev` configures Lua LSP for your Neovim config, runtime and plugins
   -- used for completion, annotations and signatures of Neovim apis
   {
@@ -385,19 +404,19 @@ return {
           -- Jump to the definition of the word under your cursor.
           --  This is where a variable was first declared, or where a function is defined, etc.
           --  To jump back, press <C-t>.
-          map('gd', require('telescope.builtin').lsp_definitions, '[G]oto [D]efinition')
+          -- map('gd', require('telescope.builtin').lsp_definitions, '[G]oto [D]efinition')
 
           -- Find references for the word under your cursor.
-          map('gr', require('telescope.builtin').lsp_references, '[G]oto [R]eferences')
+          -- map('gr', require('telescope.builtin').lsp_references, '[G]oto [R]eferences')
 
           -- Jump to the implementation of the word under your cursor.
           --  Useful when your language has ways of declaring types without an actual implementation.
-          map('gI', require('telescope.builtin').lsp_implementations, '[G]oto [I]mplementation')
+          -- map('gI', require('telescope.builtin').lsp_implementations, '[G]oto [I]mplementation')
 
           -- Jump to the type of the word under your cursor.
           --  Useful when you're not sure what type a variable is and you want to see
           --  the definition of its *type*, not where it was *defined*.
-          map('gt', require('telescope.builtin').lsp_type_definitions, '[G]oto [T]ype definition')
+          -- map('gt', require('telescope.builtin').lsp_type_definitions, '[G]oto [T]ype definition')
 
           -- Fuzzy find all the symbols in your current document.
           --  Symbols are things like variables, functions, types, etc.
