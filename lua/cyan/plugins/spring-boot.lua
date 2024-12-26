@@ -1,6 +1,6 @@
 return {
   'JavaHello/spring-boot.nvim',
-  event = 'BufReadPre',
+  event = { 'BufReadPre', 'BufNewFile' },
   dependencies = {
     'mfussenegger/nvim-jdtls', -- or nvim-java, nvim-lspconfig
     -- 'ibhagwan/fzf-lua',
