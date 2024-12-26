@@ -11,6 +11,7 @@ return {
     require('barbecue').setup {
       theme = 'catppuccin-mocha',
       create_autocmd = false, -- prevent barbecue from updating itself automatically
+      attach_navic = false,
       show_dirname = false,
       show_modified = true,
     }

@@ -306,35 +306,7 @@ return {
   { 'Bilal2453/luvit-meta', lazy = true },
 
   -- java lsp config
-  { 'mfussenegger/nvim-jdtls', lazy = true, ft = 'java', dependencies = 'mfussenegger/nvim-dap' },
-  {
-    'JavaHello/spring-boot.nvim',
-    ft = 'java',
-    dependencies = {
-      'mfussenegger/nvim-jdtls', -- or nvim-java, nvim-lspconfig
-      -- 'ibhagwan/fzf-lua',
-    },
-    init = function()
-      vim.g.spring_boot = {
-        jdt_extensions_path = nil,
-        jdt_extensions_jars = {
-          'io.projectreactor.reactor-core.jar',
-          'org.reactivestreams.reactive-streams.jar',
-          'jdt-ls-commons.jar',
-          'jdt-ls-extension.jar',
-          'sts-gradle-tooling.jar',
-        },
-      }
-    end,
-    config = function()
-      require('spring_boot').setup {
-        ls_path = nil,
-        jdtls_name = 'jdtls',
-        log_file = nil,
-        java_cmd = nil,
-      }
-    end,
-  },
+  { 'mfussenegger/nvim-jdtls', lazy = true, ft = 'java', dependencies = { 'mfussenegger/nvim-dap' } },
 
   -- json/yaml schema support
   { 'b0o/schemastore.nvim', lazy = true, version = false },
@@ -468,6 +440,12 @@ return {
               buffer = 0,
               callback = vim.lsp.codelens.refresh,
             })
+          end
+
+          -- attach navic to buffer
+
+          if client and client.name ~= 'spring-boot' and client.server_capabilities['documentSymbolProvider'] then
+            require('nvim-navic').attach(client, event.buf)
           end
         end,
       })

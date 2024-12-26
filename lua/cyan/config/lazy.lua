@@ -149,6 +149,9 @@ require('lazy').setup({
   require 'cyan.plugins.neogen', -- generate annotations/documentations
   require 'cyan.plugins.sql', -- sql support
 
+  -- Java
+  require 'cyan.plugins.spring-boot', -- spring boot support
+
   -- TS/JS
   {
     'dmmulroy/tsc.nvim', -- TypeScript project wide diagnostics
