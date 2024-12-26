@@ -77,6 +77,11 @@ return {
           cmp.show { providers = { 'snippets', 'luasnip' } }
         end,
       },
+      ['<C-a>'] = {
+        function(cmp)
+          cmp.show { providers = { 'copilot' } }
+        end,
+      },
       ['<C-i>'] = { 'show', 'show_documentation', 'hide_documentation' },
       ['<C-e>'] = { 'hide' },
       ['<C-y>'] = { 'select_and_accept' },
@@ -166,35 +171,35 @@ return {
       end,
     },
     sources = {
-      default = { 'lazydev', 'lsp', 'path', 'snippets', 'luasnip', 'buffer', 'dadbod', 'copilot' },
+      default = { 'lazydev', 'lsp', 'path', 'luasnip', 'buffer', 'dadbod', 'copilot' },
       cmdline = {},
       providers = {
         path = {
-          score_offset = 110,
+          score_offset = 100,
         },
         luasnip = {
-          score_offset = 100,
+          score_offset = 60,
         },
         snippets = {
-          score_offset = 100,
+          score_offset = 60,
         },
         lsp = {
-          score_offset = 50,
+          score_offset = 70,
         },
         lazydev = {
           name = 'LazyDev',
           module = 'lazydev.integrations.blink',
-          score_offset = 90,
+          score_offset = 100,
         },
         dadbod = {
           name = 'Dadbod',
           module = 'vim_dadbod_completion.blink',
-          score_offset = 90,
+          score_offset = 100,
         },
         copilot = {
           name = 'copilot',
           module = 'blink-cmp-copilot',
-          score_offset = 40,
+          score_offset = 50,
           async = true,
           transform_items = function(_, items)
             local CompletionItemKind = require('blink.cmp.types').CompletionItemKind
