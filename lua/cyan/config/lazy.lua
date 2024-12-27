@@ -145,6 +145,7 @@ require('lazy').setup({
   require 'cyan.plugins.barbecue', -- LSP nav bar
 
   -- ---- language specific ----
+  require 'cyan.plugins.neotest', -- testing support
   require 'cyan.plugins.refactoring', -- code refactoring
   require 'cyan.plugins.neogen', -- generate annotations/documentations
   require 'cyan.plugins.sql', -- sql support

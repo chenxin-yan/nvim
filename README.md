@@ -46,21 +46,21 @@ nvim
 
 ## Language support
 
-| Language              | Lsp               | Formatter                 | Linter          | Debugger           | Testing      |
-| --------------------- | ----------------- | ------------------------- | --------------- | ------------------ | ------------ |
-| Lua                   | ✅ luals          | ✅ stylua                 | ❌              | ❌                 | ❌           |
-| C/C++                 | ✅ clangd         | ✅ clangd                 | ✅ clangd       | ✅ codelldb        | ❌           |
-| Java                  | ✅ jdtls          | ✅ jdtls                  | ✅ jdtls        | ✅ jdtls           | ✅ java-test |
-| JavaScript/TypeScript | ✅ vtsls          | ✅ Biome/Prettier         | ✅ Biome/Eslint | ✅ vscode-js-debug | ❌           |
-| Golang                | ⏳                | ⏳                        | ⏳              | ⏳                 | ⏳           |
-| Python                | ✅ Pyright        | ✅ Ruff                   | ✅ Ruff         | ✅ debugpy         | ⏳           |
-| Markdown              | ✅ marksman       | ✅ Prettier, markdownlint | ✅ markdownlint | ❌                 | ❌           |
-| HTML                  | ✅ html-lsp       | ✅ Prettier               | ❌              | ❌                 | ❌           |
-| CSS                   | ✅ css-lsp        | ✅ Biome/Prettier         | ❌              | ❌                 | ❌           |
-| Tailwind CSS          | ✅ tailwindcss-ls | ❌                        | ❌              | ❌                 | ❌           |
-| JSON                  | ✅ jsonls         | ✅ Biome/Prettier         | ❌              | ❌                 | ❌           |
-| TOML                  | ✅ taplo          | ✅ taplo                  | ❌              | ❌                 | ❌           |
-| YAML                  | ✅ yamlls         | ✅ yamlls                 | ❌              | ❌                 | ❌           |
+| Language              | Lsp               | Formatter                 | Linter          | Debugger           | Testing                       |
+| --------------------- | ----------------- | ------------------------- | --------------- | ------------------ | ----------------------------- |
+| Lua                   | ✅ luals          | ✅ stylua                 | ❌              | ❌                 | ❌                            |
+| C/C++                 | ✅ clangd         | ✅ clangd                 | ✅ clangd       | ✅ codelldb        | ❌                            |
+| Java                  | ✅ jdtls          | ✅ jdtls                  | ✅ jdtls        | ✅ jdtls           | ✅ java-test                  |
+| JavaScript/TypeScript | ✅ vtsls          | ✅ Biome/Prettier         | ✅ Biome/Eslint | ✅ vscode-js-debug | ✅ neotest-jest/vimtest-mocha |
+| Golang                | ⏳                | ⏳                        | ⏳              | ⏳                 | ⏳                            |
+| Python                | ✅ Pyright        | ✅ Ruff                   | ✅ Ruff         | ✅ debugpy         | ✅neotest-python              |
+| Markdown              | ✅ marksman       | ✅ Prettier, markdownlint | ✅ markdownlint | ❌                 | ❌                            |
+| HTML                  | ✅ html-lsp       | ✅ Prettier               | ❌              | ❌                 | ❌                            |
+| CSS                   | ✅ css-lsp        | ✅ Biome/Prettier         | ❌              | ❌                 | ❌                            |
+| Tailwind CSS          | ✅ tailwindcss-ls | ❌                        | ❌              | ❌                 | ❌                            |
+| JSON                  | ✅ jsonls         | ✅ Biome/Prettier         | ❌              | ❌                 | ❌                            |
+| TOML                  | ✅ taplo          | ✅ taplo                  | ❌              | ❌                 | ❌                            |
+| YAML                  | ✅ yamlls         | ✅ yamlls                 | ❌              | ❌                 | ❌                            |
 
 ## Keymaps
 
@@ -68,5 +68,4 @@ This config uses [which-key.nvim](https://github.com/folke/which-key.nvim) to di
 
 ## Roadmap
 
-- [ ] setup [neotest](https://github.com/nvim-neotest/neotest)
 - [ ] add warning comments config files for hard-coded paths

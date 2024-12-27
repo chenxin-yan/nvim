@@ -9,7 +9,7 @@ return {
       { 'gs', group = 'Surround', mode = { 'n', 'x' } },
       { '<leader>c', group = '󰘦 Code', mode = { 'n', 'x' } },
       { '<leader>x', group = ' Diagnostic/QuickFix' },
-      { '<leader>t', group = ' Test' },
+      { '<leader>t', group = ' Testing' },
       { '<leader>d', group = ' Debug' },
       { '<leader>s', group = ' Search' },
       { '<leader>u', group = '󰔡 Toggle' },

@@ -48,6 +48,13 @@ return {
       end,
       desc = 'Debuger: Set [B]reakpoint',
     },
+    {
+      '<leader>td',
+      function()
+        require('neotest').run.run { strategy = 'dap' }
+      end,
+      desc = 'Neotest: [D]ebug Nearest',
+    },
   },
   config = function()
     local dap = require 'dap'

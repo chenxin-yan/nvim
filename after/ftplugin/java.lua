@@ -152,6 +152,6 @@ if not vim.g.vscode then
   vim.keymap.set('v', '<leader>rc', "<Esc><Cmd>lua require('jdtls').extract_constant(true)<cr>", { desc = 'jdtls: Extract [C]onstant', buffer = 0 })
   vim.keymap.set('v', '<leader>rm', "<Esc><Cmd>lua require('jdtls').extract_method(true)<cr>", { desc = 'jdtls: Extract [M]ethod', buffer = 0 })
 
-  vim.keymap.set('n', '<leader>tc', "<Cmd>lua require('jdtls').test_class()<cr>", { desc = 'jdtls: [T]est [C]lass', buffer = 0 })
-  vim.keymap.set('n', '<leader>tm', "<Cmd>lua require('jdtls').test_nearest_method()<cr>", { desc = 'jdtls: [T]est nearest [M]ethod', buffer = 0 })
+  vim.keymap.set('n', '<leader>tt', "<Cmd>lua require('jdtls').test_class()<cr>", { desc = 'jdtls: Test class', buffer = 0 })
+  vim.keymap.set('n', '<leader>tm', "<Cmd>lua require('jdtls').test_nearest_method()<cr>", { desc = 'jdtls: Test nearest method', buffer = 0 })
 end
