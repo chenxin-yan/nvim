@@ -89,7 +89,14 @@ return {
       {
         '<c-\\>',
         function()
-          Snacks.terminal.toggle()
+          Snacks.terminal.toggle(nil, {
+            win = {
+              position = 'float',
+              border = 'rounded',
+              width = 0.6,
+              height = 0.6,
+            },
+          })
         end,
         desc = 'Toggle Terminal',
         mode = { 'n', 't' },

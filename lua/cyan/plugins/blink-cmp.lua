@@ -216,4 +216,7 @@ return {
     },
   },
   opts_extend = { 'sources.default', 'sources.providers' },
+
+  -- Experimental signature help support
+  signature = { enabled = true },
 }
