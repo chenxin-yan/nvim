@@ -11,7 +11,19 @@ return {
     { 'theHamsta/nvim-dap-virtual-text', opts = true },
 
     -- Add your own debuggers here
-    -- 'leoluz/nvim-dap-go',
+
+    -- python dap
+    {
+      'mfussenegger/nvim-dap-python',
+      -- stylua: ignore
+      keys = {
+        { "<leader>dM", function() require('dap-python').test_method() end, desc = "Debug Method", ft = "python" },
+        { "<leader>dC", function() require('dap-python').test_class() end, desc = "Debug Class", ft = "python" },
+      },
+      config = function()
+        require('dap-python').setup '~/.local/share/nvim/mason/packages/debugpy/venv/bin/python'
+      end,
+    },
   },
   lazy = true,
   keys = {

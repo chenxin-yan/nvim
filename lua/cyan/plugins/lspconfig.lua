@@ -195,6 +195,9 @@ local servers = {
     -- init_options = {
     --   syncOnStartup = true,
     -- },
+    on_attach = function(client, buffer)
+      client.server_capabilities.hoverProvider = false
+    end,
   },
   emmet_language_server = {}, -- emmet support
   dockerls = {}, -- docker lsp
@@ -232,6 +235,26 @@ local servers = {
     },
   }, -- YAML lsp
   tailwindcss = {}, -- tailwindcss lsp
+  pyright = {}, -- python lsp
+  ruff = {
+    cmd_env = { RUFF_TRACE = 'messages' },
+    init_options = {
+      settings = {
+        logLevel = 'error',
+      },
+    },
+    on_attach = function(client, buffer)
+      vim.keymap.set('n', '<leader>co', function()
+        vim.lsp.buf.code_action {
+          apply = true,
+          context = {
+            only = { 'source.organizeImports' },
+          },
+        }
+      end, { desc = 'Ruff: [O]rganize Imports', buffer = buffer })
+      client.server_capabilities.hoverProvider = false
+    end,
+  }, -- java linter & formatter
 }
 -- You can add other tools here that you want Mason to install
 -- for you, so that they are available from within Neovim.
@@ -250,6 +273,7 @@ vim.list_extend(ensure_installed, {
   'js-debug-adapter', -- javascript debugger
   'java-debug-adapter', -- java debugger
   'codelldb', -- C/C++ debugger
+  'debugpy', -- python debugger
   -- Testing
   'java-test',
 })

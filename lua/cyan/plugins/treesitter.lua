@@ -30,6 +30,8 @@ return { -- Highlight, edit, and navigate code
       'json5',
       'java',
       'dockerfile',
+      'ninja',
+      'rst',
     },
     -- Autoinstall languages that are not installed
     auto_install = true,

@@ -53,7 +53,7 @@ nvim
 | Java                  | ✅ jdtls          | ✅ jdtls                  | ✅ jdtls        | ✅ jdtls           | ✅ java-test |
 | JavaScript/TypeScript | ✅ vtsls          | ✅ Biome/Prettier         | ✅ Biome/Eslint | ✅ vscode-js-debug | ❌           |
 | Golang                | ⏳                | ⏳                        | ⏳              | ⏳                 | ⏳           |
-| Python                | ⏳                | ⏳                        | ⏳              | ⏳                 | ⏳           |
+| Python                | ✅ Pyright        | ✅ Ruff                   | ✅ Ruff         | ✅ debugpy         | ⏳           |
 | Markdown              | ✅ marksman       | ✅ Prettier, markdownlint | ✅ markdownlint | ❌                 | ❌           |
 | HTML                  | ✅ html-lsp       | ✅ Prettier               | ❌              | ❌                 | ❌           |
 | CSS                   | ✅ css-lsp        | ✅ Biome/Prettier         | ❌              | ❌                 | ❌           |
