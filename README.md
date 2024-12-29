@@ -61,6 +61,7 @@ nvim
 | JSON                  | ✅ jsonls         | ✅ Biome/Prettier         | ❌              | ❌                 | ❌                            |
 | TOML                  | ✅ taplo          | ✅ taplo                  | ❌              | ❌                 | ❌                            |
 | YAML                  | ✅ yamlls         | ✅ yamlls                 | ❌              | ❌                 | ❌                            |
+| Docker                | ✅ dockerls       | ✅ dockerls               | ✅ hadolint     | ❌                 | ❌                            |
 
 ## Keymaps
 
