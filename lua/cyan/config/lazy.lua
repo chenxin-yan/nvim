@@ -127,6 +127,7 @@ require('lazy').setup({
   require 'cyan.plugins.ufo', -- better folds
   require 'cyan.plugins.ts-autotag', -- auto close/rename tags
   require 'cyan.plugins.multicursor', -- neovim multicursor support
+  require 'cyan.plugins.dial', -- increment/decrement improvement
 
   -- ---- UI ----
   {
