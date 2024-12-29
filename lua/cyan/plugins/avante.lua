@@ -9,8 +9,9 @@ return {
     'nvim-tree/nvim-web-devicons',
   },
   opts = {
-    behaviour = {
-      support_paste_from_clipboard = true,
+    file_selector = {
+      provider = 'telescope',
+      provider_opts = {},
     },
   },
   config = function(_, opts)
