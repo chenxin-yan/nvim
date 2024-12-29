@@ -179,10 +179,10 @@ return {
           score_offset = 100,
         },
         luasnip = {
-          score_offset = 50,
+          score_offset = 20,
         },
         snippets = {
-          score_offset = 50,
+          score_offset = 20,
         },
         lsp = {
           score_offset = 70,
@@ -200,7 +200,7 @@ return {
         copilot = {
           name = 'copilot',
           module = 'blink-cmp-copilot',
-          score_offset = 40,
+          score_offset = 30,
           async = true,
           transform_items = function(_, items)
             local CompletionItemKind = require('blink.cmp.types').CompletionItemKind

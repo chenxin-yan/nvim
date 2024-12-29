@@ -27,7 +27,7 @@ return {
     -- The adapter will then be automatically loaded with the config.
     adapters = {
       ['neotest-vim-test'] = {
-        ignore_file_types = { 'python', 'lua' },
+        ignore_file_types = { 'python', 'lua', 'java' },
       },
       ['neotest-python'] = {},
       ['neotest-jest'] = {

@@ -149,7 +149,6 @@ return { -- Fuzzy Finder (files, lsp, etc)
         ['ui-select'] = {
           require('telescope.themes').get_dropdown(),
         },
-        undo = {},
         bibtex = {
           -- Use context awareness
           context = true,

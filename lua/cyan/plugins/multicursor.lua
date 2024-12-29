@@ -70,7 +70,7 @@ return {
     -- bring back cursors if you accidentally clear them
     set('n', '<leader>Cr', mc.restoreCursors, { desc = 'Restore cursors' })
 
-    -- Align cursor colu
+    -- Align cursor col
     set('n', '<leader>Ca', mc.alignCursors, { desc = 'Align cursors' })
 
     -- Split visual selections by regex.
