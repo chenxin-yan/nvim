@@ -15,6 +15,7 @@ return {
   {
     'saghen/blink.cmp',
     dependencies = {
+      'rafamadriz/friendly-snippets',
       {
         'L3MON4D3/LuaSnip',
         lazy = true,
@@ -26,15 +27,15 @@ return {
           end
           return 'make install_jsregexp'
         end)(),
-        dependencies = {
-          {
-            'rafamadriz/friendly-snippets',
-            config = function()
-              require('luasnip.loaders.from_vscode').lazy_load()
-              require('luasnip.loaders.from_vscode').lazy_load { paths = { vim.fn.stdpath 'config' .. '/snippets' } }
-            end,
-          },
-        },
+        -- dependencies = {
+        --   {
+        --     'rafamadriz/friendly-snippets',
+        --     config = function()
+        --       require('luasnip.loaders.from_vscode').lazy_load()
+        --       require('luasnip.loaders.from_vscode').lazy_load { paths = { vim.fn.stdpath 'config' .. '/snippets' } }
+        --     end,
+        --   },
+        -- },
         opts = {
           history = true,
           delete_check_events = 'TextChanged',
@@ -82,11 +83,11 @@ return {
       -- See the full "keymap" documentation for information on defining your own keymap.
       keymap = {
         preset = 'none',
-        ['<C-n>'] = {
-          function(cmp)
-            cmp.show { providers = { 'snippets', 'luasnip' } }
-          end,
-        },
+        -- ['<C-n>'] = {
+        --   function(cmp)
+        --     cmp.show { providers = { 'snippets', 'luasnip' } }
+        --   end,
+        -- },
         ['<C-a>'] = {
           function(cmp)
             cmp.show { providers = { 'copilot' } }
@@ -185,6 +186,7 @@ return {
           'lazydev',
           'lsp',
           'path',
+          'snippets',
           'luasnip',
           'buffer',
           'dadbod',
@@ -195,6 +197,17 @@ return {
         },
         cmdline = {},
         providers = {
+          lsp = {
+            fallbacks = { 'snippets', 'luasnip', 'buffer' },
+            score_offset = 80,
+          },
+          path = {
+            score_offset = 85,
+          },
+          luasnip = {
+            fallbacks = { 'snippets' },
+            score_offset = 80,
+          },
           lazydev = {
             name = 'LazyDev',
             module = 'lazydev.integrations.blink',
@@ -203,7 +216,7 @@ return {
           dadbod = {
             name = 'Dadbod',
             module = 'vim_dadbod_completion.blink',
-            score_offset = 100,
+            score_offset = 90,
           },
           copilot = {
             name = 'copilot',
