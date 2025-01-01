@@ -327,10 +327,10 @@ return {
       },
     },
     keys = {
-      { 'gd', '<CMD>Glance definitions<CR>' },
-      { 'gr', '<CMD>Glance references<CR>' },
-      { 'gt', '<CMD>Glance type_definitions<CR>' },
-      { 'gI', '<CMD>Glance implementations<CR>' },
+      { 'gd', '<CMD>Glance definitions<CR>', desc = '[G]oto Definition' },
+      { 'gr', '<CMD>Glance references<CR>', desc = '[G]oto References' },
+      { 'gt', '<CMD>Glance type_definitions<CR>', desc = '[G]oto Type Definition' },
+      { 'gI', '<CMD>Glance implementations<CR>', desc = '[G]oto implementations' },
     },
   },
 

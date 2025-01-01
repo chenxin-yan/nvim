@@ -83,11 +83,11 @@ return {
       -- See the full "keymap" documentation for information on defining your own keymap.
       keymap = {
         preset = 'none',
-        -- ['<C-n>'] = {
-        --   function(cmp)
-        --     cmp.show { providers = { 'snippets', 'luasnip' } }
-        --   end,
-        -- },
+        ['<C-n>'] = {
+          function(cmp)
+            cmp.show { providers = { 'snippets', 'luasnip' } }
+          end,
+        },
         ['<C-a>'] = {
           function(cmp)
             cmp.show { providers = { 'copilot' } }
@@ -198,15 +198,19 @@ return {
         cmdline = {},
         providers = {
           lsp = {
-            fallbacks = { 'snippets', 'luasnip', 'buffer' },
             score_offset = 80,
+            max_items = 5,
           },
           path = {
-            score_offset = 85,
+            score_offset = 80,
+          },
+          snippets = {
+            score_offset = 70,
+            max_items = 5,
           },
           luasnip = {
-            fallbacks = { 'snippets' },
-            score_offset = 80,
+            score_offset = 75,
+            max_items = 3,
           },
           lazydev = {
             name = 'LazyDev',

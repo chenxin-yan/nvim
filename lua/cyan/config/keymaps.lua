@@ -75,3 +75,12 @@ vim.keymap.set('n', '<leader>gi', ':!git init', { desc = '[I]nitialize' })
 
 -- select pasted text
 vim.keymap.set('n', 'gp', '`[v`]', { desc = 'Select Pasted Text' })
+
+-- keymap for toggling autoformat
+vim.keymap.set('n', '<leader>uf', function()
+  if vim.g.disable_autoformat then
+    vim.g.disable_autoformat = false
+  else
+    vim.g.disable_autoformat = true
+  end
+end, { desc = 'Toggle [F]ormat' })

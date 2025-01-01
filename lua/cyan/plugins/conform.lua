@@ -13,15 +13,6 @@ return { -- Autoformat
     },
   },
   opts = function()
-    -- keymap for toggling autoformat
-    vim.keymap.set('n', '<leader>uf', function()
-      if vim.g.disable_autoformat then
-        vim.g.disable_autoformat = false
-      else
-        vim.g.disable_autoformat = true
-      end
-    end, { desc = 'Toggle [F]ormat' })
-
     local opts = {
       formatters = {
         ['markdownlint-cli2'] = {
