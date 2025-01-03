@@ -264,7 +264,7 @@ vim.list_extend(ensure_installed, {
   -- Formatters
   'stylua', -- lua formatter
   'prettier', -- javascript formatter
-  'biome', -- javascript formatter
+  'biome', -- javascript linter & formatter
   'sqlfluff', -- SQL formmater & linter
   -- Linters
   'markdownlint-cli2', -- markdown linter & formatter
