@@ -96,6 +96,17 @@ return {
 
     require('alpha').setup(dashboard.opts)
 
+    -- Set laststatus=0 when in dashboard
+    vim.o.laststatus = 0
+
+    -- Reset laststatus when leaving dashboard
+    vim.api.nvim_create_autocmd('BufUnload', {
+      buffer = 0,
+      callback = function()
+        vim.o.laststatus = 3
+      end,
+    })
+
     vim.api.nvim_create_autocmd('User', {
       once = true,
       pattern = 'LazyVimStarted',
