@@ -12,11 +12,13 @@
 
 A minimal Catppuccin neovim config built from [kickstart.nvim](https://github.com/nvim-lua/kickstart.nvim)
 
-![Preview 1](./Preview_1.jpg)
+![Preview 1](./preview_1.png)
 
-![Preview 2](./Preview_2.jpg)
+![Preview 2](./preview_2.png)
 
-![Preview 3](./Preview_3.jpg)
+![Preview 3](./preview_3.png)
+
+![Preview 4](./preview_4.png)
 
 ## Dependencies
 
@@ -43,6 +45,7 @@ nvim
 
 - [Neovide](https://github.com/neovide/neovide) support
 - Obsidian support
+- tmux support
 
 ## Language support
 
