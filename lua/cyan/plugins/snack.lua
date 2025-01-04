@@ -45,14 +45,14 @@ return {
       {
         '<leader>gF',
         function()
-          Snacks.lazygit.log_file()
+          Snacks.lazygit.log_file { cwd = Snacks.git.get_root() }
         end,
         desc = 'Lazygit Current [F]ile History',
       },
       {
         '<leader>G',
         function()
-          Snacks.lazygit()
+          Snacks.lazygit { cwd = Snacks.git.get_root() }
         end,
         desc = 'Lazygit',
       },
