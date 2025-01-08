@@ -66,9 +66,9 @@ local servers = {
         suggest = {
           completeFunctionCalls = true,
         },
-        suggestionActions = {
-          enabled = false,
-        },
+        -- suggestionActions = {
+        --   enabled = false,
+        -- },
         inlayHints = {
           enumMemberValues = { enabled = true },
           functionLikeReturnTypes = { enabled = true },
@@ -83,9 +83,9 @@ local servers = {
         suggest = {
           completeFunctionCalls = true,
         },
-        suggestionActions = {
-          enabled = false,
-        },
+        -- suggestionActions = {
+        --   enabled = false,
+        -- },
         inlayHints = {
           enumMemberValues = { enabled = true },
           functionLikeReturnTypes = { enabled = true },
