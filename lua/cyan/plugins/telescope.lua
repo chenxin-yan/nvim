@@ -83,6 +83,9 @@ return { -- Fuzzy Finder (files, lsp, etc)
 
     -- telescope bibtex
     { '<C-b>', '<cmd>Telescope bibtex<cr>', desc = 'Search [B]ibTex', ft = 'markdown', mode = 'i' },
+
+    -- serach message history
+    { '<leader>sm', '<cmd>Telescope noice<cr>', desc = 'Search [M]essage' },
   },
   config = function()
     -- Telescope is a fuzzy finder that comes with a lot of different things that
@@ -170,5 +173,6 @@ return { -- Fuzzy Finder (files, lsp, etc)
     pcall(require('telescope').load_extension, 'luasnip')
     pcall(require('telescope').load_extension, 'bibtex')
     pcall(require('telescope').load_extension, 'persisted')
+    pcall(require('telescope').load_extension, 'noice')
   end,
 }

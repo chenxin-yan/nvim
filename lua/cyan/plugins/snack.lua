@@ -29,13 +29,6 @@ return {
     local Snacks = require 'snacks'
     return {
       {
-        '<leader>sm',
-        function()
-          Snacks.notifier.show_history()
-        end,
-        desc = 'Notification History [M]essages',
-      },
-      {
         '<leader>gB',
         function()
           Snacks.gitbrowse()
