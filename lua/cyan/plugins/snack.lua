@@ -50,11 +50,11 @@ return {
         desc = 'Lazygit',
       },
       {
-        '<leader>gl',
+        '<leader>gL',
         function()
-          Snacks.lazygit.log()
+          Snacks.lazygit.log { cwd = Snacks.git.get_root() }
         end,
-        desc = 'Lazygit [L]og (cwd)',
+        desc = 'Lazygit [L]og',
       },
       {
         '<leader>rN',

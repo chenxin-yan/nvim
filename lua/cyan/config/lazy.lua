@@ -139,6 +139,7 @@ require('lazy').setup({
     end,
   },
 
+  require 'cyan.plugins.diffview',
   require 'cyan.plugins.tiny-diagnostic', -- better inline diagnostics
   require 'cyan.plugins.alpha', -- neovim dashboard
   require 'cyan.plugins.feline', -- status line

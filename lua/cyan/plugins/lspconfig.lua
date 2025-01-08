@@ -317,11 +317,11 @@ return {
     'dnlhc/glance.nvim',
     cmd = 'Glance',
     opts = {
+      height = 24,
       border = {
         enable = true, -- Show window borders. Only horizontal borders allowed
-        top_char = '―',
-        bottom_char = '―',
       },
+      use_trouble_qf = true,
     },
     keys = {
       { 'gd', '<CMD>Glance definitions<CR>', desc = '[G]oto Definition' },

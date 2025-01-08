@@ -38,6 +38,7 @@ return { -- Fuzzy Finder (files, lsp, etc)
     { '<leader>sh', '<cmd>Telescope help_tags<cr>', desc = '[H]elp' },
     { '<leader>sk', '<cmd>Telescope keymaps<cr>', desc = '[K]eymaps' },
     { '<leader>sf', "<CMD>lua require'cyan.helpers.telescope-helpers'.find_files_from_project_git_root()<CR>", desc = 'Project [F]iles' },
+    { '<leader>sF', '<CMD>Telescope find_files hidden=true no_ignore=true<CR>', desc = 'Project [F]iles' },
     {
       '<leader>s-',
       function()
@@ -131,12 +132,17 @@ return { -- Fuzzy Finder (files, lsp, etc)
       }
     end
 
+    local open_with_trouble = require('trouble.sources.telescope').open
+
     require('telescope').setup {
       -- You can put your default mappings / updates / etc. in here
       --  All the info you're looking for is in `:help telescope.setup()`
       defaults = {
         mappings = {
-          n = { s = flash },
+          n = {
+            s = flash,
+            ['<c-t>'] = open_with_trouble,
+          },
           i = {
             ['<esc>'] = actions.close,
             ['<C-j>'] = actions.move_selection_next,
@@ -144,6 +150,7 @@ return { -- Fuzzy Finder (files, lsp, etc)
             ['<C-n>'] = actions.cycle_history_next,
             ['<C-p>'] = actions.cycle_history_prev,
             ['<c-s>'] = flash,
+            ['<c-t>'] = open_with_trouble,
           },
         },
       },
