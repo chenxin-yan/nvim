@@ -195,9 +195,6 @@ local servers = {
     -- init_options = {
     --   syncOnStartup = true,
     -- },
-    on_attach = function(client, buffer)
-      client.server_capabilities.hoverProvider = false
-    end,
   },
   emmet_language_server = {}, -- emmet support
   dockerls = {}, -- docker lsp
@@ -486,7 +483,6 @@ return {
           end
 
           -- attach navic to buffer
-
           if client and client.name ~= 'spring-boot' and client.server_capabilities['documentSymbolProvider'] then
             require('nvim-navic').attach(client, event.buf)
           end

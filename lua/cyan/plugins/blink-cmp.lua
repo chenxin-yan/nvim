@@ -204,7 +204,7 @@ return {
             score_offset = 80,
           },
           snippets = {
-            score_offset = 75,
+            score_offset = 70,
             max_items = 5,
           },
           lazydev = {
