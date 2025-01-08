@@ -69,8 +69,9 @@ vim.keymap.set('n', '<leader>gc', ':!git commit -m ""<left>', { desc = '[C]ommit
 vim.keymap.set('n', '<leader>gA', ':!git commit --amend --no-edit', { desc = '[A]mend' })
 vim.keymap.set('n', '<leader>gp', ':!git pull', { desc = '[P]ull' })
 vim.keymap.set('n', '<leader>gP', ':!git push', { desc = '[P]ush' })
-vim.keymap.set('n', '<leader>gr', ':!git reset HEAD *', { desc = 'Mixed [R]eset to last commit' })
-vim.keymap.set('n', '<leader>gR', ':!git reset --hard HEAD *', { desc = 'Hard [R]eset to last commit' })
+vim.keymap.set('n', '<leader>gd', ':!git restore %', { desc = '[D]iscard changes in file' })
+vim.keymap.set('n', '<leader>gr', ':!git reset HEAD', { desc = 'Mixed [R]eset to last commit' })
+vim.keymap.set('n', '<leader>gR', ':!git reset --hard HEAD', { desc = 'Hard [R]eset to last commit' })
 vim.keymap.set('n', '<leader>gi', ':!git init', { desc = '[I]nitialize' })
 
 -- select pasted text
