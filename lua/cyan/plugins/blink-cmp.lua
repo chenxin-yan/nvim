@@ -15,7 +15,6 @@ return {
   {
     'saghen/blink.cmp',
     dependencies = {
-      'rafamadriz/friendly-snippets',
       {
         'L3MON4D3/LuaSnip',
         lazy = true,
@@ -27,15 +26,15 @@ return {
           end
           return 'make install_jsregexp'
         end)(),
-        -- dependencies = {
-        --   {
-        --     'rafamadriz/friendly-snippets',
-        --     config = function()
-        --       require('luasnip.loaders.from_vscode').lazy_load()
-        --       require('luasnip.loaders.from_vscode').lazy_load { paths = { vim.fn.stdpath 'config' .. '/snippets' } }
-        --     end,
-        --   },
-        -- },
+        dependencies = {
+          {
+            'rafamadriz/friendly-snippets',
+            config = function()
+              require('luasnip.loaders.from_vscode').lazy_load()
+              require('luasnip.loaders.from_vscode').lazy_load { paths = { vim.fn.stdpath 'config' .. '/snippets' } }
+            end,
+          },
+        },
         opts = {
           history = true,
           delete_check_events = 'TextChanged',
@@ -168,6 +167,7 @@ return {
         },
       },
       snippets = {
+        preset = 'luasnip',
         expand = function(snippet)
           require('luasnip').lsp_expand(snippet)
         end,
@@ -187,7 +187,6 @@ return {
           'lsp',
           'path',
           'snippets',
-          'luasnip',
           'buffer',
           'dadbod',
           'copilot',
@@ -205,12 +204,8 @@ return {
             score_offset = 80,
           },
           snippets = {
-            score_offset = 70,
-            max_items = 5,
-          },
-          luasnip = {
             score_offset = 75,
-            max_items = 3,
+            max_items = 5,
           },
           lazydev = {
             name = 'LazyDev',
