@@ -120,6 +120,9 @@ local servers = {
       vim.keymap.set('n', 'gD', function()
         vtsls.commands['goto_source_definition'](0)
       end, { desc = 'vtsls: [G]oto source [D]efinition', buffer = buffer })
+      vim.keymap.set('n', 'cR', function()
+        vtsls.commands['restart_tsserver'](0)
+      end, { desc = 'vtsls: [R]estart tsserver', buffer = buffer })
 
       -- setup codelens for JS/TS
       vim.lsp.commands['editor.action.showReferences'] = function(command, ctx)
