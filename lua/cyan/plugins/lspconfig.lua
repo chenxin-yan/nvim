@@ -254,7 +254,8 @@ local servers = {
       end, { desc = 'Ruff: [O]rganize Imports', buffer = buffer })
       client.server_capabilities.hoverProvider = false
     end,
-  }, -- java linter & formatter
+  }, -- python linter & formatter
+  bashls = {}, -- bashscript lsp
 }
 -- You can add other tools here that you want Mason to install
 -- for you, so that they are available from within Neovim.
