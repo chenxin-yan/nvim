@@ -14,4 +14,7 @@ return {
     i(1),
     t { ')' },
   }),
+  s('ed', {
+    t 'export default ',
+  }),
 }
