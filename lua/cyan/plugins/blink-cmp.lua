@@ -42,7 +42,7 @@ return {
         config = function()
           -- Load custom lua snippets
           require('luasnip.loaders.from_lua').lazy_load { paths = { '~/.config/nvim/lua/cyan/snippets/' } }
-          vim.keymap.set('n', '<leader>S', '<cmd>source ~/.config/nvim/lua/cyan/plugins/blink-cmp.lua<cr>', { desc = '[S]ource snippets' })
+          vim.keymap.set('n', '<leader>S', '<cmd>source ~/.config/nvim/lua/cyan/snippets/<cr>', { desc = '[S]ource snippets' })
 
           -- set keybinds for select choice node in luasnip
           vim.keymap.set({ 'i', 'v' }, '<C-s>', '<cmd>lua require("luasnip.extras.select_choice")()<cr>', { desc = '[S]elect snippet choices' })
@@ -84,7 +84,7 @@ return {
         preset = 'none',
         ['<C-n>'] = {
           function(cmp)
-            cmp.show { providers = { 'snippets', 'luasnip' } }
+            cmp.show { providers = { 'snippets' } }
           end,
         },
         ['<C-a>'] = {
@@ -186,7 +186,7 @@ return {
         providers = {
           lsp = {
             score_offset = 80,
-            max_items = 5,
+            max_items = 8,
           },
           path = {
             score_offset = 80,
