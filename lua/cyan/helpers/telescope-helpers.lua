@@ -42,11 +42,11 @@ M.live_grep_from_project_git_root = function()
   end
 
   local opts = {
-    additional_args = {
-      '--hidden',
-      '--glob',
-      '!**/.git/*',
-    },
+    -- additional_args = {
+    --   '--hidden',
+    --   '--glob',
+    --   '!**/.git/*',
+    -- },
   }
 
   if is_git_repo() then
