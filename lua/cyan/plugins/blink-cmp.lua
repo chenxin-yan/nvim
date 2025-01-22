@@ -13,6 +13,22 @@ return {
     opts = {},
   },
   {
+    'chrisgrieser/nvim-scissors',
+    event = { 'BufReadPre', 'BufNewFile' },
+    dependencies = 'nvim-telescope/telescope.nvim',
+    opts = {
+      snippetDir = vim.fn.stdpath 'config' .. '/snippets',
+      telescope = {
+        alsoSearchSnippetBody = true,
+      },
+      jsonFormatter = 'jq',
+    },
+    keys = {
+      { '<leader>Se', '<cmd>lua require("scissors").editSnippet()<cr>', desc = 'Snippet: Edit' },
+      { '<leader>Sa', '<cmd>lua require("scissors").addNewSnippet()<cr>', desc = 'Snippet: Add' },
+    },
+  },
+  {
     'saghen/blink.cmp',
     dependencies = {
       {
@@ -35,18 +51,6 @@ return {
             end,
           },
         },
-        opts = {
-          history = true,
-          delete_check_events = 'TextChanged',
-        },
-        config = function()
-          -- Load custom lua snippets
-          require('luasnip.loaders.from_lua').lazy_load { paths = { '~/.config/nvim/lua/cyan/snippets/' } }
-          vim.keymap.set('n', '<leader>S', '<cmd>source ~/.config/nvim/lua/cyan/snippets/<cr>', { desc = '[S]ource snippets' })
-
-          -- set keybinds for select choice node in luasnip
-          vim.keymap.set({ 'i', 'v' }, '<C-s>', '<cmd>lua require("luasnip.extras.select_choice")()<cr>', { desc = '[S]elect snippet choices' })
-        end,
       },
       'kristijanhusak/vim-dadbod-completion',
       {
@@ -167,7 +171,7 @@ return {
         },
       },
       snippets = {
-        preset = 'luasnip',
+        preset = 'default',
       },
       sources = {
         default = {
@@ -194,6 +198,9 @@ return {
           snippets = {
             score_offset = 70,
             max_items = 5,
+            opts = {
+              search_paths = { vim.fn.stdpath 'config' .. '/snippets' },
+            },
           },
           lazydev = {
             name = 'LazyDev',

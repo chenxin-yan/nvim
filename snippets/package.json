@@ -1,0 +1,30 @@
+{
+  "contributes": {
+    "snippets": [
+      {
+        "language": "lua",
+        "path": "./project-specific/nvim-lua.json"
+      },
+      {
+        "language": [
+          "javascript",
+          "typescript"
+        ],
+        "path": "./javascript.json"
+      },
+      {
+        "language": "typescript",
+        "path": "./typescript.json"
+      },
+      {
+        "language": "css",
+        "path": "./css.json"
+      },
+      {
+        "language": "all",
+        "path": "./all.json"
+      }
+    ]
+  },
+  "name": "personal-snippets"
+}
