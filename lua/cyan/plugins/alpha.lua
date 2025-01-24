@@ -58,8 +58,8 @@ return {
     -- stylua: ignore
     dashboard.section.buttons.val = {
       dashboard.button('e', '  > New file', ':e '),
-      dashboard.button('f', '󰈞  > Find file', "<CMD>lua require'cyan.helpers.telescope-helpers'.find_files_from_project_git_root()<CR>"),
-      dashboard.button('g', '󰺮  > Grep text', "<CMD>lua require'cyan.helpers.telescope-helpers'.live_grep_from_project_git_root()<CR>"),
+      dashboard.button('f', '󰈞  > Find file', "<CMD>Telescope find_files<CR>"),
+      dashboard.button('g', '󰺮  > Grep text', "<CMD>Telescope live_grep<CR>"),
       dashboard.button('s', '󱊒  > Search Session ', '<cmd>Telescope persisted<cr>'),
       dashboard.button('r', '󰚰  > Restore Session', '<cmd>SessionLoad<cr>'),
       dashboard.button('l', '  > Restore Last Session', '<cmd>SessionLoadLast<cr>'),
