@@ -162,7 +162,6 @@ require('lazy').setup({
   },
   require 'cyan.plugins.neotest', -- testing support
   require 'cyan.plugins.refactoring', -- code refactoring
-  require 'cyan.plugins.neogen', -- generate annotations/documentations
   require 'cyan.plugins.sql', -- sql support
 
   -- Java
@@ -184,13 +183,12 @@ require('lazy').setup({
   require 'cyan.plugins.markdown-preview', -- markdown preview in browser
   require 'cyan.plugins.markdown', -- better markdown render
   require 'cyan.plugins.footnote', -- better footnote
-  require 'cyan.plugins.bullets', -- better bullet list
+  -- require 'cyan.plugins.bullets', -- better bullet list
 
   -- ---- extras ----
   require 'cyan.plugins.leetcode', -- Leetcode integration
   require 'cyan.plugins.navigator', -- tmux integration
   require 'cyan.plugins.grug-far', -- grep and replace
-  require 'cyan.plugins.im-select', -- automatic input method switcher
   require 'cyan.plugins.yazi', -- yazi integration
   require 'cyan.plugins.obsidian', -- obsidian integration
   require 'cyan.plugins.kulala', -- REST-client interface
