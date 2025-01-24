@@ -10,6 +10,10 @@
           "javascript",
           "typescript"
         ],
+        "path": "./js-ts.json"
+      },
+      {
+        "language": "javascript",
         "path": "./javascript.json"
       },
       {
@@ -19,6 +23,10 @@
       {
         "language": "css",
         "path": "./css.json"
+      },
+      {
+        "language": "markdown",
+        "path": "./markdown.json"
       },
       {
         "language": "all",
