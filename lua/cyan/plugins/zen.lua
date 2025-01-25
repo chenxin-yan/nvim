@@ -8,7 +8,7 @@ return {
     window = {
       options = {
         signcolumn = 'no',
-        number = false,
+        number = true,
         relativenumber = false,
       },
     },

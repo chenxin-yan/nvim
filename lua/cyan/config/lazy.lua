@@ -142,7 +142,7 @@ require('lazy').setup({
   require 'cyan.plugins.diffview',
   require 'cyan.plugins.tiny-diagnostic', -- better inline diagnostics
   require 'cyan.plugins.alpha', -- neovim dashboard
-  require 'cyan.plugins.feline', -- status line
+  require 'cyan.plugins.lualine', -- status line
   require 'cyan.plugins.indent-line', -- indentation guide
   require 'cyan.plugins.noice', -- UI improvement
   require 'cyan.plugins.barbecue', -- LSP nav bar
@@ -183,7 +183,6 @@ require('lazy').setup({
   require 'cyan.plugins.markdown-preview', -- markdown preview in browser
   require 'cyan.plugins.markdown', -- better markdown render
   require 'cyan.plugins.footnote', -- better footnote
-  -- require 'cyan.plugins.bullets', -- better bullet list
 
   -- ---- extras ----
   require 'cyan.plugins.leetcode', -- Leetcode integration
