@@ -36,7 +36,7 @@ return {
         desc = '[G]it [B]rowse',
       },
       {
-        '<leader>gF',
+        '<leader>gf',
         function()
           Snacks.lazygit.log_file { cwd = Snacks.git.get_root() }
         end,
@@ -50,7 +50,7 @@ return {
         desc = 'Lazygit',
       },
       {
-        '<leader>gL',
+        '<leader>gl',
         function()
           Snacks.lazygit.log { cwd = Snacks.git.get_root() }
         end,
