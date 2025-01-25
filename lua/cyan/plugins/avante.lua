@@ -51,7 +51,6 @@ return {
   If there's no issues with code respond with only: <OK>
 ]]
     local avante_optimize_code = 'Optimize the following code'
-    local avante_summarize = 'Summarize the following text'
     local avante_explain_code = 'Explain the following code'
     local avante_complete_code = 'Complete the following codes written in ' .. vim.bo.filetype
     local avante_add_docstring = 'Add docstring to the following codes'
@@ -82,13 +81,6 @@ return {
             require('avante.api').ask { question = avante_optimize_code }
           end,
           desc = 'Optimize Code(ask)',
-        },
-        {
-          '<leader>am',
-          function()
-            require('avante.api').ask { question = avante_summarize }
-          end,
-          desc = 'Summarize text(ask)',
         },
         {
           '<leader>ax',
