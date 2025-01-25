@@ -13,5 +13,7 @@ return {
     { '<leader>3', '<cmd>Grapple select index=3<cr>', desc = 'Select tag 3' },
     { '<leader>4', '<cmd>Grapple select index=4<cr>', desc = 'Select tag 4' },
     { '<leader>5', '<cmd>Grapple select index=5<cr>', desc = 'Select tag 5' },
+    { '<C-n>', '<cmd>Grapple cycle_tags next<cr>', desc = 'Grapple cycle next tag' },
+    { '<C-p>', '<cmd>Grapple cycle_tags prev<cr>', desc = 'Grapple cycle previous tag' },
   },
 }

@@ -98,13 +98,13 @@ return { -- Collection of various small independent plugins/modules
       mappings = {
         left = '<',
         right = '>',
-        down = '<c-n>',
-        up = '<c-p>',
+        down = '<M-n>',
+        up = '<M-p>',
 
         line_left = '<',
         line_right = '>',
-        line_down = '<C-n>',
-        line_up = '<C-p>',
+        line_down = '<M-n>',
+        line_up = '<M-p>',
       },
     }
 
