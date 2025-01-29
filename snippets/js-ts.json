@@ -1,4 +1,12 @@
 {
+  "af": {
+    "body": [
+      "(${1}) => {",
+      "  ${2}",
+      "}"
+    ],
+    "prefix": "af"
+  },
   "exrt": {
     "body": [
       "import { Router } from 'express';",
