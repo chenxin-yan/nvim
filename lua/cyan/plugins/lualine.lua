@@ -61,7 +61,7 @@ local colors = {
   mantle = '#181825',
   surface = '#313244',
   text = '#cdd6f4',
-  subtext = '#bac2de',
+  subtext = '#9399b2',
 }
 
 local custom_catppuccin = {
@@ -76,9 +76,9 @@ local custom_catppuccin = {
   replace = { a = { fg = colors.mantle, bg = colors.maroon } },
 
   inactive = {
-    a = { fg = colors.text },
-    b = { fg = colors.text },
-    c = { fg = colors.text },
+    a = { fg = colors.mantle, bg = colors.lavender },
+    b = { fg = colors.text, bg = colors.surface },
+    c = { fg = colors.subtext },
   },
 }
 return {
@@ -153,12 +153,12 @@ return {
         },
       },
       inactive_sections = {
-        lualine_a = { 'filename' },
+        lualine_a = {},
         lualine_b = {},
-        lualine_c = {},
-        lualine_x = {},
+        lualine_c = { 'filename' },
+        lualine_x = { 'location' },
         lualine_y = {},
-        lualine_z = { 'location' },
+        lualine_z = {},
       },
       extensions = {},
     }
