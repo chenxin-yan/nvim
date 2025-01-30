@@ -52,7 +52,7 @@ if not vim.g.vscode then
     settings = {
       java = {
         -- WARN: Replace this with the absolute path to your main java version (JDK 17 or higher)
-        home = '/Library/Java/JavaVirtualMachines/jdk-17.jdk/Contents/Home/',
+        home = '/Library/Java/JavaVirtualMachines/jdk-21.jdk/Contents/Home/',
         eclipse = {
           downloadSources = true,
         },
@@ -62,8 +62,8 @@ if not vim.g.vscode then
           -- The runtime name parameters need to match specific Java execution environments.  See https://github.com/tamago324/nlsp-settings.nvim/blob/2a52e793d4f293c0e1d61ee5794e3ff62bfbbb5d/schemas/_generated/jdtls.json#L317-L334
           runtimes = {
             {
-              name = 'JavaSE-17',
-              path = '/Library/Java/JavaVirtualMachines/jdk-17.jdk/Contents/Home',
+              name = 'JavaSE-21',
+              path = '/Library/Java/JavaVirtualMachines/jdk-21.jdk/Contents/Home',
             },
           },
         },
@@ -83,10 +83,10 @@ if not vim.g.vscode then
         format = {
           enabled = true,
           -- Formatting works by default, but you can refer to a specific file/URL if you choose
-          -- settings = {
-          --   url = "https://github.com/google/styleguide/blob/gh-pages/intellij-java-google-style.xml",
-          --   profile = "GoogleStyle",
-          -- },
+          settings = {
+            url = 'https://github.com/google/styleguide/blob/gh-pages/intellij-java-google-style.xml',
+            profile = 'GoogleStyle',
+          },
         },
       },
       completion = {

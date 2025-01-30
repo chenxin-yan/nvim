@@ -350,7 +350,7 @@ return {
   { 'Bilal2453/luvit-meta', lazy = true },
 
   -- java lsp config
-  { 'mfussenegger/nvim-jdtls', lazy = true, ft = 'java', dependencies = { 'mfussenegger/nvim-dap' } },
+  { 'mfussenegger/nvim-jdtls', lazy = true, dependencies = { 'mfussenegger/nvim-dap' } },
 
   -- json/yaml schema support
   { 'b0o/schemastore.nvim', lazy = true, version = false },
