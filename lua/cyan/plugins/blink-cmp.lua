@@ -6,11 +6,18 @@ return {
   {
     'saghen/blink.compat',
     -- use the latest release, via version = '*', if you also use the latest release for blink.cmp
-    version = '*',
+    -- version = '*',
     -- lazy.nvim will automatically load the plugin when it's required by blink.cmp
     lazy = true,
     -- make sure to set opts so that lazy.nvim calls blink.compat's setup
     opts = {},
+    config = function()
+      -- Monkeypatch cmp.ConfirmBehavior for Avante
+      require('cmp').ConfirmBehavior = {
+        Insert = 'insert',
+        Replace = 'replace',
+      }
+    end,
   },
   {
     'chrisgrieser/nvim-scissors',
@@ -51,6 +58,10 @@ return {
             end,
           },
         },
+        opts = {
+          history = true,
+          delete_check_events = 'TextChanged',
+        },
       },
       'kristijanhusak/vim-dadbod-completion',
       {
@@ -76,7 +87,8 @@ return {
       },
     },
     event = 'InsertEnter',
-    version = '*',
+    -- version = '*',
+    build = 'cargo build --release',
     ---@module 'blink.cmp'
     ---@type blink.cmp.Config
     opts = {
@@ -171,7 +183,7 @@ return {
         },
       },
       snippets = {
-        preset = 'default',
+        preset = 'luasnip',
       },
       sources = {
         default = {
@@ -198,9 +210,6 @@ return {
           snippets = {
             score_offset = 70,
             max_items = 5,
-            opts = {
-              search_paths = { vim.fn.stdpath 'config' .. '/snippets' },
-            },
           },
           lazydev = {
             name = 'LazyDev',
