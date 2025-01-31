@@ -185,7 +185,6 @@ require('lazy').setup({
 
   -- ---- extras ----
   require 'cyan.plugins.leetcode', -- Leetcode integration
-  require 'cyan.plugins.navigator', -- tmux integration
   require 'cyan.plugins.grug-far', -- grep and replace
   require 'cyan.plugins.yazi', -- yazi integration
   require 'cyan.plugins.obsidian', -- obsidian integration
