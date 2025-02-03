@@ -16,6 +16,9 @@ return {
         style = 'minimal',
       },
     },
+    gitbrowse = {
+      what = 'branch',
+    },
     styles = {
       notification = {
         wo = {
@@ -48,6 +51,13 @@ return {
           Snacks.lazygit { cwd = Snacks.git.get_root() }
         end,
         desc = 'Lazygit',
+      },
+      {
+        '<leader>R',
+        function()
+          Snacks.terminal('posting --collection REST --env rest.env', { cwd = Snacks.git.get_root() })
+        end,
+        desc = '[R]est Client (Posting)',
       },
       {
         '<leader>gl',
