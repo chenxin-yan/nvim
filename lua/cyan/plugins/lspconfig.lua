@@ -357,7 +357,7 @@ return {
 
   -- JS/TS
   { 'yioneko/nvim-vtsls', lazy = true },
-  { 'dmmulroy/ts-error-translator.nvim', ft = { 'javascript', 'typescript' } }, -- make typescript error more readable
+  { 'dmmulroy/ts-error-translator.nvim', ft = { 'javascript', 'typescript' }, config = true }, -- make typescript error more readable
 
   -- C/C++
   {
