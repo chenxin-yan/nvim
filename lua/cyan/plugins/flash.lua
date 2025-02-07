@@ -89,6 +89,7 @@ return {
           end,
         }
       end,
+      desc = 'Flash Diagnostics',
     },
   },
 }

@@ -64,16 +64,6 @@ vim.keymap.set('n', '<leader><Tab>', '<cmd>b#<cr>', { desc = 'Goto previously op
 vim.keymap.set('n', '<C-]>', '<cmd>bnext<cr>', { desc = 'Goto next buffer' })
 vim.keymap.set('n', '<C-[>', '<cmd>bprevious<cr>', { desc = 'Goto previous buffer' })
 
--- git operations
-vim.keymap.set('n', '<leader>gc', ':!git commit -m ""<left>', { desc = '[C]ommit' })
-vim.keymap.set('n', '<leader>gA', ':!git commit --amend --no-edit', { desc = '[A]mend' })
-vim.keymap.set('n', '<leader>gp', ':!git pull', { desc = '[P]ull' })
-vim.keymap.set('n', '<leader>gP', ':!git push', { desc = '[P]ush' })
-vim.keymap.set('n', '<leader>gD', ':!git restore %', { desc = '[D]iscard changes in file' })
-vim.keymap.set('n', '<leader>gr', ':!git reset HEAD', { desc = 'Mixed [R]eset to last commit' })
-vim.keymap.set('n', '<leader>gR', ':!git reset --hard HEAD', { desc = 'Hard [R]eset to last commit' })
-vim.keymap.set('n', '<leader>gi', ':!git init', { desc = '[I]nitialize' })
-
 -- select pasted text
 vim.keymap.set('n', 'gp', '`[v`]', { desc = 'Select Pasted Text' })
 
@@ -85,3 +75,6 @@ vim.keymap.set('n', '<leader>uf', function()
     vim.g.disable_autoformat = true
   end
 end, { desc = 'Toggle [F]ormat' })
+
+-- save buffer
+vim.keymap.set('n', '<C-w>', '<cmd>w<cr>', { desc = 'Write' })

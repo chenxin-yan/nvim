@@ -85,6 +85,10 @@ return {
           },
         },
       },
+      {
+        'Kaiser-Yang/blink-cmp-git',
+        dependencies = { 'nvim-lua/plenary.nvim' },
+      },
     },
     event = 'InsertEnter',
     version = '*',
@@ -194,6 +198,7 @@ return {
           'buffer',
           'dadbod',
           'copilot',
+          'git',
           'avante_commands',
           'avante_mentions',
           'avante_files',
@@ -234,6 +239,15 @@ return {
                 item.kind = kind_idx
               end
               return items
+            end,
+          },
+          git = {
+            module = 'blink-cmp-git',
+            name = 'Git',
+            score_offset = 100,
+            enabled = true,
+            should_show_items = function()
+              return vim.o.filetype == 'gitcommit' or vim.o.filetype == 'markdown'
             end,
           },
           avante_commands = {

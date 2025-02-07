@@ -145,6 +145,7 @@ require('lazy').setup({
   require 'cyan.plugins.noice', -- UI improvement
   require 'cyan.plugins.barbecue', -- LSP nav bar
   require 'cyan.plugins.endhints', -- LSP inlay hint improvements
+  require 'cyan.plugins.octo', -- Github issues & PR
 
   -- ---- language specific ----
   { -- image support
