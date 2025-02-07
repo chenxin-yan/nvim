@@ -1,3 +1,10 @@
+local function keymap()
+  if vim.opt.iminsert:get() > 0 and vim.b.keymap_name then
+    return '⌨ ' .. vim.b.keymap_name
+  end
+  return ''
+end
+
 local function get_attached_clients()
   -- Get active clients for current buffer
   local buf_clients = vim.lsp.get_clients { bufnr = 0 }
@@ -111,7 +118,7 @@ return {
       options = {
         theme = custom_catppuccin,
         globalstatus = vim.o.laststatus == 3,
-        disabled_filetypes = { statusline = { 'dashboard', 'alpha', 'ministarter', 'snacks_dashboard' } },
+        disabled_filetypes = { statusline = { 'dashboard', 'alpha', 'ministarter', 'snacks_dashboard', 'Avante' } },
         component_separators = ' ',
         section_separators = { left = '', right = '' },
       },

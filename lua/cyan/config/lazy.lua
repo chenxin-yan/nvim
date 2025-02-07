@@ -123,7 +123,6 @@ require('lazy').setup({
   require 'cyan.plugins.trouble', -- better diagnostic list
   require 'cyan.plugins.flash', -- fast navigation
   require 'cyan.plugins.grapple', -- bookmark files for easy navigation
-  require 'cyan.plugins.zen', -- Zen mode
   require 'cyan.plugins.ufo', -- better folds
   require 'cyan.plugins.ts-autotag', -- auto close/rename tags
   require 'cyan.plugins.multicursor', -- neovim multicursor support
