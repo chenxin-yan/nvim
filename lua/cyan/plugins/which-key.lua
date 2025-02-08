@@ -17,6 +17,9 @@ return {
       { '<leader>h', group = ' Hunk', mode = { 'n', 'x' } },
       { '<leader>b', group = ' Buffer' },
       { '<leader>r', group = ' Refactor', mode = { 'n', 'x' } },
+      { '<leader>C', group = '󰗧 Cursors' },
+      { '<leader>o', group = ' Obsidian' },
+      { '<leader>j', group = ' Jobs' },
     },
     plugins = {
       spelling = {

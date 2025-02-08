@@ -83,11 +83,6 @@ return {
     -- match new cursors within visual selections by regex.
     set('v', 'M', mc.matchCursors)
 
-    -- register whichkey mappings
-    require('which-key').add {
-      { '<leader>C', group = '󰗧 Cursors' },
-    }
-
     -- Customize how cursors look.
     local hl = vim.api.nvim_set_hl
     hl(0, 'MultiCursorCursor', { link = 'Cursor' })

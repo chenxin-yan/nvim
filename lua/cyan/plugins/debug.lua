@@ -57,6 +57,9 @@ return {
     },
   },
   config = function()
+    -- task runner integration
+    require('overseer').enable_dap()
+
     local dap = require 'dap'
     local dapui = require 'dapui'
 

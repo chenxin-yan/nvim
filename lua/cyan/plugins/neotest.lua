@@ -95,6 +95,10 @@ return {
       end
     end
 
+
+    -- Task runner integration
+    opts.consumers.overseer = require("neotest.consumers.overseer")
+
     if opts.adapters then
       local adapters = {}
       for name, config in pairs(opts.adapters or {}) do

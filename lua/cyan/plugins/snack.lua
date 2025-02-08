@@ -30,6 +30,7 @@ return {
   },
   keys = function()
     local Snacks = require 'snacks'
+    Snacks.input.enable()
     return {
       {
         '<leader>gB',

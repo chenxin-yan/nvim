@@ -9,11 +9,6 @@ return {
     'BufReadPre ' .. vault_path .. '**.md',
     'BufNewFile ' .. vault_path .. '**.md',
   },
-  init = function()
-    require('which-key').add {
-      { '<leader>o', group = ' Obsidian' },
-    }
-  end,
   keys = {
     {
       '<leader>so',
@@ -32,9 +27,6 @@ return {
     },
   },
   config = function()
-    -- set conceallevel
-    vim.opt.conceallevel = 2
-
     -- obsidian plugin setup
     require('obsidian').setup {
       ui = { enable = false },

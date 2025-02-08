@@ -44,6 +44,7 @@ require('lazy').setup({
           colored_indent_levels = false,
         },
         blink_cmp = true,
+        integrations = { overseer = true },
       },
     },
     config = function(_, opts)
@@ -127,6 +128,7 @@ require('lazy').setup({
   require 'cyan.plugins.ts-autotag', -- auto close/rename tags
   require 'cyan.plugins.multicursor', -- neovim multicursor support
   require 'cyan.plugins.dial', -- increment/decrement improvement
+  require 'cyan.plugins.overseer', -- nvim test runner
 
   -- ---- UI ----
   {
