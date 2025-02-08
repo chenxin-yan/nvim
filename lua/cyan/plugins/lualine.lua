@@ -1,10 +1,3 @@
-local function keymap()
-  if vim.opt.iminsert:get() > 0 and vim.b.keymap_name then
-    return '⌨ ' .. vim.b.keymap_name
-  end
-  return ''
-end
-
 local function get_attached_clients()
   -- Get active clients for current buffer
   local buf_clients = vim.lsp.get_clients { bufnr = 0 }
@@ -143,6 +136,30 @@ return {
           },
         },
         lualine_x = {
+          -- stylua: ignore
+          {
+            function()
+              return require('noice').api.status.command.get()
+            end,
+            cond = function()
+              return package.loaded['noice'] and require('noice').api.status.command.has()
+            end,
+            color = function()
+              return { fg = Snacks.util.color 'Statement' }
+            end,
+          },
+          -- stylua: ignore
+          {
+            function() return require("noice").api.status.mode.get() end,
+            cond = function() return package.loaded["noice"] and require("noice").api.status.mode.has() end,
+            color = function() return { fg = Snacks.util.color("Constant") } end,
+          },
+          -- stylua: ignore
+          {
+            function() return "  " .. require("dap").status() end,
+            cond = function() return package.loaded["dap"] and require("dap").status() ~= "" end,
+            color = function() return { fg = Snacks.util.color("Debug") } end,
+          },
           attached_clients,
         },
         lualine_y = {
