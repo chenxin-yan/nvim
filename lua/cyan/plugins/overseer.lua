@@ -1,5 +1,6 @@
 return {
   'stevearc/overseer.nvim',
+  event = 'VeryLazy',
   cmd = {
     'OverseerOpen',
     'OverseerClose',
@@ -18,6 +19,7 @@ return {
   opts = {
     dap = false,
     task_list = {
+      direction = 'left',
       bindings = {
         ['<C-h>'] = false,
         ['<C-j>'] = false,
@@ -44,11 +46,15 @@ return {
   -- stylua: ignore
   keys = {
     { "<leader>jl", "<cmd>OverseerToggle<cr>",      desc = "Task list" },
-    { "<leader>jj", "<cmd>OverseerRun<cr>",         desc = "Run task" },
-    { "<leader>jq", "<cmd>OverseerQuickAction<cr>", desc = "Action recent task" },
+    { "<leader>jt", "<cmd>OverseerRun<cr>",         desc = "Run task" },
+    { "<leader>jA", "<cmd>OverseerQuickAction<cr>", desc = "Action recent task" },
     { "<leader>ji", "<cmd>OverseerInfo<cr>",        desc = "Overseer Info" },
-    { "<leader>jb", "<cmd>OverseerBuild<cr>",       desc = "Task builder" },
+    { "<leader>jB", "<cmd>OverseerBuild<cr>",       desc = "Task builder" },
     { "<leader>ja", "<cmd>OverseerTaskAction<cr>",  desc = "Task action" },
     { "<leader>jc", "<cmd>OverseerClearCache<cr>",  desc = "Clear cache" },
+    { "<leader>jb", "",  desc = "Bundle" },
+    { "<leader>jbs", "<cmd>OverseerSaveBundle<cr>",  desc = "Save Bundle" },
+    { "<leader>jbl", "<cmd>OverseerLoadBundle<cr>",  desc = "Load Bundle" },
+    { "<leader>jbd", "<cmd>OverseerDeleteBundle<cr>",  desc = "Delete Bundle" },
   },
 }

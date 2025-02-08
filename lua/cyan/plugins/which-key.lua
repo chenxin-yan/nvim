@@ -20,6 +20,7 @@ return {
       { '<leader>C', group = '󰗧 Cursors' },
       { '<leader>o', group = ' Obsidian' },
       { '<leader>j', group = ' Jobs' },
+      { '<leader>w', group = ' Session' },
     },
     plugins = {
       spelling = {
