@@ -49,7 +49,7 @@ return {
     { "<leader>jt", "<cmd>OverseerRun<cr>",         desc = "Run task" },
     { "<leader>jA", "<cmd>OverseerQuickAction<cr>", desc = "Action recent task" },
     { "<leader>ji", "<cmd>OverseerInfo<cr>",        desc = "Overseer Info" },
-    { "<leader>jB", "<cmd>OverseerBuild<cr>",       desc = "Task builder" },
+    { "<leader>jn", "<cmd>OverseerBuild<cr>",       desc = "Task builder" },
     { "<leader>ja", "<cmd>OverseerTaskAction<cr>",  desc = "Task action" },
     { "<leader>jc", "<cmd>OverseerClearCache<cr>",  desc = "Clear cache" },
     { "<leader>jb", "",  desc = "Bundle" },
