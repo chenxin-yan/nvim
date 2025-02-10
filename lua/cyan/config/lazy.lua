@@ -148,6 +148,7 @@ require('lazy').setup({
   require 'cyan.plugins.barbecue', -- LSP nav bar
   require 'cyan.plugins.endhints', -- LSP inlay hint improvements
   require 'cyan.plugins.octo', -- Github issues & PR
+  require 'cyan.plugins.cord', -- discord rich presence
 
   -- ---- language specific ----
   { -- image support
