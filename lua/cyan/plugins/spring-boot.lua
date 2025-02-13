@@ -19,10 +19,7 @@ return {
   end,
   config = function()
     require('spring_boot').setup {
-      ls_path = nil,
       jdtls_name = 'jdtls',
-      log_file = nil,
-      java_cmd = nil,
     }
   end,
 }
