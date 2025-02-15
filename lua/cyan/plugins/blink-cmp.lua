@@ -189,6 +189,7 @@ return {
       snippets = {
         preset = 'luasnip',
       },
+      cmdline = {},
       sources = {
         default = {
           'lazydev',
@@ -203,7 +204,6 @@ return {
           'avante_mentions',
           'avante_files',
         },
-        cmdline = {},
         providers = {
           lsp = {
             score_offset = 80,
