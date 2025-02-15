@@ -56,6 +56,7 @@ return { -- Autoformat
         sql = { 'sqlfluff' },
         mysql = { 'sqlfluff' },
         plsql = { 'sqlfluff' },
+        go = { 'goimports', 'golines', 'gofumpt' },
       },
     }
 

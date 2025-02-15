@@ -187,6 +187,9 @@ require('lazy').setup({
   require 'cyan.plugins.markdown', -- better markdown render
   require 'cyan.plugins.footnote', -- better footnote
 
+  -- Go
+  require 'cyan.plugins.gopher', -- better go experience
+
   -- ---- extras ----
   require 'cyan.plugins.leetcode', -- Leetcode integration
   require 'cyan.plugins.grug-far', -- grep and replace

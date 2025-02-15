@@ -45,7 +45,56 @@ local servers = {
       require('clangd_extensions.inlay_hints').setup_autocmd()
     end,
   }, -- C/C++ lsp
-  -- gopls = {},
+  gopls = {
+    settings = {
+      gopls = {
+        gofumpt = true,
+        codelenses = {
+          gc_details = false,
+          generate = true,
+          regenerate_cgo = true,
+          run_govulncheck = true,
+          test = true,
+          tidy = true,
+          upgrade_dependency = true,
+          vendor = true,
+        },
+        hints = {
+          assignVariableTypes = true,
+          compositeLiteralFields = true,
+          compositeLiteralTypes = true,
+          constantValues = true,
+          functionTypeParameters = true,
+          parameterNames = true,
+          rangeVariableTypes = true,
+        },
+        analyses = {
+          nilness = true,
+          unusedparams = true,
+          unusedwrite = true,
+          useany = true,
+        },
+        usePlaceholders = true,
+        completeUnimported = true,
+        staticcheck = true,
+        directoryFilters = { '-.git', '-.vscode', '-.idea', '-.vscode-test', '-node_modules' },
+        semanticTokens = true,
+      },
+    },
+    on_attach = function(client, buffer)
+      if not client.server_capabilities.semanticTokensProvider then
+        local semantic = client.config.capabilities.textDocument.semanticTokens
+        client.server_capabilities.semanticTokensProvider = {
+          full = true,
+          legend = {
+            tokenTypes = semantic.tokenTypes,
+            tokenModifiers = semantic.tokenModifiers,
+          },
+          range = true,
+        }
+      end
+    end,
+  }, -- Go LSP
   marksman = {}, -- markdown lsp
   -- rust_analyzer = {},
   -- ... etc. See `:help lspconfig-all` for a list of all the pre-configured LSPs
@@ -267,6 +316,9 @@ vim.list_extend(ensure_installed, {
   'prettier', -- javascript formatter
   'biome', -- javascript linter & formatter
   'sqlfluff', -- SQL formmater & linter
+  'goimports', -- Go formatter
+  'gofumpt', -- Go formatter
+  'golines', -- Go formatter
   -- Linters
   'markdownlint-cli2', -- markdown linter & formatter
   'hadolint', -- docker linter
@@ -275,6 +327,7 @@ vim.list_extend(ensure_installed, {
   'java-debug-adapter', -- java debugger
   'codelldb', -- C/C++ debugger
   'debugpy', -- python debugger
+  'delve', -- Go debugger
   -- Testing
   'java-test',
 })

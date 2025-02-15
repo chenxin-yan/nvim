@@ -19,6 +19,7 @@ return {
         },
       },
     }, -- javascript jest
+    'fredrikaverpil/neotest-golang', -- Go test
   },
   opts = {
     -- Can be a list of adapters like what neotest expects,
@@ -38,14 +39,11 @@ return {
           return vim.fn.getcwd()
         end,
       },
+      ['neotest-golang'] = {
+        -- go_test_args = { '-v', '-race', '-count=1', '-timeout=60s' },
+        dap_go_enabled = true,
+      },
     },
-    -- Example for loading neotest-golang with a custom config
-    -- adapters = {
-    --   ["neotest-golang"] = {
-    --     go_test_args = { "-v", "-race", "-count=1", "-timeout=60s" },
-    --     dap_go_enabled = true,
-    --   },
-    -- },
     status = { virtual_text = true },
     output = { open_on_run = true },
     quickfix = {
@@ -95,9 +93,8 @@ return {
       end
     end
 
-
     -- Task runner integration
-    opts.consumers.overseer = require("neotest.consumers.overseer")
+    opts.consumers.overseer = require 'neotest.consumers.overseer'
 
     if opts.adapters then
       local adapters = {}
