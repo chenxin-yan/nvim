@@ -166,6 +166,7 @@ require('lazy').setup({
   require 'cyan.plugins.neotest', -- testing support
   require 'cyan.plugins.refactoring', -- code refactoring
   require 'cyan.plugins.sql', -- sql support
+  require 'cyan.plugins.neogen', -- better annotation
 
   -- Java
   require 'cyan.plugins.spring-boot', -- spring boot support
