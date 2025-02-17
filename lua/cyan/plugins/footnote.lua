@@ -3,6 +3,7 @@ local is_dev = true
 if is_dev then
   return {
     dir = '~/dev/footnote.nvim/',
+    event = 'VeryLazy',
     opts = {
       debug_print = true,
       keys = {

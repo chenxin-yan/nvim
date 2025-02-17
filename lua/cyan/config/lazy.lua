@@ -148,8 +148,7 @@ require('lazy').setup({
   require 'cyan.plugins.noice', -- UI improvement
   require 'cyan.plugins.barbecue', -- LSP nav bar
   require 'cyan.plugins.endhints', -- LSP inlay hint improvements
-  require 'cyan.plugins.octo', -- Github issues & PR
-  require 'cyan.plugins.cord', -- discord rich presence
+  require 'cyan.plugins.gitgraph', -- git graph support
 
   -- ---- language specific ----
   require 'cyan.plugins.neotest', -- testing support
@@ -187,7 +186,8 @@ require('lazy').setup({
   require 'cyan.plugins.obsidian', -- obsidian integration
   require 'cyan.plugins.kulala', -- REST-client interface
   require 'cyan.plugins.avante', -- AI coding assistance
-  require 'cyan.plugins.gitgraph', -- git graph support
+  require 'cyan.plugins.cord', -- discord rich presence
+  require 'cyan.plugins.octo', -- Github issues & PR
 }, {
   ui = {
     -- If you are using a Nerd Font: set icons to an empty table which will use the
