@@ -151,18 +151,6 @@ require('lazy').setup({
   require 'cyan.plugins.cord', -- discord rich presence
 
   -- ---- language specific ----
-  { -- image support
-    '3rd/image.nvim',
-    ft = { 'markdown' },
-    opts = {
-      integrations = {
-        markdown = {
-          only_render_image_at_cursor = true,
-          floating_windows = true, -- if true, images will be rendered in floating markdown windows
-        },
-      },
-    },
-  },
   require 'cyan.plugins.neotest', -- testing support
   require 'cyan.plugins.refactoring', -- code refactoring
   require 'cyan.plugins.sql', -- sql support
@@ -199,9 +187,6 @@ require('lazy').setup({
   require 'cyan.plugins.kulala', -- REST-client interface
   require 'cyan.plugins.avante', -- AI coding assistance
 }, {
-  rocks = {
-    hererocks = true, -- recommended if you do not have global installation of Lua 5.1.
-  },
   ui = {
     -- If you are using a Nerd Font: set icons to an empty table which will use the
     -- default lazy.nvim defined Nerd Font icons, otherwise define a unicode icons table

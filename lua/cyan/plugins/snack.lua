@@ -27,6 +27,10 @@ return {
         },
       },
     },
+    image = {
+      inline = false,
+      float = true,
+    },
   },
   keys = function()
     local Snacks = require 'snacks'
@@ -104,6 +108,14 @@ return {
         end,
         desc = 'Toggle Terminal',
         mode = { 'n', 't' },
+      },
+      {
+        '<leader>bd',
+        function()
+          Snacks.bufdelete.delete()
+        end,
+        desc = '[D]elete Other Buffers',
+        mode = { 'n' },
       },
       {
         '<leader>bD',
