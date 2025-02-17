@@ -13,11 +13,11 @@ vim.api.nvim_create_autocmd('TextYankPost', {
 })
 
 -- Automatically enter insert mode after terminal being opened
-vim.api.nvim_create_autocmd('TermOpen', {
-  pattern = { '*' },
-  callback = function()
-    if vim.opt.buftype:get() == 'terminal' then
-      vim.cmd ':startinsert'
-    end
-  end,
-})
+-- vim.api.nvim_create_autocmd('TermOpen', {
+--   pattern = { '*' },
+--   callback = function()
+--     if vim.opt.buftype:get() == 'terminal' then
+--       vim.cmd ':startinsert'
+--     end
+--   end,
+-- })

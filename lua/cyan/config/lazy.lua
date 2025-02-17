@@ -142,7 +142,6 @@ require('lazy').setup({
   },
 
   require 'cyan.plugins.tiny-diagnostic', -- better inline diagnostics
-  require 'cyan.plugins.alpha', -- neovim dashboard
   require 'cyan.plugins.lualine', -- status line
   require 'cyan.plugins.indent-line', -- indentation guide
   require 'cyan.plugins.noice', -- UI improvement

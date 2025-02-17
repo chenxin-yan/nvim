@@ -18,7 +18,7 @@ return {
     return {
       allowed_dirs = { vim.env.PROJECT_DIR .. '/*', vim.env.DEV_DIR .. '/*' },
       auto_restore = false,
-      bypass_save_filetypes = { 'alpha' },
+      bypass_save_filetypes = { 'snacks_dashboard' },
       use_git_branch = true,
       session_lens = {
         load_on_setup = true,

@@ -33,6 +33,100 @@ return {
         float = true,
       },
     },
+    dashboard = {
+      enabled = true,
+      preset = {
+        -- Used by the `keys` section to show keymaps.
+        -- Set your custom keymaps here.
+        -- When using a function, the `items` argument are the default keymaps.
+        ---@type snacks.dashboard.Item[]
+        keys = {
+          { icon = ' ', key = 'e', desc = 'New File', action = ':ene | startinsert' },
+          { icon = '󰈞 ', key = 'f', desc = 'Find file', action = '<CMD>Telescope find_files<CR>' },
+          { icon = '󰺮 ', key = 'g', desc = 'Grep text', action = '<CMD>Telescope live_grep<CR>' },
+          { icon = '󱊒 ', key = 's', desc = 'Search Session', action = '<cmd>SessionSearch<cr>' },
+          { icon = '󰚰 ', key = 'r', desc = 'Restore Session', action = '<cmd>SessionRestore<cr>' },
+          { icon = ' ', key = 'l', desc = 'Restore Last Session', action = '<cmd>SessionLoadLast<cr>' },
+          { icon = '󰒲 ', key = 'u', desc = 'Update plugins', action = '<cmd>Lazy update<cr>' },
+          { icon = ' ', key = 'q', desc = 'Quit NVIM', action = '<cmd>qa<cr>' },
+        },
+        -- Used by the `header` section
+      },
+      sections = {
+        { section = 'header' },
+        { section = 'keys', gap = 1, padding = 1 },
+        {
+          pane = 2,
+          section = 'terminal',
+          cmd = 'cmatrix -r',
+          height = 6,
+          padding = 1,
+        },
+        {
+          pane = 2,
+          icon = ' ',
+          desc = 'Browse Repo',
+          padding = 1,
+          key = 'b',
+          action = function()
+            Snacks.gitbrowse()
+          end,
+        },
+        function()
+          local in_git = Snacks.git.get_root() ~= nil
+          local cmds = {
+            {
+              title = 'Notifications',
+              cmd = 'gh notify -s -a -n5',
+              action = function()
+                vim.ui.open 'https://github.com/notifications'
+              end,
+              key = 'n',
+              icon = ' ',
+              height = 5,
+              enabled = true,
+            },
+            {
+              title = 'Open Issues',
+              cmd = 'gh issue list -L 3',
+              key = 'i',
+              action = function()
+                vim.fn.jobstart('gh issue list --web', { detach = true })
+              end,
+              icon = ' ',
+              height = 7,
+            },
+            {
+              icon = ' ',
+              title = 'Open PRs',
+              cmd = 'gh pr list -L 3',
+              key = 'P',
+              action = function()
+                vim.fn.jobstart('gh pr list --web', { detach = true })
+              end,
+              height = 7,
+            },
+            {
+              icon = ' ',
+              title = 'Git Status',
+              cmd = 'git --no-pager diff --stat -B -M -C',
+              height = 10,
+            },
+          }
+          return vim.tbl_map(function(cmd)
+            return vim.tbl_extend('force', {
+              pane = 2,
+              section = 'terminal',
+              enabled = in_git,
+              padding = 1,
+              ttl = 5 * 60,
+              indent = 3,
+            }, cmd)
+          end, cmds)
+        end,
+        { section = 'startup' },
+      },
+    },
   },
   keys = function()
     local Snacks = require 'snacks'
