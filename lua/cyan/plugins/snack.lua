@@ -44,7 +44,7 @@ return {
         desc = '[G]it [B]rowse',
       },
       {
-        '<leader>gf',
+        '<leader>gF',
         function()
           Snacks.lazygit.log_file { cwd = Snacks.git.get_root() }
         end,
@@ -58,14 +58,7 @@ return {
         desc = 'Lazygit',
       },
       {
-        '<leader>R',
-        function()
-          Snacks.terminal('posting --collection REST --env rest.env', { cwd = Snacks.git.get_root() })
-        end,
-        desc = '[R]est Client (Posting)',
-      },
-      {
-        '<leader>gl',
+        '<leader>gL',
         function()
           Snacks.lazygit.log { cwd = Snacks.git.get_root() }
         end,

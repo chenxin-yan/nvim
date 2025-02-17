@@ -44,7 +44,8 @@ require('lazy').setup({
           colored_indent_levels = false,
         },
         blink_cmp = true,
-        integrations = { overseer = true },
+        overseer = true,
+        gitgraph = true,
       },
     },
     config = function(_, opts)
@@ -186,6 +187,7 @@ require('lazy').setup({
   require 'cyan.plugins.obsidian', -- obsidian integration
   require 'cyan.plugins.kulala', -- REST-client interface
   require 'cyan.plugins.avante', -- AI coding assistance
+  require 'cyan.plugins.gitgraph', -- git graph support
 }, {
   ui = {
     -- If you are using a Nerd Font: set icons to an empty table which will use the

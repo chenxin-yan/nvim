@@ -79,7 +79,7 @@ return { -- Fuzzy Finder (files, lsp, etc)
 
     -- telescope git pickers
     { '<leader>gs', '<cmd>Telescope git_status<cr>', desc = 'Git [S]tatus' },
-    -- { '<leader>gf', '<cmd>Telescope git_bcommits<cr>', desc = '[F]ile Commits history' },
+    { '<leader>gf', '<cmd>Telescope git_bcommits<cr>', desc = '[F]ile Commits history' },
     { '<leader>gb', '<cmd>Telescope git_branches<cr>', desc = '[B]ranches' },
 
     -- telescope bibtex
