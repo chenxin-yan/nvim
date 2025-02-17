@@ -53,13 +53,13 @@ return {
         -- Used by the `header` section
       },
       sections = {
-        { section = 'header' },
-        { section = 'keys', gap = 1, padding = 1 },
+        { section = 'header', indent = 60, padding = 4 },
+        { section = 'keys', gap = 1, padding = 2 },
         {
           pane = 2,
           section = 'terminal',
-          cmd = 'cmatrix -r',
-          height = 6,
+          cmd = '',
+          height = 9,
           padding = 1,
         },
         {
@@ -67,7 +67,7 @@ return {
           icon = ' ',
           desc = 'Browse Repo',
           padding = 1,
-          key = 'b',
+          key = 'B',
           action = function()
             Snacks.gitbrowse()
           end,
@@ -76,6 +76,7 @@ return {
           local in_git = Snacks.git.get_root() ~= nil
           local cmds = {
             {
+              pane = 2,
               title = 'Notifications',
               cmd = 'gh notify -s -a -n5',
               action = function()
@@ -87,6 +88,7 @@ return {
               enabled = true,
             },
             {
+              pane = 2,
               title = 'Open Issues',
               cmd = 'gh issue list -L 3',
               key = 'i',
@@ -94,9 +96,10 @@ return {
                 vim.fn.jobstart('gh issue list --web', { detach = true })
               end,
               icon = ' ',
-              height = 7,
+              height = 6,
             },
             {
+              pane = 2,
               icon = ' ',
               title = 'Open PRs',
               cmd = 'gh pr list -L 3',
@@ -104,18 +107,18 @@ return {
               action = function()
                 vim.fn.jobstart('gh pr list --web', { detach = true })
               end,
-              height = 7,
+              height = 6,
             },
             {
+              pane = 1,
               icon = ' ',
               title = 'Git Status',
               cmd = 'git --no-pager diff --stat -B -M -C',
-              height = 10,
+              height = 8,
             },
           }
           return vim.tbl_map(function(cmd)
             return vim.tbl_extend('force', {
-              pane = 2,
               section = 'terminal',
               enabled = in_git,
               padding = 1,
@@ -124,7 +127,7 @@ return {
             }, cmd)
           end, cmds)
         end,
-        { section = 'startup' },
+        { section = 'startup', indent = 60, padding = { 0, 3 } },
       },
     },
   },
