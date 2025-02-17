@@ -170,6 +170,9 @@ return {
           },
         },
         menu = {
+          auto_show = function(ctx)
+            return ctx.mode ~= 'cmdline'
+          end,
           draw = {
             treesitter = { 'lsp' },
             columns = {
