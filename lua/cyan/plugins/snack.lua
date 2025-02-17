@@ -28,8 +28,10 @@ return {
       },
     },
     image = {
-      inline = false,
-      float = true,
+      doc = {
+        inline = false,
+        float = true,
+      },
     },
   },
   keys = function()

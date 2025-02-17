@@ -9,6 +9,18 @@ return {
     'nvim-tree/nvim-web-devicons',
   },
   opts = {
+    cursor_applying_provider = 'fastapply',
+    behaviour = {
+      enable_cursor_planning_mode = true,
+    },
+    vendors = {
+      fastapply = {
+        __inherited_from = 'openai',
+        api_key_name = '',
+        endpoint = 'http://localhost:11434/v1',
+        model = 'hf.co/Kortix/FastApply-7B-v1.0_GGUF:Q4_K_M',
+      },
+    },
     file_selector = {
       provider = 'telescope',
       provider_opts = {},
