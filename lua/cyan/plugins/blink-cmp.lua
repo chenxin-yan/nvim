@@ -3,22 +3,15 @@ if vim.g.vscode then
 end
 
 return {
-  {
-    'saghen/blink.compat',
-    -- use the latest release, via version = '*', if you also use the latest release for blink.cmp
-    -- version = '*',
-    -- lazy.nvim will automatically load the plugin when it's required by blink.cmp
-    lazy = true,
-    -- make sure to set opts so that lazy.nvim calls blink.compat's setup
-    opts = {},
-    config = function()
-      -- Monkeypatch cmp.ConfirmBehavior for Avante
-      require('cmp').ConfirmBehavior = {
-        Insert = 'insert',
-        Replace = 'replace',
-      }
-    end,
-  },
+  -- {
+  --   'saghen/blink.compat',
+  --   -- use the latest release, via version = '*', if you also use the latest release for blink.cmp
+  --   -- version = '*',
+  --   -- lazy.nvim will automatically load the plugin when it's required by blink.cmp
+  --   lazy = true,
+  --   -- make sure to set opts so that lazy.nvim calls blink.compat's setup
+  --   opts = {},
+  -- },
   {
     'chrisgrieser/nvim-scissors',
     event = { 'BufReadPre', 'BufNewFile' },
@@ -63,9 +56,14 @@ return {
           delete_check_events = 'TextChanged',
         },
       },
-      'kristijanhusak/vim-dadbod-completion',
       {
-        'giuxtaposition/blink-cmp-copilot',
+        {
+          'fang2hou/blink-copilot',
+          opts = {
+            max_completions = 1, -- Global default for max completions
+            max_attempts = 2, -- Global default for max attempts
+          },
+        },
         {
           'zbirenbaum/copilot.lua',
           cmd = 'Copilot',
@@ -89,6 +87,7 @@ return {
         'Kaiser-Yang/blink-cmp-git',
         dependencies = { 'nvim-lua/plenary.nvim' },
       },
+      'Kaiser-Yang/blink-cmp-avante',
     },
     event = 'InsertEnter',
     -- version = '*',
@@ -170,9 +169,9 @@ return {
           },
         },
         menu = {
-          auto_show = function(ctx)
-            return ctx.mode ~= 'cmdline'
-          end,
+          -- auto_show = function(ctx)
+          --   return ctx.mode ~= 'cmdline'
+          -- end,
           draw = {
             treesitter = { 'lsp' },
             columns = {
@@ -192,7 +191,9 @@ return {
       snippets = {
         preset = 'luasnip',
       },
-      cmdline = {},
+      cmdline = {
+        enabled = false,
+      },
       sources = {
         default = {
           'lazydev',
@@ -200,12 +201,12 @@ return {
           'path',
           'snippets',
           'buffer',
-          'dadbod',
           'copilot',
           'git',
-          'avante_commands',
-          'avante_mentions',
-          'avante_files',
+          'avante',
+        },
+        per_filetype = {
+          sql = { 'snippets', 'dadbod', 'buffer' },
         },
         providers = {
           lsp = {
@@ -231,18 +232,9 @@ return {
           },
           copilot = {
             name = 'copilot',
-            module = 'blink-cmp-copilot',
+            module = 'blink-copilot',
             score_offset = -30,
             async = true,
-            transform_items = function(_, items)
-              local CompletionItemKind = require('blink.cmp.types').CompletionItemKind
-              local kind_idx = #CompletionItemKind + 1
-              CompletionItemKind[kind_idx] = 'Copilot'
-              for _, item in ipairs(items) do
-                item.kind = kind_idx
-              end
-              return items
-            end,
           },
           git = {
             module = 'blink-cmp-git',
@@ -253,23 +245,10 @@ return {
               return vim.o.filetype == 'gitcommit' or vim.o.filetype == 'markdown'
             end,
           },
-          avante_commands = {
-            name = 'avante_commands',
-            module = 'blink.compat.source',
-            score_offset = 90, -- show at a higher priority than lsp
-            opts = {},
-          },
-          avante_files = {
-            name = 'avante_files',
-            module = 'blink.compat.source',
-            score_offset = 100, -- show at a higher priority than lsp
-            opts = {},
-          },
-          avante_mentions = {
-            name = 'avante_mentions',
-            module = 'blink.compat.source',
-            score_offset = 1000, -- show at a higher priority than lsp
-            opts = {},
+          avante = {
+            module = 'blink-cmp-avante',
+            name = 'Avante',
+            score_offset = 100,
           },
         },
       },
