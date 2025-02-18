@@ -53,14 +53,14 @@ return {
         -- Used by the `header` section
       },
       sections = {
-        { section = 'header', indent = 60, padding = 4 },
+        { section = 'header', padding = 2 },
         { section = 'keys', gap = 1, padding = 2 },
         {
           pane = 2,
           section = 'terminal',
-          cmd = '',
-          height = 9,
-          padding = 1,
+          cmd = 'cmatrix -r',
+          height = 6,
+          padding = 2,
         },
         {
           pane = 2,
@@ -76,7 +76,6 @@ return {
           local in_git = Snacks.git.get_root() ~= nil
           local cmds = {
             {
-              pane = 2,
               title = 'Notifications',
               cmd = 'gh notify -s -a -n5',
               action = function()
@@ -88,7 +87,6 @@ return {
               enabled = true,
             },
             {
-              pane = 2,
               title = 'Open Issues',
               cmd = 'gh issue list -L 3',
               key = 'i',
@@ -99,7 +97,6 @@ return {
               height = 6,
             },
             {
-              pane = 2,
               icon = ' ',
               title = 'Open PRs',
               cmd = 'gh pr list -L 3',
@@ -110,7 +107,6 @@ return {
               height = 6,
             },
             {
-              pane = 1,
               icon = ' ',
               title = 'Git Status',
               cmd = 'git --no-pager diff --stat -B -M -C',
@@ -119,6 +115,7 @@ return {
           }
           return vim.tbl_map(function(cmd)
             return vim.tbl_extend('force', {
+              pane = 2,
               section = 'terminal',
               enabled = in_git,
               padding = 1,
@@ -127,7 +124,7 @@ return {
             }, cmd)
           end, cmds)
         end,
-        { section = 'startup', indent = 60, padding = { 0, 3 } },
+        { section = 'startup', padding = 2 },
       },
     },
   },
