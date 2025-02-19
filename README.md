@@ -54,14 +54,14 @@ nvim
 | Lua                   | ✅ luals          | ✅ stylua                      | ❌              | ❌                 | ❌                            |
 | C/C++                 | ✅ clangd         | ✅ clangd                      | ✅ clangd       | ✅ codelldb        | ❌                            |
 | Java                  | ✅ jdtls          | ✅ jdtls                       | ✅ jdtls        | ✅ jdtls           | ✅ java-test                  |
-| JavaScript/TypeScript | ✅ vtsls          | ✅ Biome/Prettier              | ✅ Biome/Eslint | ✅ vscode-js-debug | ✅ neotest-jest/vimtest-mocha |
+| JavaScript/TypeScript | ✅ vtsls          | ✅ Biome/prettierd             | ✅ Biome/Eslint | ✅ vscode-js-debug | ✅ neotest-jest/vimtest-mocha |
 | Golang                | ✅ gopls          | ✅ gofumpt, goimports, golines | ❌              | ✅ delve           | ✅ neotest-golang             |
 | Python                | ✅ Pyright        | ✅ Ruff                        | ✅ Ruff         | ✅ debugpy         | ✅ neotest-python             |
-| Markdown              | ✅ marksman       | ✅ Prettier, markdownlint      | ✅ markdownlint | ❌                 | ❌                            |
-| HTML                  | ✅ html-lsp       | ✅ Prettier                    | ❌              | ❌                 | ❌                            |
-| CSS                   | ✅ css-lsp        | ✅ Biome/Prettier              | ❌              | ❌                 | ❌                            |
+| Markdown              | ✅ marksman       | ✅ prettierd, markdownlint     | ✅ markdownlint | ❌                 | ❌                            |
+| HTML                  | ✅ html-lsp       | ✅ prettierd                   | ❌              | ❌                 | ❌                            |
+| CSS                   | ✅ css-lsp        | ✅ Biome/prettierd             | ❌              | ❌                 | ❌                            |
 | Tailwind CSS          | ✅ tailwindcss-ls | ❌                             | ❌              | ❌                 | ❌                            |
-| JSON                  | ✅ jsonls         | ✅ Biome/Prettier              | ❌              | ❌                 | ❌                            |
+| JSON                  | ✅ jsonls         | ✅ Biome/prettierd             | ❌              | ❌                 | ❌                            |
 | TOML                  | ✅ taplo          | ✅ taplo                       | ❌              | ❌                 | ❌                            |
 | YAML                  | ✅ yamlls         | ✅ yamlls                      | ❌              | ❌                 | ❌                            |
 | Docker                | ✅ dockerls       | ✅ dockerls                    | ✅ hadolint     | ❌                 | ❌                            |

@@ -313,7 +313,7 @@ vim.list_extend(ensure_installed, {
 
   -- Formatters
   'stylua', -- lua formatter
-  'prettier', -- javascript formatter
+  'prettierd', -- javascript formatter
   'biome', -- javascript linter & formatter
   'sqlfluff', -- SQL formmater & linter
   'goimports', -- Go formatter
@@ -352,6 +352,7 @@ return {
       require('mason-tool-installer').setup { ensure_installed = ensure_installed }
 
       vim.cmd 'MasonToolsInstall'
+      vim.cmd 'MasonToolsClean'
     end,
   },
 
