@@ -335,6 +335,8 @@ vim.list_extend(ensure_installed, {
 return {
   { -- Mason and auto installation setup
     'WhoIsSethDaniel/mason-tool-installer.nvim',
+    event = 'VeryLazy',
+    cmd = { 'Mason', 'MasonToolInstall' },
     dependencies = {
       'williamboman/mason.nvim',
     },
@@ -348,6 +350,8 @@ return {
       require('mason').setup()
 
       require('mason-tool-installer').setup { ensure_installed = ensure_installed }
+
+      vim.cmd 'MasonToolsInstall'
     end,
   },
 
