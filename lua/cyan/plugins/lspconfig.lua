@@ -538,11 +538,6 @@ return {
               callback = vim.lsp.codelens.refresh,
             })
           end
-
-          -- attach navic to buffer
-          if client and client.name ~= 'spring-boot' and client.server_capabilities['documentSymbolProvider'] then
-            require('nvim-navic').attach(client, event.buf)
-          end
         end,
       })
 
