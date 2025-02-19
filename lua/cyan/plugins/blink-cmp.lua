@@ -90,8 +90,8 @@ return {
       'Kaiser-Yang/blink-cmp-avante',
     },
     event = 'InsertEnter',
-    -- version = '*',
-    build = 'cargo build --release',
+    version = '*',
+    -- build = 'cargo build --release',
     ---@module 'blink.cmp'
     ---@type blink.cmp.Config
     opts = {

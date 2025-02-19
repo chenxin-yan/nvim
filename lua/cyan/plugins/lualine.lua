@@ -156,7 +156,6 @@ return {
             cond = function() return package.loaded["dap"] and require("dap").status() ~= "" end,
             color = function() return { fg = Snacks.util.color("Debug") } end,
           },
-          { 'overseer' },
           attached_clients,
         },
         lualine_y = {
