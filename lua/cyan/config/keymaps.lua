@@ -55,10 +55,6 @@ vim.keymap.set({ 'n', 'x' }, 'L', '$')
 -- select all keymap
 vim.keymap.set('n', '<leader><C-a>', 'gg<s-v>G', { desc = 'Select all' })
 
--- coment above & below
-vim.keymap.set('n', 'gco', 'o<esc>Vcx<esc><cmd>normal gcc<cr>fxa<bs>', { desc = 'Add Comment Below' })
-vim.keymap.set('n', 'gcO', 'O<esc>Vcx<esc><cmd>normal gcc<cr>fxa<bs>', { desc = 'Add Comment Above' })
-
 -- switch between buffers
 vim.keymap.set('n', '<leader><Tab>', '<cmd>b#<cr>', { desc = 'Goto previously opened buffer' })
 vim.keymap.set('n', '<C-]>', '<cmd>bnext<cr>', { desc = 'Goto next buffer' })

@@ -6,7 +6,6 @@ return {
     'nvim-treesitter/nvim-treesitter',
 
     -- neotest adaptors
-    { 'nvim-neotest/neotest-vim-test', dependencies = { 'vim-test/vim-test' } },
     'nvim-neotest/neotest-python', -- python
     {
       'nvim-neotest/neotest-jest',
@@ -19,6 +18,22 @@ return {
         },
       },
     }, -- javascript jest
+    {
+      'marilari88/neotest-vitest',
+      keys = {
+        {
+          '<leader>tW',
+          "<cmd>lua require('neotest').run.run({ vim.fn.expand('%'), vitestCommand = 'vitest --watch' })<cr>",
+          desc = 'Vitest: Run Watch File',
+        },
+        {
+          '<leader>tw',
+          "<cmd>lua require('neotest').run.run({ vitestCommand = 'vitest --watch' })<cr>",
+          desc = 'Vitest: Run Watch',
+        },
+      },
+    }, -- javascript vitest,
+
     'fredrikaverpil/neotest-golang', -- Go test
   },
   opts = {
@@ -27,9 +42,6 @@ return {
     -- or a table of adapter names, mapped to adapter configs.
     -- The adapter will then be automatically loaded with the config.
     adapters = {
-      ['neotest-vim-test'] = {
-        ignore_file_types = { 'python', 'lua', 'java' },
-      },
       ['neotest-python'] = {},
       ['neotest-jest'] = {
         jestCommand = 'npm test --',
@@ -39,6 +51,7 @@ return {
           return vim.fn.getcwd()
         end,
       },
+      ['neotest-vitest'] = {},
       ['neotest-golang'] = {
         -- go_test_args = { '-v', '-race', '-count=1', '-timeout=60s' },
         dap_go_enabled = true,
