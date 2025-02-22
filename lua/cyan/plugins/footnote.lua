@@ -3,7 +3,7 @@ local is_dev = true
 if is_dev then
   return {
     dir = '~/dev/footnote.nvim/',
-    event = 'VeryLazy',
+    ft = 'markdown',
     opts = {
       debug_print = true,
       keys = {
@@ -19,7 +19,7 @@ if is_dev then
 else
   return {
     'chenxin-yan/footnote.nvim',
-    event = 'VeryLazy',
+    ft = 'markdown',
     opts = {
       keys = {
         new_footnote = '<C-f>',

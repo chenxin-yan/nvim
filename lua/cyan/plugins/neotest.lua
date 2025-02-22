@@ -11,8 +11,8 @@ return {
       'nvim-neotest/neotest-jest',
       keys = {
         {
-          '<leader>tW',
-          "<cmd>lua require('neotest').run.run({ jestCommand = 'jest --watch ' })<cr>",
+          '<leader>tjW',
+          "<cmd>lua require('neotest').run.run({ jestCommand = 'npx jest --watch ' })<cr>",
           desc = 'Jest: Run tests with watch mode',
           ft = { 'javascript', 'typescript' },
         },
@@ -22,13 +22,13 @@ return {
       'marilari88/neotest-vitest',
       keys = {
         {
-          '<leader>tW',
-          "<cmd>lua require('neotest').run.run({ vim.fn.expand('%'), vitestCommand = 'vitest --watch' })<cr>",
+          '<leader>tvW',
+          "<cmd>lua require('neotest').run.run({ vim.fn.expand('%'), vitestCommand = 'npx vitest' })<cr>",
           desc = 'Vitest: Run Watch File',
         },
         {
-          '<leader>tw',
-          "<cmd>lua require('neotest').run.run({ vitestCommand = 'vitest --watch' })<cr>",
+          '<leader>tvw',
+          "<cmd>lua require('neotest').run.run({ vitestCommand = 'npx vitest' })<cr>",
           desc = 'Vitest: Run Watch',
         },
       },

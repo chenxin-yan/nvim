@@ -20,6 +20,8 @@ return {
     { '<leader>gP', '<cmd>Octo pr search<CR>', desc = 'Search PRs (Octo)' },
     { '<leader>gr', '<cmd>Octo repo list<CR>', desc = 'List Repos (Octo)' },
     { '<leader>gS', '<cmd>Octo search<CR>', desc = 'Search (Octo)' },
+    { '<leader>go', '<cmd>Octo pr create<CR>', desc = 'Open a PR (Octo)' },
+    { '<leader>gO', '<cmd>Octo issue create<CR>', desc = 'Open a Issue (Octo)' },
 
     { '<localleader>a', '', desc = '+assignee (Octo)', ft = 'octo' },
     { '<localleader>c', '', desc = '+comment/code (Octo)', ft = 'octo' },
@@ -31,7 +33,7 @@ return {
     { '<localleader>ps', '', desc = '+squash (Octo)', ft = 'octo' },
     { '<localleader>v', '', desc = '+review (Octo)', ft = 'octo' },
     { '<localleader>g', '', desc = '+goto_issue (Octo)', ft = 'octo' },
-    { '@', '@<C-x><C-o>', mode = 'i', ft = 'octo', silent = true },
-    { '#', '#<C-x><C-o>', mode = 'i', ft = 'octo', silent = true },
+    -- { '@', '@<C-x><C-o>', mode = 'i', ft = 'octo', silent = true },
+    -- { '#', '#<C-x><C-o>', mode = 'i', ft = 'octo', silent = true },
   },
 }

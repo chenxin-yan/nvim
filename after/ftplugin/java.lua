@@ -9,8 +9,6 @@ if not vim.g.vscode then
     vim.fn.glob(vim.env.HOME .. '/.local/share/nvim/mason/share/java-debug-adapter/com.microsoft.java.debug.plugin.jar'),
   }
 
-  vim.list_extend(bundles, require('spring_boot').java_extensions())
-
   -- Needed for running/debugging unit tests
   vim.list_extend(bundles, vim.split(vim.fn.glob(vim.env.HOME .. '/.local/share/nvim/mason/share/java-test/*.jar', 1), '\n'))
 
