@@ -13,10 +13,10 @@ return {
         end,
       },
       text = {
-        edting = function(opts)
+        editing = function(opts)
           local text = 'Editing ' .. opts.filename
           if vim.bo.modified then
-            text = text .. '[+]'
+            text = text .. ' [+]'
           end
           return text
         end,
