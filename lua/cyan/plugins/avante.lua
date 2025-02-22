@@ -9,6 +9,20 @@ return {
     'nvim-tree/nvim-web-devicons',
   },
   opts = {
+    provider = 'claude',
+    cursor_applying_provider = 'groq',
+    behaviour = {
+      enable_cursor_planning_mode = true,
+    },
+    vendors = {
+      groq = {
+        __inherited_from = 'openai',
+        api_key_name = 'GROQ_API_KEY',
+        endpoint = 'https://api.groq.com/openai/v1/',
+        model = 'qwen-2.5-coder-32b',
+        max_tokens = 20000,
+      },
+    },
     file_selector = {
       provider = 'telescope',
       provider_opts = {},
