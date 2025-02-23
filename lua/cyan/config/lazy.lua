@@ -148,17 +148,19 @@ require('lazy').setup({
   require 'cyan.plugins.gitgraph', -- git graph support
 
   -- ---- language specific ----
+  {
+    'narutoxy/dim.lua',
+    event = 'BufRead',
+    dependencies = { 'nvim-treesitter/nvim-treesitter', 'neovim/nvim-lspconfig' },
+    config = true,
+  },
   require 'cyan.plugins.neotest', -- testing support
   require 'cyan.plugins.refactoring', -- code refactoring
   require 'cyan.plugins.sql', -- sql support
   require 'cyan.plugins.neogen', -- better annotation
 
   -- TS/JS
-  {
-    'dmmulroy/tsc.nvim', -- TypeScript project wide diagnostics
-    cmd = { 'TSC' },
-    config = true,
-  },
+  require 'cyan.plugins.tsc', -- TSC support
 
   -- markdown
   {
