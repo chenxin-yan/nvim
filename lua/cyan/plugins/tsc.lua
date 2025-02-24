@@ -1,12 +1,7 @@
 return {
   'dmmulroy/tsc.nvim',
   cmd = { 'TSC' },
-  opts = {
-    -- support monorepo
-    flags = {
-      build = true,
-    },
-  },
+  opts = {},
   keys = {
     { '<leader>ck', '<cmd>TSC<CR>', desc = 'Check TypeScript error' },
   },
