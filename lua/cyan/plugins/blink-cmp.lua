@@ -240,9 +240,8 @@ return {
             module = 'blink-cmp-git',
             name = 'Git',
             score_offset = 100,
-            enabled = true,
-            should_show_items = function()
-              return vim.o.filetype == 'gitcommit' or vim.o.filetype == 'markdown'
+            enabled = function()
+              return vim.tbl_contains({ 'octo', 'gitcommit', 'markdown' }, vim.bo.filetype)
             end,
           },
           avante = {
