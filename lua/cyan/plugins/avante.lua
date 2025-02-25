@@ -20,7 +20,7 @@ return {
         api_key_name = 'GROQ_API_KEY',
         endpoint = 'https://api.groq.com/openai/v1/',
         model = 'qwen-2.5-coder-32b',
-        max_tokens = 20000,
+        max_tokens = 40000,
       },
     },
     file_selector = {

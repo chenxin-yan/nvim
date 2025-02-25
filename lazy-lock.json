@@ -1,7 +1,7 @@
 {
   "LuaSnip": { "branch": "master", "commit": "03c8e67eb7293c404845b3982db895d59c0d1538" },
   "auto-session": { "branch": "main", "commit": "9c3f977aafb56bd73ba0d082c4dcbdba5666faf3" },
-  "avante.nvim": { "branch": "main", "commit": "901e1caa918be0b9620b09466fb2ffa8c57e1de9" },
+  "avante.nvim": { "branch": "main", "commit": "481a44f041954753e9bd544587c250d7b73ee48e" },
   "barbecue": { "branch": "main", "commit": "cd7e7da622d68136e13721865b4d919efd6325ed" },
   "blink-cmp-avante": { "branch": "master", "commit": "e5a1be4c818520385f95fe2663c04e48f5f0c36a" },
   "blink-cmp-git": { "branch": "master", "commit": "628c6423626dac77c4e0bbaed7cbfb674d7a52bb" },
