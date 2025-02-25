@@ -313,7 +313,7 @@ vim.list_extend(ensure_installed, {
 
   -- Formatters
   'stylua', -- lua formatter
-  'prettierd', -- javascript formatter
+  'prettier', -- javascript formatter
   'biome', -- javascript linter & formatter
   'sqlfluff', -- SQL formmater & linter
   'goimports', -- Go formatter
