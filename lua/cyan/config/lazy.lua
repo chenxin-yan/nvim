@@ -161,6 +161,7 @@ require('lazy').setup({
 
   -- TS/JS
   require 'cyan.plugins.tsc', -- TSC support
+  require 'cyan.plugins.tailwind-tools', -- tailwindcss support
 
   -- markdown
   {

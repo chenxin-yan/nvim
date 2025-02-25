@@ -560,7 +560,7 @@ return {
         handlers = {
           function(server_name)
             -- Don't call setup for JDTLS Java LSP because it will be setup from a separate config
-            if server_name ~= 'jdtls' then
+            if server_name ~= 'jdtls' and server_name ~= 'tailwindcss' then
               local server = servers[server_name] or {}
               -- This handles overriding only values explicitly passed
               -- by the server configuration above. Useful when disabling
