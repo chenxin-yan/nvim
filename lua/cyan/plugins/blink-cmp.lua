@@ -219,21 +219,6 @@ return {
           Event = '󱐋',
           Operator = '󰪚',
           TypeParameter = '󰬛',
-
-          openPR = '',
-          openedPR = '',
-          closedPR = '',
-          mergedPR = '',
-          draftPR = '',
-          lockedPR = '',
-          openIssue = '',
-          openedIssue = '',
-          reopenedIssue = '',
-          completedIssue = '',
-          closedIssue = '',
-          not_plannedIssue = '',
-          duplicateIssue = '',
-          lockedIssue = '',
         },
       },
       completion = {
@@ -267,7 +252,7 @@ return {
         preset = 'luasnip',
       },
       cmdline = {
-        enabled = false,
+        enabled = true,
       },
       sources = {
         default = {
@@ -319,6 +304,22 @@ return {
               return vim.tbl_contains({ 'octo', 'gitcommit', 'markdown' }, vim.bo.filetype)
             end,
             opts = {
+              kind_icons = {
+                openPR = '',
+                openedPR = '',
+                closedPR = '',
+                mergedPR = '',
+                draftPR = '',
+                lockedPR = '',
+                openIssue = '',
+                openedIssue = '',
+                reopenedIssue = '',
+                completedIssue = '',
+                closedIssue = '',
+                not_plannedIssue = '',
+                duplicateIssue = '',
+                lockedIssue = '',
+              },
               git_centers = {
                 github = {
                   pull_request = {
