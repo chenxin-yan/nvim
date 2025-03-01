@@ -5,7 +5,7 @@ return {
   opts = function()
     return {
       display = {
-        theme = 'pastel',
+        theme = 'Catppuccin',
       },
       idle = {
         details = function(opts)
