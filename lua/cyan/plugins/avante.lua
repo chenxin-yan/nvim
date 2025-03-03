@@ -14,6 +14,9 @@ return {
     behaviour = {
       enable_cursor_planning_mode = true,
     },
+    claude = {
+      model = 'claude-3-5-sonnet-latest',
+    },
     vendors = {
       groq = {
         __inherited_from = 'openai',
