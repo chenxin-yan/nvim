@@ -121,7 +121,7 @@ return {
           function()
             return require('auto-session.lib').current_session_name(true)
           end,
-          { 'branch', icon = '', padding = { left = 1 } },
+          { 'branch', icon = '', padding = { left = 1, right = 1 } },
           {
             'diff',
             symbols = { added = ' ', modified = ' ', removed = ' ' },

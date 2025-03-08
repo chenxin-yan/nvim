@@ -171,6 +171,7 @@ require('lazy').setup({
   require 'cyan.plugins.gopher', -- better go experience
 
   -- ---- extras ----
+  { 'wakatime/vim-wakatime', event = 'VeryLazy' },
   require 'cyan.plugins.leetcode', -- Leetcode integration
   require 'cyan.plugins.grug-far', -- grep and replace
   require 'cyan.plugins.yazi', -- yazi integration
