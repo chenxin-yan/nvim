@@ -50,9 +50,9 @@ return { -- Autoformat
       end,
       formatters_by_ft = {
         lua = { 'stylua' },
-        html = { 'prettier' },
-        yaml = { 'prettier' },
-        markdown = { 'prettier', 'markdownlint-cli2' },
+        html = { 'prettierd' },
+        yaml = { 'prettierd' },
+        markdown = { 'prettierd', 'markdownlint-cli2' },
         sql = { 'sqlfluff' },
         mysql = { 'sqlfluff' },
         plsql = { 'sqlfluff' },
@@ -77,7 +77,7 @@ return { -- Autoformat
         if require('conform').get_formatter_info('biome', bufnr).available then
           return { 'biome' }
         else
-          return { 'prettier' }
+          return { 'prettierd' }
         end
       end
     end
