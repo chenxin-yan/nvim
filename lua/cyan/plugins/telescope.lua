@@ -37,7 +37,7 @@ return { -- Fuzzy Finder (files, lsp, etc)
     -- See `:help telescope.builtin`
     { '<leader>sh', '<cmd>Telescope help_tags<cr>', desc = '[H]elp' },
     { '<leader>sk', '<cmd>Telescope keymaps<cr>', desc = '[K]eymaps' },
-    { '<leader>sf', '<CMD>Telescope find_files<CR>', desc = 'Project [F]iles' },
+    { '<leader>sf', '<CMD>Telescope find_files hidden=true<CR>', desc = 'Project [F]iles' },
     { '<leader>sF', '<CMD>Telescope find_files hidden=true no_ignore=true<CR>', desc = '[F]iles All' },
     {
       '<leader>s-',
