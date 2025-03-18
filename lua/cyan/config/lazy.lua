@@ -45,6 +45,7 @@ require('lazy').setup({
         },
         blink_cmp = true,
         gitgraph = true,
+        octo = true,
       },
     },
     config = function(_, opts)
@@ -101,6 +102,7 @@ require('lazy').setup({
     },
   },
 
+  -- todo comments highlight
   {
     'folke/ts-comments.nvim',
     event = { 'BufReadPre', 'BufNewFile' },
