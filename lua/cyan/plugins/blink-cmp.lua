@@ -254,6 +254,13 @@ return {
       cmdline = {
         enabled = true,
       },
+      fuzzy = {
+        sorts = {
+          'exact',
+          'score',
+          'sort_text',
+        },
+      },
       sources = {
         default = {
           'lazydev',
