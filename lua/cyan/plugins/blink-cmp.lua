@@ -63,15 +63,15 @@ local function pr_or_issue_configure_score_offset(items)
 end
 
 return {
-  -- {
-  --   'saghen/blink.compat',
-  --   -- use the latest release, via version = '*', if you also use the latest release for blink.cmp
-  --   -- version = '*',
-  --   -- lazy.nvim will automatically load the plugin when it's required by blink.cmp
-  --   lazy = true,
-  --   -- make sure to set opts so that lazy.nvim calls blink.compat's setup
-  --   opts = {},
-  -- },
+  {
+    'saghen/blink.compat',
+    -- use the latest release, via version = '*', if you also use the latest release for blink.cmp
+    -- version = '*',
+    -- lazy.nvim will automatically load the plugin when it's required by blink.cmp
+    lazy = true,
+    -- make sure to set opts so that lazy.nvim calls blink.compat's setup
+    opts = {},
+  },
   {
     'chrisgrieser/nvim-scissors',
     event = { 'BufReadPre', 'BufNewFile' },
@@ -147,7 +147,6 @@ return {
         'Kaiser-Yang/blink-cmp-git',
         dependencies = { 'nvim-lua/plenary.nvim' },
       },
-      'Kaiser-Yang/blink-cmp-avante',
     },
     event = 'InsertEnter',
     version = '*',
@@ -256,8 +255,8 @@ return {
       },
       fuzzy = {
         sorts = {
-          'exact',
           'score',
+          'exact',
           'sort_text',
         },
       },
@@ -270,7 +269,9 @@ return {
           'buffer',
           'copilot',
           'git',
-          'avante',
+          'avante_commands',
+          'avante_mentions',
+          'avante_files',
         },
         per_filetype = {
           sql = { 'snippets', 'dadbod', 'buffer' },
@@ -368,10 +369,23 @@ return {
               },
             },
           },
-          avante = {
-            module = 'blink-cmp-avante',
-            name = 'Avante',
-            score_offset = 100,
+          avante_commands = {
+            name = 'avante_commands',
+            module = 'blink.compat.source',
+            score_offset = 90, -- show at a higher priority than lsp
+            opts = {},
+          },
+          avante_files = {
+            name = 'avante_files',
+            module = 'blink.compat.source',
+            score_offset = 100, -- show at a higher priority than lsp
+            opts = {},
+          },
+          avante_mentions = {
+            name = 'avante_mentions',
+            module = 'blink.compat.source',
+            score_offset = 1000, -- show at a higher priority than lsp
+            opts = {},
           },
         },
       },
