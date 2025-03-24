@@ -242,12 +242,16 @@ local servers = {
       vim.keymap.set('n', '<leader>cF', '<cmd>EslintFixAll<cr>', { desc = 'Eslint: [F]ix all', buffer = buffer })
     end,
   },
-  vale_ls = { -- prose linter lsp
-    -- NOTE: need to sync vale packages with `vale sync` command or enable syncOnStartup
-    -- init_options = {
-    --   syncOnStartup = true,
-    -- },
-  },
+  harper_ls = {
+    settings = {
+      ['harper-ls'] = {
+        linters = {
+          SentenceCapitalization = false,
+          SpellCheck = false,
+        },
+      },
+    },
+  }, -- Grammar checker
   emmet_language_server = {}, -- emmet support
   dockerls = {}, -- docker lsp
   docker_compose_language_service = {}, -- docker lsp
