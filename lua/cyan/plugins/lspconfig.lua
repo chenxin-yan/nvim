@@ -382,6 +382,12 @@ return {
   {
     'dnlhc/glance.nvim',
     cmd = 'Glance',
+    init = function()
+      vim.keymap.del('n', 'grr')
+      vim.keymap.del('n', 'gra')
+      vim.keymap.del('n', 'gri')
+      vim.keymap.del('n', 'grn')
+    end,
     opts = {
       height = 24,
       border = {
