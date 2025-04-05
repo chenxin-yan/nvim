@@ -156,6 +156,18 @@ require('lazy').setup({
   require 'cyan.plugins.neogen', -- better annotation
 
   -- TS/JS
+  { -- shadcn Component installer
+    'BibekBhusal0/nvim-shadcn',
+    dependencies = {
+      'nvim-telescope/telescope.nvim',
+    },
+    cmd = { 'ShadcnAdd' },
+    config = function()
+      require('nvim-shadcn').setup {
+        default_installer = 'pnpm',
+      }
+    end,
+  },
   require 'cyan.plugins.tsc', -- TSC support
   require 'cyan.plugins.tailwind-tools', -- tailwindcss support
 
