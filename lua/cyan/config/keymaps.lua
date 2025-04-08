@@ -9,6 +9,12 @@ vim.g.maplocalleader = ' '
 -- clear highlight search when pressing <Esc> in normal mode
 vim.keymap.set('n', '<Esc>', '<cmd>nohlsearch<cr>')
 
+-- delete lsp keyamps and use custom keymap instead
+vim.keymap.del('n', 'grr')
+vim.keymap.del({ 'n', 'x' }, 'gra')
+vim.keymap.del('n', 'gri')
+vim.keymap.del('n', 'grn')
+
 -- Diagnostic/todo keymaps
 vim.keymap.set('n', 'X', vim.diagnostic.open_float, { desc = 'Show diagnostic Error messages' })
 vim.keymap.del('n', '<c-w>d')
