@@ -182,6 +182,7 @@ require('lazy').setup({
   require 'cyan.plugins.avante', -- AI coding assistance
   require 'cyan.plugins.cord', -- discord rich presence
   require 'cyan.plugins.octo', -- Github issues & PR
+  require 'cyan.plugins.diffview', -- git diffview
 }, {
   ui = {
     -- If you are using a Nerd Font: set icons to an empty table which will use the
