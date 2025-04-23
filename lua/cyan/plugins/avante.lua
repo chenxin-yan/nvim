@@ -13,6 +13,7 @@ return {
     cursor_applying_provider = 'groq',
     behaviour = {
       enable_cursor_planning_mode = true,
+      enable_claude_text_editor_tool_mode = true,
     },
     vendors = {
       groq = {
@@ -23,7 +24,7 @@ return {
         max_tokens = 32768,
       },
     },
-    file_selector = {
+    selector = {
       provider = 'telescope',
       provider_opts = {},
     },
