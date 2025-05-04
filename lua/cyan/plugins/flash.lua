@@ -60,14 +60,6 @@ return {
       desc = 'Flash with word under cursor',
     },
     {
-      '<C-s>',
-      mode = { 'c' },
-      function()
-        require('flash').toggle()
-      end,
-      desc = 'Toggle Flash [S]earch',
-    },
-    {
       '<leader>X',
       function()
         require('flash').jump {

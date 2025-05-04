@@ -282,7 +282,7 @@ return {
         providers = {
           lsp = {
             score_offset = 80,
-            max_items = 8,
+            max_items = 10,
           },
           path = {
             score_offset = 80,
