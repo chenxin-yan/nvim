@@ -301,6 +301,7 @@ local servers = {
         vim.lsp.buf.code_action {
           apply = true,
           context = {
+            diagnostics = {},
             only = { 'source.organizeImports' },
           },
         }
@@ -314,7 +315,6 @@ local servers = {
 -- for you, so that they are available from within Neovim.
 local ensure_installed = vim.tbl_keys(servers or {})
 vim.list_extend(ensure_installed, {
-
   -- Formatters
   'stylua', -- lua formatter
   'prettierd', -- javascript formatter
@@ -524,7 +524,7 @@ return {
           -- This is not Goto Definition, this is Goto Declaration.
           --  For example, in C this would take you to the header.
           local client = vim.lsp.get_client_by_id(event.data.client_id)
-          if client and client.supports_method(vim.lsp.protocol.Methods.textDocument_declaration) then
+          if client and client:supports_method(vim.lsp.protocol.Methods.textDocument_declaration) then
             map('gD', vim.lsp.buf.declaration, '[G]oto [D]eclaration')
           end
 
@@ -532,7 +532,7 @@ return {
           -- code, if the language server you are using supports them
           --
           -- This may be unwanted, since they displace some of your code
-          if client and client.supports_method(vim.lsp.protocol.Methods.textDocument_inlayHint) then
+          if client and client:supports_method(vim.lsp.protocol.Methods.textDocument_inlayHint) then
             map('<leader>uh', function()
               vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled { bufnr = event.buf })
             end, 'Toggle Inlay [H]ints')
@@ -561,6 +561,8 @@ return {
       require('lspconfig.configs').vtsls = require('vtsls').lspconfig
 
       require('mason-lspconfig').setup {
+        ensure_installed = {},
+        automatic_enable = true,
         handlers = {
           function(server_name)
             -- Don't call setup for JDTLS Java LSP because it will be setup from a separate config
