@@ -179,7 +179,6 @@ require('lazy').setup({
   require 'cyan.plugins.yazi', -- yazi integration
   require 'cyan.plugins.obsidian', -- obsidian integration
   require 'cyan.plugins.kulala', -- REST-client interface
-  require 'cyan.plugins.avante', -- AI coding assistance
   require 'cyan.plugins.cord', -- discord rich presence
   require 'cyan.plugins.octo', -- Github issues & PR
   require 'cyan.plugins.diffview', -- git diffview

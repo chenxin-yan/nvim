@@ -12,9 +12,9 @@ return {
       ft = 'markdown',
     },
   },
-  ft = { 'markdown', 'Avante' },
+  ft = { 'markdown' },
   opts = {
-    file_types = { 'markdown', 'Avante' },
+    file_types = { 'markdown' },
     code = {
       sign = false,
       width = 'block',
