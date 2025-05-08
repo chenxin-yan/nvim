@@ -10,7 +10,7 @@ if not vim.g.vscode then
   }
 
   -- Needed for running/debugging unit tests
-  vim.list_extend(bundles, vim.split(vim.fn.glob(vim.env.HOME .. '/.local/share/nvim/mason/share/java-test/*.jar', 1), '\n'))
+  vim.list_extend(bundles, vim.split(vim.fn.glob(vim.env.HOME .. '/.local/share/nvim/mason/share/java-test/*.jar', true), '\n'))
 
   -- See `:help vim.lsp.start_client` for an overview of the supported `config` options.
   local config = {
@@ -131,7 +131,10 @@ if not vim.g.vscode then
 
   -- Needed for debugging
   config['on_attach'] = function(client, bufnr)
-    jdtls.setup_dap { hotcodereplace = 'auto' }
+    jdtls.setup_dap {
+      config_overrides = {},
+      hotcodereplace = 'auto',
+    }
     require('jdtls.dap').setup_dap_main_class_configs()
   end
 

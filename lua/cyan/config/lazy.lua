@@ -174,6 +174,13 @@ require('lazy').setup({
 
   -- ---- extras ----
   { 'wakatime/vim-wakatime', event = 'VeryLazy' },
+  {
+    'folke/zen-mode.nvim',
+    keys = {
+      'ZenMode',
+    },
+    opts = {},
+  },
   require 'cyan.plugins.leetcode', -- Leetcode integration
   require 'cyan.plugins.grug-far', -- grep and replace
   require 'cyan.plugins.yazi', -- yazi integration

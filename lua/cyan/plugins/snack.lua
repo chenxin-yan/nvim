@@ -57,10 +57,8 @@ return {
         { section = 'keys', gap = 1, padding = 2 },
         {
           pane = 2,
-          section = 'terminal',
-          cmd = 'cmatrix -r',
           height = 6,
-          padding = 2,
+          padding = 6,
         },
         {
           pane = 2,
