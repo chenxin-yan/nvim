@@ -25,6 +25,10 @@ return { -- Autoformat
         biome = {
           require_cwd = true,
         },
+        csharpier = {
+          command = 'dotnet-csharpier',
+          args = { '--write-stdout' },
+        },
       },
       notify_on_error = true,
       format_on_save = function(bufnr)
@@ -57,6 +61,7 @@ return { -- Autoformat
         mysql = { 'sqlfluff' },
         plsql = { 'sqlfluff' },
         go = { 'goimports', 'golines', 'gofumpt' },
+        cs = { 'csharpier' },
       },
     }
 

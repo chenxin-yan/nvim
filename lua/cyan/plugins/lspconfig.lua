@@ -310,6 +310,21 @@ local servers = {
     end,
   }, -- python linter & formatter
   bashls = {}, -- bashscript lsp
+  omnisharp = {
+    handlers = {
+      ['textDocument/definition'] = function(...)
+        return require('omnisharp_extended').handler(...)
+      end,
+    },
+    enable_roslyn_analyzers = true,
+    organize_imports_on_format = true,
+    enable_import_completion = true,
+    on_attach = function(client, buffer)
+      vim.keymap.set('n', 'gd', function()
+        require('omnisharp_extended').telescope_lsp_definitions()
+      end, { desc = 'Goto Definition' })
+    end,
+  }, -- csharp lsp
 }
 -- You can add other tools here that you want Mason to install
 -- for you, so that they are available from within Neovim.
@@ -323,6 +338,7 @@ vim.list_extend(ensure_installed, {
   'goimports', -- Go formatter
   'gofumpt', -- Go formatter
   'golines', -- Go formatter
+  'csharpier', -- CSharp formatter
   -- Linters
   'markdownlint-cli2', -- markdown linter & formatter
   'hadolint', -- docker linter
@@ -332,6 +348,7 @@ vim.list_extend(ensure_installed, {
   'codelldb', -- C/C++ debugger
   'debugpy', -- python debugger
   'delve', -- Go debugger
+  'netcoredbg', -- .Net debugger
   -- Testing
   'java-test',
 })
@@ -451,6 +468,9 @@ return {
       },
     },
   },
+
+  -- c sharp
+  { 'Hoffs/omnisharp-extended-lsp.nvim', lazy = true },
 
   -- == Main LSP configs ==
   { -- LSP Configuration & Plugins

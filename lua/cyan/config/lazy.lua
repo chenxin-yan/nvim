@@ -89,19 +89,6 @@ require('lazy').setup({
     },
   },
 
-  -- toggle comma semicolon
-  {
-    'saifulapm/commasemi.nvim',
-    keys = {
-      { 'g,', '<cmd>CommaToggle<cr>', desc = 'Toggle comma' },
-      { 'g;', '<cmd>SemiToggle<cr>', desc = 'Toggle semicolon' },
-    },
-    opts = {
-      keymaps = false,
-      commands = true,
-    },
-  },
-
   -- todo comments highlight
   {
     'folke/ts-comments.nvim',
@@ -176,8 +163,9 @@ require('lazy').setup({
   { 'wakatime/vim-wakatime', event = 'VeryLazy' },
   {
     'folke/zen-mode.nvim',
+    cmd = { 'ZenMode' },
     keys = {
-      'ZenMode',
+      { '<leader>uz', '<cmd>ZenMode<cr>', desc = 'Toggle [Z]en mode' },
     },
     opts = {},
   },
