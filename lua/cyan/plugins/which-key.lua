@@ -20,7 +20,6 @@ return {
       { '<leader>C', group = '󰗧 Cursors' },
       { '<leader>o', group = ' Obsidian' },
       { '<leader>j', group = ' Jobs' },
-      { '<leader>w', group = ' Session' },
       { '<leader>S', group = '󱄽 Snippets' },
     },
     plugins = {

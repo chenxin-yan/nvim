@@ -120,9 +120,6 @@ return {
           { 'mode', padding = { left = 2, right = 1 }, color = { gui = 'bold' } },
         },
         lualine_b = {
-          function()
-            return require('auto-session.lib').current_session_name(true)
-          end,
           { 'branch', icon = '', padding = { left = 1, right = 1 } },
           {
             'grapple',
