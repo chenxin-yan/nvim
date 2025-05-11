@@ -273,9 +273,6 @@ return {
           'copilot',
           'git',
         },
-        per_filetype = {
-          sql = { 'snippets', 'dadbod', 'buffer' },
-        },
         providers = {
           lsp = {
             score_offset = 80,
@@ -292,11 +289,6 @@ return {
             name = 'LazyDev',
             module = 'lazydev.integrations.blink',
             score_offset = 100,
-          },
-          dadbod = {
-            name = 'Dadbod',
-            module = 'vim_dadbod_completion.blink',
-            score_offset = 90,
           },
           copilot = {
             name = 'copilot',

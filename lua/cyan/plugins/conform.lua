@@ -19,9 +19,6 @@ return { -- Autoformat
           -- WARN: change to the path to markdownlint config file
           args = { '--fix', '$FILENAME', '--config', vim.fn.expand '~/.markdownlint.jsonc' },
         },
-        sqlfluff = {
-          args = { 'format', '--dialect=ansi', '-' },
-        },
         biome = {
           require_cwd = true,
         },
@@ -57,9 +54,6 @@ return { -- Autoformat
         html = { 'prettierd' },
         yaml = { 'prettierd' },
         markdown = { 'prettierd', 'markdownlint-cli2' },
-        sql = { 'sqlfluff' },
-        mysql = { 'sqlfluff' },
-        plsql = { 'sqlfluff' },
         go = { 'goimports', 'golines', 'gofumpt' },
         cs = { 'csharpier' },
       },

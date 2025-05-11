@@ -37,7 +37,6 @@ require('lazy').setup({
         which_key = true,
         mason = true,
         snacks = true,
-        dadbod_ui = true,
         indent_blankline = {
           enabled = true,
           scope_color = 'lavender',
@@ -138,7 +137,6 @@ require('lazy').setup({
   -- ---- language specific ----
   require 'cyan.plugins.neotest', -- testing support
   require 'cyan.plugins.refactoring', -- code refactoring
-  require 'cyan.plugins.sql', -- sql support
   require 'cyan.plugins.neogen', -- better annotation
 
   -- TS/JS

@@ -334,7 +334,6 @@ vim.list_extend(ensure_installed, {
   'stylua', -- lua formatter
   'prettierd', -- javascript formatter
   'biome', -- javascript linter & formatter
-  'sqlfluff', -- SQL formmater & linter
   'goimports', -- Go formatter
   'gofumpt', -- Go formatter
   'golines', -- Go formatter
