@@ -33,6 +33,15 @@ return {
         float = true,
       },
     },
+    explorer = {
+      enabled = true,
+      layout = {
+        cycle = false,
+      },
+      Config = {
+        replace_netrw = true,
+      },
+    },
     dashboard = {
       enabled = true,
       preset = {
@@ -42,8 +51,10 @@ return {
         ---@type snacks.dashboard.Item[]
         keys = {
           { icon = ' ', key = 'e', desc = 'New File', action = ':ene | startinsert' },
-          { icon = '󰈞 ', key = 'f', desc = 'Find file', action = '<CMD>Telescope find_files<CR>' },
-          { icon = '󰺮 ', key = 'g', desc = 'Grep text', action = '<CMD>Telescope live_grep<CR>' },
+          { icon = ' ', key = 'f', desc = 'Find File', action = ":lua Snacks.dashboard.pick('files')" },
+          { icon = ' ', key = 'g', desc = 'Find Text', action = ":lua Snacks.dashboard.pick('live_grep')" },
+          { icon = ' ', key = 'r', desc = 'Recent Files', action = ":lua Snacks.dashboard.pick('oldfiles')" },
+          { icon = ' ', key = 'c', desc = 'Config', action = ":lua Snacks.dashboard.pick('files', {cwd = vim.fn.stdpath('config')})" },
           { icon = '󰒲 ', key = 'u', desc = 'Update plugins', action = '<cmd>Lazy update<cr>' },
           { icon = ' ', key = 'q', desc = 'Quit NVIM', action = '<cmd>qa<cr>' },
         },

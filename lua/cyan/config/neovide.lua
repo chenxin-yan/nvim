@@ -6,7 +6,7 @@ vim.g.neovide_hide_mouse_when_typing = true
 vim.g.neovide_window_blurred = true
 
 if vim.g.is_transparent then
-  vim.g.neovide_transparency = 0.95
+  vim.g.neovide_opacity = 0.95
 end
 
 vim.g.neovide_cursor_animation_length = 0.05

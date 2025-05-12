@@ -20,7 +20,7 @@ vim.opt.rtp:prepend(lazypath)
 --  To update plugins you can run
 --    :Lazy update
 --
-require('lazy').setup({
+require('lazy').setup {
   -- == theme ==
   {
     'catppuccin/nvim',
@@ -129,7 +129,6 @@ require('lazy').setup({
   require 'cyan.plugins.lualine', -- status line
   require 'cyan.plugins.indent-line', -- indentation guide
   require 'cyan.plugins.noice', -- UI improvement
-  require 'cyan.plugins.bufferline', -- UI for buffers
   require 'cyan.plugins.endhints', -- LSP inlay hint improvements
   require 'cyan.plugins.gitgraph', -- git graph support
 
@@ -173,24 +172,4 @@ require('lazy').setup({
   require 'cyan.plugins.cord', -- discord rich presence
   require 'cyan.plugins.octo', -- Github issues & PR
   require 'cyan.plugins.diffview', -- git diffview
-}, {
-  ui = {
-    -- If you are using a Nerd Font: set icons to an empty table which will use the
-    -- default lazy.nvim defined Nerd Font icons, otherwise define a unicode icons table
-    icons = vim.g.have_nerd_font and {} or {
-      cmd = '⌘',
-      config = '🛠',
-      event = '📅',
-      ft = '📂',
-      init = '⚙',
-      keys = '🗝',
-      plugin = '🔌',
-      runtime = '💻',
-      require = '🌙',
-      source = '📄',
-      start = '🚀',
-      task = '📌',
-      lazy = '💤 ',
-    },
-  },
-})
+}

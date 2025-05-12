@@ -111,7 +111,10 @@ return {
       options = {
         theme = custom_catppuccin,
         globalstatus = vim.o.laststatus == 3,
-        disabled_filetypes = { statusline = { 'dashboard', 'alpha', 'ministarter', 'snacks_dashboard' } },
+        disabled_filetypes = {
+          statusline = { 'dashboard', 'alpha', 'ministarter', 'snacks_dashboard' },
+          winbar = { 'dashboard', 'alpha', 'ministarter', 'snacks_dashboard' },
+        },
         component_separators = ' ',
         section_separators = { left = '', right = '' },
       },
@@ -178,8 +181,49 @@ return {
       inactive_sections = {
         lualine_a = {},
         lualine_b = {},
-        lualine_c = { 'filename' },
+        lualine_c = {},
         lualine_x = { 'location' },
+        lualine_y = {},
+        lualine_z = {},
+      },
+      winbar = {
+        lualine_a = {},
+        lualine_b = {},
+        lualine_c = {
+          { 'filetype', icon_only = true, padding = { left = 2, right = 0 } },
+          {
+            'filename',
+            symbols = {
+              modified = '●',
+              readonly = '',
+              unnamed = '',
+              newfile = '',
+            },
+            padding = { left = 0 },
+            color = { fg = colors.text },
+          },
+        },
+        lualine_x = {},
+        lualine_y = {},
+        lualine_z = {},
+      },
+      inactive_winbar = {
+        lualine_a = {},
+        lualine_b = {},
+        lualine_c = {
+          { 'filetype', icon_only = true, padding = { left = 2, right = 0 } },
+          {
+            'filename',
+            symbols = {
+              modified = '●',
+              readonly = '',
+              unnamed = '',
+              newfile = '',
+            },
+            padding = { left = 0 },
+          },
+        },
+        lualine_x = {},
         lualine_y = {},
         lualine_z = {},
       },

@@ -115,9 +115,6 @@ local servers = {
         suggest = {
           completeFunctionCalls = true,
         },
-        -- suggestionActions = {
-        --   enabled = false,
-        -- },
         inlayHints = {
           enumMemberValues = { enabled = true },
           functionLikeReturnTypes = { enabled = true },
@@ -132,9 +129,6 @@ local servers = {
         suggest = {
           completeFunctionCalls = true,
         },
-        -- suggestionActions = {
-        --   enabled = false,
-        -- },
         inlayHints = {
           enumMemberValues = { enabled = true },
           functionLikeReturnTypes = { enabled = true },
@@ -370,6 +364,8 @@ return {
       require('mason').setup()
 
       require('mason-tool-installer').setup { ensure_installed = ensure_installed }
+
+      vim.cmd 'MasonToolsInstall'
     end,
   },
 
@@ -389,6 +385,13 @@ return {
         save_in_cmdline_history = false,
       }
     end,
+  },
+
+  -- emmet integration
+  {
+    'olrtg/nvim-emmet',
+    lazy = true,
+    keys = { { '<leader>ce', "<cmd>lua require('nvim-emmet').wrap_with_abbreviation()<cr>", desc = 'Emmet: Wrap with abbreviation()', mode = { 'n', 'v' } } },
   },
 
   -- glance lsp locations
@@ -548,19 +551,21 @@ return {
           -- code, if the language server you are using supports them
           --
           -- This may be unwanted, since they displace some of your code
-          if client and client:supports_method(vim.lsp.protocol.Methods.textDocument_inlayHint) then
+          if client and client:supports_method(vim.lsp.protocol.Methods.textDocument_inlayHint, event.buf) then
             map('<leader>uh', function()
               vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled { bufnr = event.buf })
             end, 'Toggle Inlay [H]ints')
           end
 
           -- lsp codelens
-          if vim.lsp.codelens and vim.lsp.protocol.Methods.textDocument_codeLens then
+          if client and client:supports_method(vim.lsp.protocol.Methods.textDocument_codeLens, event.buf) then
             map('<leader>cc', vim.lsp.codelens.run, 'Run [C]odelens', 'n')
-            vim.lsp.codelens.refresh()
+            vim.lsp.codelens.refresh { bufnr = event.buf }
             vim.api.nvim_create_autocmd({ 'BufReadPre', 'InsertLeave', 'BufEnter' }, {
-              buffer = 0,
-              callback = vim.lsp.codelens.refresh,
+              buffer = event.buf,
+              callback = function()
+                vim.lsp.codelens.refresh { bufnr = event.buf }
+              end,
             })
           end
         end,
