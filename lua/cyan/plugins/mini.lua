@@ -49,12 +49,6 @@ return { -- Collection of various small independent plugins/modules
     -- #ffffff
     -- config copied from lazynvim
     local hipatterns = require 'mini.hipatterns'
-    local tailwindcss = require 'cyan.helpers.tailwindCSS'
-    vim.api.nvim_create_autocmd('ColorScheme', {
-      callback = function()
-        tailwindcss.hl = {}
-      end,
-    })
     hipatterns.setup {
       highlighters = {
         hex_color = hipatterns.gen_highlighter.hex_color { priority = 2000 },
@@ -67,26 +61,6 @@ return { -- Collection of various small independent plugins/modules
             local hex_color = '#' .. r .. r .. g .. g .. b .. b
 
             return MiniHipatterns.compute_hex_color_group(hex_color, 'bg')
-          end,
-          extmark_opts = { priority = 2000 },
-        },
-        tailwindcss = {
-          pattern = '%f[%w:-][%w:-]+%-()[a-z%-]+%-%d+()%f[^%w:-]',
-          group = function(_, _, m)
-            local match = m.full_match
-            local color, shade = match:match '[%w-]+%-([a-z%-]+)%-(%d+)'
-            shade = tonumber(shade)
-            local bg = vim.tbl_get(tailwindcss.colors, color, shade)
-            if bg then
-              local hl = 'MiniHipatternsTailwind' .. color .. shade
-              if not tailwindcss.hl[hl] then
-                tailwindcss.hl[hl] = true
-                local bg_shade = shade == 500 and 950 or shade < 500 and 900 or 100
-                local fg = vim.tbl_get(tailwindcss.colors, color, bg_shade)
-                vim.api.nvim_set_hl(0, hl, { bg = '#' .. bg, fg = '#' .. fg })
-              end
-              return hl
-            end
           end,
           extmark_opts = { priority = 2000 },
         },
