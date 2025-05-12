@@ -62,7 +62,7 @@ vim.keymap.set({ 'n', 'x' }, 'L', '$')
 vim.keymap.set('n', '<leader><C-a>', 'gg<s-v>G', { desc = 'Select all' })
 
 -- switch between buffers
-vim.keymap.set('n', '<leader><Tab>', '<cmd>b#<cr>', { desc = 'Goto previously opened buffer' })
+vim.keymap.set('n', '<Tab>', '<cmd>b#<cr>', { desc = 'Goto previously opened buffer' })
 vim.keymap.set('n', '<C-e>', '<cmd>bnext<cr>', { desc = 'Goto next buffer' })
 vim.keymap.set('n', '<C-w>', '<cmd>bprevious<cr>', { desc = 'Goto previous buffer' })
 

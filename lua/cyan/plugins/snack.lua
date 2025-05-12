@@ -198,7 +198,7 @@ return {
         function()
           Snacks.bufdelete.delete()
         end,
-        desc = '[D]elete Other Buffers',
+        desc = '[D]elete current Buffer',
         mode = { 'n' },
       },
       {
