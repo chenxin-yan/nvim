@@ -62,10 +62,10 @@ require('lazy').setup {
   -- ---- Core plugins ----
   -- Detect tabstop and shiftwidth automatically
   {
-    'tpope/vim-sleuth',
+    'NMAC427/guess-indent.nvim',
     event = { 'BufReadPre', 'BufNewFile' },
     config = function()
-      vim.keymap.set('n', '<leader>bi', '<cmd>Sleuth<cr>', { desc = 'Detect [B]uffer [I]ndent' })
+      vim.keymap.set('n', '<leader>bi', '<cmd>GuessIndent<cr>', { desc = 'Detect [B]uffer [I]ndent' })
     end,
   },
 
@@ -130,7 +130,7 @@ require('lazy').setup {
   require 'cyan.plugins.lualine', -- status line
   require 'cyan.plugins.indent-line', -- indentation guide
   require 'cyan.plugins.noice', -- UI improvement
-  require 'cyan.plugins.endhints', -- LSP inlay hint improvements
+  -- require 'cyan.plugins.endhints', -- LSP inlay hint improvements
   require 'cyan.plugins.gitgraph', -- git graph support
 
   -- ---- language specific ----

@@ -1,10 +1,11 @@
 return {
   'francescarpi/buffon.nvim',
   branch = 'main',
+  event = { 'BufReadPre', 'BufNewFile' },
   ---@type BuffonConfig
   opts = {
     cyclic_navigation = false,
-    new_buffer_position = 'end',
+    new_buffer_position = 'start',
     num_pages = 2,
     open = {
       by_default = true,

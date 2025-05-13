@@ -352,7 +352,7 @@ return {
     event = 'VeryLazy',
     cmd = { 'Mason', 'MasonToolInstall', 'MasonToolsClean' },
     dependencies = {
-      'williamboman/mason.nvim',
+      'mason-org/mason.nvim',
     },
     config = function()
       -- Ensure the servers and tools above are installed
@@ -481,8 +481,8 @@ return {
     dependencies = {
 
       -- Automatically install LSPs and related tools to stdpath for Neovim
-      { 'williamboman/mason.nvim', config = true },
-      'williamboman/mason-lspconfig.nvim',
+      { 'mason-org/mason.nvim', opts = {} },
+      'mason-org/mason-lspconfig.nvim',
       'WhoIsSethDaniel/mason-tool-installer.nvim',
 
       -- -- Allows extra capabilities provided by nvim-cmp
@@ -553,8 +553,9 @@ return {
           -- This may be unwanted, since they displace some of your code
           if client and client:supports_method(vim.lsp.protocol.Methods.textDocument_inlayHint, event.buf) then
             map('<leader>uh', function()
-              vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled { bufnr = event.buf })
+              vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled, { bufnr = event.buf })
             end, 'Toggle Inlay [H]ints')
+            vim.lsp.inlay_hint.enable(true, { buffer = event.buf })
           end
 
           -- lsp codelens
@@ -584,6 +585,7 @@ return {
       require('mason-lspconfig').setup {
         ensure_installed = {},
         automatic_enable = true,
+        automatic_installation = false,
         handlers = {
           function(server_name)
             -- Don't call setup for JDTLS Java LSP because it will be setup from a separate config

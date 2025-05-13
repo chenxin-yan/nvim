@@ -14,6 +14,8 @@ return {
     local ufo = require 'ufo'
     vim.keymap.set('n', 'zR', ufo.openAllFolds)
     vim.keymap.set('n', 'zM', ufo.closeAllFolds)
+    vim.keymap.set('n', 'zr', require('ufo').openFoldsExceptKinds)
+    vim.keymap.set('n', 'zm', require('ufo').closeFoldsWith)
     vim.keymap.set('n', ']z', ufo.goNextClosedFold, { desc = 'Next closed fold' })
     vim.keymap.set('n', '[z', ufo.goPreviousClosedFold, { desc = 'Previous closed fold' })
     vim.keymap.set('n', 'K', function()
