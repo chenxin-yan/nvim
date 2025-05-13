@@ -121,7 +121,7 @@ local servers = {
           parameterNames = { enabled = 'literals' },
           parameterTypes = { enabled = true },
           propertyDeclarationTypes = { enabled = true },
-          variableTypes = { enabled = false },
+          variableTypes = { enabled = true },
         },
       },
       javascript = {
@@ -135,7 +135,7 @@ local servers = {
           parameterNames = { enabled = 'literals' },
           parameterTypes = { enabled = true },
           propertyDeclarationTypes = { enabled = true },
-          variableTypes = { enabled = false },
+          variableTypes = { enabled = true },
         },
       },
     },
@@ -305,6 +305,24 @@ local servers = {
   }, -- python linter & formatter
   bashls = {}, -- bashscript lsp
   omnisharp = {
+    settings = {
+      RoslynExtensionsOptions = {
+        InlayHintsOptions = {
+          EnableForParameters = true,
+          ForLiteralParameters = true,
+          ForIndexerParameters = true,
+          ForObjectCreationParameters = true,
+          ForOtherParameters = true,
+          SuppressForParametersThatDifferOnlyBySuffix = false,
+          SuppressForParametersThatMatchMethodIntent = false,
+          SuppressForParametersThatMatchArgumentName = false,
+          EnableForTypes = true,
+          ForImplicitVariableTypes = true,
+          ForLambdaParameterTypes = true,
+          ForImplicitObjectCreatio = true,
+        },
+      },
+    },
     handlers = {
       ['textDocument/definition'] = function(...)
         return require('omnisharp_extended').handler(...)
@@ -477,12 +495,12 @@ return {
   -- == Main LSP configs ==
   { -- LSP Configuration & Plugins
     'neovim/nvim-lspconfig',
-    event = { 'BufReadPre', 'BufNewFile' },
+    event = 'VeryLazy',
     dependencies = {
 
       -- Automatically install LSPs and related tools to stdpath for Neovim
       { 'mason-org/mason.nvim', opts = {} },
-      'mason-org/mason-lspconfig.nvim',
+      { 'mason-org/mason-lspconfig.nvim', opts = {} },
       'WhoIsSethDaniel/mason-tool-installer.nvim',
 
       -- -- Allows extra capabilities provided by nvim-cmp
@@ -572,34 +590,25 @@ return {
         end,
       })
 
-      -- LSP servers and clients are able to communicate to each other what features they support.
-      --  By default, Neovim doesn't support everything that is in the LSP specification.
-      --  When you add nvim-cmp, luasnip, etc. Neovim now has *more* capabilities.
-      --  So, we create new capabilities with nvim cmp, and then broadcast that to the servers.
-      local capabilities = vim.lsp.protocol.make_client_capabilities()
-      capabilities = vim.tbl_deep_extend('force', capabilities, require('blink.cmp').get_lsp_capabilities())
+      for server_name, config in pairs(servers) do
+        -- Don't call setup for JDTLS Java LSP and tailwindcss lsp because it will be setup from a separate config
+        local excluded_servers = { 'jdtls', 'tailwindcss' }
 
-      -- get default config from nvim-vtsls
-      require('lspconfig.configs').vtsls = require('vtsls').lspconfig
-
-      require('mason-lspconfig').setup {
-        ensure_installed = {},
-        automatic_enable = true,
-        automatic_installation = false,
-        handlers = {
-          function(server_name)
-            -- Don't call setup for JDTLS Java LSP because it will be setup from a separate config
-            if server_name ~= 'jdtls' and server_name ~= 'tailwindcss' then
-              local server = servers[server_name] or {}
-              -- This handles overriding only values explicitly passed
-              -- by the server configuration above. Useful when disabling
-              -- certain features of an LSP (for example, turning off formatting for tsserver)
-              server.capabilities = vim.tbl_deep_extend('force', {}, capabilities, server.capabilities or {})
-              require('lspconfig')[server_name].setup(server)
+        local function contains(excluded, server)
+          for _, v in ipairs(excluded) do
+            if v == server then
+              return true
             end
-          end,
-        },
-      }
+          end
+          return false
+        end
+
+        if contains(excluded_servers, server_name) then
+          goto continue
+        end
+        vim.lsp.config(server_name, config)
+        ::continue::
+      end
     end,
   },
 }

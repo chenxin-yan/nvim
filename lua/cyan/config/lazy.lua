@@ -126,11 +126,10 @@ require('lazy').setup {
     end,
   },
 
-  require 'cyan.plugins.tiny-diagnostic', -- better inline diagnostics
   require 'cyan.plugins.lualine', -- status line
   require 'cyan.plugins.indent-line', -- indentation guide
   require 'cyan.plugins.noice', -- UI improvement
-  -- require 'cyan.plugins.endhints', -- LSP inlay hint improvements
+  require 'cyan.plugins.endhints', -- LSP inlay hint improvements
   require 'cyan.plugins.gitgraph', -- git graph support
 
   -- ---- language specific ----

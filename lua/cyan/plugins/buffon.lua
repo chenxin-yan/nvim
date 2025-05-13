@@ -1,14 +1,14 @@
 return {
   'francescarpi/buffon.nvim',
   branch = 'main',
-  event = { 'BufReadPre', 'BufNewFile' },
+  event = 'VeryLazy',
   ---@type BuffonConfig
   opts = {
     cyclic_navigation = false,
     new_buffer_position = 'start',
     num_pages = 2,
     open = {
-      by_default = true,
+      by_default = false,
       ignore_ft = {
         'gitcommit',
         'gitrebase',
