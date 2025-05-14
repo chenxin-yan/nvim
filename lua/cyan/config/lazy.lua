@@ -20,7 +20,7 @@ vim.opt.rtp:prepend(lazypath)
 --  To update plugins you can run
 --    :Lazy update
 --
-require('lazy').setup {
+require('lazy').setup({
   -- == theme ==
   {
     'catppuccin/nvim',
@@ -172,4 +172,8 @@ require('lazy').setup {
   require 'cyan.plugins.cord', -- discord rich presence
   require 'cyan.plugins.octo', -- Github issues & PR
   require 'cyan.plugins.diffview', -- git diffview
-}
+}, {
+  dev = {
+    path = '~/dev',
+  },
+})

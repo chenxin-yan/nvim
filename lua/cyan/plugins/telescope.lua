@@ -181,7 +181,6 @@ return { -- Fuzzy Finder (files, lsp, etc)
     pcall(require('telescope').load_extension, 'undo')
     pcall(require('telescope').load_extension, 'luasnip')
     pcall(require('telescope').load_extension, 'bibtex')
-    pcall(require('telescope').load_extension, 'persisted')
     pcall(require('telescope').load_extension, 'noice')
   end,
 }

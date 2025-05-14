@@ -368,7 +368,7 @@ return {
   { -- Mason and auto installation setup
     'WhoIsSethDaniel/mason-tool-installer.nvim',
     event = 'VeryLazy',
-    cmd = { 'Mason', 'MasonToolInstall', 'MasonToolsClean' },
+    cmd = { 'MasonToolInstall', 'MasonToolsClean' },
     dependencies = {
       'mason-org/mason.nvim',
     },
@@ -499,7 +499,7 @@ return {
     dependencies = {
 
       -- Automatically install LSPs and related tools to stdpath for Neovim
-      { 'mason-org/mason.nvim', opts = {} },
+      { 'mason-org/mason.nvim', cmd = { 'Mason' }, opts = {} },
       { 'mason-org/mason-lspconfig.nvim', opts = {} },
       'WhoIsSethDaniel/mason-tool-installer.nvim',
 
@@ -571,7 +571,7 @@ return {
           -- This may be unwanted, since they displace some of your code
           if client and client:supports_method(vim.lsp.protocol.Methods.textDocument_inlayHint, event.buf) then
             map('<leader>uh', function()
-              vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled, { bufnr = event.buf })
+              vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled { bufnr = event.buf }, { bufnr = event.buf })
             end, 'Toggle Inlay [H]ints')
             vim.lsp.inlay_hint.enable(true, { buffer = event.buf })
           end

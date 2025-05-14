@@ -1,7 +1,7 @@
 return {
   'francescarpi/buffon.nvim',
   branch = 'main',
-  event = 'VeryLazy',
+  event = { 'BufReadPre', 'BufNewFile' },
   ---@type BuffonConfig
   opts = {
     cyclic_navigation = false,
@@ -13,6 +13,7 @@ return {
         'gitcommit',
         'gitrebase',
       },
+      default_position = 'bottom_right',
     },
     theme = {
       unloaded_buffer = '#9399b2',
@@ -51,4 +52,8 @@ return {
     'nvim-tree/nvim-web-devicons',
     'nvim-lua/plenary.nvim',
   },
+  config = function(_, opts)
+    require('buffon').setup(opts)
+    require('buffon.ui.window').Window:show()
+  end,
 }
