@@ -2,10 +2,6 @@
   "contributes": {
     "snippets": [
       {
-        "language": "lua",
-        "path": "./project-specific/nvim-lua.json"
-      },
-      {
         "language": [
           "javascript",
           "typescript"

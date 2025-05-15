@@ -77,8 +77,3 @@ vim.keymap.set('n', '<leader>uf', function()
     vim.g.disable_autoformat = true
   end
 end, { desc = 'Toggle [F]ormat' })
-
-vim.keymap.set('n', '<leader>ih', function()
-  vim.notify(tostring(vim.lsp.inlay_hint.is_enabled { bufnr = 0 }))
-  vim.notify(vim.inspect(vim.lsp.inlay_hint.get { bufnr = 0 }))
-end)

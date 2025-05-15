@@ -71,7 +71,7 @@ vim.o.shiftwidth = 2
 vim.diagnostic.config {
   severity_sort = true,
   float = { border = 'rounded', source = 'if_many' },
-  underline = { severity = vim.diagnostic.severity.ERROR },
+  underline = true,
   signs = {
     text = {
       [vim.diagnostic.severity.ERROR] = '●',
@@ -79,22 +79,11 @@ vim.diagnostic.config {
       [vim.diagnostic.severity.HINT] = '●',
       [vim.diagnostic.severity.INFO] = '●',
     },
-    texthl = {
-      [vim.diagnostic.severity.ERROR] = 'DiagnosticSignError',
-      [vim.diagnostic.severity.WARN] = 'DiagnosticSignWarn',
-      [vim.diagnostic.severity.HINT] = 'DiagnosticSignHint',
-      [vim.diagnostic.severity.INFO] = 'DiagnosticSignInfo',
-    },
-    numhl = {
-      [vim.diagnostic.severity.ERROR] = 'DiagnosticSignError',
-      [vim.diagnostic.severity.WARN] = 'DiagnosticSignWarn',
-      [vim.diagnostic.severity.HINT] = 'DiagnosticSignHint',
-      [vim.diagnostic.severity.INFO] = 'DiagnosticSignInfo',
-    },
   },
   virtual_text = {
     source = 'if_many',
     spacing = 2,
+    current_line = true,
     format = function(diagnostic)
       local diagnostic_message = {
         [vim.diagnostic.severity.ERROR] = diagnostic.message,
