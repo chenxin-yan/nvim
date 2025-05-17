@@ -114,7 +114,6 @@ require('lazy').setup({
   require 'cyan.plugins.ts-autotag', -- auto close/rename tags
   require 'cyan.plugins.multicursor', -- neovim multicursor support
   require 'cyan.plugins.dial', -- increment/decrement improvement
-  require 'cyan.plugins.buffon', -- buffer management
 
   -- ---- UI ----
   {

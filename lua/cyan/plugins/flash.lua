@@ -3,14 +3,7 @@ return {
   event = { 'BufReadPre', 'BufNewFile' },
   lazy = true,
   ---@type Flash.Config
-  opts = {
-    modes = {
-      -- Disable ";" and ","
-      char = {
-        keys = { 'f', 'F', 't', 'T' },
-      },
-    },
-  },
+  opts = {},
   keys = {
     {
       's',
