@@ -11,6 +11,7 @@ return {
       { '<leader>x', group = ' Diagnostic/QuickFix' },
       { '<leader>t', group = ' Testing' },
       { '<leader>d', group = ' Debug' },
+      { '<leader>dp', group = '+Debug Print' },
       { '<leader>s', group = ' Search' },
       { '<leader>u', group = '󰔡 Toggle' },
       { '<leader>g', group = ' Git' },

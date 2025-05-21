@@ -53,7 +53,6 @@ nvim
 | --------------------- | ----------------- | ------------------------------ | --------------- | ------------------ | ----------------------------- |
 | Lua                   | ✅ luals          | ✅ stylua                      | ❌              | ❌                 | ❌                            |
 | C/C++                 | ✅ clangd         | ✅ clangd                      | ✅ clangd       | ✅ codelldb        | ❌                            |
-| C#/.NET               | ✅ omnisharp      | ✅ csharpier                   | ❌              | ✅ netcoredbg      | ✅ neotest-dotnet ❌          |
 | Java                  | ✅ jdtls          | ✅ jdtls                       | ✅ jdtls        | ✅ jdtls           | ✅ java-test                  |
 | JavaScript/TypeScript | ✅ vtsls          | ✅ Biome/prettierd             | ✅ Biome/Eslint | ✅ vscode-js-debug | ✅ neotest-jest/vimtest-mocha |
 | Golang                | ✅ gopls          | ✅ gofumpt, goimports, golines | ❌              | ✅ delve           | ✅ neotest-golang             |

@@ -64,29 +64,25 @@ require('lazy').setup({
   {
     'NMAC427/guess-indent.nvim',
     event = { 'BufReadPre', 'BufNewFile' },
-    config = function()
-      vim.keymap.set('n', '<leader>bi', '<cmd>GuessIndent<cr>', { desc = 'Detect [B]uffer [I]ndent' })
-    end,
   },
 
   -- line preview when search line number
   { 'nacro90/numb.nvim', event = 'CmdlineEnter', config = true },
-
-  -- better change cases
-  {
-    'gregorias/coerce.nvim',
-    event = { 'BufReadPre', 'BufNewFile' },
-    tag = 'v3.0.0',
-    opts = {
-      default_mode_keymap_prefixes = {
-        normal_mode = 'gcr',
-        visual_mode = 'gr',
-      },
-      default_mode_mask = {
-        motion_mode = false,
+    -- better change cases
+    {
+      'gregorias/coerce.nvim',
+      event = { 'BufReadPre', 'BufNewFile' },
+      tag = 'v3.0.0',
+      opts = {
+        default_mode_keymap_prefixes = {
+          normal_mode = 'gcr',
+          visual_mode = 'gr',
+        },
+        default_mode_mask = {
+          motion_mode = false,
+        },
       },
     },
-  },
 
   -- todo comments highlight
   {
@@ -135,6 +131,7 @@ require('lazy').setup({
   require 'cyan.plugins.neotest', -- testing support
   require 'cyan.plugins.refactoring', -- code refactoring
   require 'cyan.plugins.neogen', -- better annotation
+  require 'cyan.plugins.debugprint', -- debug print
 
   -- TS/JS
   require 'cyan.plugins.tsc', -- TSC support

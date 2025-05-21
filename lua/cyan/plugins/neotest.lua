@@ -35,8 +35,6 @@ return {
     }, -- javascript vitest,
 
     'fredrikaverpil/neotest-golang', -- Go test
-
-    'Issafalcon/neotest-dotnet', -- csharp test
   },
   opts = {
     -- Can be a list of adapters like what neotest expects,
@@ -57,9 +55,6 @@ return {
       ['neotest-golang'] = {
         -- go_test_args = { '-v', '-race', '-count=1', '-timeout=60s' },
         dap_go_enabled = true,
-      },
-      ['neotest-dotnet'] = {
-        -- Here we can set options for neotest-dotnet
       },
     },
     status = { virtual_text = true },

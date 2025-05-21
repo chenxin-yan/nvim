@@ -22,10 +22,6 @@ return { -- Autoformat
         biome = {
           require_cwd = true,
         },
-        csharpier = {
-          command = 'dotnet-csharpier',
-          args = { '--write-stdout' },
-        },
       },
       notify_on_error = true,
       format_on_save = function(bufnr)
@@ -55,7 +51,6 @@ return { -- Autoformat
         yaml = { 'prettierd' },
         markdown = { 'prettierd', 'markdownlint-cli2' },
         go = { 'goimports', 'golines', 'gofumpt' },
-        cs = { 'csharpier' },
       },
     }
 

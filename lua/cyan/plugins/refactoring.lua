@@ -44,24 +44,6 @@ return {
       mode = 'n',
       desc = 'Extract [B]lock to file',
     },
-    {
-      '<leader>dp',
-      '<cmd>lua require("refactoring").debug.printf({below = false})<cr>',
-      mode = 'n',
-      desc = '[D]ebug [P]rint',
-    },
-    {
-      '<leader>dv',
-      '<cmd>lua require("refactoring").debug.print_var()<cr>',
-      mode = { 'x', 'n' },
-      desc = '[D]ebug print [V]ariable',
-    },
-    {
-      '<leader>du',
-      '<cmd>lua require("refactoring").debug.cleanup({})<cr>',
-      mode = 'n',
-      desc = '[D]ebug print Clean[U]p',
-    },
   },
   dependencies = {
     'nvim-lua/plenary.nvim',
