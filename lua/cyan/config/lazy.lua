@@ -68,21 +68,21 @@ require('lazy').setup({
 
   -- line preview when search line number
   { 'nacro90/numb.nvim', event = 'CmdlineEnter', config = true },
-    -- better change cases
-    {
-      'gregorias/coerce.nvim',
-      event = { 'BufReadPre', 'BufNewFile' },
-      tag = 'v3.0.0',
-      opts = {
-        default_mode_keymap_prefixes = {
-          normal_mode = 'gcr',
-          visual_mode = 'gr',
-        },
-        default_mode_mask = {
-          motion_mode = false,
-        },
+  -- better change cases
+  {
+    'gregorias/coerce.nvim',
+    event = { 'BufReadPre', 'BufNewFile' },
+    tag = 'v3.0.0',
+    opts = {
+      default_mode_keymap_prefixes = {
+        normal_mode = 'gcr',
+        visual_mode = 'gr',
+      },
+      default_mode_mask = {
+        motion_mode = false,
       },
     },
+  },
 
   -- todo comments highlight
   {
@@ -146,9 +146,6 @@ require('lazy').setup({
   require 'cyan.plugins.markdown-preview', -- markdown preview in browser
   require 'cyan.plugins.markdown', -- better markdown render
   require 'cyan.plugins.footnote', -- better footnote
-
-  -- Go
-  require 'cyan.plugins.gopher', -- better go experience
 
   -- ---- extras ----
   { 'wakatime/vim-wakatime', event = 'VeryLazy' },
