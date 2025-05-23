@@ -109,6 +109,15 @@ local servers = {
             enableServerSideFuzzyMatch = true,
           },
         },
+        tsserver = {
+          globalPlugins = {
+            {
+              name = '@astrojs/ts-plugin',
+              location = '~/.local/share/nvim/mason/packages/astro-language-server/node_modules/@astrojs/ts-plugin',
+              enableForWorkspaceTypeScriptVersions = true,
+            },
+          },
+        },
       },
       typescript = {
         updateImportsOnFileMove = { enabled = 'always' },
@@ -304,6 +313,7 @@ local servers = {
     end,
   }, -- python linter & formatter
   bashls = {}, -- bashscript lsp
+  astro = {},
 }
 -- You can add other tools here that you want Mason to install
 -- for you, so that they are available from within Neovim.

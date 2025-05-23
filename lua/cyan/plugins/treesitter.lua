@@ -26,6 +26,7 @@ return { -- Highlight, edit, and navigate code
       'xml',
       'html',
       'css',
+      'astro',
       'json5',
       'java',
       'dockerfile',
