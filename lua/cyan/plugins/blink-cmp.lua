@@ -115,28 +115,18 @@ return {
       },
       {
         {
-          'fang2hou/blink-copilot',
-          opts = {
-            max_completions = 1, -- Global default for max completions
-            max_attempts = 2, -- Global default for max attempts
+          'supermaven-inc/supermaven-nvim',
+          event = 'InsertEnter',
+          cmd = {
+            'SupermavenUseFree',
+            'SupermavenUsePro',
           },
-        },
-        {
-          'zbirenbaum/copilot.lua',
-          cmd = 'Copilot',
-          build = ':Copilot auth',
           opts = {
-            suggestion = {
-              enabled = false,
-              auto_trigger = true,
-              keymap = {
-                accept = false,
-              },
+            keymaps = {
+              accept_suggestion = nil, -- handled by nvim-cmp / blink.cmp
             },
-            panel = { enabled = false },
-            filetypes = {
-              help = true,
-            },
+            disable_inline_completion = true,
+            ignore_filetypes = { 'bigfile', 'snacks_input', 'snacks_notif' },
           },
         },
       },
@@ -164,7 +154,7 @@ return {
         },
         ['<C-a>'] = {
           function(cmp)
-            cmp.show { providers = { 'copilot' } }
+            cmp.show { providers = { 'supermaven' } }
           end,
         },
         ['<C-i>'] = { 'show', 'show_documentation', 'hide_documentation' },
@@ -184,7 +174,6 @@ return {
         use_nvim_cmp_as_default = false,
         nerd_font_variant = 'mono',
         kind_icons = {
-          Copilot = '',
           Text = '󰉿',
           Method = '󰊕',
           Function = '󰊕',
@@ -270,7 +259,7 @@ return {
           'path',
           'snippets',
           'buffer',
-          'copilot',
+          'supermaven',
           'git',
         },
         providers = {
@@ -290,9 +279,9 @@ return {
             module = 'lazydev.integrations.blink',
             score_offset = 100,
           },
-          copilot = {
-            name = 'copilot',
-            module = 'blink-copilot',
+          supermaven = {
+            name = 'supermaven',
+            module = 'blink.compat.source',
             score_offset = -30,
             async = true,
           },
