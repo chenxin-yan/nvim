@@ -45,6 +45,9 @@ return {
       },
     },
   },
+  keys = {
+    { '<leader>sm', '<cmd>Noice fzf<cr>', desc = '[M]essage' },
+  },
   dependencies = {
     -- if you lazy-load any plugin below, make sure to add proper `module="..."` entries
     'MunifTanjim/nui.nvim',

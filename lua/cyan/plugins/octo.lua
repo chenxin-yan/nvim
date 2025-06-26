@@ -2,7 +2,7 @@ return {
   'pwntester/octo.nvim',
   dependencies = {
     'nvim-lua/plenary.nvim',
-    'nvim-telescope/telescope.nvim',
+    'ibhagwan/fzf-lua',
     'nvim-tree/nvim-web-devicons',
   },
   cmd = 'Octo',
@@ -11,7 +11,7 @@ return {
     enable_builtin = true,
     default_to_projects_v2 = true,
     default_merge_method = 'squash',
-    picker = 'telescope',
+    picker = 'fzf-lua',
   },
   keys = {
     { '<leader>gi', '<cmd>Octo issue list<CR>', desc = 'List Issues (Octo)' },

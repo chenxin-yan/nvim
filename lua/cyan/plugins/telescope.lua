@@ -5,27 +5,9 @@ return { -- Fuzzy Finder (files, lsp, etc)
   lazy = true,
   dependencies = {
     'nvim-lua/plenary.nvim',
-    { -- If encountering errors, see telescope-fzf-native README for installation instructions
-      'nvim-telescope/telescope-fzf-native.nvim',
-
-      -- `build` is used to run some command when the plugin is installed/updated.
-      -- This is only run then, not every time Neovim starts up.
-      build = 'make',
-
-      -- `cond` is a condition used to determine whether this plugin should be
-      -- installed and loaded.
-      cond = function()
-        return vim.fn.executable 'make' == 1
-      end,
-    },
-
-    'nvim-telescope/telescope-ui-select.nvim',
 
     -- Useful for getting pretty icons, but requires a Nerd Font.
     { 'nvim-tree/nvim-web-devicons' },
-
-    -- Telescope undotree
-    'debugloop/telescope-undo.nvim',
 
     -- Telescope luasnip integration
     'benfowler/telescope-luasnip.nvim',
@@ -35,60 +17,18 @@ return { -- Fuzzy Finder (files, lsp, etc)
   },
   keys = {
     -- See `:help telescope.builtin`
-    { '<leader>sh', '<cmd>Telescope help_tags<cr>', desc = '[H]elp' },
-    { '<leader>sk', '<cmd>Telescope keymaps<cr>', desc = '[K]eymaps' },
-    { '<leader>sf', '<CMD>Telescope find_files<CR>', desc = 'Project [F]iles' },
-    { '<leader>sF', '<CMD>Telescope find_files hidden=true no_ignore=true<CR>', desc = '[F]iles All' },
-    {
-      '<leader>s-',
-      function()
-        require('telescope.builtin').find_files { cwd = vim.fn.expand '%:p:h' }
-      end,
-      desc = 'Parent directory',
-    },
-    { '<leader>s*', '<cmd>Telescope grep_string<cr>', desc = 'Current [W]ord' },
-    { '<leader>sg', '<CMD>Telescope live_grep<CR>', desc = '[G]rep project' },
-    { '<leader>sD', '<cmd>Telescope diagnostics<cr>', desc = 'Workspace [D]iagnostics' },
-    { '<leader>sd', '<cmd>Telescope diagnostics bufnr=0<cr>', desc = 'Buffer [D]iagnostics' },
-    { '<leader>sR', '<cmd>Telescope resume<cr>', desc = '[R]esume' },
-    { '<leader>s.', '<cmd>Telescope oldfiles<cr>', desc = 'Recent Files ("." for repeat)' },
-    { '<leader><leader>', '<cmd>Telescope buffers<cr>', desc = 'Search Open Buffers' },
-
-    -- Slightly advanced example of overriding default behavior and theme
-    { '<leader>/', '<cmd>Telescope current_buffer_fuzzy_find theme=dropdown previewer=false<cr>', desc = '[/] Fuzzily search in current buffer' },
-
-    -- It's also possible to pass additional configuration options.
-    --  See `:help telescope.builtin.live_grep()` for information about particular keys
-    {
-      '<leader>s/',
-      '<cmd>lua require("telescope.builtin").live_grep({grep_open_files=true, prompt_title="Live Grep in Open File"})<cr>',
-      desc = '[/] in Open Files',
-    },
 
     -- Shortcut for searching your Neovim configuration files
     { '<leader>sn', '<cmd>Telescope find_files cwd=' .. vim.fn.stdpath 'config' .. '<cr>', desc = '[N]eovim Config' },
 
     -- Shortcut for searching spelling suggestions
-    { 'Z', '<cmd>Telescope spell_suggest theme=cursor<cr>', desc = ' Spelling Suggestions' },
-
-    -- telescope undo tree
-    { '<leader>su', '<cmd>Telescope undo<cr>', desc = '[U]ndo tree' },
+    -- { 'Z', '<cmd>Telescope spell_suggest theme=cursor<cr>', desc = ' Spelling Suggestions' },
 
     -- telescope luasnip
     { '<leader>sc', '<cmd>Telescope luasnip<cr>', desc = '[C]ompletion (Luasnip)' },
 
-    -- telescope git pickers
-    { '<leader>gs', '<cmd>Telescope git_status<cr>', desc = 'Git [S]tatus' },
-    { '<leader>gf', '<cmd>Telescope git_bcommits<cr>', desc = '[F]ile Commits history' },
-    { '<leader>gS', '<cmd>Telescope git_stash<cr>', desc = 'Git [S]tash' },
-    { '<leader>gl', '<cmd>Telescope git_commits<cr>', desc = 'Git [L]og' },
-    { '<leader>gb', '<cmd>Telescope git_branches<cr>', desc = '[B]ranches' },
-
     -- telescope bibtex
     { '<C-b>', '<cmd>Telescope bibtex<cr>', desc = 'Search [B]ibTex', ft = 'markdown', mode = 'i' },
-
-    -- serach message history
-    { '<leader>sm', '<cmd>Telescope noice<cr>', desc = 'Search [M]essage' },
   },
   config = function()
     -- Telescope is a fuzzy finder that comes with a lot of different things that
@@ -158,9 +98,6 @@ return { -- Fuzzy Finder (files, lsp, etc)
       },
       -- pickers = {}
       extensions = {
-        ['ui-select'] = {
-          require('telescope.themes').get_dropdown(),
-        },
         bibtex = {
           -- Use context awareness
           context = true,
@@ -176,11 +113,9 @@ return { -- Fuzzy Finder (files, lsp, etc)
     }
 
     -- Enable Telescope extensions if they are installed
-    pcall(require('telescope').load_extension, 'fzf')
-    pcall(require('telescope').load_extension, 'ui-select')
-    pcall(require('telescope').load_extension, 'undo')
+    -- pcall(require('telescope').load_extension, 'fzf')
+    -- pcall(require('telescope').load_extension, 'ui-select')
     pcall(require('telescope').load_extension, 'luasnip')
     pcall(require('telescope').load_extension, 'bibtex')
-    pcall(require('telescope').load_extension, 'noice')
   end,
 }

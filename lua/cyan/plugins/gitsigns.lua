@@ -59,6 +59,7 @@ return { -- Adds git related signs to the gutter, as well as utilities for manag
         end, { desc = '[D]iff against last commit' })
         -- Toggles
         map('n', '<leader>ub', gitsigns.toggle_current_line_blame, { desc = 'Toggle git show [b]lame line' })
+        map('n', '<leader>uw', gitsigns.toggle_word_diff, { desc = 'Toggle git show [w]ord diff' })
       end,
     },
   },

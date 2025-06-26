@@ -95,6 +95,7 @@ require('lazy').setup({
   require 'cyan.plugins.todo-comments', -- Highlight todo, notes, etc in comment; todo tree
   require 'cyan.plugins.which-key', -- keybinding hint
   require 'cyan.plugins.telescope', -- fuzzy search
+  require 'cyan.plugins.fzf-lua', -- fuzzy search
   require 'cyan.plugins.lspconfig', -- LSP support
   require 'cyan.plugins.conform', -- formatter support
   require 'cyan.plugins.blink-cmp', -- autocompletion
