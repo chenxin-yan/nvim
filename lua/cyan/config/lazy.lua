@@ -110,7 +110,6 @@ require('lazy').setup({
   require 'cyan.plugins.ufo', -- better folds
   require 'cyan.plugins.ts-autotag', -- auto close/rename tags
   require 'cyan.plugins.multicursor', -- neovim multicursor support
-  require 'cyan.plugins.dial', -- increment/decrement improvement
   require 'cyan.plugins.arrow', -- better file navigation
 
   -- ---- UI ----
@@ -133,7 +132,6 @@ require('lazy').setup({
   require 'cyan.plugins.neotest', -- testing support
   require 'cyan.plugins.refactoring', -- code refactoring
   require 'cyan.plugins.neogen', -- better annotation
-  require 'cyan.plugins.debugprint', -- debug print
 
   -- TS/JS
   require 'cyan.plugins.tsc', -- TSC support

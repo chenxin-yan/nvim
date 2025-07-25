@@ -1,4 +1,4 @@
-local is_dev = true
+local is_dev = false
 
 if is_dev then
   return {

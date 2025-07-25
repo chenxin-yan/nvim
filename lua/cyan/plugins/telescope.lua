@@ -18,12 +18,6 @@ return { -- Fuzzy Finder (files, lsp, etc)
   keys = {
     -- See `:help telescope.builtin`
 
-    -- Shortcut for searching your Neovim configuration files
-    { '<leader>sn', '<cmd>Telescope find_files cwd=' .. vim.fn.stdpath 'config' .. '<cr>', desc = '[N]eovim Config' },
-
-    -- Shortcut for searching spelling suggestions
-    -- { 'Z', '<cmd>Telescope spell_suggest theme=cursor<cr>', desc = ' Spelling Suggestions' },
-
     -- telescope luasnip
     { '<leader>sc', '<cmd>Telescope luasnip<cr>', desc = '[C]ompletion (Luasnip)' },
 

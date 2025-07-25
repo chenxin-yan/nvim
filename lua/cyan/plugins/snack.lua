@@ -42,6 +42,9 @@ return {
         replace_netrw = true,
       },
     },
+    picker = {
+      ui_select = true,
+    },
     dashboard = {
       enabled = true,
       preset = {
@@ -51,10 +54,10 @@ return {
         ---@type snacks.dashboard.Item[]
         keys = {
           { icon = ' ', key = 'e', desc = 'New File', action = ':ene | startinsert' },
-          { icon = ' ', key = 'f', desc = 'Find File', action = ":lua Snacks.dashboard.pick('files')" },
-          { icon = ' ', key = 'g', desc = 'Find Text', action = ":lua Snacks.dashboard.pick('live_grep')" },
-          { icon = ' ', key = 'r', desc = 'Recent Files', action = ":lua Snacks.dashboard.pick('oldfiles')" },
-          { icon = ' ', key = 'c', desc = 'Config', action = ":lua Snacks.dashboard.pick('files', {cwd = vim.fn.stdpath('config')})" },
+          { icon = ' ', key = 'f', desc = 'Find File', action = '<cmd>FzfLua files<cr>' },
+          { icon = ' ', key = 'g', desc = 'Find Text', action = '<cmd>FzfLua live_grep<cr>' },
+          { icon = ' ', key = 'r', desc = 'Recent Files', action = '<cmd>FzfLua oldfiles<cr>' },
+          { icon = ' ', key = 'c', desc = 'Config', action = '<cmd>FzfLua files cwd=' .. vim.fn.stdpath 'config' .. '<cr>' },
           { icon = '󰒲 ', key = 'u', desc = 'Update plugins', action = '<cmd>Lazy update<cr>' },
           { icon = ' ', key = 'q', desc = 'Quit NVIM', action = '<cmd>qa<cr>' },
         },
@@ -219,6 +222,64 @@ return {
         end,
         desc = '[D]elete Other Buffers',
         mode = { 'n' },
+      },
+      -- pickers
+      {
+        '<leader>su',
+        function()
+          Snacks.picker.undo()
+        end,
+        desc = 'Undo History',
+      },
+      {
+        '<leader>/',
+        function()
+          Snacks.picker.lines {}
+        end,
+        desc = 'Buffer Lines',
+      },
+      {
+        '<leader>s/',
+        function()
+          Snacks.picker.grep_buffers { layout = { preset = 'ivy', layout = { height = 25 } } }
+        end,
+        desc = 'Grep Open Buffers',
+      },
+      {
+        '<leader>ss',
+        function()
+          Snacks.picker.lsp_symbols { layout = { preset = 'ivy', layout = { height = 25 } } }
+        end,
+        desc = 'LSP Symbols',
+      },
+      {
+        '<leader>sS',
+        function()
+          Snacks.picker.lsp_workspace_symbols { layout = { preset = 'ivy', layout = { height = 25 } } }
+        end,
+        desc = 'LSP Workspace Symbols',
+      },
+      {
+        'Z',
+        function()
+          Snacks.picker.spelling { layout = { layout = { relative = 'cursor' } } }
+        end,
+        desc = 'Spelling',
+      },
+      -- others
+      {
+        '<leader>z',
+        function()
+          Snacks.zen()
+        end,
+        desc = 'Toggle Zen Mode',
+      },
+      {
+        '<leader>Z',
+        function()
+          Snacks.zen.zoom()
+        end,
+        desc = 'Toggle Zoom',
       },
     }
   end,

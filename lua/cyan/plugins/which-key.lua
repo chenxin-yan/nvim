@@ -22,6 +22,7 @@ return {
       { '<leader>o', group = ' Obsidian' },
       { '<leader>j', group = ' Jobs' },
       { '<leader>S', group = '󱄽 Snippets' },
+      { '<leader>a', group = ' AI' }
     },
     plugins = {
       spelling = {

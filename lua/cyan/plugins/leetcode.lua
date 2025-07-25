@@ -2,8 +2,6 @@ return {
   'kawre/leetcode.nvim',
   build = ':TSUpdate html',
   dependencies = {
-    'ibhagwan/fzf-lua',
-    'nvim-lua/plenary.nvim', -- required by telescope
     'MunifTanjim/nui.nvim',
 
     -- optional

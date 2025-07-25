@@ -74,7 +74,7 @@ return {
     set('n', '<leader>Ca', mc.alignCursors, { desc = 'Align cursors' })
 
     -- Split visual selections by regex.
-    set('v', 'D', mc.splitCursors)
+    set('v', 'S', mc.splitCursors)
 
     -- Append/insert for each line of visual selections.
     set('v', 'I', mc.insertVisual)

@@ -14,6 +14,7 @@ vim.keymap.del('n', 'grr')
 vim.keymap.del({ 'n', 'x' }, 'gra')
 vim.keymap.del('n', 'gri')
 vim.keymap.del('n', 'grn')
+vim.keymap.del('n', 'grt')
 
 -- Diagnostic/todo keymaps
 vim.keymap.set('n', 'X', vim.diagnostic.open_float, { desc = 'Show diagnostic Error messages' })
@@ -62,9 +63,7 @@ vim.keymap.set({ 'n', 'x' }, 'L', '$')
 vim.keymap.set('n', '<leader><C-a>', 'gg<s-v>G', { desc = 'Select all' })
 
 -- switch between buffers
-vim.keymap.set('n', '<Tab>', '<cmd>b#<cr>', { desc = 'Goto previously opened buffer' })
-vim.keymap.set('n', '<C-e>', '<cmd>bnext<cr>', { desc = 'Goto next buffer' })
-vim.keymap.set('n', '<C-w>', '<cmd>bprevious<cr>', { desc = 'Goto previous buffer' })
+vim.keymap.set('n', '<leader><Tab>', '<cmd>b#<cr>', { desc = 'Goto previously opened buffer' })
 
 -- select pasted text
 vim.keymap.set('n', 'gp', '`[v`]', { desc = 'Select Pasted Text' })

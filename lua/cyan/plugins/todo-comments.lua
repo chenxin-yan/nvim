@@ -6,15 +6,18 @@ return {
   keys = {
     { '<leader>xt', '<cmd>Trouble todo toggle filter = {tag = {TODO,FIX,FIXME}}<cr>', desc = '[T]odos' },
     {
-      '<leader>xT',
-      '<cmd>Trouble todo toggle<cr>',
-      desc = 'Highlighted Comments',
+      '<leader>st',
+      function()
+        Snacks.picker.todo_comments { layout = { preset = 'ivy', layout = { height = 25 } } }
+      end,
+      desc = 'Todo',
     },
-    { '<leader>st', '<cmd>TodoFzflua keywords=TODO,FIXME,FIX<cr>', desc = '[T]odos' },
     {
       '<leader>sT',
-      '<cmd>TodoFzflua><cr>',
-      desc = 'Highlighted Comments',
+      function()
+        Snacks.picker.todo_comments { keywords = { 'TODO', 'FIX', 'FIXME' }, layout = { preset = 'ivy', layout = { height = 25 } } }
+      end,
+      desc = 'Todo/Fix/Fixme',
     },
   },
   config = function()

@@ -1,8 +1,32 @@
 return {
   {
     'folke/trouble.nvim',
-    opts = { modes = { lsp_document_symbols = { format = '{kind_icon} {symbol.name}' } } },
+    opts = {
+      warn_no_results = false,
+      open_no_results = true,
+      modes = { lsp_document_symbols = { format = '{kind_icon} {symbol.name}' } },
+    },
     cmd = 'Trouble',
+    specs = {
+      'folke/snacks.nvim',
+      opts = function(_, opts)
+        return vim.tbl_deep_extend('force', opts or {}, {
+          picker = {
+            actions = require('trouble.sources.snacks').actions,
+            win = {
+              input = {
+                keys = {
+                  ['<c-t>'] = {
+                    'trouble_open',
+                    mode = { 'n', 'i' },
+                  },
+                },
+              },
+            },
+          },
+        })
+      end,
+    },
     keys = {
       {
         '<leader>xX',
@@ -16,12 +40,12 @@ return {
       },
       {
         '<leader>cs',
-        '<cmd>Trouble symbols toggle focus=false win.size=35 win.position=left<cr>',
+        '<cmd>Trouble symbols toggle focus=false win.size=40 win.position=left<cr>',
         desc = 'Symbols (Trouble)',
       },
       {
         '<leader>cl',
-        '<cmd>Trouble lsp toggle focus=false win.position=right win.size=65<cr>',
+        '<cmd>Trouble lsp toggle focus=false win.position=right win.size=60<cr>',
         desc = 'LSP Definitions / references / ... (Trouble)',
       },
       {

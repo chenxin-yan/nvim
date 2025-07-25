@@ -72,8 +72,8 @@ return { -- Collection of various small independent plugins/modules
       mappings = {
         left = '<',
         right = '>',
-        down = 'J',
-        up = 'K',
+        down = '<C-j>',
+        up = '<C-k>',
 
         line_left = '<',
         line_right = '>',
