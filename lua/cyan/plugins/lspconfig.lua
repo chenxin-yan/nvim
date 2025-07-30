@@ -233,7 +233,6 @@ local servers = {
       },
     },
   },
-  jdtls = {}, -- java lsp
   taplo = {}, -- toml lsp
   eslint = { -- linter for javascript
     settings = {
@@ -328,16 +327,12 @@ vim.list_extend(ensure_installed, {
   'golines', -- Go formatter
   -- Linters
   'markdownlint-cli2', -- markdown linter & formatter
-  'hadolint', -- docker linter
   -- debugger
   'js-debug-adapter', -- javascript debugger
-  'java-debug-adapter', -- java debugger
   'codelldb', -- C/C++ debugger
   'debugpy', -- python debugger
   'delve', -- Go debugger
   'netcoredbg', -- .Net debugger
-  -- Testing
-  'java-test',
 })
 
 return {
@@ -421,8 +416,11 @@ return {
   },
   { 'Bilal2453/luvit-meta', lazy = true },
 
-  -- java lsp config
-  { 'mfussenegger/nvim-jdtls', lazy = true, dependencies = { 'mfussenegger/nvim-dap' } },
+  -- java config
+  {
+    'nvim-java/nvim-java',
+    lazy = true,
+  },
 
   -- json/yaml schema support
   { 'b0o/schemastore.nvim', lazy = true, version = false },
@@ -475,9 +473,6 @@ return {
       { 'mason-org/mason.nvim', cmd = { 'Mason' }, opts = {} },
       { 'mason-org/mason-lspconfig.nvim', opts = {} },
       'WhoIsSethDaniel/mason-tool-installer.nvim',
-
-      -- -- Allows extra capabilities provided by nvim-cmp
-      -- 'hrsh7th/cmp-nvim-lsp',
     },
     config = function()
       -- If you're wondering about lsp vs treesitter, you can check out the wonderfully
@@ -534,9 +529,21 @@ return {
         end,
       })
 
+      require('java').setup {
+        jdk = { auto_install = false },
+      }
+      require('lspconfig').jdtls.setup {
+        {
+          handlers = {
+            -- By assigning an empty function, you can remove the notifications
+            -- printed to the cmd
+            ['$/progress'] = function(_, result, ctx) end,
+          },
+        },
+      }
+
       for server_name, config in pairs(servers) do
-        -- Don't call setup for JDTLS Java LSP and tailwindcss lsp because it will be setup from a separate config
-        local excluded_servers = { 'jdtls', 'tailwindcss' }
+        local excluded_servers = { 'tailwindcss' }
 
         local function contains(excluded, server)
           for _, v in ipairs(excluded) do

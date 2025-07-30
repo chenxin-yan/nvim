@@ -30,6 +30,9 @@ require('lazy').setup({
       vim.cmd.colorscheme 'catppuccin-mocha'
     end,
     opts = {
+      float = {
+        transparent = true,
+      },
       integrations = {
         noice = true,
         grug_far = true,

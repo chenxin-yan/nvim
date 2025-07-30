@@ -22,6 +22,14 @@ return {
       desc = 'Flash Treesitter',
     },
     {
+      '<c-g>',
+      mode = { 'c' },
+      function()
+        require('flash').toggle()
+      end,
+      desc = 'Toggle Flash Search',
+    },
+    {
       'r',
       mode = 'o',
       function()

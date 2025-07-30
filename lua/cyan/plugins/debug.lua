@@ -147,30 +147,6 @@ return {
       }
     end
 
-    -- == JAVA ==
-    dap.configurations.java = {
-      {
-        name = 'Debug Launch (2GB)',
-        type = 'java',
-        request = 'launch',
-        vmArgs = '' .. '-Xmx2g ',
-      },
-      {
-        name = 'Debug Attach (8000)',
-        type = 'java',
-        request = 'attach',
-        hostName = '127.0.0.1',
-        port = 8000,
-      },
-      {
-        name = 'Debug Attach (5005)',
-        type = 'java',
-        request = 'attach',
-        hostName = '127.0.0.1',
-        port = 5005,
-      },
-    }
-
     -- == C/C++ ==
     if not dap.adapters['codelldb'] then
       require('dap').adapters['codelldb'] = {
