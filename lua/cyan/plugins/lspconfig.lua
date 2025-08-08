@@ -470,8 +470,8 @@ return {
     dependencies = {
 
       -- Automatically install LSPs and related tools to stdpath for Neovim
-      { 'mason-org/mason.nvim', cmd = { 'Mason' }, opts = {} },
-      { 'mason-org/mason-lspconfig.nvim', opts = {} },
+      { 'mason-org/mason.nvim', cmd = { 'Mason' } },
+      'mason-org/mason-lspconfig.nvim',
       'WhoIsSethDaniel/mason-tool-installer.nvim',
     },
     config = function()
@@ -532,18 +532,11 @@ return {
       require('java').setup {
         jdk = { auto_install = false },
       }
-      require('lspconfig').jdtls.setup {
-        {
-          handlers = {
-            -- By assigning an empty function, you can remove the notifications
-            -- printed to the cmd
-            ['$/progress'] = function(_, result, ctx) end,
-          },
-        },
-      }
+
+      local excluded_servers = { 'tailwindcss' }
 
       for server_name, config in pairs(servers) do
-        local excluded_servers = { 'tailwindcss' }
+        vim.inspect 'test'
 
         local function contains(excluded, server)
           for _, v in ipairs(excluded) do
@@ -560,6 +553,21 @@ return {
         vim.lsp.config(server_name, config)
         ::continue::
       end
+
+      vim.lsp.config('jdtls', {
+        handlers = {
+          ['$/progress'] = function(_, result, ctx) end,
+        },
+      })
+
+      vim.lsp.enable 'jdtls'
+
+      require('mason-lspconfig').setup {
+        ensure_installed = {},
+        automatic_enable = {
+          exclude = excluded_servers,
+        },
+      }
     end,
   },
 }
