@@ -61,7 +61,6 @@ require('lazy').setup({
   },
 
   -- == plugins ==
-
   -- ---- Core plugins ----
   -- Detect tabstop and shiftwidth automatically
   {

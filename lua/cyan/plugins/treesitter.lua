@@ -35,6 +35,7 @@ return { -- Highlight, edit, and navigate code
       'gomod',
       'gowork',
       'gosum',
+      'nix',
     },
     -- Autoinstall languages that are not installed
     auto_install = true,

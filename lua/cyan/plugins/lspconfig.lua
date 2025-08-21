@@ -312,7 +312,8 @@ local servers = {
     end,
   }, -- python linter & formatter
   bashls = {}, -- bashscript lsp
-  astro = {},
+  astro = {}, -- astro lsp
+  nil_ls = {}, -- nix lsp
 }
 -- You can add other tools here that you want Mason to install
 -- for you, so that they are available from within Neovim.
@@ -361,19 +362,14 @@ return {
   -- == LSP Plugins==
   --- incremental renaming
   {
-    'smjonas/inc-rename.nvim',
+    'saecki/live-rename.nvim',
     keys = {
       {
         '<leader>rn',
-        ':IncRename ',
+        "<cmd>lua require('live-rename').rename()<cr>",
         desc = 'Rename',
       },
     },
-    config = function()
-      require('inc_rename').setup {
-        save_in_cmdline_history = false,
-      }
-    end,
   },
 
   -- emmet integration
@@ -536,8 +532,6 @@ return {
       local excluded_servers = { 'tailwindcss' }
 
       for server_name, config in pairs(servers) do
-        vim.inspect 'test'
-
         local function contains(excluded, server)
           for _, v in ipairs(excluded) do
             if v == server then
