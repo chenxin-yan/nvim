@@ -1,5 +1,7 @@
 # Neovim config
 
+> This repo is deprecated. Please refer to my new [dotfiles](https://github.com/chenxin-yan/nix-dotfiles#) managed using Nix Home Manager
+
 <!--toc:start-->
 
 - [Dependencies](#dependencies)
